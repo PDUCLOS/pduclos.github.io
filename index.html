@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrice — Data Analyst Senior | Portfolio</title>
+    <meta name="description" content="Portfolio Data Analyst Senior — 20 ans d'expertise industrielle, certifié Jedha Bootcamp. Power BI, SQL, Python, SAP.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0B0F1A;
+            --bg-secondary: #111827;
+            --bg-card: #1A2035;
+            --bg-card-hover: #1F2847;
+            --accent: #38BDF8;
+            --accent-warm: #F59E0B;
+            --accent-green: #34D399;
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --border: #1E293B;
+            --border-light: #334155;
+            --gradient-1: linear-gradient(135deg, #38BDF8 0%, #818CF8 100%);
+            --gradient-2: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+            --gradient-3: linear-gradient(135deg, #34D399 0%, #38BDF8 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* === NOISE TEXTURE OVERLAY === */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* === NAVIGATION === */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 15, 26, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* === HERO === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-grid {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 100%);
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .hero-glow-1 {
+            top: -200px; right: -100px;
+            background: var(--accent);
+        }
+
+        .hero-glow-2 {
+            bottom: -200px; left: -100px;
+            background: var(--accent-warm);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 100px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+            animation: fadeSlideUp 0.8s ease both;
+        }
+
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+            animation: fadeSlideUp 0.8s ease 0.1s both;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 620px;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            animation: fadeSlideUp 0.8s ease 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            animation: fadeSlideUp 0.8s ease 0.3s both;
+        }
+
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.2rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .hero-stat-label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === SECTION COMMON === */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin-bottom: 3.5rem;
+            font-weight: 300;
+        }
+
+        /* === ABOUT === */
+        #about {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            font-weight: 300;
+            font-size: 1.02rem;
+        }
+
+        .about-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .about-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .about-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-warm), var(--accent-green));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            background: var(--bg-secondary);
+            transform: translateX(-4px);
+        }
+
+        .timeline-item:nth-child(2)::before { border-color: var(--accent-warm); }
+        .timeline-item:nth-child(3)::before { border-color: var(--accent-green); }
+
+        .timeline-year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-item:nth-child(2) .timeline-year { color: var(--accent-warm); }
+        .timeline-item:nth-child(3) .timeline-year { color: var(--accent-green); }
+
+        .timeline-role {
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0.2rem 0;
+        }
+
+        .timeline-company {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* === PROJECTS === */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+        }
+
+        .project-card-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            min-height: 320px;
+        }
+
+        .project-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-visual-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.12;
+        }
+
+        .project-card:nth-child(1) .project-visual-bg { background: var(--gradient-1); }
+        .project-card:nth-child(2) .project-visual-bg { background: var(--gradient-2); }
+        .project-card:nth-child(3) .project-visual-bg { background: var(--gradient-3); }
+        .project-card:nth-child(4) .project-visual-bg { background: var(--gradient-2); }
+
+        .project-icon {
+            position: relative;
+            z-index: 2;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            border-radius: 24px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .project-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-card:nth-child(1) .project-tag { color: var(--accent); }
+        .project-card:nth-child(2) .project-tag { color: var(--accent-warm); }
+        .project-card:nth-child(3) .project-tag { color: var(--accent-green); }
+        .project-card:nth-child(4) .project-tag { color: var(--accent-warm); }
+
+        .project-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            padding: 0.35rem 0.75rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .project-link:hover {
+            gap: 0.8rem;
+        }
+
+        .project-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* === SKILLS === */
+        #skills {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .skill-group {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-group:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+        }
+
+        .skill-group-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-group-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .skill-name {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .skill-level {
+            display: flex;
+            gap: 3px;
+        }
+
+        .skill-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+
+        .skill-dot.active {
+            background: var(--accent);
+        }
+
+        .skill-group:nth-child(2) .skill-dot.active { background: var(--accent-warm); }
+        .skill-group:nth-child(3) .skill-dot.active { background: var(--accent-green); }
+
+        /* === CONTACT === */
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3.5rem;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+        }
+
+        .contact-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-text {
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            font-size: 1.02rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.85rem 1.8rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .contact-btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .contact-btn-primary:hover {
+            background: #60CDFA;
+            transform: translateY(-2px);
+        }
+
+        .contact-btn-secondary {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-light);
+            color: var(--text-primary);
+        }
+
+        .contact-btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        .contact-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        footer span {
+            color: var(--accent);
+        }
+
+        /* === MOBILE HAMBURGER === */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .project-card-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .project-visual {
+                min-height: 180px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: rgba(11, 15, 26, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            .hero-stat {
+                flex-direction: row;
+                align-items: baseline;
+                gap: 0.75rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .contact-card {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+
+        /* === SCROLL REVEAL === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#about">Parcours</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Disponible — Région lyonnaise
+            </div>
+            <h1>
+                L'expertise industrielle<br>
+                au service de la <span class="highlight">Data</span>
+            </h1>
+            <p class="hero-description">
+                Data Analyst Senior avec 20 ans d'expérience en distribution industrielle.
+                Je transforme des données complexes en décisions stratégiques grâce à
+                Power BI, SQL et Python.
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">20+</span>
+                    <span class="hero-stat-label">Années d'expérience</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">3</span>
+                    <span class="hero-stat-label">Outils maîtrisés</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">∞</span>
+                    <span class="hero-stat-label">Curiosité</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <span class="section-label">// Parcours</span>
+                    <h2 class="section-title">De la distribution industrielle à la Data</h2>
+                    <p>
+                        Après <strong>14 ans chez Michaud Chailly</strong> (Groupe Maurin) et
+                        <strong>6 ans au sein du groupe Descours & Cabaud</strong> (DEXIS, Codima),
+                        j'ai développé une connaissance approfondie des marchés B2B industriels,
+                        de la supply chain et de la relation client.
+                    </p>
+                    <p>
+                        En 2023, j'ai entrepris une reconversion vers la Data Analytics via le
+                        <strong>Bootcamp Jedha</strong>, convaincu que ma compréhension métier
+                        est un atout décisif pour donner du sens aux données.
+                    </p>
+                    <p>
+                        Mon passage chez <strong>Carrier</strong> (8 mois) m'a permis de mettre
+                        en pratique mes nouvelles compétences sur des problématiques HVAC réelles :
+                        reporting Power BI, analyse SAP et automatisation de processus.
+                    </p>
+                </div>
+                <div class="about-timeline reveal">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2024 – 2025</span>
+                        <p class="timeline-role">Data Analyst — Carrier</p>
+                        <p class="timeline-company">Power BI · SAP · Analyse HVAC</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2023 – 2024</span>
+                        <p class="timeline-role">Certification Data Analyst — Jedha</p>
+                        <p class="timeline-company">Python · SQL · Machine Learning</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2004 – 2023</span>
+                        <p class="timeline-role">Expert Distribution Industrielle</p>
+                        <p class="timeline-company">Michaud Chailly · Descours & Cabaud · DEXIS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-container">
+            <span class="section-label reveal">// Projets</span>
+            <h2 class="section-title reveal">Mes réalisations</h2>
+            <p class="section-description reveal">
+                Chaque projet reflète ma double compétence : la rigueur métier et la puissance de la data.
+            </p>
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 1: HVAC -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-visual">
+                            <div class="project-visual-bg"></div>
+                            <div class="project-icon">📊</div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-12"/></svg>
+                                Projet phare — Analyse de marché
+                            </span>
+                            <h3 class="project-title">Marché HVAC Auvergne-Rhône-Alpes</h3>
+                            <p class="project-description">
+                                Étude complète du marché HVAC régional combinant données publiques,
+                                web scraping et modèles de prédiction ML. Visualisation interactive
+                                des tendances et opportunités de marché.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Power BI</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Scikit-learn</span>
+                                <span class="tech-badge">Pandas</span>
+                                <span class="tech-badge">Web Scraping</span>
+                            </div>
+                            <a href="https://github.com/PDUCLOS/Projet-HVAC" target="_blank" class="project-link">
+                                Voir sur GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2: CARRIER -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-visual">
+                            <div class="project-visual-bg"></div>
+                            <div class="project-icon">⚙️</div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                                Expérience professionnelle
+                            </span>
+                            <h3 class="project-title">Reporting & Analyse — Carrier</h3>
+                            <p class="project-description">
+                                Conception et déploiement de dashboards Power BI pour le suivi
+                                de production HVAC. Extraction et transformation de données SAP,
+                                automatisation des rapports pour l'équipe opérationnelle.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Power BI</span>
+                                <span class="tech-badge">SAP</span>
+                                <span class="tech-badge">DAX</span>
+                                <span class="tech-badge">Power Query</span>
+                                <span class="tech-badge">Excel VBA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3: CSVTRAITEMENT -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-visual">
+                            <div class="project-visual-bg"></div>
+                            <div class="project-icon">🐍</div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                Développement Python
+                            </span>
+                            <h3 class="project-title">Csvtraitement — Outil de traitement CSV</h3>
+                            <p class="project-description">
+                                Application Python enterprise-level pour le traitement massif de fichiers CSV.
+                                Streaming processing, intégration ML pour la détection d'anomalies,
+                                validation avancée et pipeline de transformation automatisé.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Pandas</span>
+                                <span class="tech-badge">Machine Learning</span>
+                                <span class="tech-badge">Streaming</span>
+                                <span class="tech-badge">CLI</span>
+                            </div>
+                            <a href="https://github.com/PDUCLOS/Csvtraitement" target="_blank" class="project-link">
+                                Voir sur GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 4: PREDICTIRA -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-visual">
+                            <div class="project-visual-bg"></div>
+                            <div class="project-icon">🏥</div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                Machine Learning — Santé publique
+                            </span>
+                            <h3 class="project-title">PredictIRA — Prédiction des admissions urgences</h3>
+                            <p class="project-description">
+                                Application web Flask de prédiction des admissions aux urgences pour
+                                infections respiratoires aiguës. Modèle LightGBM entraîné sur données
+                                épidémiologiques, interface interactive et API REST documentée Swagger.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Flask</span>
+                                <span class="tech-badge">LightGBM</span>
+                                <span class="tech-badge">Scikit-learn</span>
+                                <span class="tech-badge">API REST</span>
+                            </div>
+                            <a href="https://github.com/PDUCLOS/PredictIRA" target="_blank" class="project-link">
+                                Voir sur GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="section-container">
+            <span class="section-label reveal">// Compétences</span>
+            <h2 class="section-title reveal">Stack technique</h2>
+            <p class="section-description reveal">
+                Un socle technique solide, enrichi par deux décennies de compréhension métier.
+            </p>
+
+            <div class="skills-grid">
+                <div class="skill-group reveal">
+                    <div class="skill-group-icon">📊</div>
+                    <h3 class="skill-group-title">Data Visualisation</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Power BI / DAX</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Excel avancé / VBA</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Power Query</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-group reveal">
+                    <div class="skill-group-icon">💻</div>
+                    <h3 class="skill-group-title">Programmation</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python / Pandas</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Scikit-learn</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-group reveal">
+                    <div class="skill-group-icon">🏭</div>
+                    <h3 class="skill-group-title">Expertise Métier</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">SAP / ERP</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Distribution B2B</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">HVAC / Industrie</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="contact-card reveal">
+                <h2 class="contact-title">Travaillons ensemble</h2>
+                <p class="contact-text">
+                    Basé dans la région lyonnaise, je suis à la recherche d'un poste de
+                    Data Analyst où ma double compétence technique et métier fera la différence.
+                </p>
+                <div class="contact-links">
+                    <a href="tel:+33619665235" class="contact-btn contact-btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.67 19.79 19.79 0 01.22 4.05 2 2 0 012.18 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.06 6.06l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                        06 19 66 52 35
+                    </a>
+                    <a href="mailto:patrice.noel.duclos@gmail.com" class="contact-btn contact-btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 4-10 8L2 4"/></svg>
+                        Email
+                    </a>
+                    <a href="https://github.com/PDUCLOS" target="_blank" class="contact-btn contact-btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/patrice-duclos-04819b96/" target="_blank" class="contact-btn contact-btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.47 2H3.53A1.45 1.45 0 002 3.47v17.06A1.45 1.45 0 003.47 22h17.06A1.45 1.45 0 0022 20.53V3.47A1.45 1.45 0 0020.47 2zM8.09 18.74h-3v-9h3v9zM6.59 8.48a1.56 1.56 0 110-3.12 1.56 1.56 0 010 3.12zM18.91 18.74h-3v-4.26c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.18-1.73 2.39v4.34h-3v-9h2.89v1.23h.04a3.16 3.16 0 012.85-1.56c3.04 0 3.6 2 3.6 4.61v4.72z"/></svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Patrice — Construit avec <span>♥</span> et des données
+    </footer>
+
+    <!-- SCROLL REVEAL SCRIPT -->
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        reveals.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
