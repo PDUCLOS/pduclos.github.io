@@ -968,6 +968,93 @@
             }
         }
 
+        /* === CERTIFICATIONS === */
+        #certifications {
+            padding: 6rem 2rem;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .certification-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .certification-card:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+        }
+
+        .certification-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .certification-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .certification-org {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 0.4rem;
+        }
+
+        .certification-year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .certification-card:nth-child(2) .certification-year {
+            color: var(--accent-warm);
+        }
+
+        /* === PROJECT SCREENSHOT PLACEHOLDER === */
+        .project-visual {
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .project-screenshot-placeholder {
+            position: relative;
+            z-index: 2;
+            width: 85%;
+            max-width: 280px;
+            aspect-ratio: 16 / 10;
+            border: 2px dashed var(--border-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.03em;
+            background: rgba(255,255,255,0.02);
+        }
+
+        @media (max-width: 640px) {
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* === SCROLL REVEAL === */
         .reveal {
             opacity: 0;
@@ -993,6 +1080,7 @@
             <li><a href="#about">Parcours</a></li>
             <li><a href="#projects">Projets</a></li>
             <li><a href="#skills">Compétences</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -1005,7 +1093,7 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="dot"></span>
-                Disponible — Région lyonnaise
+                Disponible — Région lyonnaise · Certifié Jedha — RNCP Niv. 6
             </div>
             <h1>
                 L'expertise industrielle<br>
@@ -1026,7 +1114,7 @@
                     <span class="hero-stat-label">Projets GitHub</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-number">8+</span>
+                    <span class="hero-stat-number">5+</span>
                     <span class="hero-stat-label">Outils maîtrisés</span>
                 </div>
             </div>
@@ -1088,7 +1176,7 @@
                         </div>
                         <div>
                             <div class="expertise-col-title">Compétences Data</div>
-                            <div class="expertise-col-subtitle">Certifié Jedha · 2023–2025</div>
+                            <div class="expertise-col-subtitle">Certifié M2i / Jedha · 2024–2025</div>
                         </div>
                     </div>
                     <ul class="expertise-list">
@@ -1133,29 +1221,33 @@
                         de la supply chain et de la relation client.
                     </p>
                     <p>
-                        En 2023, j'ai entrepris une reconversion vers la Data Analytics via le
-                        <strong>Bootcamp Jedha</strong>, convaincu que ma compréhension métier
-                        est un atout décisif pour donner du sens aux données.
+                        En 2024, j'ai entrepris une reconversion vers la Data Analytics via la
+                        <strong>formation diplômante M2i / Jedha Bootcamp (RNCP Niv. 6 — Bac+4)</strong>,
+                        convaincu que ma compréhension métier est un atout décisif pour donner du sens aux données.
                     </p>
                     <p>
-                        Mon passage chez <strong>Carrier</strong> (1 an, dont un stage) m'a permis de mettre
+                        Mon passage chez <strong>Carrier</strong> (stage 2 mois + CDD 8 mois, contexte international FR/EN) m'a permis de mettre
                         en pratique mes nouvelles compétences sur des problématiques HVAC réelles :
                         reporting Power BI, analyse SAP et automatisation de processus.
+                    </p>
+                    <p>
+                        Certifié <strong>Databricks Lakehouse Fundamentals</strong> (2025),
+                        je continue à élargir mon socle technique pour répondre aux enjeux data modernes.
                     </p>
                 </div>
                 <div class="about-timeline reveal">
                     <div class="timeline-item">
+                        <span class="timeline-year">2025 – 2026</span>
+                        <p class="timeline-role">Data Analyst — Carrier <span style="font-weight:400; color: var(--text-muted); font-size:0.88rem;">(stage 2 mois + CDD 8 mois)</span></p>
+                        <p class="timeline-company">Power BI · SAP · Analyse HVAC · Contexte international FR/EN</p>
+                    </div>
+                    <div class="timeline-item">
                         <span class="timeline-year">2024 – 2025</span>
-                        <p class="timeline-role">Data Analyst — Carrier <span style="font-weight:400; color: var(--text-muted); font-size:0.88rem;">(1 an, dont stage)</span></p>
-                        <p class="timeline-company">Power BI · SAP · Analyse HVAC</p>
+                        <p class="timeline-role">Formation diplômante — M2i / Jedha Bootcamp</p>
+                        <p class="timeline-company">RNCP Niv. 6 (Bac+4) · Python · SQL · Machine Learning</p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year">2023 – 2024</span>
-                        <p class="timeline-role">Certification Data Analyst — Jedha</p>
-                        <p class="timeline-company">Python · SQL · Machine Learning</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-year">2004 – 2023</span>
+                        <span class="timeline-year">2004 – 2024</span>
                         <p class="timeline-role">Expert Distribution Industrielle</p>
                         <p class="timeline-company">Michaud Chailly · Descours & Cabaud · DEXIS</p>
                     </div>
@@ -1188,6 +1280,7 @@
                                     <circle cx="10" cy="26" r="5" fill="#FBBF24"/>
                                 </svg>
                             </div>
+                            <div class="project-screenshot-placeholder">Capture à venir</div>
                         </div>
                         <div class="project-content">
                             <span class="project-tag">
@@ -1196,9 +1289,9 @@
                             </span>
                             <h3 class="project-title">Marché HVAC Auvergne-Rhône-Alpes</h3>
                             <p class="project-description">
-                                Étude complète du marché HVAC régional combinant données publiques,
-                                web scraping et modèles de prédiction ML. Visualisation interactive
-                                des tendances et opportunités de marché.
+                                Étude complète du marché HVAC régional. Sources multiples : données publiques
+                                INSEE/ADEME, web scraping, données marché. Modèles de prédiction ML et
+                                visualisation interactive des tendances et opportunités de marché.
                             </p>
                             <div class="project-tech">
                                 <span class="tech-badge">Power BI</span>
@@ -1229,6 +1322,7 @@
                                     <line x1="16" y1="52" x2="42" y2="52"/>
                                 </svg>
                             </div>
+                            <div class="project-screenshot-placeholder">Capture à venir</div>
                         </div>
                         <div class="project-content">
                             <span class="project-tag">
@@ -1237,9 +1331,9 @@
                             </span>
                             <h3 class="project-title">Reporting & Analyse — Carrier</h3>
                             <p class="project-description">
-                                Conception et déploiement de dashboards Power BI pour le suivi
-                                de production HVAC. Extraction et transformation de données SAP,
-                                automatisation des rapports pour l'équipe opérationnelle.
+                                Dashboards Power BI Master Data & Business HVAC Europe.
+                                Flux unifié depuis 5 sources SAP, détection d'erreurs business à 100 K€/mois.
+                                −40% temps de traitement via automatisation Power Query.
                             </p>
                             <div class="project-tech">
                                 <span class="tech-badge">Power BI</span>
@@ -1269,6 +1363,7 @@
                                     <rect x="43" y="39" width="7" height="7" rx="1.5" fill="#34D399" opacity="0.35"/>
                                 </svg>
                             </div>
+                            <div class="project-screenshot-placeholder">Capture à venir</div>
                         </div>
                         <div class="project-content">
                             <span class="project-tag">
@@ -1278,8 +1373,8 @@
                             <h3 class="project-title">Csvtraitement — Outil de traitement CSV</h3>
                             <p class="project-description">
                                 Application Python enterprise-level pour le traitement massif de fichiers CSV.
-                                Streaming processing, intégration ML pour la détection d'anomalies,
-                                validation avancée et pipeline de transformation automatisé.
+                                Streaming processing, détection d'anomalies ML, validation avancée
+                                et pipeline de transformation automatisé.
                             </p>
                             <div class="project-tech">
                                 <span class="tech-badge">Python</span>
@@ -1288,7 +1383,7 @@
                                 <span class="tech-badge">Streaming</span>
                                 <span class="tech-badge">CLI</span>
                             </div>
-                            <a href="https://github.com/PDUCLOS/Csvtraitement" target="_blank" class="project-link">
+                            <a href="https://github.com/PDUCLOS/csvtraitement" target="_blank" class="project-link">
                                 Voir sur GitHub
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
@@ -1310,6 +1405,7 @@
                                     <line x1="16" y1="52" x2="42" y2="52" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round"/>
                                 </svg>
                             </div>
+                            <div class="project-screenshot-placeholder">Capture à venir</div>
                         </div>
                         <div class="project-content">
                             <span class="project-tag">
@@ -1385,6 +1481,16 @@
                                 <span class="skill-dot"></span>
                             </div>
                         </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Databricks</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1414,6 +1520,16 @@
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Scikit-learn</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Web Scraping</span>
                             <div class="skill-level">
                                 <span class="skill-dot active"></span>
                                 <span class="skill-dot active"></span>
@@ -1459,6 +1575,46 @@
                                 <span class="skill-dot"></span>
                             </div>
                         </div>
+                        <div class="skill-item">
+                            <span class="skill-name">IA Générative — Claude, GPT</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+        <div class="section-container">
+            <span class="section-label reveal">// Certifications</span>
+            <h2 class="section-title reveal">Certifications & Diplômes</h2>
+            <p class="section-description reveal">
+                Des formations reconnues pour valider et structurer mon expertise data.
+            </p>
+
+            <div class="certifications-grid">
+                <div class="certification-card reveal">
+                    <div class="certification-icon">🎓</div>
+                    <div>
+                        <h3 class="certification-title">Concepteur Développeur en Sciences des Données</h3>
+                        <p class="certification-org">Jedha / M2i — RNCP Niv. 6 (Bac+4)</p>
+                        <span class="certification-year">2024 – 2025</span>
+                    </div>
+                </div>
+                <div class="certification-card reveal">
+                    <div class="certification-icon">📜</div>
+                    <div>
+                        <h3 class="certification-title">Databricks Lakehouse Fundamentals</h3>
+                        <p class="certification-org">Databricks Academy</p>
+                        <span class="certification-year">2025</span>
                     </div>
                 </div>
             </div>
@@ -1487,9 +1643,13 @@
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                         GitHub
                     </a>
-                    <a href="https://www.linkedin.com/in/patrice-duclos-04819b96/" target="_blank" class="contact-btn contact-btn-secondary">
+                    <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" target="_blank" class="contact-btn contact-btn-secondary">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.47 2H3.53A1.45 1.45 0 002 3.47v17.06A1.45 1.45 0 003.47 22h17.06A1.45 1.45 0 0022 20.53V3.47A1.45 1.45 0 0020.47 2zM8.09 18.74h-3v-9h3v9zM6.59 8.48a1.56 1.56 0 110-3.12 1.56 1.56 0 010 3.12zM18.91 18.74h-3v-4.26c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.18-1.73 2.39v4.34h-3v-9h2.89v1.23h.04a3.16 3.16 0 012.85-1.56c3.04 0 3.6 2 3.6 4.61v4.72z"/></svg>
                         LinkedIn
+                    </a>
+                    <a href="https://pduclos.github.io" target="_blank" class="contact-btn contact-btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                        Portfolio
                     </a>
                 </div>
             </div>
@@ -1498,7 +1658,7 @@
 
     <!-- FOOTER -->
     <footer>
-        © 2025 Patrice — Construit avec <span>♥</span> et des données
+        © 2026 Patrice — Construit avec <span>♥</span> et des données
     </footer>
 
     <!-- SCROLL REVEAL SCRIPT -->
