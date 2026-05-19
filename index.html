@@ -523,7 +523,7 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
         }
 
@@ -586,6 +586,7 @@
 
         .skill-group:nth-child(2) .skill-dot.active { background: var(--accent-warm); }
         .skill-group:nth-child(3) .skill-dot.active { background: var(--accent-green); }
+        .skill-group:nth-child(4) .skill-dot.active { background: var(--accent); }
 
         /* === CONTACT === */
         .contact-card {
@@ -1110,7 +1111,7 @@
                     <span class="hero-stat-label">Années d'expérience</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-number">4</span>
+                    <span class="hero-stat-number">5</span>
                     <span class="hero-stat-label">Projets GitHub</span>
                 </div>
                 <div class="hero-stat">
@@ -1447,6 +1448,51 @@
                     </div>
                 </div>
 
+                <!-- PROJECT 5: LYONFLOW -->
+                <div class="project-card reveal">
+                    <div class="project-card-inner">
+                        <div class="project-visual">
+                            <div class="project-visual-bg"></div>
+                            <div class="project-icon">
+                                <svg width="58" height="58" viewBox="0 0 58 58" fill="none" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="20" r="5"/>
+                                    <circle cx="46" cy="20" r="5"/>
+                                    <circle cx="29" cy="44" r="5"/>
+                                    <path d="M17 20 Q29 8 41 20"/>
+                                    <line x1="14" y1="24" x2="27" y2="40"/>
+                                    <line x1="44" y1="24" x2="31" y2="40"/>
+                                    <circle cx="29" cy="20" r="3" fill="#38BDF8" opacity="0.6"/>
+                                </svg>
+                            </div>
+                            <div class="project-screenshot-placeholder">Capture à venir</div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                Data Engineering — Trafic urbain
+                            </span>
+                            <h3 class="project-title">LyonFlow — Prédiction du trafic urbain</h3>
+                            <p class="project-description">
+                                Plateforme multimodale de prédiction de trafic pour la Métropole de Lyon.
+                                Ingestion de données ouvertes (Data Grand Lyon), pipeline Airflow, comparaison
+                                de 3 familles de modèles (XGBoost MAE 6.97 / R² 0.71), API FastAPI et dashboard Streamlit.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Airflow</span>
+                                <span class="tech-badge">XGBoost</span>
+                                <span class="tech-badge">FastAPI</span>
+                                <span class="tech-badge">Docker</span>
+                                <span class="tech-badge">Streamlit</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                            </div>
+                            <a href="https://github.com/PDUCLOS/LyonFlow" target="_blank" class="project-link">
+                                Voir sur GitHub
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1552,6 +1598,26 @@
                                 <span class="skill-dot"></span>
                             </div>
                         </div>
+                        <div class="skill-item">
+                            <span class="skill-name">XGBoost / Prophet</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">MLflow</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1591,6 +1657,52 @@
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">IA Générative — Claude, GPT</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <div class="skill-group-icon">⚙️</div>
+                    <h3 class="skill-group-title">MLOps & Data Engineering</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Airflow</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">FastAPI</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Docker / Kubernetes</span>
+                            <div class="skill-level">
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot active"></span>
+                                <span class="skill-dot"></span>
+                                <span class="skill-dot"></span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Streamlit</span>
                             <div class="skill-level">
                                 <span class="skill-dot active"></span>
                                 <span class="skill-dot active"></span>
