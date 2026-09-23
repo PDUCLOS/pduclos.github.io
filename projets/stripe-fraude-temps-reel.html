@@ -46,7 +46,7 @@
             <span class="project-tag" style="color:var(--accent)">Data Architecture · Streaming · Bloc 2 RNCP 38777</span>
             <h1>Paiements : scorer la fraude <span class="highlight">en moins d'une seconde</span></h1>
             <p class="lead">Architecture de données unifiée façon Stripe : PostgreSQL transactionnel, CDC Debezium vers Kafka, feature store Redis, MongoDB, entrepôt Snowflake — avec XGBoost, MLflow, dérive Evidently, réentraînement automatique et une cible AWS entièrement décrite en Terraform.</p>
-            <div class="kpi-row"><div class="kpi"><b>&lt; 1 s</b><span>cible de scoring</span></div><div class="kpi"><b>7</b><span>technologies de stockage</span></div><div class="kpi"><b>0,995</b><span>ROC-AUC offline</span></div><div class="kpi"><b>3 jobs</b><span>CI de bout en bout</span></div><div class="kpi"><b>9</b><span>modules Terraform</span></div></div>
+            <div class="kpi-row"><div class="kpi"><b>&lt; 1 s</b><span>cible de scoring</span></div><div class="kpi"><b>5</b><span>briques de données</span></div><div class="kpi"><b>0,995</b><span>ROC-AUC offline</span></div><div class="kpi"><b>3 jobs</b><span>CI de bout en bout</span></div><div class="kpi"><b>9</b><span>modules Terraform</span></div></div>
             <div class="btn-row"><a href="https://github.com/PDUCLOS/BLOC2-STRIPE" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Code source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </div>
     </header>
@@ -55,7 +55,7 @@
         <div class="section-container">
             <span class="section-label">// En 30 secondes</span>
             <h2>Le problème, la réponse, la preuve</h2>
-            <div style="margin-bottom:2rem"><p>Une plateforme de paiement doit bloquer une transaction frauduleuse <strong>avant</strong> de la valider, sans ralentir la base transactionnelle et sans que les analyses ne bloquent la production. Elle doit aussi respecter RGPD et PCI-DSS.</p><p>La réponse : séparer les usages. PostgreSQL pour la transaction, Debezium + Kafka pour diffuser les changements, Redis pour les features temps réel, MongoDB pour les journaux, Snowflake pour l'analytique — et un modèle surveillé qui se réentraîne quand la réalité change.</p></div>
+            <div style="margin-bottom:2rem"><p><em>Étude de cas de certification inspirée de Stripe, sur données synthétiques — sans lien avec l'entreprise.</em></p><p>Une plateforme de paiement doit bloquer une transaction frauduleuse <strong>avant</strong> de la valider, sans ralentir la base transactionnelle et sans que les analyses ne bloquent la production. Elle doit aussi respecter RGPD et PCI-DSS.</p><p>La réponse : séparer les usages. PostgreSQL pour la transaction, Debezium + Kafka pour diffuser les changements, Redis pour les features temps réel, MongoDB pour les journaux, Snowflake pour l'analytique — et un modèle surveillé qui se réentraîne quand la réalité change.</p></div>
             <div class="two-col">
                 <div class="arg-card arg-card--rh reveal">
                     <span class="arg-label">Pour le recruteur · valeur business</span>

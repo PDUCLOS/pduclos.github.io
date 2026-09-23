@@ -115,7 +115,7 @@ def project_page(p, projects):
             <span class="section-label">// Outils & langages</span>
             <h2>Stack technique et pourquoi ces choix</h2>
             <div class="two-col" style="margin-bottom:2rem;align-items:start">
-                <div class="skill-group"><h3 class="skill-group-title">Langages (part du code)</h3>{lang_bars(p['langs'])}
+                <div class="skill-group"><h3 class="skill-group-title">Langages (part du code)</h3>{lang_bars(p['langs']) if p.get('langs') else ''}
                     <p class="code-caption" style="margin-top:1rem">{e(p.get('langs_note', 'Lignes de code hors notebooks, calculées sur le dépôt.'))}</p></div>
                 <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
                     <div class="project-tech">{badges(p['tags'])}</div></div>

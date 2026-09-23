@@ -225,7 +225,7 @@ def page_rh():
          "Parce que le coût d'un projet data raté ne vient presque jamais du code : il vient d'un problème mal posé. "
          "Je sais parler à un directeur commercial, un acheteur, un technicien de maintenance — et traduire leur besoin en indicateurs."),
         ("« Saura-t-il s'intégrer dans une équipe tech ? »",
-         "Mes projets suivent les standards d'équipe : revues possibles via Git, conventions documentées, tests bloquants en CI, "
+         "Mes projets suivent les standards d'équipe : conventions documentées, tests bloquants en CI, "
          "documentation d'architecture, diagrammes draw.io. Expérience de projets d'équipe en formation et en contexte international chez Carrier."),
         ("« Quel type de poste ? »",
          "Data Analyst senior, Data Scientist, ML Engineer / MLOps, ou Lead Data dans l'industrie, l'énergie, la distribution B2B "

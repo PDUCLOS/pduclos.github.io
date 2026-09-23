@@ -91,9 +91,8 @@ PROJECTS = [
                           serving="FastAPI + clé API", deploy="VPS, deploy/rollback scriptés, health checks",
                           iac="Asset Bundle Databricks ; branche Kubernetes dormante"),
         metrics=dict(head=["Décision / mesure", "Résultat", "Source"], rows=[
-            ["1 modèle unique (38 features) vs 3 modèles spécialisés", "MAE 5,8 → 3,2 (−45 %)", "mlops/model_validation"],
-            ["XGBoost vitesse H+1h en production", "MAE 6,97 · R² 0,71", "suivi production"],
-            ["Couverture réseau", "~458 stations Vélo'v · ~101 k arêtes OSM", "README / schémas"],
+            ["1 modèle unique (38 features) vs 3 modèles spécialisés", "MAE 5,8 → 3,2 (−45 %)", "validation interne (dépôt de travail privé)"],
+            ["Couverture réseau", "~458 stations Vélo'v · ~101 k arêtes OSM", "README / schémas du dépôt public"],
         ], note="Décision d'architecture clé : séparer trafic, bus et Vélo'v. Les features de capacité routière valent 0 pour les vélos : "
                 "dans un modèle unique, elles ajoutent du bruit et dégradent la précision."),
         snippets=[
@@ -130,10 +129,11 @@ make rollback-vps            # retour à la release précédente'''),
         lead="Architecture de données unifiée façon Stripe : PostgreSQL transactionnel, CDC Debezium vers Kafka, "
              "feature store Redis, MongoDB, entrepôt Snowflake — avec XGBoost, MLflow, dérive Evidently, "
              "réentraînement automatique et une cible AWS entièrement décrite en Terraform.",
-        kpis=[("< 1 s", "cible de scoring"), ("7", "technologies de stockage"), ("0,995", "ROC-AUC offline"),
+        kpis=[("< 1 s", "cible de scoring"), ("5", "briques de données"), ("0,995", "ROC-AUC offline"),
               ("3 jobs", "CI de bout en bout"), ("9", "modules Terraform")],
         links=[("Code source", GH + "BLOC2-STRIPE", True)],
         context=[
+            "<em>Étude de cas de certification inspirée de Stripe, sur données synthétiques — sans lien avec l'entreprise.</em>",
             "Une plateforme de paiement doit bloquer une transaction frauduleuse <strong>avant</strong> de la valider, "
             "sans ralentir la base transactionnelle et sans que les analyses ne bloquent la production. "
             "Elle doit aussi respecter RGPD et PCI-DSS.",
@@ -630,8 +630,8 @@ spec:
             "Diffusion de dashboards Master Data et Business HVAC à l'échelle européenne.",
         ],
         extra_diagrams=[],
-        langs=[("DAX / M (Power Query)", 70), ("VBA", 20), ("SQL", 10)],
-        langs_note="Répartition indicative : projet réalisé en entreprise, code non public.",
+        langs=None,
+        langs_note="Projet réalisé en entreprise : code non public.",
         tags=["Power BI", "DAX", "Power Query", "SAP", "Excel VBA", "Master Data", "Data Quality"],
         stack=[
             ("Power BI", "Modèle sémantique et dashboards", "Restitution pour les décideurs"),
