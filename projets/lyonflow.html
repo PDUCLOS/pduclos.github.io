@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LyonFlow — Plateforme MLOps trafic multimodal — Patrice Duclos</title>
+    <meta name="description" content="Plateforme MLOps de bout en bout, en production sur VPS : 9 sources open data, architecture Medallion sur PostgreSQL/PostGIS, 27 DAGs Airflow, modèles XGBoost réentraînés automatiquement, routage multimodal pgRouting et un dashboard à 3 personas.">
+    <meta property="og:title" content="LyonFlow — Plateforme MLOps trafic multimodal — Patrice Duclos">
+    <meta property="og:description" content="Plateforme MLOps de bout en bout, en production sur VPS : 9 sources open data, architecture Medallion sur PostgreSQL/PostGIS, 27 DAGs Airflow, modèles XGBoost réentraînés automatiquement, routage multimodal pgRouting et un dashboard à 3 personas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/projets/lyonflow.html">
+    <link rel="canonical" href="https://pduclos.github.io/projets/lyonflow.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">Parcours</a></li>
+            <li class="has-dropdown">
+                <a href="/projets/" class="dropdown-toggle" aria-current="page">Projets</a>
+                <ul class="dropdown">
+                    <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/projets/lyonflow.html" aria-current="page">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · Jumeau numérique</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/stack.html">Stack MLOps</a></li>
+            <li><a href="/profil-rh.html">Recruteurs</a></li>
+            <li><a href="/profil-tech.html">Profil technique</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / LyonFlow</div>
+            <span class="project-tag" style="color:var(--accent)">MLOps · Production · Mobilité urbaine</span>
+            <h1>LyonFlow — la mobilité lyonnaise <span class="highlight">prédite en temps réel</span></h1>
+            <p class="lead">Plateforme MLOps de bout en bout, en production sur VPS : 9 sources open data, architecture Medallion sur PostgreSQL/PostGIS, 27 DAGs Airflow, modèles XGBoost réentraînés automatiquement, routage multimodal pgRouting et un dashboard à 3 personas.</p>
+            <div class="kpi-row"><div class="kpi"><b>9</b><span>sources open data</span></div><div class="kpi"><b>27</b><span>DAGs Airflow</span></div><div class="kpi"><b>620</b><span>tests pytest</span></div><div class="kpi"><b>59</b><span>widgets / 18 pages</span></div><div class="kpi"><b>−45 %</b><span>MAE (3 modèles vs 1)</span></div></div>
+            <div class="btn-row"><a href="/live/" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Démo live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/lyonflowfull" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Code source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/databrickslyonflow" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Variante Databricks <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// En 30 secondes</span>
+            <h2>Le problème, la réponse, la preuve</h2>
+            <div style="margin-bottom:2rem"><p>La Métropole de Lyon publie des dizaines de flux ouverts (boucles de comptage, positions des bus TCL, stations Vélo'v, météo, chantiers), mais <strong>aucun outil ne les croise</strong> pour aider un usager à choisir son mode de transport, un opérateur à piloter son réseau ou un élu à arbitrer un investissement.</p><p>LyonFlow collecte ces flux toutes les 5 minutes, les raffine en couches Bronze → Silver → Gold, prédit trafic et disponibilité Vélo'v à H+1h, recommande le meilleur itinéraire multimodal et restitue le tout dans une application pensée pour trois publics.</p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">Pour le recruteur · valeur business</span>
+                    <ul><li><strong>Un produit en production</strong>, pas un notebook : accessible en ligne, supervisé, sauvegardé chaque nuit.</li><li>Pensé pour <strong>3 utilisateurs métier</strong> (usager, opérateur TCL, élu) — même logique que le pilotage commercial : chaque décideur a sa vue.</li><li>Le croisement <strong>retard bus × congestion</strong> distingue un problème opérationnel d'un besoin d'infrastructure (voie dédiée) : un argument chiffré pour un arbitrage budgétaire.</li><li>Projet porté seul de bout en bout : cadrage, données, modèles, déploiement, documentation RGPD.</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
+                    <ul><li>Medallion Bronze/Silver/Gold sur <strong>PostgreSQL 16 + PostGIS + pgRouting</strong>, SQL paramétré partout, zéro credential en dur.</li><li><strong>27 DAGs Airflow</strong> (collecte 5 min → 6 h, transforms, ML, maintenance), archivage MinIO S3.</li><li><strong>MLflow</strong> registry (6 modèles, stage Production), retrain XGBoost toutes les 30 min, drift <strong>PSI</strong> maison + rapports Evidently.</li><li>CI GitHub Actions : ruff, mypy, bandit, pytest + couverture. Déploiement <code>make deploy-vps</code> / <code>rollback-vps</code>, 20 health checks.</li><li>Observabilité Prometheus + Grafana + Alertmanager, Nginx seul point exposé, TLS Let's Encrypt.</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline</span>
+            <h2>Architecture de bout en bout</h2>
+            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Le fichier source est téléchargeable et modifiable.</p>
+            <div class="pipeline-figure"><img src="/diagrams/lyonflow.svg" alt="Pipeline LyonFlow" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div>
+            <ol class="pipeline-steps"><li><strong>Collecte</strong> — 9 sources ouvertes sans clé, DAGs Airflow cadencés de 5 min (trafic, bus, Vélo'v) à 6 h (vigilance météo).</li><li><strong>Bronze</strong> — stockage brut JSONB immuable : on peut toujours rejouer l'historique.</li><li><strong>Silver</strong> — déduplication (<code>DISTINCT ON</code>), parsing SIRI, reprojection géographique (4326 / 2154), filtrage des capteurs défaillants.</li><li><strong>Gold</strong> — features ML (lags, moyennes glissantes, calendrier scolaire, météo) et vues matérialisées métier (goulots, retards par tronçon).</li><li><strong>Modélisation</strong> — XGBoost vitesse H+1h (inférence toutes les 15 min), XGBoost Vélo'v H+1h, routage voiture <code>pgr_dijkstra</code> sur le réseau OSM avec vitesses injectées.</li><li><strong>MLOps</strong> — suivi MLflow, comparaison continue aux données TomTom, rapport de dérive quotidien, réentraînement automatique.</li><li><strong>Restitution</strong> — API FastAPI (prédiction, recommandation, goulots) et dashboard Streamlit 18 pages / 59 widgets, sans aucune donnée simulée.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="schemas">
+        <div class="section-container">
+            <span class="section-label">// Schémas détaillés</span>
+            <h2>Les diagrammes d'architecture du projet</h2>
+            <p style="margin-bottom:2rem">Diagrammes draw.io réalisés pendant le projet et versionnés dans le dépôt
+               (données d'infrastructure sensibles masquées).</p>
+            <div class="reveal" style="margin-bottom:2.5rem"><h3>Flux de données Medallion</h3>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-medallion.svg" alt="Flux de données Medallion" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-medallion.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-medallion.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-medallion.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Les 4 piliers ML</h3>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-ml.svg" alt="Les 4 piliers ML" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-ml.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-ml.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-ml.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Infrastructure de production (VPS, conteneurs)</h3>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-infra.svg" alt="Infrastructure de production (VPS, conteneurs)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-infra.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-infra.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-infra.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Orchestration Airflow</h3>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-airflow.svg" alt="Orchestration Airflow" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-airflow.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-airflow.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-airflow.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Outils & langages</span>
+            <h2>Stack technique et pourquoi ces choix</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Langages (part du code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">Python</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:78%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">78%</span></div><div class="skill-item"><span class="skill-name">SQL</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:13%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">13%</span></div><div class="skill-item"><span class="skill-name">Shell</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:4%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">4%</span></div><div class="skill-item"><span class="skill-name">YAML</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:3%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">3%</span></div><div class="skill-item"><span class="skill-name">Makefile</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:1%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">1%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">Lignes de code hors notebooks, calculées sur le dépôt.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
+                    <div class="project-tech"><span class="tech-badge">Airflow</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">PostGIS</span><span class="tech-badge">pgRouting</span><span class="tech-badge">XGBoost</span><span class="tech-badge">MLflow</span><span class="tech-badge">PSI / Evidently</span><span class="tech-badge">FastAPI</span><span class="tech-badge">Streamlit</span><span class="tech-badge">Docker</span><span class="tech-badge">Nginx</span><span class="tech-badge">Prometheus</span><span class="tech-badge">Grafana</span><span class="tech-badge">MinIO</span><span class="tech-badge">GitHub Actions</span><span class="tech-badge">RGPD</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
+                <tbody><tr><td>Apache Airflow 2.9</td><td>27 DAGs : collecte, transforms Medallion, entraînement, inférence, maintenance</td><td>Orchestration de production, dépendances et reprises</td></tr><tr><td>PostgreSQL 16 + PostGIS</td><td>Schémas bronze / silver / gold / osm / rgpd</td><td>Modélisation Medallion, SQL spatial, vues matérialisées</td></tr><tr><td>pgRouting 3.7</td><td>Itinéraire voiture sur ~101 k arêtes OSM</td><td>Algorithmes de graphe dans la base</td></tr><tr><td>XGBoost</td><td>Vitesse trafic et disponibilité Vélo'v à H+1h</td><td>Séries temporelles, features métier</td></tr><tr><td>MLflow 2.12</td><td>Tracking et registry de 6 modèles</td><td>Cycle de vie des modèles</td></tr><tr><td>PSI + Evidently</td><td>Détection de dérive quotidienne</td><td>Monitoring de modèles en production</td></tr><tr><td>FastAPI</td><td>API prédiction / recommandation, clé API</td><td>Service de modèles</td></tr><tr><td>Streamlit</td><td>18 pages, 3 personas, rapport PDF élus</td><td>Restitution orientée décision</td></tr><tr><td>Docker · Nginx · systemd</td><td>Stack conteneurisée, reverse proxy unique, TLS</td><td>Déploiement et durcissement serveur</td></tr><tr><td>Prometheus · Grafana · Alertmanager</td><td>Métriques, tableaux de bord, 7 groupes d'alertes</td><td>Observabilité</td></tr><tr><td>MinIO</td><td>Archivage S3 des données Silver</td><td>Gestion du cycle de vie des données</td></tr><tr><td>Databricks (variante)</td><td>Delta Lake, DLT <code>expect_or_drop</code>, Unity Catalog, Asset Bundles</td><td>Portabilité vers un lakehouse managé</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="mlops">
+        <div class="section-container">
+            <span class="section-label">// Maturité MLOps</span>
+            <h2>Industrialisation : ce qui est en place</h2>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Pratique</th><th>Statut</th><th>Détail</th></tr></thead>
+                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>ruff, mypy, bandit, pytest + couverture</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>620 tests (unitaires, personas, intégration, e2e)</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Compose applicatif + compose monitoring</td></tr><tr><td>Orchestration</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Airflow, 27 DAGs (25 actifs)</td></tr><tr><td>Tracking / registry</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>MLflow registry, stage Production</td></tr><tr><td>Monitoring / drift</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>PSI quotidien, Evidently, Prometheus/Grafana</td></tr><tr><td>API</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>FastAPI + clé API</td></tr><tr><td>Déploiement</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>VPS, deploy/rollback scriptés, health checks</td></tr><tr><td>IaC / K8s</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Asset Bundle Databricks ; branche Kubernetes dormante</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="resultats">
+        <div class="section-container">
+            <span class="section-label">// Résultats</span>
+            <h2>Métriques mesurées</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Décision / mesure</th><th>Résultat</th><th>Source</th></tr></thead><tbody><tr><td>1 modèle unique (38 features) vs 3 modèles spécialisés</td><td>MAE 5,8 → 3,2 (−45 %)</td><td>mlops/model_validation</td></tr><tr><td>XGBoost vitesse H+1h en production</td><td>MAE 6,97 · R² 0,71</td><td>suivi production</td></tr><tr><td>Couverture réseau</td><td>~458 stations Vélo&#x27;v · ~101 k arêtes OSM</td><td>README / schémas</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">Décision d'architecture clé : séparer trafic, bus et Vélo'v. Les features de capacité routière valent 0 pour les vélos : dans un modèle unique, elles ajoutent du bruit et dégradent la précision.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="code">
+        <div class="section-container">
+            <span class="section-label">// Extraits de code</span>
+            <h2>Le code qui fait la différence</h2>
+            <p class="code-caption">src/monitoring/psi.py — dérive PSI robuste, sans dépendance lourde</p><pre class="code"><code>def _safe_psi_term(pct_ref: float, pct_curr: float, eps: float = 1e-6) -&gt; float:
+    &quot;&quot;&quot;Un terme de la somme PSI, protégé contre log(0) et division par 0.&quot;&quot;&quot;
+    if pct_ref &lt; eps and pct_curr &lt; eps:
+        return 0.0
+    if pct_curr &lt; eps:
+        pct_curr = eps
+    if pct_ref &lt; eps:
+        pct_ref = eps
+    return (pct_curr - pct_ref) * np.log(pct_curr / pct_ref)</code></pre><p class="code-caption">Exploitation — déploiement et retour arrière en une commande</p><pre class="code"><code>make check-deploy-env        # .deploy.env en chmod 600 + variables critiques
+make deploy-vps              # rsync + restart systemd
+./scripts/healthcheck-vps.sh  # 20+ checks : conteneurs, disque, DB, endpoints
+make rollback-vps            # retour à la release précédente</code></pre>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Regard critique</span>
+            <h2>Limites connues et prochaines étapes</h2>
+            <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet
+               à une équipe de décider en connaissance de cause.</p>
+            <div class="arg-card arg-card--ok"><ul><li>Serveur unique : pas de haute disponibilité. La cible Kubernetes (EKS/GKE) existe sur une branche dormante.</li><li>Prédiction des retards bus encore en phase d'analyse : la donnée SIRI doit s'accumuler avant de passer en production.</li><li>Sauvegarde hors site : configuration rclone à finaliser.</li><li>Variante Databricks en cours : semaine 1 livrée (Unity Catalog, ingestion Bronze, DLT), MLflow / Model Serving / Genie à venir.</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/projets/predictira.html"><small>← Projet précédent</small>PredictIRA</a>
+            <a class="next" href="/projets/stripe-fraude-temps-reel.html"><small>Projet suivant →</small>Stripe — fraude temps réel</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=2"></script>
+</body>
+</html>

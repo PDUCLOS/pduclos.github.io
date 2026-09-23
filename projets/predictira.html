@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PredictIRA — prévoir les passages aux urgences — Patrice Duclos</title>
+    <meta name="description" content="Prédiction hebdomadaire des passages aux urgences pour infections respiratoires aiguës par département, à partir de la météo, de la pollution, de l&#x27;indice grippal et des recherches Google Trends. Modèle LightGBM servi par Flask, puis industrialisé en API FastAPI conteneurisée.">
+    <meta property="og:title" content="PredictIRA — prévoir les passages aux urgences — Patrice Duclos">
+    <meta property="og:description" content="Prédiction hebdomadaire des passages aux urgences pour infections respiratoires aiguës par département, à partir de la météo, de la pollution, de l&#x27;indice grippal et des recherches Google Trends. Modèle LightGBM servi par Flask, puis industrialisé en API FastAPI conteneurisée.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/projets/predictira.html">
+    <link rel="canonical" href="https://pduclos.github.io/projets/predictira.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">Parcours</a></li>
+            <li class="has-dropdown">
+                <a href="/projets/" class="dropdown-toggle" aria-current="page">Projets</a>
+                <ul class="dropdown">
+                    <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · Jumeau numérique</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html" aria-current="page">PredictIRA<small>ML santé publique · Projet d&#x27;équipe</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/stack.html">Stack MLOps</a></li>
+            <li><a href="/profil-rh.html">Recruteurs</a></li>
+            <li><a href="/profil-tech.html">Profil technique</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / PredictIRA</div>
+            <span class="project-tag" style="color:var(--accent)">ML santé publique · Projet d&#x27;équipe</span>
+            <h1>Anticiper les <span class="highlight">urgences respiratoires</span> avant la vague</h1>
+            <p class="lead">Prédiction hebdomadaire des passages aux urgences pour infections respiratoires aiguës par département, à partir de la météo, de la pollution, de l'indice grippal et des recherches Google Trends. Modèle LightGBM servi par Flask, puis industrialisé en API FastAPI conteneurisée.</p>
+            <div class="kpi-row"><div class="kpi"><b>28</b><span>variables</span></div><div class="kpi"><b>LightGBM</b><span>modèle</span></div><div class="kpi"><b>2</b><span>applications (Flask, FastAPI)</span></div><div class="kpi"><b>4</b><span>équipiers</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/PredictIRA" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Application Flask <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/industrialisation" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">API FastAPI + Docker <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// En 30 secondes</span>
+            <h2>Le problème, la réponse, la preuve</h2>
+            <div style="margin-bottom:2rem"><p>Les épidémies respiratoires saturent les urgences chaque hiver. Anticiper la charge d'une à deux semaines permet d'adapter les effectifs et les lits.</p><p>Projet d'équipe de formation (M2i / Jedha) : conception du modèle, puis industrialisation en API.</p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">Pour le recruteur · valeur business</span>
+                    <ul><li>Travail en équipe de 4 sur un sujet d'intérêt public.</li><li>Premier passage du notebook à une application utilisable, puis à un service conteneurisé.</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
+                    <ul><li>Variables environnementales (O3, PM2.5, PM10, NO2…), indice grippal et signaux de recherche ; encodage cyclique de la semaine.</li><li>LightGBM + <code>StandardScaler</code> sérialisés, formulaire Flask prérempli par département / semaine.</li><li>Industrialisation : endpoint FastAPI <code>POST /predict/</code>, image Docker, client HTML.</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline</span>
+            <h2>Architecture de bout en bout</h2>
+            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Le fichier source est téléchargeable et modifiable.</p>
+            <div class="pipeline-figure"><img src="/diagrams/predictira.svg" alt="Pipeline PredictIRA" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/predictira.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/predictira.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fpredictira.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div>
+            <ol class="pipeline-steps"><li>Assemblage hebdomadaire des variables environnementales, épidémiologiques et de recherche par département.</li><li>Normalisation et entraînement d'un modèle LightGBM de régression.</li><li>Application Flask : l'utilisateur choisit département et semaine, ajuste les variables, obtient la prédiction.</li><li>Industrialisation : même modèle exposé par une API FastAPI dans un conteneur Docker.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Outils & langages</span>
+            <h2>Stack technique et pourquoi ces choix</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Langages (part du code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">HTML / CSS</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:70%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">70%</span></div><div class="skill-item"><span class="skill-name">Python</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:30%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">30%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">Lignes de code hors notebooks, calculées sur le dépôt.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
+                    <div class="project-tech"><span class="tech-badge">LightGBM</span><span class="tech-badge">scikit-learn</span><span class="tech-badge">Flask</span><span class="tech-badge">FastAPI</span><span class="tech-badge">Docker</span><span class="tech-badge">Santé publique</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
+                <tbody><tr><td>LightGBM</td><td>Régression du nombre de passages</td><td>Gradient boosting</td></tr><tr><td>scikit-learn</td><td>Normalisation</td><td>Préparation des données</td></tr><tr><td>Flask + Jinja</td><td>Application web</td><td>Premier produit utilisable</td></tr><tr><td>FastAPI + Docker</td><td>API de prédiction conteneurisée</td><td>Industrialisation</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="mlops">
+        <div class="section-container">
+            <span class="section-label">// Maturité MLOps</span>
+            <h2>Industrialisation : ce qui est en place</h2>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Pratique</th><th>Statut</th><th>Détail</th></tr></thead>
+                <tbody><tr><td>CI/CD</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tests</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Image python:3.9 + uvicorn</td></tr><tr><td>Orchestration</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Flask puis FastAPI</td></tr><tr><td>Déploiement</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section" id="code">
+        <div class="section-container">
+            <span class="section-label">// Extraits de code</span>
+            <h2>Le code qui fait la différence</h2>
+            <p class="code-caption">industrialisation/api.py — l&#x27;API de prédiction minimale</p><pre class="code"><code>@app.post(&quot;/predict/&quot;)
+def predict(data: dict):
+    df = pd.DataFrame([data])
+    prediction = model.predict(df)
+    return {&quot;prediction_ira&quot;: int(prediction[0])}</code></pre>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Regard critique</span>
+            <h2>Limites connues et prochaines étapes</h2>
+            <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet
+               à une équipe de décider en connaissance de cause.</p>
+            <div class="arg-card arg-card--ok"><ul><li>Projet de début de formation : pas de tests, de validation de schéma ni de métriques publiées dans le dépôt.</li><li>Ce que j'en ai retenu et appliqué ensuite : schémas Pydantic, tests, CI et suivi des modèles (voir LyonFlow et Stripe).</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/projets/gouvernance-spotify.html"><small>← Projet précédent</small>Gouvernance des données — Spotify</a>
+            <a class="next" href="/projets/lyonflow.html"><small>Projet suivant →</small>LyonFlow</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=2"></script>
+</body>
+</html>

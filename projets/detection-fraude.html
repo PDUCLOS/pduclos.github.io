@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détection automatique de fraude bancaire — Patrice Duclos</title>
+    <meta name="description" content="Pipeline conteneurisé qui interroge un flux de paiements chaque minute, score chaque transaction avec XGBoost via une API FastAPI, alerte sur Telegram au-delà d&#x27;un seuil métier et produit un rapport quotidien automatique.">
+    <meta property="og:title" content="Détection automatique de fraude bancaire — Patrice Duclos">
+    <meta property="og:description" content="Pipeline conteneurisé qui interroge un flux de paiements chaque minute, score chaque transaction avec XGBoost via une API FastAPI, alerte sur Telegram au-delà d&#x27;un seuil métier et produit un rapport quotidien automatique.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/projets/detection-fraude.html">
+    <link rel="canonical" href="https://pduclos.github.io/projets/detection-fraude.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">Parcours</a></li>
+            <li class="has-dropdown">
+                <a href="/projets/" class="dropdown-toggle" aria-current="page">Projets</a>
+                <ul class="dropdown">
+                    <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html" aria-current="page">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · Jumeau numérique</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/stack.html">Stack MLOps</a></li>
+            <li><a href="/profil-rh.html">Recruteurs</a></li>
+            <li><a href="/profil-tech.html">Profil technique</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / Détection de fraude automatisée</div>
+            <span class="project-tag" style="color:var(--accent)">ML en production · Alerting · Bloc 3 RNCP 38777</span>
+            <h1>Fraude carte : <span class="highlight">alerter en temps réel</span>, reporter chaque matin</h1>
+            <p class="lead">Pipeline conteneurisé qui interroge un flux de paiements chaque minute, score chaque transaction avec XGBoost via une API FastAPI, alerte sur Telegram au-delà d'un seuil métier et produit un rapport quotidien automatique.</p>
+            <div class="kpi-row"><div class="kpi"><b>0,83</b><span>rappel (fraudes détectées)</span></div><div class="kpi"><b>0,989</b><span>ROC-AUC</span></div><div class="kpi"><b>1 min</b><span>cadence d&#x27;ingestion</span></div><div class="kpi"><b>6</b><span>services Docker</span></div><div class="kpi"><b>22</b><span>tests pytest</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/BLOC3-FRAUD-DETECTION" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Code source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/anonymisation" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Version 1 (RandomForest + MLflow) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// En 30 secondes</span>
+            <h2>Le problème, la réponse, la preuve</h2>
+            <div style="margin-bottom:2rem"><p>La fraude à la carte dépasse le milliard d'euros par an en Europe (BCE, 2019). Les équipes fraude ont besoin de trois choses : être <strong>notifiées instantanément</strong>, disposer <strong>chaque matin</strong> d'un bilan de la veille et d'une prédiction servie en continu par une API.</p><p>Le projet répond aux trois besoins avec une infrastructure reproductible en deux commandes.</p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">Pour le recruteur · valeur business</span>
+                    <ul><li>Traduction directe d'un besoin métier en service automatisé : <strong>alerte, rapport, API</strong>.</li><li>Arbitrage assumé : privilégier le <strong>rappel</strong> (ne pas laisser passer la fraude), avec un seuil réglable par l'équipe métier sans redéploiement.</li><li>Capacité à remettre en cause son propre travail : la V1 a été abandonnée après analyse critique (features non reproductibles en production).</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
+                    <ul><li>Airflow : DAG temps réel (<code>*/1 * * * *</code>) avec XCom et reprise, DAG rapport quotidien à 07:00.</li><li>FastAPI : <code>/predict</code>, <code>/health</code>, clé API optionnelle, <strong>seuil métier</strong> par variable d'environnement, repli visible sur un scoreur de secours.</li><li>10 features métier reproductibles à l'inférence (montant, heure, week-end, géolocalisation marchand…), XGBoost pondéré (<code>scale_pos_weight</code> ≈ 27).</li><li>Docker Compose 6 services avec health checks ; PostgreSQL 15 via SQLAlchemy 2 ; alertes Telegram / SMTP.</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline</span>
+            <h2>Architecture de bout en bout</h2>
+            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Le fichier source est téléchargeable et modifiable.</p>
+            <div class="pipeline-figure"><img src="/diagrams/detection-fraude.svg" alt="Pipeline Détection de fraude automatisée" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/detection-fraude.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/detection-fraude.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fdetection-fraude.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div>
+            <ol class="pipeline-steps"><li>Chaque minute, Airflow récupère les transactions courantes (API publique, repli sur un fichier Kaggle avec curseur persistant).</li><li>Chaque transaction est envoyée à l'API FastAPI, qui construit les 10 features métier et calcule la probabilité de fraude.</li><li>Au-delà du seuil métier (0,7), une alerte part sur Telegram (et par e-mail en option) ; tous les résultats sont stockés dans PostgreSQL.</li><li>À 07:00, un second DAG génère le rapport HTML des fraudes de la veille.</li><li>Un dashboard Streamlit affiche KPIs, distribution des probabilités, carte et top 20 des transactions à risque.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="schemas">
+        <div class="section-container">
+            <span class="section-label">// Schémas détaillés</span>
+            <h2>Les diagrammes d'architecture du projet</h2>
+            <p style="margin-bottom:2rem">Diagrammes draw.io réalisés pendant le projet et versionnés dans le dépôt
+               (données d'infrastructure sensibles masquées).</p>
+            <div class="reveal" style="margin-bottom:2.5rem"><h3>Pipeline détaillé (entraînement, temps réel, rapport)</h3>
+                <div class="pipeline-figure"><img src="/diagrams/fraude-pipeline.svg" alt="Pipeline détaillé (entraînement, temps réel, rapport)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/fraude-pipeline.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/fraude-pipeline.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Ffraude-pipeline.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Outils & langages</span>
+            <h2>Stack technique et pourquoi ces choix</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Langages (part du code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">Python</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:85%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">85%</span></div><div class="skill-item"><span class="skill-name">Shell</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:8%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">8%</span></div><div class="skill-item"><span class="skill-name">HTML</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:4%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">4%</span></div><div class="skill-item"><span class="skill-name">YAML</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:3%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">3%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">Lignes de code hors notebooks, calculées sur le dépôt.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
+                    <div class="project-tech"><span class="tech-badge">XGBoost</span><span class="tech-badge">FastAPI</span><span class="tech-badge">Airflow</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">SQLAlchemy</span><span class="tech-badge">Pydantic</span><span class="tech-badge">Streamlit</span><span class="tech-badge">Docker</span><span class="tech-badge">Telegram API</span><span class="tech-badge">pytest</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
+                <tbody><tr><td>XGBoost</td><td>Classifieur sur 10 features métier</td><td>Gestion du déséquilibre de classes</td></tr><tr><td>FastAPI + Pydantic</td><td>API de scoring, validation des entrées</td><td>Service de modèle robuste</td></tr><tr><td>Airflow 2.9</td><td>Ingestion minute + rapport quotidien</td><td>Orchestration planifiée</td></tr><tr><td>PostgreSQL 15 + SQLAlchemy 2</td><td>Historique des prédictions</td><td>Persistance et requêtage</td></tr><tr><td>Telegram Bot API / SMTP</td><td>Notifications de fraude</td><td>Boucler avec l'utilisateur métier</td></tr><tr><td>Streamlit + Plotly</td><td>Suivi en temps réel</td><td>Restitution</td></tr><tr><td>MLflow (V1)</td><td>Tracking de la version RandomForest</td><td>Suivi d'expériences</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="mlops">
+        <div class="section-container">
+            <span class="section-label">// Maturité MLOps</span>
+            <h2>Industrialisation : ce qui est en place</h2>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Pratique</th><th>Statut</th><th>Détail</th></tr></thead>
+                <tbody><tr><td>CI/CD</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>22 tests (API, rapport) ; 47 dans la V1</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Compose 6 services + health checks</td></tr><tr><td>Orchestration</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>2 DAGs Airflow</td></tr><tr><td>Tracking / registry</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>MLflow dans la V1, fichier de métriques en V2</td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td>Grafana + dérive prévus</td></tr><tr><td>API</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>FastAPI</td></tr><tr><td>Déploiement</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Reproductible localement en 2 commandes</td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="resultats">
+        <div class="section-container">
+            <span class="section-label">// Résultats</span>
+            <h2>Métriques mesurées</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Modèle</th><th>Rappel</th><th>Précision</th><th>F1</th><th>ROC-AUC</th></tr></thead><tbody><tr><td>XGBoost features métier (V2, seuil 0,5)</td><td>0,831</td><td>0,373</td><td>0,515</td><td>0,989</td></tr><tr><td>RandomForest features PCA (V1, abandonné)</td><td>0,78</td><td>0,88</td><td>—</td><td>—</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">La V1 affichait une meilleure précision mais reposait sur des features PCA impossibles à reconstruire en production : ses probabilités plafonnaient à ~0,37 et elle ne détectait aucune fraude réelle. La V2 privilégie un modèle réellement servable.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="code">
+        <div class="section-container">
+            <span class="section-label">// Extraits de code</span>
+            <h2>Le code qui fait la différence</h2>
+            <p class="code-caption">api/main.py — seuil métier au-dessus de la probabilité, repli explicite</p><pre class="code"><code>try:
+    from src.predict_business import get_predictor as get_business_predictor
+    predictor = get_business_predictor()
+    result = predictor.predict(dict(transaction))
+    probability = float(result[&quot;fraud_probability&quot;])
+    is_fraud = bool(probability &gt;= FRAUD_THRESHOLD)
+    return is_fraud, probability, &quot;xgboost_business&quot;
+except FileNotFoundError:
+    logger.warning(&quot;Modèle business absent (models/fraud_model.pkl) — fallback vers mock&quot;)
+except Exception as exc:
+    logger.error(&quot;Erreur prédiction business: %s — fallback vers mock&quot;, exc)
+return _mock_predict(transaction)</code></pre>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Regard critique</span>
+            <h2>Limites connues et prochaines étapes</h2>
+            <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet
+               à une équipe de décider en connaissance de cause.</p>
+            <div class="arg-card arg-card--ok"><ul><li>Précision modérée (0,37 au seuil 0,5) : calibration des probabilités (<code>CalibratedClassifierCV</code>) et entraînement sur les 555 k lignes prévus.</li><li>Pas encore de CI ni de monitoring de dérive (Grafana + DAG de réentraînement mensuel planifiés).</li><li>Le modèle n'est pas versionné dans le dépôt : un clone neuf sert le scoreur de secours tant que l'entraînement n'a pas été lancé.</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/projets/stripe-fraude-temps-reel.html"><small>← Projet précédent</small>Stripe — fraude temps réel</a>
+            <a class="next" href="/projets/copilot-maintenance.html"><small>Projet suivant →</small>Copilote maintenance (RAG local)</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=2"></script>
+</body>
+</html>

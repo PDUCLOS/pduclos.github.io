@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme polyglotte de détection de fraude temps réel — Patrice Duclos</title>
+    <meta name="description" content="Architecture de données unifiée façon Stripe : PostgreSQL transactionnel, CDC Debezium vers Kafka, feature store Redis, MongoDB, entrepôt Snowflake — avec XGBoost, MLflow, dérive Evidently, réentraînement automatique et une cible AWS entièrement décrite en Terraform.">
+    <meta property="og:title" content="Plateforme polyglotte de détection de fraude temps réel — Patrice Duclos">
+    <meta property="og:description" content="Architecture de données unifiée façon Stripe : PostgreSQL transactionnel, CDC Debezium vers Kafka, feature store Redis, MongoDB, entrepôt Snowflake — avec XGBoost, MLflow, dérive Evidently, réentraînement automatique et une cible AWS entièrement décrite en Terraform.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/projets/stripe-fraude-temps-reel.html">
+    <link rel="canonical" href="https://pduclos.github.io/projets/stripe-fraude-temps-reel.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">Parcours</a></li>
+            <li class="has-dropdown">
+                <a href="/projets/" class="dropdown-toggle" aria-current="page">Projets</a>
+                <ul class="dropdown">
+                    <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html" aria-current="page">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · Jumeau numérique</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/stack.html">Stack MLOps</a></li>
+            <li><a href="/profil-rh.html">Recruteurs</a></li>
+            <li><a href="/profil-tech.html">Profil technique</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / Stripe — fraude temps réel</div>
+            <span class="project-tag" style="color:var(--accent)">Data Architecture · Streaming · Bloc 2 RNCP 38777</span>
+            <h1>Paiements : scorer la fraude <span class="highlight">en moins d'une seconde</span></h1>
+            <p class="lead">Architecture de données unifiée façon Stripe : PostgreSQL transactionnel, CDC Debezium vers Kafka, feature store Redis, MongoDB, entrepôt Snowflake — avec XGBoost, MLflow, dérive Evidently, réentraînement automatique et une cible AWS entièrement décrite en Terraform.</p>
+            <div class="kpi-row"><div class="kpi"><b>&lt; 1 s</b><span>cible de scoring</span></div><div class="kpi"><b>7</b><span>technologies de stockage</span></div><div class="kpi"><b>0,995</b><span>ROC-AUC offline</span></div><div class="kpi"><b>3 jobs</b><span>CI de bout en bout</span></div><div class="kpi"><b>9</b><span>modules Terraform</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/BLOC2-STRIPE" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Code source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// En 30 secondes</span>
+            <h2>Le problème, la réponse, la preuve</h2>
+            <div style="margin-bottom:2rem"><p>Une plateforme de paiement doit bloquer une transaction frauduleuse <strong>avant</strong> de la valider, sans ralentir la base transactionnelle et sans que les analyses ne bloquent la production. Elle doit aussi respecter RGPD et PCI-DSS.</p><p>La réponse : séparer les usages. PostgreSQL pour la transaction, Debezium + Kafka pour diffuser les changements, Redis pour les features temps réel, MongoDB pour les journaux, Snowflake pour l'analytique — et un modèle surveillé qui se réentraîne quand la réalité change.</p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">Pour le recruteur · valeur business</span>
+                    <ul><li>Sujet à fort enjeu financier : chaque fraude manquée coûte, chaque faux positif <strong>bloque un client</strong>.</li><li>Choix d'architecture justifiés et chiffrés, y compris le <strong>coût cloud (FinOps)</strong> : ~3 100 $/mois en prod, ramenés à ~2 400 $ avec les leviers identifiés.</li><li>Conformité intégrée dès la conception : aucun numéro de carte stocké, empreintes SHA-256, rétention limitée des journaux.</li><li>Incidents réels documentés et résolus — la preuve d'une posture d'exploitation, pas seulement de développement.</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
+                    <ul><li><strong>CDC Debezium</strong> sur le WAL PostgreSQL → Kafka (KRaft), write-back idempotent du score.</li><li><strong>Feature store Redis</strong> (vélocité 1 h / 24 h en sorted sets) et même vecteur de features à l'entraînement et à l'inférence : zéro <em>training/serving skew</em>.</li><li>Split <strong>temporel</strong> anti-fuite, XGBoost avec <code>scale_pos_weight</code>, MLflow registry <code>fraud-detector</code>.</li><li>Moniteur Evidently : réentraînement automatique si dérive &gt; 0,3, rappel &lt; 0,7 ou précision &lt; 0,5, avec délai de carence.</li><li>CI qui monte <strong>toute la stack</strong> sans mock + notebook d'audit exécuté comme porte qualité ; Terraform AWS (VPC 3 AZ, RDS, MSK, ElastiCache, ECS Fargate, MWAA).</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline</span>
+            <h2>Architecture de bout en bout</h2>
+            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Le fichier source est téléchargeable et modifiable.</p>
+            <div class="pipeline-figure"><img src="/diagrams/stripe-fraude-temps-reel.svg" alt="Pipeline Stripe — fraude temps réel" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-fraude-temps-reel.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-fraude-temps-reel.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-fraude-temps-reel.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div>
+            <ol class="pipeline-steps"><li>Un producteur insère des transactions synthétiques (5 % de fraude injectée) dans PostgreSQL 16, configuré en réplication logique.</li><li>Debezium lit le journal WAL et publie chaque changement dans Kafka (<code>stripe.public.transactions</code>).</li><li>Le scorer enrichit chaque transaction avec les vélocités client stockées dans Redis, puis la note (règles ou XGBoost) : autoriser, revoir (≥ 0,60) ou bloquer (≥ 0,85).</li><li>Le score est réécrit de façon idempotente dans PostgreSQL ; les événements et alertes partent dans Kafka puis MongoDB.</li><li>Le moniteur compare toutes les 2 minutes les données récentes à la référence (Evidently) et la performance réellement servie ; il relance l'entraînement si nécessaire.</li><li>Chaque nuit, Airflow exporte vers le modèle en étoile Snowflake et rafraîchit les vues matérialisées.</li><li>Le dashboard Streamlit (authentifié) expose KPIs, alertes, dérive et comparaison règles / modèle.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="schemas">
+        <div class="section-container">
+            <span class="section-label">// Schémas détaillés</span>
+            <h2>Les diagrammes d'architecture du projet</h2>
+            <p style="margin-bottom:2rem">Diagrammes draw.io réalisés pendant le projet et versionnés dans le dépôt
+               (données d'infrastructure sensibles masquées).</p>
+            <div class="reveal" style="margin-bottom:2.5rem"><h3>Architecture de données unifiée (implémentation réelle)</h3>
+                <div class="pipeline-figure"><img src="/diagrams/stripe-architecture.svg" alt="Architecture de données unifiée (implémentation réelle)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-architecture.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-architecture.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-architecture.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Cible AWS (Terraform)</h3>
+                <div class="pipeline-figure"><img src="/diagrams/stripe-aws.svg" alt="Cible AWS (Terraform)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-aws.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-aws.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-aws.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Outils & langages</span>
+            <h2>Stack technique et pourquoi ces choix</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Langages (part du code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">Python</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:48%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">48%</span></div><div class="skill-item"><span class="skill-name">HCL (Terraform)</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:27%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">27%</span></div><div class="skill-item"><span class="skill-name">SQL</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:7%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">7%</span></div><div class="skill-item"><span class="skill-name">YAML</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:7%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">7%</span></div><div class="skill-item"><span class="skill-name">Shell</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:4%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">4%</span></div><div class="skill-item"><span class="skill-name">JavaScript</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:3%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">3%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">Lignes de code hors notebooks, calculées sur le dépôt.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
+                    <div class="project-tech"><span class="tech-badge">PostgreSQL</span><span class="tech-badge">Debezium</span><span class="tech-badge">Kafka</span><span class="tech-badge">Redis</span><span class="tech-badge">MongoDB</span><span class="tech-badge">Snowflake</span><span class="tech-badge">XGBoost</span><span class="tech-badge">MLflow</span><span class="tech-badge">Evidently</span><span class="tech-badge">Airflow</span><span class="tech-badge">Streamlit</span><span class="tech-badge">Terraform</span><span class="tech-badge">AWS</span><span class="tech-badge">Docker</span><span class="tech-badge">GitHub Actions</span><span class="tech-badge">PCI-DSS</span><span class="tech-badge">FinOps</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
+                <tbody><tr><td>PostgreSQL 16</td><td>OLTP 3NF, rôles séparés, fonction d'anonymisation RGPD</td><td>Modélisation transactionnelle</td></tr><tr><td>Debezium 2.6 + Kafka 7.6</td><td>Change Data Capture, topics scores / alertes / dead-letter</td><td>Architecture événementielle</td></tr><tr><td>Redis 7</td><td>Feature store en ligne (vélocités)</td><td>Features temps réel à faible latence</td></tr><tr><td>MongoDB 7</td><td>Journaux avec TTL, alertes, features, monitoring</td><td>Modélisation NoSQL</td></tr><tr><td>Snowflake</td><td>Schéma en étoile, CLUSTER BY</td><td>Modélisation OLAP (exécuté en dry-run)</td></tr><tr><td>XGBoost + scikit-learn</td><td>Classifieur de fraude, 7 features partagées</td><td>ML sur données déséquilibrées</td></tr><tr><td>MLflow 2.14</td><td>Tracking + registry</td><td>Cycle de vie des modèles</td></tr><tr><td>Evidently 0.4</td><td>Dérive + déclenchement du réentraînement</td><td>Monitoring et boucle fermée</td></tr><tr><td>Airflow 2.9</td><td>ETL quotidien vers l'OLAP</td><td>Orchestration batch</td></tr><tr><td>Terraform 1.10</td><td>VPC, RDS Multi-AZ, MSK, ElastiCache, Atlas, ECS, MWAA, KMS</td><td>Infrastructure as Code</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="mlops">
+        <div class="section-container">
+            <span class="section-label">// Maturité MLOps</span>
+            <h2>Industrialisation : ce qui est en place</h2>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Pratique</th><th>Statut</th><th>Détail</th></tr></thead>
+                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>lint, terraform validate, e2e stack complète</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>16 checks e2e + 13 tests ML + notebook d&#x27;audit</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>8 services + profils Flink / Airflow</td></tr><tr><td>Orchestration</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Airflow (batch) + Kafka (flux)</td></tr><tr><td>Tracking / registry</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>MLflow, modèle enregistré fraud-detector</td></tr><tr><td>Monitoring / drift</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Evidently + précision/rappel servis, retrain auto</td></tr><tr><td>API</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Scoring par consommateur Kafka (pas d&#x27;API REST)</td></tr><tr><td>Déploiement</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Local Docker ; cible AWS validée, non appliquée</td></tr><tr><td>IaC / K8s</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Terraform AWS, envs dev / prod</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="resultats">
+        <div class="section-container">
+            <span class="section-label">// Résultats</span>
+            <h2>Métriques mesurées</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Run (15/09/2026)</th><th>Déclencheur</th><th>Précision</th><th>Rappel</th><th>F1</th><th>ROC-AUC</th></tr></thead><tbody><tr><td>15:53</td><td>make ml-train</td><td>0,95</td><td>0,97</td><td>0,96</td><td>0,995</td></tr><tr><td>17:10</td><td>automatique (dérive 0,43)</td><td>0,77</td><td>0,97</td><td>0,86</td><td>0,990</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">Mesures offline sur hold-out temporel. Précision réellement servie autour du réentraînement : 0,93 à 0,99 par minute. Leçon documentée : juger un modèle réentraîné sur sa performance <strong>servie</strong>, pas seulement sur une métrique offline.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="code">
+        <div class="section-container">
+            <span class="section-label">// Extraits de code</span>
+            <h2>Le code qui fait la différence</h2>
+            <p class="code-caption">ml/monitor.py — boucle fermée : dérive ou dégradation ⇒ réentraînement</p><pre class="code"><code>if drift[&quot;drift_share&quot;] &gt; DRIFT_THRESHOLD:
+    reasons.append(f&quot;drift_share={drift[&#x27;drift_share&#x27;]:.2f} &gt; seuil {DRIFT_THRESHOLD}&quot;)
+if performance is not None and performance[&quot;recall&quot;] &lt; MIN_RECALL:
+    reasons.append(f&quot;recall={performance[&#x27;recall&#x27;]:.2f} &lt; seuil {MIN_RECALL}&quot;)
+if performance is not None and performance[&quot;precision&quot;] &lt; MIN_PRECISION:
+    reasons.append(f&quot;precision={performance[&#x27;precision&#x27;]:.2f} &lt; seuil {MIN_PRECISION}&quot;)
+
+cooldown_ok = (last_retrain_at is None) or (now_ts - last_retrain_at &gt; RETRAIN_COOLDOWN_SECONDS)
+if reasons and cooldown_ok:
+    doc[&quot;retrain_triggered&quot;] = True
+    retrain_model()</code></pre><p class="code-caption">ml/train_fraud_model.py — split temporel pour éviter la fuite d&#x27;information</p><pre class="code"><code>def temporal_train_test_split(df, X, y, test_frac=0.2):
+    &quot;&quot;&quot;Split train/test par ordre chronologique (pas aléatoire).
+    Un split aléatoire mélangerait les fenêtres de vélocité passé/futur :
+    le modèle &quot;verrait&quot; indirectement des transactions futures.&quot;&quot;&quot;
+    n = len(df)
+    cut = int(n * (1 - test_frac))
+    return X[:cut], X[cut:], y[:cut], y[cut:]</code></pre>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Regard critique</span>
+            <h2>Limites connues et prochaines étapes</h2>
+            <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet
+               à une équipe de décider en connaissance de cause.</p>
+            <div class="arg-card arg-card--ok"><ul><li>Flink remplacé par un consommateur Python équivalent (PyFlink ne compile pas sur ARM64) ; le job PyFlink existe en profil optionnel.</li><li>Snowflake exécuté en dry-run faute de compte ; Terraform validé mais jamais appliqué.</li><li>Pas encore de porte de promotion ni de rollback automatique dans le registry MLflow.</li><li>Écart offline / online observé sur une fenêtre (précision servie 0,52) : signalé par le notebook d'audit lui-même, piste de calibration.</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/projets/lyonflow.html"><small>← Projet précédent</small>LyonFlow</a>
+            <a class="next" href="/projets/detection-fraude.html"><small>Projet suivant →</small>Détection de fraude automatisée</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting &amp; analyse Master Data — Carrier — Patrice Duclos</title>
+    <meta name="description" content="Dashboards Power BI Master Data &amp; Business HVAC Europe : flux unifié depuis 5 sources SAP, détection d&#x27;anomalies critiques, automatisation Power Query et pilotage à l&#x27;échelle européenne, en contexte international FR/EN.">
+    <meta property="og:title" content="Reporting &amp; analyse Master Data — Carrier — Patrice Duclos">
+    <meta property="og:description" content="Dashboards Power BI Master Data &amp; Business HVAC Europe : flux unifié depuis 5 sources SAP, détection d&#x27;anomalies critiques, automatisation Power Query et pilotage à l&#x27;échelle européenne, en contexte international FR/EN.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/projets/carrier-reporting.html">
+    <link rel="canonical" href="https://pduclos.github.io/projets/carrier-reporting.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">Parcours</a></li>
+            <li class="has-dropdown">
+                <a href="/projets/" class="dropdown-toggle" aria-current="page">Projets</a>
+                <ul class="dropdown">
+                    <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · Jumeau numérique</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html" aria-current="page">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/stack.html">Stack MLOps</a></li>
+            <li><a href="/profil-rh.html">Recruteurs</a></li>
+            <li><a href="/profil-tech.html">Profil technique</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / Carrier — Reporting HVAC Europe</div>
+            <span class="project-tag" style="color:var(--accent)">Expérience professionnelle · Impact mesurable</span>
+            <h1>Carrier : <span class="highlight">−40 % de temps de traitement</span>, 100 K€/mois d'erreurs détectées</h1>
+            <p class="lead">Dashboards Power BI Master Data & Business HVAC Europe : flux unifié depuis 5 sources SAP, détection d'anomalies critiques, automatisation Power Query et pilotage à l'échelle européenne, en contexte international FR/EN.</p>
+            <div class="kpi-row"><div class="kpi"><b>−40 %</b><span>temps de traitement</span></div><div class="kpi"><b>100 K€/mois</b><span>erreurs détectées</span></div><div class="kpi"><b>5</b><span>sources SAP unifiées</span></div><div class="kpi"><b>10 mois</b><span>stage + CDD</span></div></div>
+            <div class="btn-row"></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// En 30 secondes</span>
+            <h2>Le problème, la réponse, la preuve</h2>
+            <div style="margin-bottom:2rem"><p>Dans un groupe industriel international, la qualité des données de référence (articles, prix, clients) conditionne la facturation, la marge et la relation client. Les erreurs sont coûteuses et souvent invisibles.</p><p>Mission : unifier les extractions SAP, fiabiliser les données de référence et donner aux équipes européennes des tableaux de bord de pilotage.</p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">Pour le recruteur · valeur business</span>
+                    <ul><li><strong>Impact chiffré</strong> : −40 % de temps de traitement et environ 100 K€ d'erreurs détectées chaque mois.</li><li>Contexte <strong>international</strong> (FR/EN), équipes Customer Care et Master Data européennes.</li><li>Double compétence mise en pratique : compréhension métier HVAC + outillage data.</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
+                    <ul><li>Modèle sémantique Power BI multi-sources SAP, mesures DAX de contrôle qualité.</li><li>Automatisation des traitements récurrents avec Power Query et VBA.</li><li>Règles de détection d'anomalies sur les données de référence.</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline</span>
+            <h2>Architecture de bout en bout</h2>
+            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Le fichier source est téléchargeable et modifiable.</p>
+            <div class="pipeline-figure"><img src="/diagrams/carrier-reporting.svg" alt="Pipeline Carrier — Reporting HVAC Europe" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/carrier-reporting.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/carrier-reporting.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fcarrier-reporting.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div>
+            <ol class="pipeline-steps"><li>Consolidation de 5 sources SAP en un flux unique via Power Query.</li><li>Modélisation sémantique et mesures DAX de pilotage et de contrôle.</li><li>Détection des anomalies de données de référence et remontée aux équipes concernées.</li><li>Diffusion de dashboards Master Data et Business HVAC à l'échelle européenne.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Outils & langages</span>
+            <h2>Stack technique et pourquoi ces choix</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Langages (part du code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">DAX / M (Power Query)</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:70%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">70%</span></div><div class="skill-item"><span class="skill-name">VBA</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:20%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">20%</span></div><div class="skill-item"><span class="skill-name">SQL</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:10%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">10%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">Répartition indicative : projet réalisé en entreprise, code non public.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
+                    <div class="project-tech"><span class="tech-badge">Power BI</span><span class="tech-badge">DAX</span><span class="tech-badge">Power Query</span><span class="tech-badge">SAP</span><span class="tech-badge">Excel VBA</span><span class="tech-badge">Master Data</span><span class="tech-badge">Data Quality</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
+                <tbody><tr><td>Power BI</td><td>Modèle sémantique et dashboards</td><td>Restitution pour les décideurs</td></tr><tr><td>DAX</td><td>Mesures de pilotage et de contrôle</td><td>Logique analytique</td></tr><tr><td>Power Query</td><td>Consolidation de 5 sources SAP</td><td>Automatisation de la préparation</td></tr><tr><td>SAP</td><td>Données de référence et transactions</td><td>Maîtrise des ERP</td></tr><tr><td>Excel VBA</td><td>Automatisation de tâches récurrentes</td><td>Gain de productivité</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Regard critique</span>
+            <h2>Limites connues et prochaines étapes</h2>
+            <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet
+               à une équipe de décider en connaissance de cause.</p>
+            <div class="arg-card arg-card--ok"><ul><li>Données et code confidentiels : cette page décrit la démarche sans exposer d'information interne.</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/projets/marche-hvac.html"><small>← Projet précédent</small>Marché HVAC France</a>
+            <a class="next" href="/projets/csvtraitement.html"><small>Projet suivant →</small>Csvtraitement</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=2"></script>
+</body>
+</html>
