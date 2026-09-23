@@ -145,7 +145,7 @@
         <div class="section-container">
             <span class="section-label">// Résultats</span>
             <h2>Métriques mesurées</h2>
-            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Décision / mesure</th><th>Résultat</th><th>Source</th></tr></thead><tbody><tr><td>1 modèle unique (38 features) vs 3 modèles spécialisés</td><td>MAE 5,8 → 3,2 (−45 %)</td><td>validation interne (dépôt de travail privé)</td></tr><tr><td>Couverture réseau</td><td>~458 stations Vélo&#x27;v · ~101 k arêtes OSM</td><td>README / schémas du dépôt public</td></tr></tbody></table></div>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Décision / mesure</th><th>Résultat</th><th>Source</th></tr></thead><tbody><tr><td>1 modèle unique (38 features) vs 3 modèles spécialisés</td><td>MAE 5,8 → 3,2 (−45 %)</td><td>validation interne (dépôt de travail privé)</td></tr><tr><td>Benchmark exploratoire : comptages véhicules, split temporel 80/20, 5 modèles</td><td>XGBoost optimisé : MAE 6,97 · R² 0,71 (régression linéaire : MAE 15,5)</td><td>notebook 05, dépôt de travail privé</td></tr><tr><td>Couverture réseau</td><td>~458 stations Vélo&#x27;v · ~101 k arêtes OSM</td><td>README / schémas du dépôt public</td></tr></tbody></table></div>
             <p style="margin-top:1.2rem">Décision d'architecture clé : séparer trafic, bus et Vélo'v. Les features de capacité routière valent 0 pour les vélos : dans un modèle unique, elles ajoutent du bruit et dégradent la précision.</p>
         </div>
     </section>

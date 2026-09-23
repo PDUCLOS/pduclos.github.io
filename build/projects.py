@@ -92,6 +92,8 @@ PROJECTS = [
                           iac="Asset Bundle Databricks ; branche Kubernetes dormante"),
         metrics=dict(head=["Décision / mesure", "Résultat", "Source"], rows=[
             ["1 modèle unique (38 features) vs 3 modèles spécialisés", "MAE 5,8 → 3,2 (−45 %)", "validation interne (dépôt de travail privé)"],
+            ["Benchmark exploratoire : comptages véhicules, split temporel 80/20, 5 modèles",
+             "XGBoost optimisé : MAE 6,97 · R² 0,71 (régression linéaire : MAE 15,5)", "notebook 05, dépôt de travail privé"],
             ["Couverture réseau", "~458 stations Vélo'v · ~101 k arêtes OSM", "README / schémas du dépôt public"],
         ], note="Décision d'architecture clé : séparer trafic, bus et Vélo'v. Les features de capacité routière valent 0 pour les vélos : "
                 "dans un modèle unique, elles ajoutent du bruit et dégradent la précision."),
