@@ -22,18 +22,20 @@ stake_rows = "".join(f"<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>" for a, b, 
 ACHATS = dict(
     slug="achats-negociation",
     short="Achats — tarifs & scorecards",
-    kicker="Business Analysis · Achats · Produit data",
+    kicker="Projet en cours · Business Analyst · Achats",
+    badge="PROJET EN COURS · BUSINESS ANALYST",
     title="Plateforme d'aide à la négociation achats",
-    title_html='Achats : transformer chaque hausse tarifaire en <span class="highlight">argument chiffré</span>',
-    lead="Projet mené de bout en bout en posture de Business Analyst : cadrage des besoins d'une direction Achats industrielle, "
-         "modélisation des règles métier, chiffrage des gains, cahier des charges et lotissement — puis livraison d'un moteur "
-         "Python / DuckDB et d'une interface R/Shiny.",
-    kpis=[("≈ 1 %", "de la dépense suivie (gain central)"), ("6", "leviers de gain chiffrés"), ("≈ 2 500", "tests Python"),
-          ("445", "tests R/Shiny"), ("6 mois", "plan de déploiement")],
+    title_html='Business Analyst achats : transformer chaque hausse tarifaire en <span class="highlight">argument chiffré</span>',
+    lead="Projet réel, en cours dans une direction Achats industrielle. J'y interviens comme <strong>Business Analyst</strong> "
+         "et j'assure le <strong>suivi du projet</strong> : recueil des besoins, règles de gestion, business case, cahier des charges, "
+         "backlog, recette avec les acheteurs et pilotage des lots — jusqu'à la livraison d'un moteur Python / DuckDB et d'une interface R/Shiny.",
+    kpis=[("≈ 1 %", "de la dépense suivie (gain central)"), ("105", "éléments de backlog suivis"), ("24", "règles de gestion formalisées"),
+          ("6", "leviers de gain chiffrés"), ("≈ 3 000", "tests automatisés")],
     links=[],
     context=[
-        "<em>Projet réalisé en entreprise, présenté de façon anonymisée : aucune entreprise, aucun fournisseur, aucun site ni aucun montant réel. "
-        "Les exemples chiffrés viennent du jeu de démonstration, entièrement fictif. Code non public.</em>",
+        "<strong>Ce projet existe et il est en cours.</strong> Je l'accompagne en tant que Business Analyst, de l'expression du besoin "
+        "au suivi de la mise en œuvre. <em>Présentation anonymisée : aucune entreprise, aucun fournisseur, aucun site ni aucun montant réel ; "
+        "les exemples chiffrés viennent du jeu de démonstration, entièrement fictif. Code non public.</em>",
         "Une direction Achats reçoit chaque année des dizaines de révisions tarifaires, dans tous les formats (Excel, CSV, PDF). "
         "Aujourd'hui, l'acheteur passe <strong>1 à 3 jours par révision</strong> à remettre le fichier au format, rapprocher les références "
         "de l'ERP et chiffrer l'impact — et négocie souvent sur la hausse <em>affichée</em> par le fournisseur.",
@@ -41,7 +43,7 @@ ACHATS = dict(
         "et les <strong>scorecards fournisseurs</strong> trimestrielles (fin de la ressaisie, l'acheteur ne garde que le jugement).",
     ],
     rh=[
-        "Posture <strong>Business Analyst complète</strong> : besoins, règles de gestion, cahier des charges, lots, budget, gains, conduite du changement.",
+        "<strong>Rôle actuel de Business Analyst</strong> sur un projet réel : besoins, règles de gestion, cahier des charges, backlog, recette, suivi.",
         "<strong>Business case chiffré</strong> en trois scénarios (bas / central / haut) : de 0,5 % à 2,3 % de la dépense suivie, retour dès le premier trimestre.",
         "Conditions d'échec écrites noir sur blanc : volumes non fiables, référentiel non rattaché, rapport de force défavorable, alertes non suivies.",
         "Organisation proposée : équipe de 8 personnes, dont <strong>deux profils métier</strong> jugés indispensables au succès.",
@@ -54,6 +56,19 @@ ACHATS = dict(
         "Principe directeur : ce que le moteur ne sait pas lire reste <strong>vide avec son motif</strong> — jamais zéro, jamais deviné.",
     ],
     custom_sections=[
+        ("mon-role", "Mon rôle", "Business Analyst et suivi du projet",
+         '<div class="two-col">'
+         '<div class="arg-card arg-card--rh"><span class="arg-label">Analyse métier</span><ul>'
+         "<li><strong>Recueil des besoins</strong> auprès des acheteurs et de la direction Achats ; cartographie du processus actuel et cible.</li>"
+         "<li><strong>24 règles de gestion</strong> formalisées (RG-xx), avec leurs cas limites, puis une revue critique complète des règles.</li>"
+         "<li><strong>Cahier des charges</strong> versionné (v3) et <strong>traçabilité des exigences</strong> jusqu'aux tests.</li>"
+         "<li><strong>Business case</strong> : 6 leviers chiffrés en 3 scénarios, conditions d'échec explicites.</li></ul></div>"
+         '<div class="arg-card arg-card--ok"><span class="arg-label">Suivi du projet</span><ul>'
+         "<li><strong>Backlog de 105 éléments</strong> décrits assez précisément pour être chiffrés, priorisés avec le référent métier.</li>"
+         "<li><strong>Décisions datées</strong> et tracées (périmètre gelé, arbitrages, choix d'architecture).</li>"
+         "<li><strong>Contrôles réguliers</strong> de l'avancement et revues de code datées : ce qui est réellement livré, pas ce qui est annoncé.</li>"
+         "<li><strong>Recette</strong> sur fichiers réels rejoués, rapport remis à l'acheteur pour validation ; jalons go / no-go.</li>"
+         "<li><strong>Pilotage de lots délégués</strong> : chaque lot a sa demande écrite, ses critères d'acceptation et sa grille de contrôle.</li></ul></div></div>"),
         ("parties-prenantes", "Parties prenantes", "Qui a besoin de quoi",
          '<div class="table-wrap"><table class="stack-table"><thead><tr><th>Acteur</th><th>Besoin</th><th>Réponse apportée</th></tr></thead>'
          f"<tbody>{stake_rows}</tbody></table></div>"),

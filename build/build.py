@@ -248,7 +248,12 @@ def page_rh():
             <h2>Ce que j'apporte dès le premier mois</h2>
             <p class="pitch pitch--warm" style="margin-bottom:2rem">Je ne commence pas par les données : je commence par la question
                que se pose le décideur. Puis je construis l'outil qui y répond — et je le mets en production.</p>
-            <div class="three-col">
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal"><span class="arg-label">Rôle actuel</span><ul>
+                    <li><strong>Business Analyst</strong> sur un projet achats réel, en cours</li>
+                    <li>Besoins, règles de gestion, business case, cahier des charges</li>
+                    <li><strong>Suivi du projet</strong> : backlog de 105 éléments, recette, jalons</li>
+                    <li><a href="/projets/achats-negociation.html" style="color:var(--accent)">Voir le projet →</a></li></ul></div>
                 <div class="arg-card arg-card--rh reveal"><span class="arg-label">Impact business mesuré</span><ul>
                     <li><strong>−40 %</strong> de temps de traitement chez Carrier</li>
                     <li><strong>~100 K€/mois</strong> d'erreurs de données détectées</li>
@@ -411,7 +416,7 @@ def patch_index():
     new_nav = "<!-- NAV:START -->\n" + nav(PROJECTS, "/") + "    <!-- NAV:END -->"
     html, n = re.subn(r"<!-- NAV:START -->.*?<!-- NAV:END -->", lambda _: new_nav, html, flags=re.S)
     assert n == 1, "NAV markers missing in index.html"
-    tiles = "<!-- TILES:START -->\n" + "".join(tile(p) for p in PROJECTS if p["slug"] not in ("lyonflow", "carrier-reporting")) + "\n<!-- TILES:END -->"
+    tiles = "<!-- TILES:START -->\n" + "".join(tile(p) for p in PROJECTS if p["slug"] not in ("lyonflow", "carrier-reporting", "achats-negociation")) + "\n<!-- TILES:END -->"
     html, n = re.subn(r"<!-- TILES:START -->.*?<!-- TILES:END -->", lambda _: tiles, html, flags=re.S)
     assert n == 1, "TILES markers missing in index.html"
     idx.write_text(html, encoding="utf-8")

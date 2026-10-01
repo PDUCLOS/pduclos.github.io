@@ -1,5 +1,6 @@
 """Shared page chrome (head, nav, footer) for the multi-page portfolio."""
 import html
+import re
 
 SITE = "https://pduclos.github.io"
 REPO_RAW = "https://raw.githubusercontent.com/PDUCLOS/pduclos.github.io/main"
@@ -8,6 +9,7 @@ e = lambda s: html.escape(str(s), quote=True)
 
 
 def head(title, description, path):
+    description = re.sub(r"<[^>]+>", "", description)
     return f"""<!DOCTYPE html>
 <html lang="fr">
 <head>

@@ -43,6 +43,8 @@ def project_page(p, projects):
         cls = "contact-btn contact-btn-primary" if primary else "contact-btn contact-btn-secondary"
         buttons.append(f'<a href="{href}" target="_blank" rel="noopener" class="{cls}">{e(label)} {arrow()}</a>')
 
+    badge = (f'<div class="live-badge" style="position:static;display:inline-flex;margin-bottom:1.2rem">'
+             f'<span class="live-dot"></span> {e(p["badge"])}</div>') if p.get("badge") else ""
     out = [head(f"{p['title']} — Patrice Duclos", p["lead"], path), nav(projects, path)]
     custom = "".join(f"""
     <section class="page-section{' alt' if i % 2 == 0 else ''}" id="{sid}">
@@ -58,6 +60,7 @@ def project_page(p, projects):
         <div class="hero-bg-grid"></div>
         <div class="hero-glow hero-glow-1"></div>
         <div class="hero-content">
+            {badge}
             <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / {e(p['short'])}</div>
             <span class="project-tag" style="color:var(--accent)">{e(p['kicker'])}</span>
             <h1>{p['title_html']}</h1>
