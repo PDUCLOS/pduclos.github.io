@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme d&#x27;aide à la négociation achats — Patrice Duclos</title>
+    <meta name="description" content="Projet mené de bout en bout en posture de Business Analyst : cadrage des besoins d&#x27;une direction Achats industrielle, modélisation des règles métier, chiffrage des gains, cahier des charges et lotissement — puis livraison d&#x27;un moteur Python / DuckDB et d&#x27;une interface R/Shiny.">
+    <meta property="og:title" content="Plateforme d&#x27;aide à la négociation achats — Patrice Duclos">
+    <meta property="og:description" content="Projet mené de bout en bout en posture de Business Analyst : cadrage des besoins d&#x27;une direction Achats industrielle, modélisation des règles métier, chiffrage des gains, cahier des charges et lotissement — puis livraison d&#x27;un moteur Python / DuckDB et d&#x27;une interface R/Shiny.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/projets/achats-negociation.html">
+    <link rel="canonical" href="https://pduclos.github.io/projets/achats-negociation.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">Parcours</a></li>
+            <li class="has-dropdown">
+                <a href="/projets/" class="dropdown-toggle" aria-current="page">Projets</a>
+                <ul class="dropdown">
+                    <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · Jumeau numérique</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/achats-negociation.html" aria-current="page">Achats — tarifs &amp; scorecards<small>Business Analysis · Achats · Produit data</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/stack.html">Stack MLOps</a></li>
+            <li><a href="/profil-rh.html">Recruteurs</a></li>
+            <li><a href="/profil-tech.html">Profil technique</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / Achats — tarifs &amp; scorecards</div>
+            <span class="project-tag" style="color:var(--accent)">Business Analysis · Achats · Produit data</span>
+            <h1>Achats : transformer chaque hausse tarifaire en <span class="highlight">argument chiffré</span></h1>
+            <p class="lead">Projet mené de bout en bout en posture de Business Analyst : cadrage des besoins d'une direction Achats industrielle, modélisation des règles métier, chiffrage des gains, cahier des charges et lotissement — puis livraison d'un moteur Python / DuckDB et d'une interface R/Shiny.</p>
+            <div class="kpi-row"><div class="kpi"><b>≈ 1 %</b><span>de la dépense suivie (gain central)</span></div><div class="kpi"><b>6</b><span>leviers de gain chiffrés</span></div><div class="kpi"><b>≈ 2 500</b><span>tests Python</span></div><div class="kpi"><b>445</b><span>tests R/Shiny</span></div><div class="kpi"><b>6 mois</b><span>plan de déploiement</span></div></div>
+            <div class="btn-row"></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// En 30 secondes</span>
+            <h2>Le problème, la réponse, la preuve</h2>
+            <div style="margin-bottom:2rem"><p><em>Projet réalisé en entreprise, présenté de façon anonymisée : aucune entreprise, aucun fournisseur, aucun site ni aucun montant réel. Les exemples chiffrés viennent du jeu de démonstration, entièrement fictif. Code non public.</em></p><p>Une direction Achats reçoit chaque année des dizaines de révisions tarifaires, dans tous les formats (Excel, CSV, PDF). Aujourd'hui, l'acheteur passe <strong>1 à 3 jours par révision</strong> à remettre le fichier au format, rapprocher les références de l'ERP et chiffrer l'impact — et négocie souvent sur la hausse <em>affichée</em> par le fournisseur.</p><p>Le projet outille deux processus : l'analyse des <strong>tarifs fournisseurs</strong> (de la réception au dossier de négociation) et les <strong>scorecards fournisseurs</strong> trimestrielles (fin de la ressaisie, l'acheteur ne garde que le jugement).</p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">Pour le recruteur · valeur business</span>
+                    <ul><li>Posture <strong>Business Analyst complète</strong> : besoins, règles de gestion, cahier des charges, lots, budget, gains, conduite du changement.</li><li><strong>Business case chiffré</strong> en trois scénarios (bas / central / haut) : de 0,5 % à 2,3 % de la dépense suivie, retour dès le premier trimestre.</li><li>Conditions d'échec écrites noir sur blanc : volumes non fiables, référentiel non rattaché, rapport de force défavorable, alertes non suivies.</li><li>Organisation proposée : équipe de 8 personnes, dont <strong>deux profils métier</strong> jugés indispensables au succès.</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
+                    <ul><li>Moteur Python 3.12 piloté par configuration YAML : ajouter un fournisseur relève de la <strong>configuration, pas du code</strong>.</li><li><strong>Cascade de rattachement</strong> L0 exact → L1 règles → L2 approché (rapidfuzz) → L3 arbitrage humain, référentiel versionné et annulable.</li><li>Entrepôt DuckDB (68 tables, 42 vues d'interface sous contrat versionné), interface R/Shiny en lecture seule, 5 profils d'habilitation.</li><li>Qualité : ≈ 2 500 tests Python (pytest-xdist), 445 tests R (testthat), CI GitHub Actions Python 3.12 / 3.13 + ruff.</li><li>Principe directeur : ce que le moteur ne sait pas lire reste <strong>vide avec son motif</strong> — jamais zéro, jamais deviné.</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="page-section alt" id="parties-prenantes">
+        <div class="section-container">
+            <span class="section-label">// Parties prenantes</span>
+            <h2>Qui a besoin de quoi</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Acteur</th><th>Besoin</th><th>Réponse apportée</th></tr></thead><tbody><tr><td>Acheteur</td><td>Négocier vite, avec des chiffres incontestables</td><td>Dossier de négociation, mémo d'une page, file d'arbitrage triée par enjeu</td></tr><tr><td>Référent achats / responsable produit</td><td>Arbitrer seuils, règles et priorités</td><td>Règles en configuration, journal des décisions</td></tr><tr><td>Direction achats</td><td>Piloter la performance fournisseurs et les économies</td><td>Scorecards trimestrielles, Board consolidé, économies constatées</td></tr><tr><td>Contrôle de gestion</td><td>Fiabilité des chiffres</td><td>Chaque montant traçable jusqu'à sa source ; aucune valeur devinée</td></tr><tr><td>DSI</td><td>Sécurité, exploitation, coût</td><td>Lecture seule sur les ERP, habilitations par profil, sauvegardes, mises à jour sans perte</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section" id="processus">
+        <div class="section-container">
+            <span class="section-label">// Processus as-is / to-be</span>
+            <h2>Du fichier fournisseur au mémo de négociation</h2>
+            <div class="two-col"><div class="arg-card arg-card--rh"><span class="arg-label">Aujourd'hui (as-is)</span><ul><li>Mise au format et rapprochement des références à la main : 1 à 2 jours.</li><li>Comparaison N-1 / N et chiffrage de l'impact : 0,5 à 1 jour.</li><li>Arguments et mémo : 0,5 jour.</li><li>Vérification de l'application du prix dans l'ERP : rarement faite.</li><li>Négociation sur la hausse moyenne annoncée par le fournisseur.</li></ul></div><div class="arg-card arg-card--ok"><span class="arg-label">Cible (to-be)</span><ul><li>Dépôt du fichier tel quel ; gabarit reconnu et mémorisé : 30 min.</li><li>Rattachement automatique, l'acheteur n'arbitre que les cas douteux.</li><li>Hausse pondérée par les volumes, impact annualisé, Pareto : automatique.</li><li>Mémo d'une page et support Excel produits : 15 min.</li><li>Écarts d'application ERP détectés et chiffrés chaque mois.</li></ul></div></div><p style="margin-top:1.5rem">Exemple sur la démonstration (données fictives) : un tarif annoncé à <strong>+4,80 %</strong> ne pèse que <strong>+2,08 %</strong> une fois pondéré par les volumes et la grille de remise — et l'impact tient dans quelques références.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="business-case">
+        <div class="section-container">
+            <span class="section-label">// Business case</span>
+            <h2>Six leviers de gain, chiffrés et bornés</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>#</th><th>Levier</th><th>Ordre de grandeur</th><th>Ce qui le rend crédible</th></tr></thead><tbody><tr><td>G1</td><td>Négocier sur la hausse <strong>pondérée par les volumes</strong>, pas sur la moyenne affichée</td><td>0,3 à 0,8 pt de hausse évité sur la dépense en révision</td><td>Argument chiffré, référence par référence</td></tr><tr><td>G2</td><td>Faire payer le <strong>prix convenu</strong> : écart entre prix payé dans l'ERP et prix dû</td><td>0,10 à 0,50 % de la dépense</td><td>Sépare le simple retard d'application de l'écart réellement inexpliqué</td></tr><tr><td>G3</td><td>Aligner les entités sur le <strong>meilleur prix du groupe</strong></td><td>30 à 50 % de l'écart entre sites</td><td>Jamais de prix à 0 € quand une donnée manque</td></tr><tr><td>G4</td><td>Faire respecter les <strong>prix spéciaux</strong> : plafonds de hausse, engagements de volume, accords non déclarés</td><td>0,5 à 1,5 % de la dépense concernée</td><td>Phrase de négociation rédigée avec sa source</td></tr><tr><td>G5</td><td>Rendre du <strong>temps à l'acheteur</strong></td><td>1,5 à 3 jours par révision tarifaire</td><td>Temps réinvesti dans la négociation, pas dans la recopie</td></tr><tr><td>G6</td><td><strong>Acheter avant la hausse</strong> jusqu'au point où le stock coûte plus qu'il ne rapporte</td><td>bénéfice ∝ hausse² / coût de possession</td><td>Plafonné par la péremption et les règles de provision</td></tr></tbody></table></div><div class="kpi-row" style="margin-top:1.5rem"><div class="kpi"><b>0,47 %</b><span>scénario bas</span></div><div class="kpi"><b>1,15 %</b><span>scénario central</span></div><div class="kpi"><b>2,29 %</b><span>scénario haut</span></div><div class="kpi"><b>T1</b><span>retour sur investissement</span></div></div><p>Gains exprimés en part de la dépense suivie. Ils séparent toujours le <strong>mesuré</strong> (sur la démonstration) de l'<strong>estimé</strong> (hypothèses à confirmer sur les données réelles), et la méthode pour remplacer les estimations par les vrais chiffres dès la première campagne est documentée.</p><p>Condition de tous les autres gains : <strong>lire les prix sans erreur</strong>. Le rejeu d'un corpus de tarifs a révélé dix erreurs de lecture silencieuses (une base « prix pour 1000 » ignorée = prix mille fois trop bas ; une date américaine = trois mois d'écart). Chacune a aujourd'hui son test de non-régression.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="risques">
+        <div class="section-container">
+            <span class="section-label">// Risques & conditions de succès</span>
+            <h2>Ce qui rendrait ces chiffres faux</h2>
+            <div class="two-col"><div class="arg-card arg-card--rh"><span class="arg-label">Conditions d'échec identifiées</span><ul><li><strong>Volumes ERP non fiables</strong> : la pondération s'effondre (l'outil refuse alors de chiffrer).</li><li><strong>Référentiel non rattaché</strong> : pas de comparaison possible — premier chantier, en temps d'acheteur.</li><li><strong>Rapport de force défavorable</strong> : l'outil donne l'argument, pas le pouvoir.</li><li><strong>Alertes non traitées</strong> : un écart détecté et jamais corrigé ne rapporte rien.</li></ul></div><div class="arg-card arg-card--ok"><span class="arg-label">Plan de déploiement (6 mois, 8 lots)</span><ul><li>L0 cadrage et accès → L1 raccordement ERP → L2 reprise du référentiel → L3 recette sur données réelles.</li><li>L4 interface et habilitations → L5 économies et négociation → L6 industrialisation → L7 déploiement et formation.</li><li>Jalons go / no-go : une entité raccordée (M2), un fournisseur de bout en bout validé par l'acheteur (M3).</li><li>Périmètre fonctionnel gelé, documentation livrée avec chaque lot.</li></ul></div></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline</span>
+            <h2>Architecture de bout en bout</h2>
+            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Le fichier source est téléchargeable et modifiable.</p>
+            <div class="pipeline-figure"><img src="/diagrams/achats-negociation.svg" alt="Pipeline Achats — tarifs &amp; scorecards" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-negociation.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-negociation.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-negociation.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div>
+            <ol class="pipeline-steps"><li><strong>Déposer</strong> — le fichier est reçu tel quel, empreinté et archivé ; un doublon est refusé.</li><li><strong>Comprendre</strong> — gabarit reconnu, clé unique détectée, compte rendu de lecture présenté avant tout calcul.</li><li><strong>Rattacher</strong> — chaque référence fournisseur est reliée à l'article ERP par la cascade ; l'acheteur n'arbitre que les doutes, une seule fois.</li><li><strong>Analyser</strong> — hausse pondérée, impact annualisé, Pareto, remises, plafonds de prix spéciaux, écarts d'application ERP ; les aberrants partent en quarantaine.</li><li><strong>Négocier</strong> — mémo d'une page, support Excel et demande de reprise ; chaque chiffre renvoie à sa source.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="schemas">
+        <div class="section-container">
+            <span class="section-label">// Schémas détaillés</span>
+            <h2>Les diagrammes d'architecture du projet</h2>
+            <p style="margin-bottom:2rem">Diagrammes draw.io réalisés pendant le projet et versionnés dans le dépôt
+               (données d'infrastructure sensibles masquées).</p>
+            <div class="reveal" style="margin-bottom:2.5rem"><h3>Parcours d&#x27;un tarif — et ce que l&#x27;outil refuse de faire</h3>
+                <div class="pipeline-figure"><img src="/diagrams/achats-parcours.svg" alt="Parcours d&#x27;un tarif — et ce que l&#x27;outil refuse de faire" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-parcours.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-parcours.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-parcours.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Cascade de rattachement aux références ERP</h3>
+                <div class="pipeline-figure"><img src="/diagrams/achats-cascade.svg" alt="Cascade de rattachement aux références ERP" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-cascade.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-cascade.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-cascade.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Architecture et flux de données</h3>
+                <div class="pipeline-figure"><img src="/diagrams/achats-architecture.svg" alt="Architecture et flux de données" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-architecture.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-architecture.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-architecture.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Outils & langages</span>
+            <h2>Stack technique et pourquoi ces choix</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Langages (part du code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">Python</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:78%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">78%</span></div><div class="skill-item"><span class="skill-name">R</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:18%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">18%</span></div><div class="skill-item"><span class="skill-name">YAML</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:3%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">3%</span></div><div class="skill-item"><span class="skill-name">JavaScript</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:1%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">1%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">Lignes de code hors notebooks, calculées sur le dépôt.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
+                    <div class="project-tech"><span class="tech-badge">Business Analysis</span><span class="tech-badge">Achats</span><span class="tech-badge">Business case</span><span class="tech-badge">Règles de gestion</span><span class="tech-badge">Cahier des charges</span><span class="tech-badge">Python</span><span class="tech-badge">DuckDB</span><span class="tech-badge">R / Shiny</span><span class="tech-badge">rapidfuzz</span><span class="tech-badge">pandas</span><span class="tech-badge">YAML</span><span class="tech-badge">pytest</span><span class="tech-badge">GitHub Actions</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
+                <tbody><tr><td>Analyse métier</td><td>Règles de gestion, cas limites, revue critique des règles (défauts critiques, lacunes)</td><td>Formaliser ce que l'acheteur fait implicitement</td></tr><tr><td>Business case</td><td>6 leviers chiffrés en 3 scénarios, conditions d'échec</td><td>Décision d'investissement argumentée</td></tr><tr><td>Cahier des charges + backlog</td><td>Exigences tracées, lots chiffrables, jalons go / no-go</td><td>Pilotage de projet</td></tr><tr><td>Python + pandas</td><td>Moteur de lecture, normalisation et analyse</td><td>Industrialiser des règles métier</td></tr><tr><td>rapidfuzz</td><td>Rapprochement approché des références</td><td>Matching robuste avec garde-fous</td></tr><tr><td>DuckDB</td><td>Entrepôt analytique en fichier, vues sous contrat</td><td>Analytique embarquée sans serveur</td></tr><tr><td>R / Shiny</td><td>Poste de travail acheteur, 5 profils</td><td>Interface métier</td></tr><tr><td>YAML</td><td>Un fichier de configuration par fournisseur</td><td>Évolutivité sans développement</td></tr><tr><td>pytest · testthat · GitHub Actions</td><td>≈ 2 500 tests Python + 445 tests R, CI multi-versions</td><td>Fiabilité des chiffres</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="mlops">
+        <div class="section-container">
+            <span class="section-label">// Maturité MLOps</span>
+            <h2>Industrialisation : ce qui est en place</h2>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Pratique</th><th>Statut</th><th>Détail</th></tr></thead>
+                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Python 3.12 / 3.13, ruff ; R testthat</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>≈ 2 500 tests Python + 445 tests R</td></tr><tr><td>Docker</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Déploiement conteneurisé multi-utilisateurs planifié</td></tr><tr><td>Orchestration</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Campagnes planifiables, rejouables</td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Journal de toutes les opérations, registre des injections</td></tr><tr><td>API</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Interface R/Shiny</td></tr><tr><td>Déploiement</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Démonstration complète rejouable ; mise en service par lots</td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section" id="code">
+        <div class="section-container">
+            <span class="section-label">// Extraits de code</span>
+            <h2>Le code qui fait la différence</h2>
+            <p class="code-caption">tarifs/rattachement.py — niveau L3 de la cascade : rapprochement approché motivé</p><pre class="code"><code># L3 — rapprochement approché (RG-07). `score_cutoff` : rapidfuzz abandonne tôt les candidats
+# sous le seuil de présentation ; même résultat que le filtre a posteriori, bien moins de travail.
+choix = process.extract(refnorm, idx[&quot;cles&quot;], scorer=fuzz.ratio, limit=int(s[&quot;nb_candidats&quot;]) + 1,
+                        score_cutoff=float(s.get(&quot;seuil_candidat_min&quot;, 0)))
+cands = [{&quot;reference_erp&quot;: par_norm[c], &quot;score&quot;: round(sc, 1),
+          &quot;rapproche&quot;: f&quot;similarité {sc:.0f} % sur la référence normalisée&quot;,
+          &quot;separe&quot;: f&quot;{refnorm} ≠ {c}&quot;} for c, sc, _ in choix if sc &gt;= s.get(&quot;seuil_candidat_min&quot;, 0)]</code></pre>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Regard critique</span>
+            <h2>Limites connues et prochaines étapes</h2>
+            <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet
+               à une équipe de décider en connaissance de cause.</p>
+            <div class="arg-card arg-card--ok"><ul><li>Déploiement conteneurisé multi-utilisateurs et connexion à l'annuaire d'entreprise encore au backlog.</li><li>Un seul profil sectoriel riche (adhésifs, films, chimie) en plus du profil générique ; interface en français.</li><li>Gains estimés tant que la première campagne sur données réelles n'a pas eu lieu — la méthode de mesure est prête.</li><li>Revue critique des règles métier menée : défauts critiques identifiés (paliers, remises, encodages) et corrigés un par un, avec test dédié.</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/projets/carrier-reporting.html"><small>← Projet précédent</small>Carrier — Reporting HVAC Europe</a>
+            <a class="next" href="/projets/csvtraitement.html"><small>Projet suivant →</small>Csvtraitement</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=2"></script>
+</body>
+</html>

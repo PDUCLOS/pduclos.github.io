@@ -24,6 +24,9 @@ EXISTING = {
     "stripe-architecture": "BLOC2-STRIPE/presentation/stripe_architecture_globale.drawio",
     "stripe-aws": "BLOC2-STRIPE/presentation/stripe_aws_cible.drawio",
     "fraude-pipeline": "BLOC3-FRAUD-DETECTION/docs/diagrams/02_pipeline.drawio",
+    "achats-parcours": "Purchasingsolution/docs/presentation-vendeur/02_parcours_tarif.drawio",
+    "achats-cascade": "Purchasingsolution/docs/presentation-vendeur/03_cascade_rattachement.drawio",
+    "achats-architecture": "Purchasingsolution/docs/ARCHITECTURE_PIPELINE.drawio",
 }
 # Masking rules live in build/redact.local (gitignored, tab-separated "regex<TAB>replacement")
 # so the sensitive values themselves never get published with the build script.
@@ -228,7 +231,7 @@ def page_rh():
          "Mes projets suivent les standards d'équipe : conventions documentées, tests bloquants en CI, "
          "documentation d'architecture, diagrammes draw.io. Expérience de projets d'équipe en formation et en contexte international chez Carrier."),
         ("« Quel type de poste ? »",
-         "Data Analyst senior, Data Scientist, ML Engineer / MLOps, ou Lead Data dans l'industrie, l'énergie, la distribution B2B "
+         "Data Analyst senior, Business Analyst data, Data Scientist, ML Engineer / MLOps, ou Lead Data dans l'industrie, l'énergie, la distribution B2B "
          "ou la supply chain — là où la double compétence métier + data a le plus de valeur. Région lyonnaise, hybride."),
     ]
     obj_html = "".join(f'<details class="objection"><summary>{q}</summary><p>{a}</p></details>' for q, a in objections)
@@ -257,7 +260,7 @@ def page_rh():
                 <div class="arg-card arg-card--rh reveal"><span class="arg-label">Livraison de bout en bout</span><ul>
                     <li>Plateforme <strong>en production</strong> (LyonFlow), consultable en ligne</li>
                     <li>{len(PROJECTS)} projets documentés, du besoin à l'API</li>
-                    <li>IA générative appliquée à l'industrie (copilote maintenance)</li></ul></div>
+                    <li>Business case achats : leviers chiffrés, plan en 8 lots, conditions d'échec</li></ul></div>
             </div>
         </div>
     </section>
@@ -293,7 +296,7 @@ def page_rh():
         <div class="section-container">
             <span class="section-label">// Projets phares</span>
             <h2>Trois projets à regarder en priorité</h2>
-            <div class="proj-grid">{''.join(tile(p) for p in PROJECTS if p['slug'] in ('lyonflow', 'carrier-reporting', 'copilot-maintenance'))}</div>
+            <div class="proj-grid">{''.join(tile(p) for p in PROJECTS if p['slug'] in ('lyonflow', 'carrier-reporting', 'achats-negociation'))}</div>
         </div>
     </section>
 

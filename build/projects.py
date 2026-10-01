@@ -1,5 +1,7 @@
 """Portfolio content: one dict per project page. Facts come from the repositories (analysed 2026-09-23)."""
 
+from achats import ACHATS
+
 GH = "https://github.com/PDUCLOS/"
 
 M_NONE = dict(ci="n", tests="n", docker="n", orch="n", tracking="n", monitoring="n", serving="n", deploy="n", iac="n")
@@ -921,3 +923,6 @@ def predict(data: dict):
         ],
     ),
 ]
+
+# Business-analyst project, shown right after Carrier.
+PROJECTS.insert([p["slug"] for p in PROJECTS].index("carrier-reporting") + 1, ACHATS)

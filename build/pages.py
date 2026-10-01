@@ -44,6 +44,15 @@ def project_page(p, projects):
         buttons.append(f'<a href="{href}" target="_blank" rel="noopener" class="{cls}">{e(label)} {arrow()}</a>')
 
     out = [head(f"{p['title']} — Patrice Duclos", p["lead"], path), nav(projects, path)]
+    custom = "".join(f"""
+    <section class="page-section{' alt' if i % 2 == 0 else ''}" id="{sid}">
+        <div class="section-container">
+            <span class="section-label">// {label}</span>
+            <h2>{title}</h2>
+            {body}
+        </div>
+    </section>
+""" for i, (sid, label, title, body) in enumerate(p.get("custom_sections", [])))
     out.append(f"""
     <header class="page-hero">
         <div class="hero-bg-grid"></div>
@@ -76,6 +85,7 @@ def project_page(p, projects):
         </div>
     </section>
 
+{custom}
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
             <span class="section-label">// Pipeline</span>
