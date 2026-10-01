@@ -1631,3 +1631,47 @@ details.objection p { margin-top: 0.8rem; }
     color: var(--text-muted);
     font-weight: 400;
 }
+
+/* --- Slide decks --- */
+.deck { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem 1.5rem; }
+.slide { margin: 0; }
+.slide-img {
+    display: block; width: 100%; padding: 0; border: 1px solid var(--border-light); border-radius: 10px;
+    overflow: hidden; background: #fff; cursor: zoom-in; transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.slide-img:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,0.45); }
+.slide-img img { display: block; width: 100%; height: auto; }
+.slide figcaption { display: flex; gap: 1rem; align-items: flex-start; margin-top: 0.6rem; }
+.slide-num { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-muted); padding-top: 0.15rem; white-space: nowrap; }
+.slide details { flex: 1; font-size: 0.82rem; }
+.slide summary { cursor: pointer; color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; }
+.slide-text { margin-top: 0.6rem; padding: 0.9rem 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; }
+.page-section .slide-text p { font-size: 0.82rem; line-height: 1.55; }
+.page-section .slide-text p + p { margin-top: 0.5rem; }
+.lightbox {
+    position: fixed; inset: 0; z-index: 2000; background: #05080F;
+    display: flex; align-items: center; justify-content: center;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 94vw; max-height: 88vh; border-radius: 6px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); background: #fff; }
+.lightbox button {
+    position: absolute; background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%; width: 46px; height: 46px; font-size: 1.5rem; cursor: pointer; line-height: 1;
+}
+.lightbox button:hover { background: rgba(255,255,255,0.18); }
+.lb-close { top: 1rem; right: 1rem; font-size: 1rem !important; }
+.lb-prev { left: 1rem; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 1rem; top: 50%; transform: translateY(-50%); }
+.lb-count { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); color: #94A3B8; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+.deck-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.deck-card { display: block; text-decoration: none; color: inherit; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: all 0.3s ease; }
+.deck-card:hover { transform: translateY(-3px); border-color: var(--accent-warm); }
+.deck-card img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--border); }
+.deck-card div { padding: 1.1rem 1.3rem; }
+.deck-card h3 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.25rem; margin: 0.3rem 0 0.4rem; color: var(--text-primary); }
+.deck-card p { font-size: 0.88rem; }
+@media (max-width: 900px) {
+    .deck, .deck-cards { grid-template-columns: 1fr; }
+    .lightbox img { max-width: 100vw; border-radius: 0; }
+    .lb-prev, .lb-next { top: auto; bottom: 0.6rem; transform: none; }
+}

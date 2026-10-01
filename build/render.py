@@ -25,7 +25,7 @@ def head(title, description, path):
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css?v=2">
+    <link rel="stylesheet" href="/assets/style.css?v=3">
 </head>
 <body>
 """
@@ -50,11 +50,14 @@ def nav(projects, current=""):
         <ul class="nav-links">
             {link('/#about', 'Parcours')}
             <li class="has-dropdown">
-                <a href="/projets/" class="dropdown-toggle"{' aria-current="page"' if current.startswith('/projets/') else ''}>Projets</a>
+                <a href="/projets/" class="dropdown-toggle"{' aria-current="page"' if current.startswith(('/projets/', '/presentations/')) else ''}>Projets</a>
                 <ul class="dropdown">
                     <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
                     {''.join(items)}
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/presentations/plateforme-tarifs.html">Présentation commerciale<small>projet achats · 38 slides</small></a></li>
+                    <li><a href="/presentations/hausses-tarifaires.html">Présentation technique<small>projet achats · 21 slides</small></a></li>
                 </ul>
             </li>
             {link('/stack.html', 'Stack MLOps')}
@@ -72,7 +75,7 @@ FOOTER = """
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>
-    <script src="/assets/site.js?v=2"></script>
+    <script src="/assets/site.js?v=3"></script>
 </body>
 </html>
 """

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme tarifs — entrer en négociation en sachant — Patrice Duclos</title>
+    <meta name="description" content="La présentation qui vend le produit à une direction Achats : enjeux, six chapitres fonctionnels du fichier reçu au pilotage du service, différenciation, limites assumées et prochaine étape.">
+    <meta property="og:title" content="Plateforme tarifs — entrer en négociation en sachant — Patrice Duclos">
+    <meta property="og:description" content="La présentation qui vend le produit à une direction Achats : enjeux, six chapitres fonctionnels du fichier reçu au pilotage du service, différenciation, limites assumées et prochaine étape.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/presentations/plateforme-tarifs.html">
+    <link rel="canonical" href="https://pduclos.github.io/presentations/plateforme-tarifs.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=3">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">Parcours</a></li>
+            <li class="has-dropdown">
+                <a href="/projets/" class="dropdown-toggle" aria-current="page">Projets</a>
+                <ul class="dropdown">
+                    <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · Jumeau numérique</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/achats-negociation.html">Achats — tarifs &amp; scorecards<small>Projet en cours · Business Analyst · Achats</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/presentations/plateforme-tarifs.html">Présentation commerciale<small>projet achats · 38 slides</small></a></li>
+                    <li><a href="/presentations/hausses-tarifaires.html">Présentation technique<small>projet achats · 21 slides</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/stack.html">Stack MLOps</a></li>
+            <li><a href="/profil-rh.html">Recruteurs</a></li>
+            <li><a href="/profil-tech.html">Profil technique</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/achats-negociation.html">Projet Achats</a> / Présentation commerciale</div>
+            <div class="live-badge" style="position:static;display:inline-flex;margin-bottom:1.2rem"><span class="live-dot"></span> PROJET EN COURS · BUSINESS ANALYST</div>
+            <span class="project-tag" style="color:var(--accent-warm)">Présentation commerciale · 38 slides</span>
+            <h1>Plateforme tarifs — entrer en négociation en sachant</h1>
+            <p class="lead">La présentation qui vend le produit à une direction Achats : enjeux, six chapitres fonctionnels du fichier reçu au pilotage du service, différenciation, limites assumées et prochaine étape.</p>
+            <div class="kpi-row">
+                <div class="kpi"><b>38</b><span>slides</span></div>
+                <div class="kpi"><b style="font-size:1rem;line-height:1.4">Direction Achats, acheteurs, décideurs</b><span>public visé</span></div>
+            </div>
+            <div class="btn-row">
+                <button class="contact-btn contact-btn-primary" id="deck-play">▶ Mode présentation</button>
+                <a class="contact-btn contact-btn-secondary" href="/projets/achats-negociation.html">← Le projet</a>
+                <a class="contact-btn contact-btn-secondary" href="/presentations/hausses-tarifaires.html">Présentation technique &amp; demande de décision <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+    </header>
+    <section class="page-section">
+        <div class="section-container">
+            <div class="arg-card arg-card--rh" style="margin-bottom:2.5rem"><span class="arg-label">Ce que montre ce support</span><ul>
+                <li>Structurée en 6 chapitres, chacun répondant à une question d'acheteur</li><li>Chaque promesse adossée à un écran qui existe — et une page « ce qui n'est pas encore livré »</li><li>Écrans issus de la démonstration (données fictives)</li>
+                <li><em>Version anonymisée pour le portfolio : nom de l'entreprise, fournisseurs, entités et sites retirés ; notes du présentateur non publiées.</em></li></ul></div>
+            <div class="deck">
+            <figure class="slide reveal" id="s1">
+                <button class="slide-img" data-i="0" aria-label="Agrandir la slide 1">
+                    <img src="/presentations/plateforme-tarifs/01.webp" alt="Slide 1 — Entrer en négociation
+en sachant." loading="eager" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">01 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>DIRECTION ACHATS · PLATEFORME TARIFS</p><p>Entrer en négociation<br>en sachant.</p><p>Chaque tarif fournisseur est lu quel que soit son format, rattaché aux références de vos ERP, comparé à la version précédente, chiffré sur vos volumes réels, et transformé en dossier de négociation dont chaque chiffre remonte à sa cellule d&#x27;origine.</p><p>Document de présentation · 30 septembre 2026 · toutes les données illustrées sont fictives</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s2">
+                <button class="slide-img" data-i="1" aria-label="Agrandir la slide 2">
+                    <img src="/presentations/plateforme-tarifs/02.webp" alt="Slide 2 — Une hausse se subit. Demain, elle se discute." loading="eager" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">02 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>Une hausse se subit. Demain, elle se discute.</p><p>Six enjeux que tout acheteur reconnaît, et ce que la plateforme y change.</p><p>Argent</p><p>Erreurs silencieuses</p><p>Temps</p><p>Aujourd&#x27;hui : La hausse est acceptée sur la moyenne affichée par le fournisseur.</p><p>Aujourd&#x27;hui : Un meilleur prix à 0 € par une formule, une absence confondue avec un zéro.</p><p>Aujourd&#x27;hui : Des jours de collecte et de recopie par révision tarifaire.</p><p>Recalculée pondérée par vos volumes, chiffrée par an, opposée ligne par ligne.</p><p>Aucune valeur fausse n&#x27;est produite : une donnée absente reste absente.</p><p>L&#x27;acheteur analyse au lieu de collecter : le dossier sort en une commande.</p><p>Mémoire</p><p>Dépendance</p><p>Preuve</p><p>Aujourd&#x27;hui : Rattachements et règles vivent dans des classeurs individuels.</p><p>Aujourd&#x27;hui : Prix spéciaux expirés, marchés en repli, tarifs non appliqués passent inaperçus.</p><p>Aujourd&#x27;hui : Un chiffre porté en négociation n&#x27;est pas justifiable a posteriori.</p><p>Un référentiel qui s&#x27;enrichit : un arbitrage rendu une fois ne se repose plus.</p><p>Chacun devient une alerte chiffrée, avant la négociation et non après.</p><p>Toute valeur remonte à la cellule d&#x27;origine ; une analyse se rejoue à l&#x27;identique.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s3">
+                <button class="slide-img" data-i="2" aria-label="Agrandir la slide 3">
+                    <img src="/presentations/plateforme-tarifs/03.webp" alt="Slide 3 — Trois règles que l&#x27;outil ne trahit jamais" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">03 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>Trois règles que l&#x27;outil ne trahit jamais</p><p>C&#x27;est ce qui rend un chiffre défendable face à un fournisseur.</p><p>Une absence n&#x27;est jamais un zéro</p><p>Rien n&#x27;est effacé</p><p>Chaque chiffre a sa source</p><p>Quand l&#x27;outil ne sait pas, il écrit « — » et dit pourquoi. Un prix manquant n&#x27;est pas un prix nul, un volume inconnu n&#x27;est pas un volume nul, un taux de change absent ne vaut pas 1.</p><p>Une suppression est un statut, une correction est une nouvelle version. Chaque action porte son auteur et sa date, et s&#x27;annule. Une analyse passée se rejoue à l&#x27;identique.</p><p>Un clic donne le fichier, l&#x27;onglet, la ligne, la colonne et la valeur brute d&#x27;origine. Une cote lue dans une désignation est surlignée avec son niveau de confiance.</p><p>Refusé plutôt que faux.</p><p>Annulable, rejouable, signé.</p><p>Un chiffre sans provenance ne se négocie pas.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s4">
+                <button class="slide-img" data-i="3" aria-label="Agrandir la slide 4">
+                    <img src="/presentations/plateforme-tarifs/04.webp" alt="Slide 4 — Six chapitres, du fichier reçu au pilotage du service" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">04 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>Six chapitres, du fichier reçu au pilotage du service</p><p>Chaque chapitre répond à une question que l&#x27;acheteur se pose ; chaque réponse est un écran qui existe.</p><p>Lire sans deviner</p><p>Analyser et négocier</p><p>Tout format, clé unique, arbitrages de lecture, rattachement aux ERP, prix comparables et prix rendu.</p><p>Hausse pondérée, tarif ou remise, indices matière, plafonds clients, marchés, meilleur prix groupe, dossier de négociation.</p><p>Le négocié est-il le payé ?</p><p>Acheter au bon moment</p><p>Historique des prix d&#x27;achat, contrôle des commandes et des accusés de réception, économies constatées.</p><p>Achat d&#x27;anticipation sous plafonds nommés, stock relevé, lots et péremption, pertes, volumétrie par palier.</p><p>Piloter le service</p><p>Chez vous, pour tout secteur</p><p>Tableau de bord, objectifs sur la dépense adressable, tâches, relance, portefeuilles, huit profils d&#x27;accès.</p><p>Profils métier, devise pivot, sans code, mise à jour sans perte, registre des injections, sécurité.</p><p>Et, sur les mêmes principes, le second module : les scorecards fournisseurs.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s5">
+                <button class="slide-img" data-i="4" aria-label="Agrandir la slide 5">
+                    <img src="/presentations/plateforme-tarifs/05.webp" alt="Slide 5 — Le moteur décide et trace, l&#x27;interface fait agir" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">05 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>Le moteur décide et trace, l&#x27;interface fait agir</p><p>Toutes les règles de gestion vivent dans le moteur. L&#x27;interface ne calcule rien : elle lit et déclenche.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s6">
+                <button class="slide-img" data-i="5" aria-label="Agrandir la slide 6">
+                    <img src="/presentations/plateforme-tarifs/06.webp" alt="Slide 6 — Le parcours d&#x27;un tarif, en cinq étapes" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">06 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>Le parcours d&#x27;un tarif, en cinq étapes</p><p>Du fichier reçu au dossier de négociation, chaque étape a son garde-fou.</p><p>Le gain principal n&#x27;est pas l&#x27;automatisation de la saisie. C&#x27;est d&#x27;entrer en négociation en sachant : quelles références augmentent, de combien, pour quel impact annuel, avec quelle cohérence interne, et sur quels marchés la demande recule.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s7">
+                <button class="slide-img" data-i="6" aria-label="Agrandir la slide 7">
+                    <img src="/presentations/plateforme-tarifs/07.webp" alt="Slide 7 — Lire tout tarif, et dire ce qu&#x27;on a compris" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">07 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>1 · LIRE SANS DEVINER</p><p>Lire tout tarif, et dire ce qu&#x27;on a compris</p><p>Le compte rendu préalable est le contrat entre le moteur et l&#x27;acheteur : rien ne se traite sans lui.</p><p>Tout format reconnu</p><p>Tarif simple · matriciel par entité · liste longue · paliers. Signature d&#x27;en-tête indépendante de l&#x27;ordre, alias en six langues, versions de gabarit. Aucun onglet perdu sans message.</p><p>La clé unique de chaque tarif</p><p>Détectée automatiquement (référence seule, référence + cote, etc.). En cas d&#x27;ambiguïté, des candidats motivés sont proposés à l&#x27;acheteur, puis la clé est mémorisée.</p><p>Compte rendu préalable</p><p>Ce que le moteur a lu : colonnes reconnues, absences, deux dates, tarifs rétroactifs, délai de prévenance. Un bloquant ne se contourne pas ; une alerte s&#x27;acquitte nommément.</p><p>Dossier de tarif : clé unique et colonnes, guidés par un fil d&#x27;étapes.</p><p>Sept modèles de fichiers prêts à envoyer au fournisseur, chacun avec son mode d&#x27;emploi colonne par colonne.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s8">
+                <button class="slide-img" data-i="7" aria-label="Agrandir la slide 8">
+                    <img src="/presentations/plateforme-tarifs/08.webp" alt="Slide 8 — Ce que l&#x27;outil refuse de deviner" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">08 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>1 · LIRE SANS DEVINER</p><p>Ce que l&#x27;outil refuse de deviner</p><p>Une question fermée, deux lectures chiffrées, et aucune option pré-cochée.</p><p>BASE DE PRIX · BLOQUANTE</p><p>Ce fichier porte la lettre M en base de prix. Faut-il lire une base de 1, ou de 1000 ?</p><p>base 1  « 45.00 » vaut 45,00 €<br>base 1000  « 45.00 » vaut 0,045 €</p><p>Aucune option n&#x27;est pré-cochée</p><p>Le bouton reste inactif tant qu&#x27;une réponse et une portée ne sont pas choisies.</p><p>Arbitrages de lecture : la file, la question, sa provenance.</p><p>Une réponse mémorisée, annulable</p><p>Un concurrent qui devine a raison neuf fois sur dix. La dixième coûte plus cher que les neuf autres n&#x27;ont rapporté.</p><p>Ce dépôt seulement, ou tous les tarifs du fournisseur : la portée se choisit avant de répondre.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s9">
+                <button class="slide-img" data-i="8" aria-label="Agrandir la slide 9">
+                    <img src="/presentations/plateforme-tarifs/09.webp" alt="Slide 9 — Rattacher aux références ERP, sans deviner" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">09 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>1 · LIRE SANS DEVINER</p><p>Rattacher aux références ERP, sans deviner</p><p>Cascade déterministe. L&#x27;humain n&#x27;intervient que là où la machine doute, et sa décision est mémorisée.</p><p>File triée par enjeu</p><p>Volume × écart : l&#x27;acheteur commence par ce qui pèse. Candidats motivés, score affiché.</p><p>Au clavier, annulable</p><p>J / K pour naviguer, V pour valider, R pour rejeter. Chaque décision s&#x27;annule et reste signée.</p><p>Masque de référence</p><p>Un DSL lisible par fournisseur répare les références abîmées, avec score ; sinon arbitrage.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s10">
+                <button class="slide-img" data-i="9" aria-label="Agrandir la slide 10">
+                    <img src="/presentations/plateforme-tarifs/10.webp" alt="Slide 10 — Prix comparables : devises, unités, dates" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">10 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>1 · LIRE SANS DEVINER</p><p>Prix comparables : devises, unités, dates</p><p>Devise, unité, date : sinon la ligne reste « non comparable », avec son motif.</p><p>Devises</p><p>Taux BCE de la date d&#x27;application par défaut. Cinq règles au choix : date d&#x27;application, date d&#x27;émission, taux contractuel avec écart au marché, taux budgétaire, moyenne de période. Réglable par fournisseur ou par entité.</p><p>Unités et dimensions</p><p>Pièce, mètre, m², kilo, litre, rouleau, jumbo, carton, palette. Les cotes sont lues dans les désignations quand elles manquent, avec leur provenance et leur niveau de confiance. Ambiguïté irréconciliable = refus, pas approximation.</p><p>Deux dates par tarif</p><p>La cote lue dans la désignation est surlignée, avec son niveau de confiance.</p><p>Date d&#x27;émission et date de mise en application. La seconde pilote le change, la comparaison et les alertes ; la première mesure le délai de prévenance et détecte les tarifs rétroactifs. Jamais inventée.</p><p>Un chiffre sans provenance ne se négocie pas : l&#x27;acheteur voit d&#x27;où vient chaque cote avant de la porter en négociation.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s11">
+                <button class="slide-img" data-i="10" aria-label="Agrandir la slide 11">
+                    <img src="/presentations/plateforme-tarifs/11.webp" alt="Slide 11 — Le prix rendu, comparable entre sites et fournisseurs" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">11 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>1 · LIRE SANS DEVINER</p><p>Le prix rendu, comparable entre sites et fournisseurs</p><p>HT ou TTC, remise par pays, Incoterm, frais d&#x27;approche, base de prix : tout est déclaré, rien n&#x27;est supposé.</p><p>HT ou TTC, explicite</p><p>Classes ABC</p><p>Une analyse HT contre TTC est refusée. Aucun taux de TVA n&#x27;est supposé.</p><p>Calculées sur la dépense connue. Une dépense inconnue ne reçoit aucune classe, jamais « C » par défaut.</p><p>Remises par pays et par entité</p><p>Incoterm et frais d&#x27;approche</p><p>La grille s&#x27;applique au périmètre déclaré. Un périmètre inconnu donne un prix net vide, avec son motif.</p><p>Le prix rendu s&#x27;obtient par déclaration. Sans déclaration, le résultat est strictement inchangé.</p><p>Base de prix : l&#x27;unité, 100, 1 000</p><p>Surface ou volume vers masse</p><p>Cascade : gabarit, en-tête, cohérence N-1 / N, sinon question. Une base qui change entre deux versions bloque le traitement.</p><p>Par grammage ou densité quand la donnée est connue. Sinon la ligne reste non comparable, avec son motif.</p><p>Fin de validité du tarif : lue quand elle est claire, vide quand elle est ambiguë. Un tarif sans fin déclarée n&#x27;est jamais « en vigueur » par défaut.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s12">
+                <button class="slide-img" data-i="11" aria-label="Agrandir la slide 12">
+                    <img src="/presentations/plateforme-tarifs/12.webp" alt="Slide 12 — Neuf pièges de lecture, attrapés" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">12 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>1 · LIRE SANS DEVINER</p><p>Neuf pièges de lecture, attrapés</p><p>Défauts réels, trouvés en rejouant un corpus de tarifs. Chacun était silencieux : aucun message d&#x27;erreur.</p><p>Ce que le fichier écrit | Ce que le moteur en faisait, sans un mot | L&#x27;écart produit<br>« 1 inch x 36 yards » | yard et pied inconnus, le pouce appliqué aux deux cotes | 0,91 m au lieu de 32,92 m<br>« Article A-001 » | le nom du fabricant lu comme une longueur, et retenue | une cote inventée, non signalée<br>« SEK 1 234,56 » | couronne, zloty, yuan absents de la lecture des nombres | la ligne perdue<br>« Prix pour 1000 » en en-tête | pris pour la colonne qui déclare la base | la colonne des prix disparaît<br>« Preis pro 1000 », « por millar » | base de prix non lue hors du français et de l&#x27;anglais | prix cent à mille fois trop bas<br>« 1.23.4 » | groupement incohérent accepté sans un mot | lu 1234 : un prix inventé<br>« 04/01/2026 » | tranché sans regarder le pays du fournisseur | trois mois d&#x27;écart sur la date<br>PZ, PZA, CTN, COIL, JUM… | quatorze codes d&#x27;unité absents de la table | tarif italien ou espagnol refusé<br>Une variation en quarantaine | réapparue dans le classement d&#x27;impact du classeur | 500 € devenus 99 500 €</p><p>Ce ne sont pas les défauts d&#x27;un logiciel mal fait : ce sont les pièges que tout tarif tend. Ici, ils sont nommés, chiffrés, et un test empêche chacun de revenir.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s13">
+                <button class="slide-img" data-i="12" aria-label="Agrandir la slide 13">
+                    <img src="/presentations/plateforme-tarifs/13.webp" alt="Slide 13 — La vie d&#x27;un article, d&#x27;un tarif à l&#x27;autre" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">13 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>2 · ANALYSER ET NÉGOCIER</p><p>La vie d&#x27;un article, d&#x27;un tarif à l&#x27;autre</p><p>Ce que l&#x27;outil voit sur une seule référence, et ce qu&#x27;il en fait à chaque étape.</p><p>Chronologie unifiée par référence : tarifs et jalons, prix spéciaux, prix d&#x27;achat et commandes de l&#x27;ERP sur la même ligne du temps. Chaque date dit d&#x27;où elle vient (application, effet ERP, constat). Un prix passé au millimètre n&#x27;a pas baissé, un changement de devise n&#x27;est pas une hausse.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s14">
+                <button class="slide-img" data-i="13" aria-label="Agrandir la slide 14">
+                    <img src="/presentations/plateforme-tarifs/14.webp" alt="Slide 14 — Combien augmente-t-il, vraiment ?" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">14 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>2 · ANALYSER ET NÉGOCIER</p><p>Combien augmente-t-il, vraiment ?</p><p>L&#x27;analyse N-1 / N sur vos volumes réels, pas sur la moyenne annoncée.</p><p>Hausse pondérée par les volumes et moyenne simple à côté : le fournisseur cite l&#x27;une, vous payez l&#x27;autre.<br>Impact annualisé en euros par référence, entité, famille. Sans volume connu : vide, jamais zéro.<br>Pareto : quelques références font l&#x27;essentiel de la hausse, on sait par où commencer.<br>Dispersion entre sites : le même article payé différemment selon l&#x27;entité, levier de convergence.<br>Quarantaine : variations aberrantes et unités irréconciliables isolées, jamais noyées dans la moyenne.<br>Écart avec le prix d&#x27;achat ERP : le tarif négocié est-il celui qu&#x27;on paie ? Alerte « tarif non appliqué » avec retard en jours.</p><p>Analyse des variations : pondérée et simple côte à côte, Pareto, retour à la cellule d&#x27;origine.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s15">
+                <button class="slide-img" data-i="14" aria-label="Agrandir la slide 15">
+                    <img src="/presentations/plateforme-tarifs/15.webp" alt="Slide 15 — A-t-il monté son tarif, ou baissé ma remise ?" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">15 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>2 · ANALYSER ET NÉGOCIER</p><p>A-t-il monté son tarif, ou baissé ma remise ?</p><p>Prix tarif, remise et prix net sont trois notions distinctes. L&#x27;outil décompose l&#x27;écart sans reste.</p><p>prix net = prix tarif × (1 − remise)</p><p>effet tarif = (T₁ − T₀) × (1 − r₀)<br>ce que la hausse de tarif coûte, à remise inchangée<br>effet remise = − T₁ × (r₁ − r₀)<br>ce que le changement de remise rend, ou reprend<br>effet tarif + effet remise ≡ écart net</p><p>Grille de remises</p><p>Trois montages lus</p><p>Par famille ou par article, l&#x27;article l&#x27;emporte. Versionnée, simulation obligatoire, annulable.</p><p>Prix nets seuls, tarif + grille, ou les deux : l&#x27;écart implicite est signalé, jamais corrigé.</p><p>Remises et familles : poids de chaque famille dans la dépense réelle, effet tarif et effet remise séparés.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s16">
+                <button class="slide-img" data-i="15" aria-label="Agrandir la slide 16">
+                    <img src="/presentations/plateforme-tarifs/16.webp" alt="Slide 16 — La hausse est-elle justifiée, et où en est-on ?" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">16 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>2 · ANALYSER ET NÉGOCIER</p><p>La hausse est-elle justifiée, et où en est-on ?</p><p>Indices matière d&#x27;un côté, jalons de la négociation de l&#x27;autre : deux faits que le fournisseur ne peut pas contester.</p><p>INDICES MATIÈRE ET FORMULES D&#x27;INDEXATION</p><p>CYCLE DE VIE DU TARIF</p><p>Annonce</p><p>Contre-proposition</p><p>Acceptation</p><p>Refus</p><p>Déposez vos indices (un fichier CSV) et une formule d&#x27;indexation par famille ou par article. Le moteur calcule la hausse théorique que l&#x27;indice justifie et la met en face de la hausse demandée.</p><p>Trois délais mesurés</p><p>Négociation, application, mise à jour ERP. Un délai dont il manque un jalon reste vide.</p><p>hausse justifiée = formule(indices à la date)<br>l&#x27;écart = hausse demandée − hausse justifiée</p><p>Tâche « acceptation manquante »</p><p>Un tarif appliqué sans jalon d&#x27;acceptation crée une tâche déduite ; elle disparaît quand le jalon existe.</p><p>C&#x27;est l&#x27;argument : « votre matière a pris tant, vous demandez tant de plus ». Une valeur d&#x27;indice manquante donne un vide motivé, jamais 0. Aucun accès réseau : l&#x27;indice est celui que vous déposez.</p><p>Ce que l&#x27;outil refuse</p><p>Accepter un fichier qui porte une contre-proposition encore active. Chaque jalon est daté, signé, annulable.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s17">
+                <button class="slide-img" data-i="16" aria-label="Agrandir la slide 17">
+                    <img src="/presentations/plateforme-tarifs/17.webp" alt="Slide 17 — Le fournisseur respecte-t-il le plafond ?" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">17 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>2 · ANALYSER ET NÉGOCIER</p><p>Le fournisseur respecte-t-il le plafond ?</p><p>Les engagements pris pour un client final deviennent un plafond de hausse opposable, calculé et non estimé.</p><p>Engagement au client final</p><p>Versionné, jamais écrasé. Validité, entité, mode de report. Chevauchements bloquants, échéances suivies.</p><p>Trois modes de report</p><p>Remise en pourcentage, écart en valeur, ou prix gelé. Tolérance configurable. Le plafond se déduit du tarif N-1 et du contrat.</p><p>Verdict opposable</p><p>Dépassement chiffré à l&#x27;unité, en pourcentage, annualisé sur le volume 12 mois du client, avec une phrase de négociation prête. Refusé plutôt que faux si le tarif de référence ou l&#x27;unité change.</p><p>Prix spéciaux : engagements, échéances, verdict de plafond, phrase de négociation.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s18">
+                <button class="slide-img" data-i="17" aria-label="Agrandir la slide 18">
+                    <img src="/presentations/plateforme-tarifs/18.webp" alt="Slide 18 — Une hausse sur un marché qui recule ?" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">18 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>2 · ANALYSER ET NÉGOCIER</p><p>Une hausse sur un marché qui recule ?</p><p>L&#x27;argument de négociation le plus direct, construit à partir des ventes ERP article × client × mois.</p><p>Marché en repli</p><p>Décrochage marqué</p><p>volumes ou chiffre d&#x27;affaires en baisse tendancielle sur la fenêtre</p><p>chute nette d&#x27;un mois à l&#x27;autre, au-delà du bruit habituel</p><p>Client perdu</p><p>Référence en extinction</p><p>un client final qui n&#x27;achète plus la référence</p><p>ventes qui s&#x27;éteignent progressivement</p><p>Prix spécial sans contrepartie</p><p>Hausse sur marché en repli</p><p>engagement accordé, volumes promis non tenus</p><p>le fournisseur augmente là où votre demande recule</p><p>Toutes bornées par un seuil plancher de significativité : sans volume de référence suffisant, aucune alerte n&#x27;est levée. Concentration client, marge avant et après hausse, tendances sur 24 mois glissants. Chaque alerte s&#x27;acquitte nommément.</p><p>Ventes et marchés : volumes, chiffre d&#x27;affaires, marge, alertes acquittables.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s19">
+                <button class="slide-img" data-i="18" aria-label="Agrandir la slide 19">
+                    <img src="/presentations/plateforme-tarifs/19.webp" alt="Slide 19 — Qui, dans le groupe, achète ceci, et à quel prix ?" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">19 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>2 · ANALYSER ET NÉGOCIER</p><p>Qui, dans le groupe, achète ceci, et à quel prix ?</p><p>Comparer des articles identiques, jamais « équivalents ». L&#x27;outil ne décide pas qu&#x27;un article en vaut un autre.</p><p>Comparaison entre fournisseurs</p><p>QUATRE RÈGLES QUI TIENNENT</p><p>Même unité, mêmes cotes connues avec les mêmes valeurs, même entité, même palier. Le meilleur prix est mis en évidence, les autres portent leur rang et leur écart. Les lignes non comparées disent pourquoi.</p><p>Un rang n&#x27;est calculé qu&#x27;entre lignes de la même unité, avec au moins deux prix, sans mêler HT et TTC. Sinon la case reste vide et la colonne « Pourquoi » l&#x27;explique.<br>Une ligne sans prix n&#x27;est jamais la meilleure.<br>Un prix spécial est un engagement envers un client final : signalé, jamais classé, jamais proposé à une autre entité.<br>Le nom du client final n&#x27;existe que pour les profils commerciaux, ni à l&#x27;écran ni dans l&#x27;extraction pour les autres.</p><p>Meilleur prix groupe</p><p>Trois façons de chercher : référence maître, référence fournisseur, ou caractéristiques identiques (au moins deux cotes, exactement). Prix net normalisé, taux et date, présence d&#x27;un prix spécial.</p><p>Marge répercutée</p><p>Sur le prix de vente réellement observé, selon la répercussion déclarée. Jamais additionnée au gain d&#x27;achat, aucun paramètre par défaut.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s20">
+                <button class="slide-img" data-i="19" aria-label="Agrandir la slide 20">
+                    <img src="/presentations/plateforme-tarifs/20.webp" alt="Slide 20 — Le dossier de négociation, en un clic" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">20 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>2 · ANALYSER ET NÉGOCIER</p><p>Le dossier de négociation, en un clic</p><p>Trois pièces, trois lecteurs, produites en un clic depuis l&#x27;écran du tarif. Une donnée absente s&#x27;affiche « — » avec son motif.</p><p>Bilan de négociation</p><p>Support d&#x27;analyse</p><p>Demande de reprise</p><p>Pour l&#x27;acheteur, en interne · PDF et Word</p><p>Pour l&#x27;acheteur, pendant l&#x27;entretien · Excel</p><p>Pour le fournisseur · PDF et Word · FR, EN, DE</p><p>Tout ce que le moteur sait du tarif, ordonné pour préparer l&#x27;entretien : hausse pondérée, effet remise, plafonds, marchés, application ERP, économies.</p><p>Le détail chiffré, filtrable, avec la provenance de chaque valeur. Sept onglets : synthèse, variations, anomalies, dispersion, familles, application ERP, prix spéciaux.</p><p>Ce qu&#x27;il doit corriger ou compléter, et pourquoi, sans commentaire commercial. Non produite si le tarif est propre. Refusée plutôt que livrée à moitié traduite.</p><p>Produit depuis l&#x27;écran</p><p>Des arguments, chacun sourcé</p><p>Mémo d&#x27;une page et relance</p><p>Un clic dans le dossier du tarif : formats au choix, fichiers datés et téléchargeables.</p><p>Le bilan de démonstration est passé de trois arguments à onze, dont l&#x27;écart de prix entre entités du groupe.</p><p>Les arguments et leurs sources ; les données manquantes, motivées, prêtes à envoyer.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s21">
+                <button class="slide-img" data-i="20" aria-label="Agrandir la slide 21">
+                    <img src="/presentations/plateforme-tarifs/21.webp" alt="Slide 21 — Combien ai-je réellement économisé ?" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">21 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>3 · LE NÉGOCIÉ EST-IL LE PAYÉ ?</p><p>Combien ai-je réellement économisé ?</p><p>Quatre montants qui ne se confondent jamais, reconnus par le contrôle de gestion parce que chacun a sa source.</p><p>Économies acquises</p><p>Mesurées sur les volumes réellement achetés, jamais sur les volumes prévus.</p><p>Économies conditionnelles</p><p>Adossées à un volume promis : jauge promis contre réalisé, montant à risque si l&#x27;engagement n&#x27;est pas tenu.</p><p>Écart d&#x27;application ERP</p><p>Simple retard de saisie séparé de la part réellement inexpliquée. Seule la seconde se négocie.</p><p>Prix spéciaux non déclarés</p><p>L&#x27;ERP paie durablement moins que le prix dû sans accord enregistré : écart chiffré, client final proposé si les ventes le désignent, jamais deviné. Vous déclarez, écartez ou laissez en attente.</p><p>Économies : acquises, conditionnelles avec montant à risque, écart d&#x27;application, prix spéciaux détectés.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s22">
+                <button class="slide-img" data-i="21" aria-label="Agrandir la slide 22">
+                    <img src="/presentations/plateforme-tarifs/22.webp" alt="Slide 22 — Un prix d&#x27;achat a-t-il bougé ? Quand, pourquoi ?" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">22 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>3 · LE NÉGOCIÉ EST-IL LE PAYÉ ?</p><p>Un prix d&#x27;achat a-t-il bougé ? Quand, pourquoi ?</p><p>Chaque synchronisation ERP est comparée à la précédente : un mouvement est daté et expliqué.</p><p>Hausse qui suit un tarif<br>avec le retard d&#x27;application mesuré en jours</p><p>Hausse anticipée<br>le prix d&#x27;achat bouge avant la date d&#x27;application</p><p>Dérive inexpliquée<br>aucun tarif ni prix spécial dans la fenêtre : à demander au fournisseur</p><p>Retrait<br>une référence disparaît du catalogue, une seule fois</p><p>Date d&#x27;effet inconnue<br>le mouvement est daté de son constat, et le dit</p><p>Les pièges refusés : un prix passé au millimètre n&#x27;a pas baissé, un changement de devise n&#x27;est pas une hausse, deux prix non comparables donnent « indéterminé », jamais « hausse ».</p><p>Historique des prix d&#x27;achat : chronologie unifiée tarif, prix spécial, prix d&#x27;achat ERP.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s23">
+                <button class="slide-img" data-i="22" aria-label="Agrandir la slide 23">
+                    <img src="/presentations/plateforme-tarifs/23.webp" alt="Slide 23 — Le prix saisi est-il le prix convenu ?" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">23 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>3 · LE NÉGOCIÉ EST-IL LE PAYÉ ?</p><p>Le prix saisi est-il le prix convenu ?</p><p>Deux contrôles sur les commandes de l&#x27;ERP : après la date d&#x27;application, puis commande par commande.</p><p>Écart de saisie</p><p>Écart d&#x27;accusé</p><p>Absence de preuve</p><p>Le prix de la commande n&#x27;est pas le prix convenu : c&#x27;est chez vous que ça se corrige.</p><p>L&#x27;accusé de réception du fournisseur confirme un autre prix : c&#x27;est chez lui.</p><p>Aucun accusé : « il existe, il n&#x27;est pas saisi » ou « il n&#x27;a pas été envoyé ». La réponse est l&#x27;information ; rien n&#x27;est présélectionné.</p><p>Trois écarts distincts, parce que les confondre fait accuser la mauvaise personne.</p><p>Dérives</p><p>Couverture des accusés</p><p>Profil Finance</p><p>Ce qui passe sous le seuil d&#x27;alerte mais se répète : occurrences, montant cumulé, période. Une dérive ne s&#x27;acquitte pas : elle se clôt quand les écarts cessent.</p><p>Un indicateur rappelle sur quelle part des commandes le contrôle porte réellement. À 30 % de couverture, il ne vaut que pour un tiers d&#x27;entre elles.</p><p>La comptabilité fournisseurs subit la première un prix mal appliqué : elle lit alertes, dérives et demandes d&#x27;accusé, extrait les listes, n&#x27;acquitte rien.</p><p>Refusé plutôt que faux : comparer des prix non comparables (base, unité ou devise non établies), comparer à un tarif postérieur à l&#x27;événement, ou transformer une absence de prix en écart de zéro.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s24">
+                <button class="slide-img" data-i="23" aria-label="Agrandir la slide 24">
+                    <img src="/presentations/plateforme-tarifs/24.webp" alt="Slide 24 — Acheter avant la hausse — jusqu&#x27;où" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">24 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>4 · ACHETER AU BON MOMENT</p><p>Acheter avant la hausse — jusqu&#x27;où</p><p>La question n&#x27;est pas s&#x27;il faut anticiper. Le stock se paie : place, trésorerie, péremption.</p><p>couverture optimale =<br>hausse en % ÷ taux de possession mensuel</p><p>QUATRE PLAFONDS — LE PLUS BAS GAGNE</p><p>Durée de vie</p><p>au-delà, on achète du rebut</p><p>Hausse de 5 %, possession 18 % par an, soit 1,5 % par mois : 3,3 mois de couverture.<br>Le bénéfice réel vaut la moitié de ce qu&#x27;un calcul naïf annonce : l&#x27;autre moitié part en coût de détention.</p><p>Provision comptable</p><p>au-delà du seuil de rotation, le stock est déprécié</p><p>Délai de livraison</p><p>livré après la date d&#x27;application : nouveau prix</p><p>Ce que le moteur refuse de calculer</p><p>Capacité de stockage</p><p>Sans consommation connue, sans taux de possession administré, sur une hausse encore en arbitrage ou sur une ligne en quarantaine : aucune recommandation, et le motif est écrit.</p><p>par entité, quand elle est déclarée</p><p>Le modèle vient de la recherche opérationnelle : Tersine et Grasso (1978) ; Taleizadeh et Pentico (2013), qui démontrent qu&#x27;un optimum unique existe.</p><p>Chaque plafond appliqué est nommé dans le résultat : l&#x27;acheteur sait ce qui a limité la quantité.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s25">
+                <button class="slide-img" data-i="24" aria-label="Agrandir la slide 25">
+                    <img src="/presentations/plateforme-tarifs/25.webp" alt="Slide 25 — Le stock que vous avez, celui qui périme, ce qu&#x27;il coûte" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">25 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>4 · ACHETER AU BON MOMENT</p><p>Le stock que vous avez, celui qui périme, ce qu&#x27;il coûte</p><p>Stock, lots et rebuts relevés à chaque synchronisation ERP. Un stock inconnu n&#x27;est jamais compté pour zéro.</p><p>Stock déduit, ou non</p><p>Couverture et exposition</p><p>Quantité, date de relevé, et ce que l&#x27;outil en a fait. Non déduit si le relevé est trop ancien, l&#x27;unité incompatible, le stock négatif : la quantité recommandée reste alors un maximum, et le dit.</p><p>Combien de mois le stock couvre, et ce qui est exposé à la hausse. Un constat, jamais une projection.</p><p>Lots et péremption</p><p>Pertes par péremption</p><p>Stock par lot, premier périmé premier sorti, stock à risque de péremption avec trois pistes chiffrées. Un stock non daté est montré, pas déduit.</p><p>La valeur jetée sur douze mois, d&#x27;après les rebuts de l&#x27;ERP. Affichée à côté de l&#x27;économie, jamais soustraite. Une entité sans données est « non suivie », pas « sans perte ».</p><p>Volumétrie par palier</p><p>Enveloppe et capacité globales</p><p>Conseil de quantité et remise par quantité, palier par palier. Refus motivé si une donnée manque, jamais un zéro.</p><p>Une enveloppe de trésorerie et une capacité de stockage pour l&#x27;ensemble : une recommandation qui ne tient pas est exclue, jamais réduite en silence.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s26">
+                <button class="slide-img" data-i="25" aria-label="Agrandir la slide 26">
+                    <img src="/presentations/plateforme-tarifs/26.webp" alt="Slide 26 — Pensée pour l&#x27;acheteur, pas pour l&#x27;informaticien" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">26 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>5 · PILOTER LE SERVICE</p><p>Pensée pour l&#x27;acheteur, pas pour l&#x27;informaticien</p><p>Une boîte de réception triée par enjeu, un dossier par tarif, un arbitrage au clavier, un clic qui remonte à la source.</p><p>Portefeuille : chaque ligne porte l&#x27;action attendue, triée par enjeu.</p><p>Arbitrage : candidats motivés, touches J / K / V / R, annulation.</p><p>Boîte de réception</p><p>Clavier J / K / V / R</p><p>Tout est annulable</p><p>Clic vers la cellule</p><p>Huit profils</p><p>Sept entrées de navigation, affichage adaptatif, mode sombre, accessibilité AA. La décision reste toujours tracée au nom de celui qui l&#x27;a prise.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s27">
+                <button class="slide-img" data-i="26" aria-label="Agrandir la slide 27">
+                    <img src="/presentations/plateforme-tarifs/27.webp" alt="Slide 27 — Piloter le service, pas seulement les tarifs" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">27 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>5 · PILOTER LE SERVICE</p><p>Piloter le service, pas seulement les tarifs</p><p>Premier écran d&#x27;un acheteur : où j&#x27;en suis sur mon objectif, où passe mon temps, ce qui vient d&#x27;arriver.</p><p>Objectif ventilé sur la dépense adressable</p><p>Fournisseur par fournisseur. Les exclus (contrat pluriannuel, monopole) gardent leur motif ; une ventilation qui ne fait pas le total est refusée. « Aucun objectif » n&#x27;est pas un objectif à zéro.</p><p>Les deux axes du 80/20</p><p>L&#x27;enjeu dit où est l&#x27;argent, la charge dit où passe le temps. « Fort enjeu, faible charge » est l&#x27;angle mort ; « faible enjeu, forte charge » est le piège qui remplit une journée sans que la dépense bouge.</p><p>Mesuré sur ce que le moteur sait défendre</p><p>Économies acquises et conditionnelles, hausses pondérées, écarts d&#x27;application. Aucun indicateur maison. La Direction voit le même écran consolidé sur tout le service.</p><p>Tableau de bord : objectif, réalisé, part conditionnelle, dépense du périmètre, deux axes du 80/20.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s28">
+                <button class="slide-img" data-i="27" aria-label="Agrandir la slide 28">
+                    <img src="/presentations/plateforme-tarifs/28.webp" alt="Slide 28 — Au quotidien : tâches, relance, portefeuilles, comptes" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">28 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>5 · PILOTER LE SERVICE</p><p>Au quotidien : tâches, relance, portefeuilles, comptes</p><p>Ce qui attend, dans l&#x27;ordre de ce que ça pèse. Rien ne disparaît parce qu&#x27;on l&#x27;a coché.</p><p>Mes tâches : déduites, ou saisies.</p><p>Relance : données manquantes, par enjeu.</p><p>Portefeuilles : un fournisseur, un référent.</p><p>Une tâche déduite ne se coche pas</p><p>Relance chiffrée</p><p>Comptes jamais supprimés</p><p>Elle disparaît quand le fait qui la crée disparaît : on ne fait pas disparaître un arbitrage autrement qu&#x27;en arbitrant.</p><p>Pour chaque donnée manquante, ce qu&#x27;elle débloquerait en euros. Un texte prêt à coller ; rien ne part de l&#x27;outil.</p><p>Désactivé, daté, signé ; journal sans mot de passe. Le droit « données commerciales » s&#x27;active par profil, avec motif obligatoire.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s29">
+                <button class="slide-img" data-i="28" aria-label="Agrandir la slide 29">
+                    <img src="/presentations/plateforme-tarifs/29.webp" alt="Slide 29 — Huit profils : chacun voit ce qui le regarde" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">29 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>5 · PILOTER LE SERVICE</p><p>Huit profils : chacun voit ce qui le regarde</p><p>Contrôles côté serveur. Chaque export ne contient que les colonnes autorisées au profil, et le nombre de lignes est plafonné.</p><p>Profil | Agit | Commercial | Prix d&#x27;achat | Ce qui le distingue<br>Acheteur | oui | non | oui | Tableau de bord, tâches, portefeuille, arbitrage, analyse, remises, prix spéciaux, économies<br>Responsable achats | oui | non | oui | Comme l&#x27;acheteur, plus les portefeuilles et les objectifs de son équipe<br>Approvisionneur | non | non | oui | Quel prix s&#x27;applique aujourd&#x27;hui, liens, références, meilleur prix<br>Référent données | oui | non | oui | Gabarits, clés, références, règles de conversion, injections<br>Direction Achats | consultation | oui | oui | Pilotage consolidé ; seul profil métier à voir ventes, clients et marges<br>Finance / comptabilité | non | non | oui | Contrôle des prix, historique des prix d&#x27;achat, tarifs reçus ; extrait, n&#x27;acquitte rien<br>Data architecte | oui | non | non | Sources Power BI et Snowflake, références, pilotage, administration<br>Administrateur | oui | oui | oui | Tous les onglets, comptes, droits par profil, relance fournisseur</p><p>Journal d&#x27;accès persistant. Le refus d&#x27;accès est éprouvé en forgeant l&#x27;appel depuis un navigateur, hors de l&#x27;écran : un bouton grisé n&#x27;est pas une sécurité, le moteur refuse l&#x27;appel.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s30">
+                <button class="slide-img" data-i="29" aria-label="Agrandir la slide 30">
+                    <img src="/presentations/plateforme-tarifs/30.webp" alt="Slide 30 — Nouveau fournisseur, nouvel ERP : sans code" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">30 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>6 · CHEZ VOUS, POUR TOUT SECTEUR</p><p>Nouveau fournisseur, nouvel ERP : sans code</p><p>Un fichier témoin suffit pour proposer un gabarit ; un bloc de configuration suffit pour lire un ERP.</p><p>Gabarits, alias de colonnes, valeurs d&#x27;absence, unités, règles de change, seuils, règles de rattachement, entités et connecteurs, sources Power BI et Snowflake : tout est un fichier de configuration versionné, lisible par le référent données.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s31">
+                <button class="slide-img" data-i="30" aria-label="Agrandir la slide 31">
+                    <img src="/presentations/plateforme-tarifs/31.webp" alt="Slide 31 — Pour tout secteur d&#x27;achats directs, dans votre devise" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">31 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>6 · CHEZ VOUS, POUR TOUT SECTEUR</p><p>Pour tout secteur d&#x27;achats directs, dans votre devise</p><p>Ce que le secteur décide est un profil en configuration ; ce que le groupe décide est un réglage. Le moteur ne change pas.</p><p>Profil métier en configuration</p><p>Unités, lecture des cotes, libellés : profil « générique » ou « industriel ». Une nouveauté sectorielle se déclare dans un profil, pas dans le moteur.</p><p>Devise pivot au choix</p><p>Euro par défaut ; sinon taux croisé sur les séries BCE datées, sur toute la chaîne de comparaison.</p><p>Fichiers lus en six langues</p><p>Même interface au bureau, en mode sombre, sur le téléphone : la démonstration tourne sur des sites fictifs et deux profils métier.</p><p>Alias de colonnes FR, EN, DE, PL, IT, ES ; dates en toutes lettres et trimestres ; gallon US ou impérial, « M » pour mille.</p><p>Vos réglages, à part du produit</p><p>Le moteur ne contient rien de sectoriel : ce qui change d&#x27;un secteur à l&#x27;autre est une donnée, pas du code.</p><p>Seuils, gabarits validés, connecteur ERP : une mise à jour ne les écrase jamais. Un contrôle liste ce qui ne serait plus reconnu.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s32">
+                <button class="slide-img" data-i="31" aria-label="Agrandir la slide 32">
+                    <img src="/presentations/plateforme-tarifs/32.webp" alt="Slide 32 — Une mise à jour ne fait jamais perdre une donnée" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">32 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>6 · CHEZ VOUS, POUR TOUT SECTEUR</p><p>Une mise à jour ne fait jamais perdre une donnée</p><p>Essai sur une copie, sauvegarde vérifiée, retour arrière automatique. Le client décide du moment ; il n&#x27;y a pas de mise à jour automatique.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s33">
+                <button class="slide-img" data-i="32" aria-label="Agrandir la slide 33">
+                    <img src="/presentations/plateforme-tarifs/33.webp" alt="Slide 33 — Retrouver une erreur, l&#x27;annuler, sans rien supprimer" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">33 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>6 · CHEZ VOUS, POUR TOUT SECTEUR</p><p>Retrouver une erreur, l&#x27;annuler, sans rien supprimer</p><p>Le registre des injections, la sauvegarde vérifiée et la surcouche client : ce que l&#x27;exploitant retient.</p><p>Registre des injections</p><p>Sauvegarde vérifiée</p><p>Tout chargement est tracé : un tarif déposé, une synchronisation ERP, des taux, des indices, une décision. Retrouver le moment, la zone touchée et ce qui en dépend ; simuler, puis annuler avec un motif. Une décision humaine postérieure n&#x27;est jamais défaite en silence.</p><p>Copie cohérente, manifeste, vérifiée en la rouvrant ; journal d&#x27;événements hors base. Une corruption détectée met la base en quarantaine et restaure la dernière sauvegarde saine : aucune base n&#x27;est jamais supprimée.</p><p>Surcouche client</p><p>Jamais de copie du produit</p><p>Un seul produit pour tous les clients, une surcouche par client jamais écrasée : ses seuils, ses gabarits, ses extensions (connecteur ERP, écran sur mesure), ses fonctionnalités activées, sa recette rejouée avant chaque livraison.</p><p>Un fork rend les mises à jour impossibles. Ce qui est général rejoint le produit, derrière un réglage ; ce qui est propre au client reste dans sa surcouche. Une mise à jour ne remplace que le produit.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s34">
+                <button class="slide-img" data-i="33" aria-label="Agrandir la slide 34">
+                    <img src="/presentations/plateforme-tarifs/34.webp" alt="Slide 34 — Ce que l&#x27;informatique et l&#x27;audit retiennent" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">34 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>6 · CHEZ VOUS, POUR TOUT SECTEUR</p><p>Ce que l&#x27;informatique et l&#x27;audit retiennent</p><p>Sobre à héberger, impossible à contourner, vérifiable ligne par ligne.</p><p>Intégralement local</p><p>Lecture seule garantie</p><p>Secrets jamais en fichier</p><p>Aucune donnée tarifaire ne quitte l&#x27;entreprise. Le seul flux sortant est le téléchargement des taux BCE, remplaçable par un dépôt manuel. Python et DuckDB, R/Shiny : aucune licence logicielle.</p><p>Les connecteurs ERP, Power BI et Snowflake n&#x27;ont aucune méthode d&#x27;écriture. Toute requête autre qu&#x27;une lecture est refusée avant exécution.</p><p>Variables d&#x27;environnement, trousseau système ou coffre d&#x27;entreprise. Toute trace passe par un masquage testé.</p><p>Journal et traçabilité</p><p>Rejouable à l&#x27;identique</p><p>Intégration continue</p><p>Chaque action et chaque accès sont journalisés avec leur auteur. Chaque exigence du cahier des charges est reliée à son module et à son test. Contrat d&#x27;interface versionné.</p><p>Brut immuable, versions successives, tarif en vigueur à une date. Une analyse passée se reproduit octet pour octet.</p><p>Moteur, interface et scorecards rejoués à chaque modification, plus un banc de recette sur des corpus de tarifs extérieurs. Près de trois mille tests automatisés.</p><p>Création de comptes depuis l&#x27;interface, les règles sont arrêtées : nul ne crée un compte plus puissant que le sien, aucun mot de passe n&#x27;est choisi par le créateur, aucun compte n&#x27;est supprimé — désactivé, daté, signé.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s35">
+                <button class="slide-img" data-i="34" aria-label="Agrandir la slide 35">
+                    <img src="/presentations/plateforme-tarifs/35.webp" alt="Slide 35 — Ce qui la distingue" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">35 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>Ce qui la distingue</p><p>Le tableur fait le calcul. Le module ERP enregistre le prix. La plateforme prépare la négociation.</p><p> | Tableur partagé | Module prix d&#x27;un ERP | Plateforme tarifs<br>Formats de tarifs | Un modèle par fournisseur, à la main | Un format imposé au fournisseur | Tout format, gabarit mémorisé<br>Références | Recopie, VLOOKUP fragile | Celles de cet ERP seulement | Cascade vers tous les ERP du groupe, arbitrage mémorisé<br>Absence de donnée | Devient un zéro | Devient un zéro ou une erreur | Reste absente, avec son motif<br>Hausse | Moyenne simple | Écart unitaire | Pondérée volumes, effet tarif / effet remise, plafond client<br>Prix payé vs tarif | Non suivi | Non rapproché | Retard d&#x27;application, dérive inexpliquée, prix spécial non déclaré<br>Marchés | Non | Non | Ventes 24 mois : hausse sur marché en repli<br>Preuve | Aucune | Journal technique | Chaque chiffre remonte à sa cellule ; rejouable<br>Stock et anticipation | Non | Stock brut | Jusqu&#x27;où acheter avant la hausse, sous plafonds nommés ; pertes à côté<br>Pilotage du service | Un fichier par acheteur | Non | Objectifs sur la dépense adressable, 80/20 enjeu × charge, tâches déduites<br>Ajouter un fournisseur | Un nouveau classeur | Un projet informatique | Un fichier témoin et une validation</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s36">
+                <button class="slide-img" data-i="35" aria-label="Agrandir la slide 36">
+                    <img src="/presentations/plateforme-tarifs/36.webp" alt="Slide 36 — Le second module : les scorecards fournisseurs" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">36 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>Le second module : les scorecards fournisseurs</p><p>Mêmes principes pour l&#x27;évaluation trimestrielle : source unique, contrôles avant diffusion, absence jamais confondue avec zéro.</p><p>Une seule requête source</p><p>Contrôles avant diffusion</p><p>Absence ≠ zéro</p><p>Une seule extraction Power BI par campagne alimente toutes les scorecards et le tableau consolidé. Rejouable à l&#x27;identique.</p><p>Bornes, doublons, cohérence entre mesures. Une donnée douteuse bloque le fournisseur concerné, pas toute la campagne.</p><p>Un trimestre sans réception affiche un taux de service vide, jamais 0 %.</p><p>Note RSE calculée</p><p>Gabarit officiel préservé</p><p>L&#x27;acheteur garde la main</p><p>Grille pondérée et référentiel daté : une note passée ne change pas quand le référentiel évolue.</p><p>Excel et PDF générés dans le gabarit du groupe, tableau consolidé régénéré.</p><p>Suggestions argumentées pour les appréciations, brouillon de commentaire. La note reste décidée par l&#x27;acheteur.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s37">
+                <button class="slide-img" data-i="36" aria-label="Agrandir la slide 37">
+                    <img src="/presentations/plateforme-tarifs/37.webp" alt="Slide 37 — Ce qui est spécifié, pas encore livré" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">37 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>Ce qui est spécifié, pas encore livré</p><p>Une plaquette ne promet que ce qui existe. Ces briques sont cadrées dans le backlog, décrites pour être chiffrées.</p><p>Déploiement conteneurisé multi-utilisateurs</p><p>Connexion par l&#x27;annuaire d&#x27;entreprise</p><p>Architecture cible et plan de fiabilité écrits ; la conteneurisation reste à faire.</p><p>Architecture arrêtée : identité portée par le reverse-proxy ; à son branchement, la création de comptes disparaît.</p><p>Fichier de mise à jour des prix vers l&#x27;ERP</p><p>Fiche fournisseur</p><p>Le classement des lignes (sûre, identique, à créer…) existe en lecture seule ; le fichier d&#x27;import reste à produire.</p><p>Conditions de paiement, acheteur groupe, type de contrat, transport, plafond légal : cadré.</p><p>Coûts de transport et règles intercompagnies</p><p>Interface en plusieurs langues</p><p>Barèmes au palier, poids venant du tarif ou de l&#x27;ERP, franco : décisions prises, développement à venir.</p><p>Les fichiers sont déjà lus en six langues ; la traduction de l&#x27;interface est en cours de livraison.</p><p>Personnalisation aux couleurs de l&#x27;entreprise</p><p>Tarifs en PDF, ou sur plusieurs onglets</p><p>Fond, logo, noms de menus : cadré.</p><p>Refusés aujourd&#x27;hui avec un motif explicite plutôt que traités de travers.</p><p>Un comité qui prend une plaquette en défaut sur un point ne croit plus les autres. Celle-ci ne montre que des écrans qui existent.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s38">
+                <button class="slide-img" data-i="37" aria-label="Agrandir la slide 38">
+                    <img src="/presentations/plateforme-tarifs/38.webp" alt="Slide 38 — Ce que vous gagnez n&#x27;est pas de la saisie.
+C&#x27;est une position." loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">38 / 38</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>Ce que vous gagnez n&#x27;est pas de la saisie.<br>C&#x27;est une position.</p><p>Vous savez quelles références augmentent, de combien, pour quel impact annuel sur vos volumes réels.<br>Vous savez si le fournisseur a monté son tarif ou réduit votre remise, et s&#x27;il respecte le plafond promis à votre client.<br>Vous savez si l&#x27;ERP paie le prix négocié, depuis quand, et ce qui reste inexpliqué.<br>Vous savez sur quels marchés votre demande recule, et qui, dans le groupe, achète moins cher.<br>Vous savez jusqu&#x27;où acheter avant une hausse, et ce que le stock vous coûte.<br>Vous savez où va le temps de votre service, et où est l&#x27;argent.<br>Et chaque chiffre que vous posez sur la table remonte à la cellule d&#x27;où il vient.</p><p>Prochaine étape : une démonstration sur l&#x27;un de vos tarifs réels, avec vos références ERP : le dossier de négociation sort en séance.</p></div></details></figcaption>
+            </figure></div>
+        </div>
+    </section>
+    <div class="lightbox" id="lightbox" hidden>
+        <button class="lb-close" aria-label="Fermer">✕</button>
+        <button class="lb-prev" aria-label="Slide précédente">‹</button>
+        <img id="lb-img" alt="">
+        <button class="lb-next" aria-label="Slide suivante">›</button>
+        <div class="lb-count" id="lb-count"></div>
+    </div>
+    <script>
+    (function () {
+        var n = 38, i = 0, slug = "plateforme-tarifs";
+        var lb = document.getElementById('lightbox'), img = document.getElementById('lb-img'), cnt = document.getElementById('lb-count');
+        function pad(k) { return (k < 10 ? '0' : '') + k; }
+        function show(k) {
+            i = (k + n) % n;
+            img.src = '/presentations/' + slug + '/' + pad(i + 1) + '.webp';
+            img.alt = document.querySelectorAll('.slide img')[i].alt;
+            cnt.textContent = pad(i + 1) + ' / ' + pad(n);
+            new Image().src = '/presentations/' + slug + '/' + pad(((i + 1) % n) + 1) + '.webp';
+        }
+        function open(k) { show(k); lb.hidden = false; document.body.style.overflow = 'hidden';
+            if (lb.requestFullscreen) lb.requestFullscreen().catch(function () {}); }
+        function close() { lb.hidden = true; document.body.style.overflow = '';
+            if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+            var t = document.getElementById('s' + (i + 1)); if (t) t.scrollIntoView({block: 'center'}); }
+        document.getElementById('deck-play').addEventListener('click', function () { open(0); });
+        document.querySelectorAll('.slide-img').forEach(function (b) {
+            b.addEventListener('click', function () { open(+b.dataset.i); }); });
+        lb.querySelector('.lb-close').addEventListener('click', close);
+        lb.querySelector('.lb-prev').addEventListener('click', function () { show(i - 1); });
+        lb.querySelector('.lb-next').addEventListener('click', function () { show(i + 1); });
+        document.addEventListener('fullscreenchange', function () { if (!document.fullscreenElement && !lb.hidden) close(); });
+        document.addEventListener('keydown', function (ev) {
+            if (lb.hidden) return;
+            if (ev.key === 'ArrowRight' || ev.key === ' ' || ev.key === 'PageDown') { ev.preventDefault(); show(i + 1); }
+            else if (ev.key === 'ArrowLeft' || ev.key === 'PageUp') { ev.preventDefault(); show(i - 1); }
+            else if (ev.key === 'Escape') close();
+            else if (ev.key === 'Home') show(0); else if (ev.key === 'End') show(n - 1);
+        });
+        var x0 = null;
+        lb.addEventListener('touchstart', function (ev) { x0 = ev.touches[0].clientX; }, {passive: true});
+        lb.addEventListener('touchend', function (ev) {
+            if (x0 === null) return; var dx = ev.changedTouches[0].clientX - x0;
+            if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1)); x0 = null; });
+    })();
+    </script>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=3"></script>
+</body>
+</html>

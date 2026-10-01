@@ -1,0 +1,201 @@
+[
+[
+"DIRECTION ACHATS",
+"Hausses tarifaires : le socle est construit",
+"Rattacher, normaliser, comparer et opposer — sur les entités du groupe. Ce qui tourne, ce qui reste à brancher, et ce que nous demandons.",
+"Demande de décision — septembre 2026"
+],
+[
+"CE QUE NOUS VENONS CHERCHER",
+"Trois décisions, par ordre de coût croissant",
+"1 — Le reste du socle : 24 j",
+"2 — Le lot dates et conversions : 10 j",
+"3 — Prix spéciaux et ventes : 47 j",
+"Cadrage technique et recette réelle. La seule dépense qui transforme un dispositif vérifié sur données fictives en outil de production.",
+"Deux dates du tarif, alerte sur un tarif non appliqué dans l’ERP, cinq règles de conversion. Le lot le moins cher, et il conditionne la justesse de plusieurs calculs.",
+"Le plafond de hausse opposable et la détection des marchés en repli. Les deux arguments de négociation les plus forts.",
+"Le reste du programme — connecteurs ERP réels, modèle de langage local, désignations multilingues — n'est pas soumis à décision aujourd'hui."
+],
+[
+"LE CONSTAT D’ORIGINE",
+"Le comparatif multi-sites ne compare qu’à moitié",
+"54 %",
+"25 %",
+"0 €",
+"de couverture réelle",
+"sur deux entités",
+"de « meilleur prix »",
+"58 prix renseignés sur 108 croisements référence × entité",
+"Deux entités ne sont renseignés qu'une fois sur quatre",
+"affiché sur une référence sans aucun prix — défaut de calcul actif",
+"Les 46 % manquants ne signifient pas « pas de prix ». Ils signifient, le plus souvent, référence non rattachée.",
+"Le « meilleur prix » est une formule MIN qui ignore le texte : les absences étant saisies avec un tiret, une référence sans aucun prix affiche zéro. Le « meilleur site », lui, est saisi en dur."
+],
+[
+"POURQUOI CE N'EST PAS QU'UN TABLEUR À AUTOMATISER",
+"Six difficultés structurelles",
+"Identité de la référence",
+"Format instable",
+"Devises",
+"La même pièce porte un code différent chez le fournisseur et dans chacun des ERP du groupe.",
+"Le fournisseur change l'ordre et le nom de ses colonnes sans préavis.",
+"Comparer un prix en zloty et un prix en euro suppose un taux, une date et une règle.",
+"Unités",
+"Valeurs sales",
+"Prix d'achat ERP opaque",
+"Le tarif est au 100, l'ERP raisonne à l'unité de stock. Deux prix ne sont comparables qu'à unité normalisée.",
+"Symboles monétaires, espaces insécables, tirets, zéros de tête perdus, notation scientifique.",
+"Le PA réellement paramétré est inconnu au moment de négocier. Il peut être obsolète depuis des mois."
+],
+[
+"LE VRAI PROBLÈME",
+"Nous négocions des hausses sans savoir ce qu’elles coûtent réellement.",
+"Sans rattachement, il n'y a ni comparaison entre sites, ni comparaison avec le tarif précédent, ni impact chiffré. La discussion se tient sur un pourcentage annoncé par le fournisseur."
+],
+[
+"LA CHAÎNE",
+"Du fichier reçu au mémo de négociation",
+"1 · Dépôt et clé",
+"2 · Gabarit",
+"3 · Compte rendu",
+"Le fichier est identifié, archivé intact, et le moteur détermine ce qui identifie une ligne.",
+"Structure reconnue, colonnes remises dans l’ordre même si le fournisseur les a permutées.",
+"Le moteur dit ce qu’il a compris du fichier. Rien ne démarre sans validation.",
+"4 · Normalisation",
+"5 · Rattachement",
+"6 · Analyse",
+"Prix nettoyés, références abîmées réparées, devises et unités ramenées à une base commune.",
+"La même pièce est reconnue sur les entités du groupe et dans leurs ERP.",
+"Variation pondérée, impact annualisé, dispersion entre sites, plafond opposable.",
+"Tout s’exécute en local. Les seuls flux sortants sont les taux de change publics et les sources du groupe explicitement déclarées."
+],
+[
+"UN OUTIL, PAS UN SCRIPT PAR FOURNISSEUR",
+"Le moteur reconnaît des structures, pas des fournisseurs",
+" | Archétype de fichier | Exemple | État\nF1 | Tarif simple — une ligne, une colonne de prix | Le cas le plus courant du marché | Fait\nF2 | Matriciel par entité — une colonne de prix par site | Le fichier du fournisseur A analysé : une colonne par entités | Fait\nF3 | Liste longue — une ligne par couple référence × entité | Export d’ERP fournisseur | Fait\nF4 | Paliers en colonnes — un prix par tranche de quantité | « 1-9 / 10-49 / 50+ » | Fait\nF5 | Paliers en lignes — référence répétée | « from qty » / « Staffel » | Fait\nF6 à F8 | Multi-onglets, multi-blocs, catalogue PDF | Le PDF est refusé avec un motif explicite | Non livré",
+"Ajouter un fournisseur ou absorber un changement de format est une opération de configuration, jamais une modification du code. Cible : deux heures sur un format courant."
+],
+[
+"LE CŒUR DU DISPOSITIF",
+"Le référentiel des liens est l'actif, pas l'outil",
+"Chaque équivalence validée — référence fournisseur, référence ERP de chaque entité — est écrite définitivement dans une base commune. Elle ne sera jamais réarbitrée.",
+"Campagne 1",
+"Campagne 2",
+"Régime établi",
+"Beaucoup d'arbitrages. C'est le coût d'entrée, assumé.",
+"Les liens acquis s’appliquent seuls. Le reliquat se réduit.",
+"80 % de rattachement déterministe. 95 % supposent le modèle de langage local, non branché à ce jour.",
+"Le coût décroît campagne après campagne. C'est un investissement qui s'amortit, pas une charge récurrente."
+],
+[
+"LE CALCUL QUI CHANGE LA NÉGOCIATION",
+"Le plafond de hausse opposable au fournisseur",
+"Un prix spécial accordé pour un client final n'est pas un prix : c'est un engagement. Lors d'une révision, le fournisseur ne doit pas en profiter pour le remonter plus vite que son tarif.",
+"Mode de report | Plafond opposable | Quand il s’applique\nRemise en pourcentage | S1* = T1 × (1 − r), avec r = 1 − S0 / T0 | La remise est en pourcentage : elle se conserve\nÉcart en valeur | S1* = T1 − d, avec d = T0 − S0 | La remise est un montant fixe : l’écart en euros se conserve\nGelé | S1* = S0 | Prix contractuellement bloqué jusqu’à l’échéance",
+"La phrase prête pour la négociation : « votre tarif augmente de 10,2 %, mais le prix accordé à ce client augmente de 13,3 % ; au même mode de report, il devrait être à 10,864 € »."
+],
+[
+"L’ARGUMENT LE PLUS FORT",
+"Une hausse sur un marché en repli",
+"Alerte | Détection | Gravité\nMarché en repli | Chiffre d’affaires du marché en baisse de plus de 15 % sur 3 mois, en comparaison annuelle | Moyenne\nDécrochage marqué | Baisse de plus de 30 % sur le même axe | Forte\nClient perdu | Client actif l’an dernier, aucune commande depuis 6 mois | Forte\nPrix spécial sans contrepartie | Volume réalisé inférieur à 60 % du volume engagé | Forte\nHausse sur marché en repli | Hausse tarifaire sur une référence dont le marché recule | Forte",
+"Aucune alerte n'est déclenchée sur une donnée absente : sans historique, l'indicateur reste vide, jamais nul. Un seuil plancher évite que le bruit statistique déclenche des alertes inutiles."
+],
+[
+"NOUVEAU — PRIX TARIF, REMISE, PRIX NET",
+"La hausse annoncée n’est pas la hausse subie",
+"Ce que le fournisseur annonce",
+"Ce que l’entreprise paie",
+"+ 4,80 %",
+"+ 2,08 %",
+"Hausse tarifaire pondérée",
+"Hausse nette pondérée — remise prise en compte",
+"La variation se décompose sans reste : + 2 262 € d’effet tarif, − 1 285 € d’effet remise. On sait enfin dire si c’est le tarif qui monte, ou la remise qui se retire.",
+"Trois montages reconnus : prix nets seuls, tarif avec grille de remise, ou les deux sur la même ligne — auquel cas l'incohérence est signalée et jamais corrigée."
+],
+[
+"NOUVEAU — ÉCONOMIES CONSTATÉES",
+"Une économie se constate, elle ne se déclare pas",
+"Toute économie affichée est un écart de prix multiplié par un volume réellement acheté. Sans volume connu, elle reste vide — jamais zéro, jamais estimée.",
+"Sur le jeu de démonstration | Montant\nÉconomie annoncée au titre de l’application du tarif | ≈ 64 k€\ndont simple retard de mise à jour du prix d’achat ERP — pas une économie | ≈ 61 k€\ndont écart réellement inexpliqué — un accord à retrouver | ≈ 2,5 k€\nPrix spéciaux non déclarés détectés | 4 candidats, ≈ 9,5 k€\nCandidats écartés, chacun avec son motif | ≈ 33",
+"Sans cette décomposition, 64 k€ auraient été présentés comme une économie. Il n'y en a que 2,5."
+],
+[
+"NOUVEAU — UNITÉS ET DIMENSIONS",
+"Ce qui n’est pas comparable, on le chiffre",
+"Un fournisseur facture à la pièce, un autre au mètre linéaire, un troisième au kilo, un quatrième au rouleau. Jusqu'ici, une ligne non comparable était écartée avec son motif — juste, mais muet.",
+"86 %",
+"78 %",
+"2 %",
+"des lignes portent des dimensions",
+"ont un prix au m² et au ml",
+"ont un prix au kilo",
+"largeur, longueur, épaisseur, grammage",
+"comparables entre fournisseurs",
+"faute de grammage communiqué",
+"Les 98 % manquants ne sont plus une impasse : c’est une demande précise à formuler au fournisseur — le grammage. Ce qui était écarté en silence devient une information à réclamer."
+],
+[
+"CE QUE L'ACHETEUR VOIT",
+"Le poste de travail est construit",
+"Étape | Ce que fait l'acheteur | Temps\n1 | Il voit sur son tableau de bord que le tarif est arrivé, avec l’impact estimé | 1 min\n2 | Il lit le compte rendu préalable et valide le lancement | 5 min\n3 | Le traitement s’exécute en arrière-plan — il fait autre chose | —\n4 | Il traite la file d’arbitrage, triée par enjeu : les 20 premières lignes font l’essentiel | 25 min\n5 | Il lit l’analyse, filtre sur sa famille, repère les hausses aberrantes | 15 min\n6 | Il regarde les plus gros postes et exporte le mémo de négociation | 10 min",
+"L'option n'est plus une hypothèse : le poste de travail est construit, en R/Shiny, servi en local, et adapté au téléphone comme au poste fixe. Les écrans E1 à E5, E7 et E10 sont construits et parcourus."
+],
+[
+"UNE LIGNE, DE BOUT EN BOUT",
+"Ce que l'acheteur lit, et qu'il n'a aujourd'hui nulle part",
+"Ce que le moteur établit | Valeur\nVariation du tarif | + 10,2 %, soit + 1,145 € par unité\nVolume acheté sur 12 mois | 8 400 unités\nImpact annualisé | + 9 618 €\nNiveau d’alerte | Alerte — au-delà du seuil de 5 %\nPrix d’achat paramétré dans l’ERP | Écart de −2,4 %, non mis à jour depuis 14 mois\nMeilleur prix du groupe | 9,80 € chez une autre entité — rapport de 1,26\nPlafond opposable sur le prix spécial | 10,864 € ; le fournisseur propose 11,20 € — dépassement de 0,336 €, soit +3,1 %",
+"Quatre leviers sur une seule ligne : négocier la hausse, corriger un PA obsolète, harmoniser entre entités, opposer le plafond sur le prix spécial."
+],
+[
+"ÉTAT DE RÉALISATION",
+"Ce qui reste à brancher sur les systèmes réels",
+"Élément | Situation | Ce qu’il faut pour le lever\nERP des entités du groupe | Les trois modalités de connecteur sont construites et testées ; aucun ERP de production raccordé | Cartographie complète, ouverture des comptes dédiés, validation du contrat par chaque équipe applicative\nModèles sémantiques et entrepôt | Accès construits et testés en bac à sable ; jamais exercés en réel | Identification des espaces, création des identités en lecture, dépôt des secrets au coffre\nModèle de langage local | Les niveaux L4 et L5 ont un contrat stable ; le modèle n’est jamais appelé par la chaîne | Matériel d’exécution, choix du modèle, calibrage sur le jeu de 500 références\nHabilitations | Le profil est un sélecteur, sans authentification | Raccordement à l’annuaire du groupe, derrière l’authentification unique\nPrix spéciaux existants | Le calcul est livré et testé ; aucune donnée collectée | Import en masse depuis les documents contractuels, ou saisie progressive\nÉcran Économies | Le moteur et la spécification existent ; l’écran n’est pas construit | 6 jours de développement — décision à prendre\nQuatre fichiers de code | Les briques Économies et Unités ne sont pas versionnées | Enregistrement au dépôt — préalable à toute recette"
+],
+[
+"CE QUE NOUS NE FAISONS PAS",
+"Le périmètre exclu est aussi important que le périmètre",
+"Aucune écriture dans un ERP",
+"Rien ne sort du SI",
+"Données commerciales cloisonnées",
+"Le dispositif lit, analyse et propose. L'écriture est une trajectoire à paliers, ouverte plus tard, sur preuves — jamais au démarrage.",
+"Traitement local. Les seuls flux sortants sont les taux de change publics et les sources du groupe explicitement déclarées, en lecture seule.",
+"Remises, prix nets et données clients ne sont traités que par les briques qui les prévoient, sous habilitation distincte de celle des achats.",
+"Un rattachement faux propagé dans un référentiel articles coûte incomparablement plus cher qu'une analyse fausse : il se découvre tard et se corrige mal. C'est pourquoi l'écriture se mérite."
+],
+[
+"LE CHIFFRAGE",
+"441 jours au total — 233 sont derrière nous",
+"RÉALISÉ",
+"À DÉCIDER AUJOURD’HUI",
+"PROGRAMME — PLUS TARD",
+"233 j",
+"81 j",
+"127 j",
+"Socle complet, plus sept briques : clé unique, format des références, sources, prix spéciaux, ventes, remises et familles, économies, unités et dimensions, contrôle d’accès.",
+"Reste du socle 24 j. Écran Économies et traçabilité 10 j. Connecteurs ERP réels 25 à 40 j. Le solde se décide lot par lot.",
+"Modèle local et apprentissage, règles de conversion d’entreprise, impact business, désignations multilingues, fichiers d’import ERP.",
+"Le total augmente de 53 jours depuis le dernier chiffrage, mais la part réalisée augmente de 61 : ce qui reste à engager diminue. Le projet a produit davantage que ce qui était planifié, sans que le document l'enregistre."
+],
+[
+"CE QUE NOUS ASSUMONS",
+"Quatre risques, et comment nous les tenons",
+"Risque | Comment nous le tenons\nLes ERP des entités du groupe sont hétérogènes et certains n’offrent aucun accès exploitable | Contrat d’interface commun acceptant l’export planifié en mode dégradé. Trois modalités déjà construites et testées. Cartographie dès le cadrage\nLe taux de rattachement n’est pas atteint au premier passage | L’objectif de 80 % s’entend en régime établi, pas au premier passage. Le jeu de 500 références sert d’amorçage et de vérité de référence\nLe plafond de hausse reste inopposable faute de données | Le calcul est livré, mais il ne vaut que sur le périmètre renseigné. La collecte des prix spéciaux existants est une décision à part entière\nLa charge de validation décourage les acheteurs | File triée par enjeu, validation par règle plutôt que par cas, actions en masse simulées, annulation. Mesure du temps réel dès la recette"
+],
+[
+"CE QUE NOUS DEMANDONS",
+"Trois décisions, et deux prérequis",
+"Engager le reste du socle — 24 jours",
+"Cadrage technique et recette sur données réelles. La seule dépense qui met en production ce qui est déjà construit.",
+"Mettre la traçabilité à jour — 4 jours",
+"Les règles au-delà de RG-24 et les deux briques les plus récentes ne sont tracées nulle part. La recette porterait sur un périmètre partiel.",
+"Construire l’écran Économies — 6 jours",
+"Le moteur et la spécification existent. Sans écran, la brique reste inaccessible aux acheteurs.",
+"Et sans budget : versionner les quatre fichiers non enregistrés, valider les règles RG-01 à RG-60, trancher une numérotation unique de briques et d’écrans."
+],
+[
+"ANNEXE",
+"Comment nous saurons que ça marche",
+"Indicateur | Aujourd’hui | Cible\nRattachement automatique des références | Couverture du comparatif : 54 % | 80 % en déterministe ; 95 % suppose le modèle local\nPrix faux produits par le calcul | Présent dans le fichier actuel | Zéro\nDélai d’analyse d’un tarif reçu | Plusieurs jours à plusieurs semaines | 1 jour ouvré\nTemps humain par tarif en régime établi | Non mesuré | 1 heure\nRaccordement d’un nouveau fournisseur | Sans objet | 2 heures sur un format courant\nPrix spéciaux couverts par le plafond | 0 % | 100 % du périmètre renseigné\nLignes comparables au m² et au mètre linéaire | Non mesuré | 78 % constatés en démonstration",
+"Documents de référence : CDC-TARIFS-002 version 3.0, et son addendum 3.1 qui couvre les remises et familles, les économies, les unités et dimensions, et le contrôle d'accès — EF-233 à EF-258, RG-41 à RG-60."
+]
+]

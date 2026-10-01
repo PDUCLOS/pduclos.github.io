@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hausses tarifaires — le socle est construit — Patrice Duclos</title>
+    <meta name="description" content="La note de décision présentée à la direction : constat chiffré, difficultés structurelles, chaîne de traitement, calculs clés, état de réalisation, chiffrage en jours, risques et trois décisions demandées.">
+    <meta property="og:title" content="Hausses tarifaires — le socle est construit — Patrice Duclos">
+    <meta property="og:description" content="La note de décision présentée à la direction : constat chiffré, difficultés structurelles, chaîne de traitement, calculs clés, état de réalisation, chiffrage en jours, risques et trois décisions demandées.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/presentations/hausses-tarifaires.html">
+    <link rel="canonical" href="https://pduclos.github.io/presentations/hausses-tarifaires.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=3">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">Parcours</a></li>
+            <li class="has-dropdown">
+                <a href="/projets/" class="dropdown-toggle" aria-current="page">Projets</a>
+                <ul class="dropdown">
+                    <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · Jumeau numérique</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/achats-negociation.html">Achats — tarifs &amp; scorecards<small>Projet en cours · Business Analyst · Achats</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/presentations/plateforme-tarifs.html">Présentation commerciale<small>projet achats · 38 slides</small></a></li>
+                    <li><a href="/presentations/hausses-tarifaires.html">Présentation technique<small>projet achats · 21 slides</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/stack.html">Stack MLOps</a></li>
+            <li><a href="/profil-rh.html">Recruteurs</a></li>
+            <li><a href="/profil-tech.html">Profil technique</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/achats-negociation.html">Projet Achats</a> / Présentation technique &amp; demande de décision</div>
+            <div class="live-badge" style="position:static;display:inline-flex;margin-bottom:1.2rem"><span class="live-dot"></span> PROJET EN COURS · BUSINESS ANALYST</div>
+            <span class="project-tag" style="color:var(--accent-warm)">Présentation technique &amp; demande de décision · 21 slides</span>
+            <h1>Hausses tarifaires — le socle est construit</h1>
+            <p class="lead">La note de décision présentée à la direction : constat chiffré, difficultés structurelles, chaîne de traitement, calculs clés, état de réalisation, chiffrage en jours, risques et trois décisions demandées.</p>
+            <div class="kpi-row">
+                <div class="kpi"><b>21</b><span>slides</span></div>
+                <div class="kpi"><b style="font-size:1rem;line-height:1.4">Direction Achats, DSI, sponsor du projet</b><span>public visé</span></div>
+            </div>
+            <div class="btn-row">
+                <button class="contact-btn contact-btn-primary" id="deck-play">▶ Mode présentation</button>
+                <a class="contact-btn contact-btn-secondary" href="/projets/achats-negociation.html">← Le projet</a>
+                <a class="contact-btn contact-btn-secondary" href="/presentations/plateforme-tarifs.html">Présentation commerciale <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+    </header>
+    <section class="page-section">
+        <div class="section-container">
+            <div class="arg-card arg-card--rh" style="margin-bottom:2.5rem"><span class="arg-label">Ce que montre ce support</span><ul>
+                <li>Suivi de projet : réalisé / à décider / plus tard, chiffré en jours</li><li>Risques explicites et la façon de les tenir</li><li>Indicateurs de succès mesurables, traçabilité vers le cahier des charges</li>
+                <li><em>Version anonymisée pour le portfolio : nom de l'entreprise, fournisseurs, entités et sites retirés ; notes du présentateur non publiées.</em></li></ul></div>
+            <div class="deck">
+            <figure class="slide reveal" id="s1">
+                <button class="slide-img" data-i="0" aria-label="Agrandir la slide 1">
+                    <img src="/presentations/hausses-tarifaires/01.webp" alt="Slide 1 — Hausses tarifaires : le socle est construit" loading="eager" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">01 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>DIRECTION ACHATS</p><p>Hausses tarifaires : le socle est construit</p><p>Rattacher, normaliser, comparer et opposer — sur les entités du groupe. Ce qui tourne, ce qui reste à brancher, et ce que nous demandons.</p><p>Demande de décision — septembre 2026</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s2">
+                <button class="slide-img" data-i="1" aria-label="Agrandir la slide 2">
+                    <img src="/presentations/hausses-tarifaires/02.webp" alt="Slide 2 — Trois décisions, par ordre de coût croissant" loading="eager" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">02 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>CE QUE NOUS VENONS CHERCHER</p><p>Trois décisions, par ordre de coût croissant</p><p>1 — Le reste du socle : 24 j</p><p>2 — Le lot dates et conversions : 10 j</p><p>3 — Prix spéciaux et ventes : 47 j</p><p>Cadrage technique et recette réelle. La seule dépense qui transforme un dispositif vérifié sur données fictives en outil de production.</p><p>Deux dates du tarif, alerte sur un tarif non appliqué dans l’ERP, cinq règles de conversion. Le lot le moins cher, et il conditionne la justesse de plusieurs calculs.</p><p>Le plafond de hausse opposable et la détection des marchés en repli. Les deux arguments de négociation les plus forts.</p><p>Le reste du programme — connecteurs ERP réels, modèle de langage local, désignations multilingues — n&#x27;est pas soumis à décision aujourd&#x27;hui.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s3">
+                <button class="slide-img" data-i="2" aria-label="Agrandir la slide 3">
+                    <img src="/presentations/hausses-tarifaires/03.webp" alt="Slide 3 — Le comparatif multi-sites ne compare qu’à moitié" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">03 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>LE CONSTAT D’ORIGINE</p><p>Le comparatif multi-sites ne compare qu’à moitié</p><p>54 %</p><p>25 %</p><p>0 €</p><p>de couverture réelle</p><p>sur deux entités</p><p>de « meilleur prix »</p><p>58 prix renseignés sur 108 croisements référence × entité</p><p>Deux entités ne sont renseignés qu&#x27;une fois sur quatre</p><p>affiché sur une référence sans aucun prix — défaut de calcul actif</p><p>Les 46 % manquants ne signifient pas « pas de prix ». Ils signifient, le plus souvent, référence non rattachée.</p><p>Le « meilleur prix » est une formule MIN qui ignore le texte : les absences étant saisies avec un tiret, une référence sans aucun prix affiche zéro. Le « meilleur site », lui, est saisi en dur.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s4">
+                <button class="slide-img" data-i="3" aria-label="Agrandir la slide 4">
+                    <img src="/presentations/hausses-tarifaires/04.webp" alt="Slide 4 — Six difficultés structurelles" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">04 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>POURQUOI CE N&#x27;EST PAS QU&#x27;UN TABLEUR À AUTOMATISER</p><p>Six difficultés structurelles</p><p>Identité de la référence</p><p>Format instable</p><p>Devises</p><p>La même pièce porte un code différent chez le fournisseur et dans chacun des ERP du groupe.</p><p>Le fournisseur change l&#x27;ordre et le nom de ses colonnes sans préavis.</p><p>Comparer un prix en zloty et un prix en euro suppose un taux, une date et une règle.</p><p>Unités</p><p>Valeurs sales</p><p>Prix d&#x27;achat ERP opaque</p><p>Le tarif est au 100, l&#x27;ERP raisonne à l&#x27;unité de stock. Deux prix ne sont comparables qu&#x27;à unité normalisée.</p><p>Symboles monétaires, espaces insécables, tirets, zéros de tête perdus, notation scientifique.</p><p>Le PA réellement paramétré est inconnu au moment de négocier. Il peut être obsolète depuis des mois.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s5">
+                <button class="slide-img" data-i="4" aria-label="Agrandir la slide 5">
+                    <img src="/presentations/hausses-tarifaires/05.webp" alt="Slide 5 — Nous négocions des hausses sans savoir ce qu’elles coûtent réellement." loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">05 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>LE VRAI PROBLÈME</p><p>Nous négocions des hausses sans savoir ce qu’elles coûtent réellement.</p><p>Sans rattachement, il n&#x27;y a ni comparaison entre sites, ni comparaison avec le tarif précédent, ni impact chiffré. La discussion se tient sur un pourcentage annoncé par le fournisseur.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s6">
+                <button class="slide-img" data-i="5" aria-label="Agrandir la slide 6">
+                    <img src="/presentations/hausses-tarifaires/06.webp" alt="Slide 6 — Du fichier reçu au mémo de négociation" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">06 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>LA CHAÎNE</p><p>Du fichier reçu au mémo de négociation</p><p>1 · Dépôt et clé</p><p>2 · Gabarit</p><p>3 · Compte rendu</p><p>Le fichier est identifié, archivé intact, et le moteur détermine ce qui identifie une ligne.</p><p>Structure reconnue, colonnes remises dans l’ordre même si le fournisseur les a permutées.</p><p>Le moteur dit ce qu’il a compris du fichier. Rien ne démarre sans validation.</p><p>4 · Normalisation</p><p>5 · Rattachement</p><p>6 · Analyse</p><p>Prix nettoyés, références abîmées réparées, devises et unités ramenées à une base commune.</p><p>La même pièce est reconnue sur les entités du groupe et dans leurs ERP.</p><p>Variation pondérée, impact annualisé, dispersion entre sites, plafond opposable.</p><p>Tout s’exécute en local. Les seuls flux sortants sont les taux de change publics et les sources du groupe explicitement déclarées.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s7">
+                <button class="slide-img" data-i="6" aria-label="Agrandir la slide 7">
+                    <img src="/presentations/hausses-tarifaires/07.webp" alt="Slide 7 — Le moteur reconnaît des structures, pas des fournisseurs" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">07 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>UN OUTIL, PAS UN SCRIPT PAR FOURNISSEUR</p><p>Le moteur reconnaît des structures, pas des fournisseurs</p><p> | Archétype de fichier | Exemple | État<br>F1 | Tarif simple — une ligne, une colonne de prix | Le cas le plus courant du marché | Fait<br>F2 | Matriciel par entité — une colonne de prix par site | Le fichier du fournisseur A analysé : une colonne par entités | Fait<br>F3 | Liste longue — une ligne par couple référence × entité | Export d’ERP fournisseur | Fait<br>F4 | Paliers en colonnes — un prix par tranche de quantité | « 1-9 / 10-49 / 50+ » | Fait<br>F5 | Paliers en lignes — référence répétée | « from qty » / « Staffel » | Fait<br>F6 à F8 | Multi-onglets, multi-blocs, catalogue PDF | Le PDF est refusé avec un motif explicite | Non livré</p><p>Ajouter un fournisseur ou absorber un changement de format est une opération de configuration, jamais une modification du code. Cible : deux heures sur un format courant.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s8">
+                <button class="slide-img" data-i="7" aria-label="Agrandir la slide 8">
+                    <img src="/presentations/hausses-tarifaires/08.webp" alt="Slide 8 — Le référentiel des liens est l&#x27;actif, pas l&#x27;outil" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">08 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>LE CŒUR DU DISPOSITIF</p><p>Le référentiel des liens est l&#x27;actif, pas l&#x27;outil</p><p>Chaque équivalence validée — référence fournisseur, référence ERP de chaque entité — est écrite définitivement dans une base commune. Elle ne sera jamais réarbitrée.</p><p>Campagne 1</p><p>Campagne 2</p><p>Régime établi</p><p>Beaucoup d&#x27;arbitrages. C&#x27;est le coût d&#x27;entrée, assumé.</p><p>Les liens acquis s’appliquent seuls. Le reliquat se réduit.</p><p>80 % de rattachement déterministe. 95 % supposent le modèle de langage local, non branché à ce jour.</p><p>Le coût décroît campagne après campagne. C&#x27;est un investissement qui s&#x27;amortit, pas une charge récurrente.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s9">
+                <button class="slide-img" data-i="8" aria-label="Agrandir la slide 9">
+                    <img src="/presentations/hausses-tarifaires/09.webp" alt="Slide 9 — Le plafond de hausse opposable au fournisseur" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">09 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>LE CALCUL QUI CHANGE LA NÉGOCIATION</p><p>Le plafond de hausse opposable au fournisseur</p><p>Un prix spécial accordé pour un client final n&#x27;est pas un prix : c&#x27;est un engagement. Lors d&#x27;une révision, le fournisseur ne doit pas en profiter pour le remonter plus vite que son tarif.</p><p>Mode de report | Plafond opposable | Quand il s’applique<br>Remise en pourcentage | S1* = T1 × (1 − r), avec r = 1 − S0 / T0 | La remise est en pourcentage : elle se conserve<br>Écart en valeur | S1* = T1 − d, avec d = T0 − S0 | La remise est un montant fixe : l’écart en euros se conserve<br>Gelé | S1* = S0 | Prix contractuellement bloqué jusqu’à l’échéance</p><p>La phrase prête pour la négociation : « votre tarif augmente de 10,2 %, mais le prix accordé à ce client augmente de 13,3 % ; au même mode de report, il devrait être à 10,864 € ».</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s10">
+                <button class="slide-img" data-i="9" aria-label="Agrandir la slide 10">
+                    <img src="/presentations/hausses-tarifaires/10.webp" alt="Slide 10 — Une hausse sur un marché en repli" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">10 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>L’ARGUMENT LE PLUS FORT</p><p>Une hausse sur un marché en repli</p><p>Alerte | Détection | Gravité<br>Marché en repli | Chiffre d’affaires du marché en baisse de plus de 15 % sur 3 mois, en comparaison annuelle | Moyenne<br>Décrochage marqué | Baisse de plus de 30 % sur le même axe | Forte<br>Client perdu | Client actif l’an dernier, aucune commande depuis 6 mois | Forte<br>Prix spécial sans contrepartie | Volume réalisé inférieur à 60 % du volume engagé | Forte<br>Hausse sur marché en repli | Hausse tarifaire sur une référence dont le marché recule | Forte</p><p>Aucune alerte n&#x27;est déclenchée sur une donnée absente : sans historique, l&#x27;indicateur reste vide, jamais nul. Un seuil plancher évite que le bruit statistique déclenche des alertes inutiles.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s11">
+                <button class="slide-img" data-i="10" aria-label="Agrandir la slide 11">
+                    <img src="/presentations/hausses-tarifaires/11.webp" alt="Slide 11 — La hausse annoncée n’est pas la hausse subie" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">11 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>NOUVEAU — PRIX TARIF, REMISE, PRIX NET</p><p>La hausse annoncée n’est pas la hausse subie</p><p>Ce que le fournisseur annonce</p><p>Ce que l’entreprise paie</p><p>+ 4,80 %</p><p>+ 2,08 %</p><p>Hausse tarifaire pondérée</p><p>Hausse nette pondérée — remise prise en compte</p><p>La variation se décompose sans reste : + 2 262 € d’effet tarif, − 1 285 € d’effet remise. On sait enfin dire si c’est le tarif qui monte, ou la remise qui se retire.</p><p>Trois montages reconnus : prix nets seuls, tarif avec grille de remise, ou les deux sur la même ligne — auquel cas l&#x27;incohérence est signalée et jamais corrigée.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s12">
+                <button class="slide-img" data-i="11" aria-label="Agrandir la slide 12">
+                    <img src="/presentations/hausses-tarifaires/12.webp" alt="Slide 12 — Une économie se constate, elle ne se déclare pas" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">12 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>NOUVEAU — ÉCONOMIES CONSTATÉES</p><p>Une économie se constate, elle ne se déclare pas</p><p>Toute économie affichée est un écart de prix multiplié par un volume réellement acheté. Sans volume connu, elle reste vide — jamais zéro, jamais estimée.</p><p>Sur le jeu de démonstration | Montant<br>Économie annoncée au titre de l’application du tarif | ≈ 64 k€<br>dont simple retard de mise à jour du prix d’achat ERP — pas une économie | ≈ 61 k€<br>dont écart réellement inexpliqué — un accord à retrouver | ≈ 2,5 k€<br>Prix spéciaux non déclarés détectés | 4 candidats, ≈ 9,5 k€<br>Candidats écartés, chacun avec son motif | ≈ 33</p><p>Sans cette décomposition, 64 k€ auraient été présentés comme une économie. Il n&#x27;y en a que 2,5.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s13">
+                <button class="slide-img" data-i="12" aria-label="Agrandir la slide 13">
+                    <img src="/presentations/hausses-tarifaires/13.webp" alt="Slide 13 — Ce qui n’est pas comparable, on le chiffre" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">13 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>NOUVEAU — UNITÉS ET DIMENSIONS</p><p>Ce qui n’est pas comparable, on le chiffre</p><p>Un fournisseur facture à la pièce, un autre au mètre linéaire, un troisième au kilo, un quatrième au rouleau. Jusqu&#x27;ici, une ligne non comparable était écartée avec son motif — juste, mais muet.</p><p>86 %</p><p>78 %</p><p>2 %</p><p>des lignes portent des dimensions</p><p>ont un prix au m² et au ml</p><p>ont un prix au kilo</p><p>largeur, longueur, épaisseur, grammage</p><p>comparables entre fournisseurs</p><p>faute de grammage communiqué</p><p>Les 98 % manquants ne sont plus une impasse : c’est une demande précise à formuler au fournisseur — le grammage. Ce qui était écarté en silence devient une information à réclamer.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s14">
+                <button class="slide-img" data-i="13" aria-label="Agrandir la slide 14">
+                    <img src="/presentations/hausses-tarifaires/14.webp" alt="Slide 14 — Le poste de travail est construit" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">14 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>CE QUE L&#x27;ACHETEUR VOIT</p><p>Le poste de travail est construit</p><p>Étape | Ce que fait l&#x27;acheteur | Temps<br>1 | Il voit sur son tableau de bord que le tarif est arrivé, avec l’impact estimé | 1 min<br>2 | Il lit le compte rendu préalable et valide le lancement | 5 min<br>3 | Le traitement s’exécute en arrière-plan — il fait autre chose | —<br>4 | Il traite la file d’arbitrage, triée par enjeu : les 20 premières lignes font l’essentiel | 25 min<br>5 | Il lit l’analyse, filtre sur sa famille, repère les hausses aberrantes | 15 min<br>6 | Il regarde les plus gros postes et exporte le mémo de négociation | 10 min</p><p>L&#x27;option n&#x27;est plus une hypothèse : le poste de travail est construit, en R/Shiny, servi en local, et adapté au téléphone comme au poste fixe. Les écrans E1 à E5, E7 et E10 sont construits et parcourus.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s15">
+                <button class="slide-img" data-i="14" aria-label="Agrandir la slide 15">
+                    <img src="/presentations/hausses-tarifaires/15.webp" alt="Slide 15 — Ce que l&#x27;acheteur lit, et qu&#x27;il n&#x27;a aujourd&#x27;hui nulle part" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">15 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>UNE LIGNE, DE BOUT EN BOUT</p><p>Ce que l&#x27;acheteur lit, et qu&#x27;il n&#x27;a aujourd&#x27;hui nulle part</p><p>Ce que le moteur établit | Valeur<br>Variation du tarif | + 10,2 %, soit + 1,145 € par unité<br>Volume acheté sur 12 mois | 8 400 unités<br>Impact annualisé | + 9 618 €<br>Niveau d’alerte | Alerte — au-delà du seuil de 5 %<br>Prix d’achat paramétré dans l’ERP | Écart de −2,4 %, non mis à jour depuis 14 mois<br>Meilleur prix du groupe | 9,80 € chez une autre entité — rapport de 1,26<br>Plafond opposable sur le prix spécial | 10,864 € ; le fournisseur propose 11,20 € — dépassement de 0,336 €, soit +3,1 %</p><p>Quatre leviers sur une seule ligne : négocier la hausse, corriger un PA obsolète, harmoniser entre entités, opposer le plafond sur le prix spécial.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s16">
+                <button class="slide-img" data-i="15" aria-label="Agrandir la slide 16">
+                    <img src="/presentations/hausses-tarifaires/16.webp" alt="Slide 16 — Ce qui reste à brancher sur les systèmes réels" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">16 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>ÉTAT DE RÉALISATION</p><p>Ce qui reste à brancher sur les systèmes réels</p><p>Élément | Situation | Ce qu’il faut pour le lever<br>ERP des entités du groupe | Les trois modalités de connecteur sont construites et testées ; aucun ERP de production raccordé | Cartographie complète, ouverture des comptes dédiés, validation du contrat par chaque équipe applicative<br>Modèles sémantiques et entrepôt | Accès construits et testés en bac à sable ; jamais exercés en réel | Identification des espaces, création des identités en lecture, dépôt des secrets au coffre<br>Modèle de langage local | Les niveaux L4 et L5 ont un contrat stable ; le modèle n’est jamais appelé par la chaîne | Matériel d’exécution, choix du modèle, calibrage sur le jeu de 500 références<br>Habilitations | Le profil est un sélecteur, sans authentification | Raccordement à l’annuaire du groupe, derrière l’authentification unique<br>Prix spéciaux existants | Le calcul est livré et testé ; aucune donnée collectée | Import en masse depuis les documents contractuels, ou saisie progressive<br>Écran Économies | Le moteur et la spécification existent ; l’écran n’est pas construit | 6 jours de développement — décision à prendre<br>Quatre fichiers de code | Les briques Économies et Unités ne sont pas versionnées | Enregistrement au dépôt — préalable à toute recette</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s17">
+                <button class="slide-img" data-i="16" aria-label="Agrandir la slide 17">
+                    <img src="/presentations/hausses-tarifaires/17.webp" alt="Slide 17 — Le périmètre exclu est aussi important que le périmètre" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">17 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>CE QUE NOUS NE FAISONS PAS</p><p>Le périmètre exclu est aussi important que le périmètre</p><p>Aucune écriture dans un ERP</p><p>Rien ne sort du SI</p><p>Données commerciales cloisonnées</p><p>Le dispositif lit, analyse et propose. L&#x27;écriture est une trajectoire à paliers, ouverte plus tard, sur preuves — jamais au démarrage.</p><p>Traitement local. Les seuls flux sortants sont les taux de change publics et les sources du groupe explicitement déclarées, en lecture seule.</p><p>Remises, prix nets et données clients ne sont traités que par les briques qui les prévoient, sous habilitation distincte de celle des achats.</p><p>Un rattachement faux propagé dans un référentiel articles coûte incomparablement plus cher qu&#x27;une analyse fausse : il se découvre tard et se corrige mal. C&#x27;est pourquoi l&#x27;écriture se mérite.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s18">
+                <button class="slide-img" data-i="17" aria-label="Agrandir la slide 18">
+                    <img src="/presentations/hausses-tarifaires/18.webp" alt="Slide 18 — 441 jours au total — 233 sont derrière nous" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">18 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>LE CHIFFRAGE</p><p>441 jours au total — 233 sont derrière nous</p><p>RÉALISÉ</p><p>À DÉCIDER AUJOURD’HUI</p><p>PROGRAMME — PLUS TARD</p><p>233 j</p><p>81 j</p><p>127 j</p><p>Socle complet, plus sept briques : clé unique, format des références, sources, prix spéciaux, ventes, remises et familles, économies, unités et dimensions, contrôle d’accès.</p><p>Reste du socle 24 j. Écran Économies et traçabilité 10 j. Connecteurs ERP réels 25 à 40 j. Le solde se décide lot par lot.</p><p>Modèle local et apprentissage, règles de conversion d’entreprise, impact business, désignations multilingues, fichiers d’import ERP.</p><p>Le total augmente de 53 jours depuis le dernier chiffrage, mais la part réalisée augmente de 61 : ce qui reste à engager diminue. Le projet a produit davantage que ce qui était planifié, sans que le document l&#x27;enregistre.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s19">
+                <button class="slide-img" data-i="18" aria-label="Agrandir la slide 19">
+                    <img src="/presentations/hausses-tarifaires/19.webp" alt="Slide 19 — Quatre risques, et comment nous les tenons" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">19 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>CE QUE NOUS ASSUMONS</p><p>Quatre risques, et comment nous les tenons</p><p>Risque | Comment nous le tenons<br>Les ERP des entités du groupe sont hétérogènes et certains n’offrent aucun accès exploitable | Contrat d’interface commun acceptant l’export planifié en mode dégradé. Trois modalités déjà construites et testées. Cartographie dès le cadrage<br>Le taux de rattachement n’est pas atteint au premier passage | L’objectif de 80 % s’entend en régime établi, pas au premier passage. Le jeu de 500 références sert d’amorçage et de vérité de référence<br>Le plafond de hausse reste inopposable faute de données | Le calcul est livré, mais il ne vaut que sur le périmètre renseigné. La collecte des prix spéciaux existants est une décision à part entière<br>La charge de validation décourage les acheteurs | File triée par enjeu, validation par règle plutôt que par cas, actions en masse simulées, annulation. Mesure du temps réel dès la recette</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s20">
+                <button class="slide-img" data-i="19" aria-label="Agrandir la slide 20">
+                    <img src="/presentations/hausses-tarifaires/20.webp" alt="Slide 20 — Trois décisions, et deux prérequis" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">20 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>CE QUE NOUS DEMANDONS</p><p>Trois décisions, et deux prérequis</p><p>Engager le reste du socle — 24 jours</p><p>Cadrage technique et recette sur données réelles. La seule dépense qui met en production ce qui est déjà construit.</p><p>Mettre la traçabilité à jour — 4 jours</p><p>Les règles au-delà de RG-24 et les deux briques les plus récentes ne sont tracées nulle part. La recette porterait sur un périmètre partiel.</p><p>Construire l’écran Économies — 6 jours</p><p>Le moteur et la spécification existent. Sans écran, la brique reste inaccessible aux acheteurs.</p><p>Et sans budget : versionner les quatre fichiers non enregistrés, valider les règles RG-01 à RG-60, trancher une numérotation unique de briques et d’écrans.</p></div></details></figcaption>
+            </figure>
+            <figure class="slide reveal" id="s21">
+                <button class="slide-img" data-i="20" aria-label="Agrandir la slide 21">
+                    <img src="/presentations/hausses-tarifaires/21.webp" alt="Slide 21 — Comment nous saurons que ça marche" loading="lazy" width="1600" height="900">
+                </button>
+                <figcaption><span class="slide-num">21 / 21</span>
+                    <details><summary>Transcription</summary><div class="slide-text"><p>ANNEXE</p><p>Comment nous saurons que ça marche</p><p>Indicateur | Aujourd’hui | Cible<br>Rattachement automatique des références | Couverture du comparatif : 54 % | 80 % en déterministe ; 95 % suppose le modèle local<br>Prix faux produits par le calcul | Présent dans le fichier actuel | Zéro<br>Délai d’analyse d’un tarif reçu | Plusieurs jours à plusieurs semaines | 1 jour ouvré<br>Temps humain par tarif en régime établi | Non mesuré | 1 heure<br>Raccordement d’un nouveau fournisseur | Sans objet | 2 heures sur un format courant<br>Prix spéciaux couverts par le plafond | 0 % | 100 % du périmètre renseigné<br>Lignes comparables au m² et au mètre linéaire | Non mesuré | 78 % constatés en démonstration</p><p>Documents de référence : CDC-TARIFS-002 version 3.0, et son addendum 3.1 qui couvre les remises et familles, les économies, les unités et dimensions, et le contrôle d&#x27;accès — EF-233 à EF-258, RG-41 à RG-60.</p></div></details></figcaption>
+            </figure></div>
+        </div>
+    </section>
+    <div class="lightbox" id="lightbox" hidden>
+        <button class="lb-close" aria-label="Fermer">✕</button>
+        <button class="lb-prev" aria-label="Slide précédente">‹</button>
+        <img id="lb-img" alt="">
+        <button class="lb-next" aria-label="Slide suivante">›</button>
+        <div class="lb-count" id="lb-count"></div>
+    </div>
+    <script>
+    (function () {
+        var n = 21, i = 0, slug = "hausses-tarifaires";
+        var lb = document.getElementById('lightbox'), img = document.getElementById('lb-img'), cnt = document.getElementById('lb-count');
+        function pad(k) { return (k < 10 ? '0' : '') + k; }
+        function show(k) {
+            i = (k + n) % n;
+            img.src = '/presentations/' + slug + '/' + pad(i + 1) + '.webp';
+            img.alt = document.querySelectorAll('.slide img')[i].alt;
+            cnt.textContent = pad(i + 1) + ' / ' + pad(n);
+            new Image().src = '/presentations/' + slug + '/' + pad(((i + 1) % n) + 1) + '.webp';
+        }
+        function open(k) { show(k); lb.hidden = false; document.body.style.overflow = 'hidden';
+            if (lb.requestFullscreen) lb.requestFullscreen().catch(function () {}); }
+        function close() { lb.hidden = true; document.body.style.overflow = '';
+            if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+            var t = document.getElementById('s' + (i + 1)); if (t) t.scrollIntoView({block: 'center'}); }
+        document.getElementById('deck-play').addEventListener('click', function () { open(0); });
+        document.querySelectorAll('.slide-img').forEach(function (b) {
+            b.addEventListener('click', function () { open(+b.dataset.i); }); });
+        lb.querySelector('.lb-close').addEventListener('click', close);
+        lb.querySelector('.lb-prev').addEventListener('click', function () { show(i - 1); });
+        lb.querySelector('.lb-next').addEventListener('click', function () { show(i + 1); });
+        document.addEventListener('fullscreenchange', function () { if (!document.fullscreenElement && !lb.hidden) close(); });
+        document.addEventListener('keydown', function (ev) {
+            if (lb.hidden) return;
+            if (ev.key === 'ArrowRight' || ev.key === ' ' || ev.key === 'PageDown') { ev.preventDefault(); show(i + 1); }
+            else if (ev.key === 'ArrowLeft' || ev.key === 'PageUp') { ev.preventDefault(); show(i - 1); }
+            else if (ev.key === 'Escape') close();
+            else if (ev.key === 'Home') show(0); else if (ev.key === 'End') show(n - 1);
+        });
+        var x0 = null;
+        lb.addEventListener('touchstart', function (ev) { x0 = ev.touches[0].clientX; }, {passive: true});
+        lb.addEventListener('touchend', function (ev) {
+            if (x0 === null) return; var dx = ev.changedTouches[0].clientX - x0;
+            if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1)); x0 = null; });
+    })();
+    </script>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=3"></script>
+</body>
+</html>

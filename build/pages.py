@@ -41,7 +41,8 @@ def project_page(p, projects):
     buttons = []
     for label, href, primary in p.get("links", []):
         cls = "contact-btn contact-btn-primary" if primary else "contact-btn contact-btn-secondary"
-        buttons.append(f'<a href="{href}" target="_blank" rel="noopener" class="{cls}">{e(label)} {arrow()}</a>')
+        ext = ' target="_blank" rel="noopener"' if href.startswith("http") or href.startswith("/live") else ""
+        buttons.append(f'<a href="{href}"{ext} class="{cls}">{e(label)} {arrow()}</a>')
 
     badge = (f'<div class="live-badge" style="position:static;display:inline-flex;margin-bottom:1.2rem">'
              f'<span class="live-dot"></span> {e(p["badge"])}</div>') if p.get("badge") else ""

@@ -31,7 +31,8 @@ ACHATS = dict(
          "backlog, recette avec les acheteurs et pilotage des lots — jusqu'à la livraison d'un moteur Python / DuckDB et d'une interface R/Shiny.",
     kpis=[("≈ 1 %", "de la dépense suivie (gain central)"), ("105", "éléments de backlog suivis"), ("24", "règles de gestion formalisées"),
           ("6", "leviers de gain chiffrés"), ("≈ 3 000", "tests automatisés")],
-    links=[],
+    links=[("Présentation commerciale", "/presentations/plateforme-tarifs.html", True),
+           ("Présentation technique", "/presentations/hausses-tarifaires.html", False)],
     context=[
         "<strong>Ce projet existe et il est en cours.</strong> Je l'accompagne en tant que Business Analyst, de l'expression du besoin "
         "au suivi de la mise en œuvre. <em>Présentation anonymisée : aucune entreprise, aucun fournisseur, aucun site ni aucun montant réel ; "
@@ -56,6 +57,17 @@ ACHATS = dict(
         "Principe directeur : ce que le moteur ne sait pas lire reste <strong>vide avec son motif</strong> — jamais zéro, jamais deviné.",
     ],
     custom_sections=[
+        ("presentations", "Supports de présentation", "Les présentations du projet, en version web",
+         '<p style="margin-bottom:1.5rem">Deux supports que j\'ai conçus et présentés : l\'un pour <strong>vendre</strong> le produit, '
+         "l'autre pour <strong>obtenir une décision</strong> de la direction. Convertis en pages web, avec mode plein écran et transcription.</p>"
+         '<div class="deck-cards">'
+         '<a class="deck-card" href="/presentations/plateforme-tarifs.html"><img src="/presentations/plateforme-tarifs/01.webp" alt="Première slide de la présentation commerciale" loading="lazy" width="1600" height="900">'
+         '<div><span class="project-tag" style="color:var(--accent-warm)">Présentation commerciale · 38 slides</span>'
+         "<h3>Plateforme tarifs — entrer en négociation en sachant</h3><p>Enjeux, six chapitres fonctionnels, différenciation, limites assumées.</p></div></a>"
+         '<a class="deck-card" href="/presentations/hausses-tarifaires.html"><img src="/presentations/hausses-tarifaires/01.webp" alt="Première slide de la présentation technique" loading="lazy" width="1600" height="900">'
+         '<div><span class="project-tag" style="color:var(--accent-warm)">Présentation technique · 21 slides</span>'
+         "<h3>Hausses tarifaires — le socle est construit</h3><p>Constat, chaîne, calculs, état de réalisation, chiffrage, risques, décisions.</p></div></a>"
+         "</div>"),
         ("mon-role", "Mon rôle", "Business Analyst et suivi du projet",
          '<div class="two-col">'
          '<div class="arg-card arg-card--rh"><span class="arg-label">Analyse métier</span><ul>'

@@ -9,6 +9,7 @@ from drawio import build_xml, write_and_export, slim_svg, DRAWIO_BIN
 from pages import project_page, MATRIX_COLS, MARK
 from projects import PROJECTS, GH
 from render import head, nav, FOOTER, badges, arrow, e
+from presentations import DECKS, deck_page
 import subprocess
 
 SITE = Path(__file__).resolve().parent.parent
@@ -431,4 +432,6 @@ if __name__ == "__main__":
     print("pages")
     for p in PROJECTS:
         write(SITE / "projets" / f"{p['slug']}.html", project_page(p, PROJECTS))
+    for d in DECKS:
+        write(SITE / "presentations" / f"{d['slug']}.html", deck_page(d, PROJECTS))
     page_projects_index(); page_stack(); page_rh(); page_tech(); patch_index()
