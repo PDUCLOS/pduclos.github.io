@@ -156,7 +156,7 @@ cands = [{"reference_erp": par_norm[c], "score": round(sc, 1),
     ],
     limits=[
         "Déploiement conteneurisé multi-utilisateurs et connexion à l'annuaire d'entreprise encore au backlog.",
-        "Un seul profil sectoriel riche (adhésifs, films, chimie) en plus du profil générique ; interface en français.",
+        "Un seul profil sectoriel riche (industriel) en plus du profil générique ; interface en français.",
         "Gains estimés tant que la première campagne sur données réelles n'a pas eu lieu — la méthode de mesure est prête.",
         "Revue critique des règles métier menée : défauts critiques identifiés (paliers, remises, encodages) et corrigés un par un, avec test dédié.",
     ],
