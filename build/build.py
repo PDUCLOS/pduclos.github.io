@@ -219,7 +219,7 @@ def page_rh():
     path = "/profil-rh.html"
     objections = [
         ("« C'est une reconversion : a-t-il vraiment le niveau ? »",
-         "Deux certifications RNCP (niveau 6 obtenu, niveau 7 Lead Data Science / AI Architect en cours), une certification Databricks, "
+         "Deux certifications RNCP obtenues (niveau 6, puis niveau 7 Bac+5 Lead Data Science / AI Architect en 2026), une certification Databricks, "
          "10 mois chez Carrier avec des résultats chiffrés, et une plateforme MLOps <strong>en production</strong> accessible en ligne. "
          "La reconversion est terminée ; ce qui reste, c'est 20 ans de terrain que les profils juniors n'ont pas."),
         ("« Senior métier, mais junior technique ? »",
@@ -311,7 +311,7 @@ def page_rh():
             <span class="section-label">// Formation</span>
             <h2>Diplômes et certifications</h2>
             <div class="certifications-grid">
-                <div class="certification-card"><div class="certification-icon">🚀</div><div><h3 class="certification-title">Lead Data Science / AI Architect</h3><p class="certification-org">Jedha — RNCP 38777, niveau 7 (Bac+5)</p><span class="certification-year">2026 – en cours</span></div></div>
+                <div class="certification-card"><div class="certification-icon">🚀</div><div><h3 class="certification-title">Lead Data Science / AI Architect</h3><p class="certification-org">Jedha — RNCP 38777, niveau 7 (Bac+5)</p><span class="certification-year">2026 · obtenue ✓</span></div></div>
                 <div class="certification-card"><div class="certification-icon">🎓</div><div><h3 class="certification-title">Concepteur Développeur en Sciences des Données</h3><p class="certification-org">Jedha / M2i — RNCP niveau 6 (Bac+4)</p><span class="certification-year">2024 – 2025</span></div></div>
                 <div class="certification-card"><div class="certification-icon">📜</div><div><h3 class="certification-title">Databricks Lakehouse Fundamentals</h3><p class="certification-org">Databricks Academy</p><span class="certification-year">2025</span></div></div>
                 <div class="certification-card"><div class="certification-icon">⚙️</div><div><h3 class="certification-title">DUT Génie Mécanique et Productique</h3><p class="certification-org">IUT B Villeurbanne</p><span class="certification-year">2000 – 2002</span></div></div>

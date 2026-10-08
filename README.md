@@ -1,7 +1,7 @@
 # Portfolio — Patrice Duclos, Data Analyst Senior · Data Scientist · MLOps
 
 Portfolio personnel : 20 ans d'expertise en distribution industrielle et une reconversion data certifiée
-(Jedha RNCP niveau 6, niveau 7 Lead Data Science / AI Architect en cours).
+(Jedha RNCP niveau 6, puis niveau 7 Bac+5 Lead Data Science / AI Architect obtenu en 2026).
 
 ## Site live
 
