@@ -56,6 +56,7 @@ def nav(projects, current=""):
                     <li class="dropdown-sep" aria-hidden="true"></li>
                     {''.join(items)}
                     <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/pondera/">Site commercial — Pondera<small>projet achats · site produit bilingue</small></a></li>
                     <li><a href="/presentations/plateforme-tarifs.html">Présentation commerciale<small>projet achats · 38 slides</small></a></li>
                     <li><a href="/presentations/hausses-tarifaires.html">Présentation technique<small>projet achats · 21 slides</small></a></li>
                 </ul>

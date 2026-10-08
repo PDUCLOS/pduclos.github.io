@@ -1,0 +1,1 @@
+import{a as e,o as t,r as n}from"./anim.1igxcFK3.js";document.querySelectorAll(`[data-ic]`).forEach(r=>{let i=n(r),a=r.querySelectorAll(`[data-l]`),o=r.querySelector(`[data-box]`),s=r.querySelector(`[data-msg]`);e(r,(e,n)=>{let r=n?9:e%9;a.forEach((e,n)=>t(e,r>.5+n*.7));let c=r>3.4;s.textContent=c?i.done:i.calc,o.style.background=c?`var(--ok-bg)`:`var(--line-3)`})});

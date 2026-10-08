@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pduclos.github.io/sitemap.xml

@@ -49,7 +49,7 @@ def deck_page(deck, projects):
         <div class="hero-glow hero-glow-1"></div>
         <div class="hero-content">
             <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/achats-negociation.html">Projet Achats</a> / {e(deck['kind'])}</div>
-            <div class="live-badge" style="position:static;display:inline-flex;margin-bottom:1.2rem"><span class="live-dot"></span> PROJET EN COURS · BUSINESS ANALYST</div>
+            <div class="live-badge" style="position:static;display:inline-flex;margin-bottom:1.2rem"><span class="live-dot"></span> PROJET EN COURS · CHEF DE PROJET</div>
             <span class="project-tag" style="color:var(--accent-warm)">{e(deck['kind'])} · {n} slides</span>
             <h1>{e(deck['title'])}</h1>
             <p class="lead">{deck['lead']}</p>

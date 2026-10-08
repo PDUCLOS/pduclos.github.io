@@ -22,20 +22,21 @@ stake_rows = "".join(f"<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>" for a, b, 
 ACHATS = dict(
     slug="achats-negociation",
     short="Achats — tarifs & scorecards",
-    kicker="Projet en cours · Business Analyst · Achats",
-    badge="PROJET EN COURS · BUSINESS ANALYST",
+    kicker="Projet en cours · Chef de projet · Achats",
+    badge="PROJET EN COURS · CHEF DE PROJET DE BOUT EN BOUT",
     title="Plateforme d'aide à la négociation achats",
-    title_html='Business Analyst achats : transformer chaque hausse tarifaire en <span class="highlight">argument chiffré</span>',
-    lead="Projet réel, en cours dans une direction Achats industrielle. J'y interviens comme <strong>Business Analyst</strong> "
-         "et j'assure le <strong>suivi du projet</strong> : recueil des besoins, règles de gestion, business case, cahier des charges, "
-         "backlog, recette avec les acheteurs et pilotage des lots — jusqu'à la livraison d'un moteur Python / DuckDB et d'une interface R/Shiny.",
+    title_html='Chef de projet achats : transformer chaque hausse tarifaire en <span class="highlight">argument chiffré</span>',
+    lead="Projet réel, en cours dans une direction Achats industrielle. Je <strong>pilote le projet de bout en bout</strong> : "
+         "cadrage et analyse métier, business case, cahier des charges, architecture, développement du moteur Python / DuckDB et de "
+         "l'interface R/Shiny, recette avec les acheteurs, déploiement — et sa mise en marché, avec le site commercial.",
     kpis=[("≈ 1 %", "de la dépense suivie (gain central)"), ("105", "éléments de backlog suivis"), ("24", "règles de gestion formalisées"),
           ("6", "leviers de gain chiffrés"), ("≈ 3 000", "tests automatisés")],
-    links=[("Présentation commerciale", "/presentations/plateforme-tarifs.html", True),
+    links=[("Site commercial (Pondera)", "/pondera/", True),
+           ("Présentation commerciale", "/presentations/plateforme-tarifs.html", False),
            ("Présentation technique", "/presentations/hausses-tarifaires.html", False)],
     context=[
-        "<strong>Ce projet existe et il est en cours.</strong> Je l'accompagne en tant que Business Analyst, de l'expression du besoin "
-        "au suivi de la mise en œuvre. <em>Présentation anonymisée : aucune entreprise, aucun fournisseur, aucun site ni aucun montant réel ; "
+        "<strong>Ce projet existe et il est en cours.</strong> Je le gère de bout en bout, de l'expression du besoin "
+        "à la mise en production et à la présentation commerciale. <em>Présentation anonymisée : aucune entreprise, aucun fournisseur, aucun site ni aucun montant réel ; "
         "les exemples chiffrés viennent du jeu de démonstration, entièrement fictif. Code non public.</em>",
         "Une direction Achats reçoit chaque année des dizaines de révisions tarifaires, dans tous les formats (Excel, CSV, PDF). "
         "Aujourd'hui, l'acheteur passe <strong>1 à 3 jours par révision</strong> à remettre le fichier au format, rapprocher les références "
@@ -44,7 +45,7 @@ ACHATS = dict(
         "et les <strong>scorecards fournisseurs</strong> trimestrielles (fin de la ressaisie, l'acheteur ne garde que le jugement).",
     ],
     rh=[
-        "<strong>Rôle actuel de Business Analyst</strong> sur un projet réel : besoins, règles de gestion, cahier des charges, backlog, recette, suivi.",
+        "<strong>Chef de projet de bout en bout</strong> sur un projet réel : besoins, cahier des charges, architecture, développement, recette, déploiement, commercialisation.",
         "<strong>Business case chiffré</strong> en trois scénarios (bas / central / haut) : de 0,5 % à 2,3 % de la dépense suivie, retour dès le premier trimestre.",
         "Conditions d'échec écrites noir sur blanc : volumes non fiables, référentiel non rattaché, rapport de force défavorable, alertes non suivies.",
         "Organisation proposée : équipe de 8 personnes, dont <strong>deux profils métier</strong> jugés indispensables au succès.",
@@ -57,9 +58,14 @@ ACHATS = dict(
         "Principe directeur : ce que le moteur ne sait pas lire reste <strong>vide avec son motif</strong> — jamais zéro, jamais deviné.",
     ],
     custom_sections=[
-        ("presentations", "Supports de présentation", "Les présentations du projet, en version web",
-         '<p style="margin-bottom:1.5rem">Deux supports que j\'ai conçus et présentés : l\'un pour <strong>vendre</strong> le produit, '
-         "l'autre pour <strong>obtenir une décision</strong> de la direction. Convertis en pages web, avec mode plein écran et transcription.</p>"
+        ("presentations", "Mise en marché", "Site commercial et présentations du projet",
+         '<p style="margin-bottom:1.5rem">Le produit a son <strong>site commercial bilingue</strong> (Astro, nom de travail « Pondera ») et deux supports '
+         "que j'ai conçus et présentés : l'un pour <strong>vendre</strong>, l'autre pour <strong>obtenir une décision</strong> de la direction.</p>"
+         '<a class="deck-card" href="/pondera/" style="margin-bottom:1.5rem"><img src="/presentations/pondera-home.webp" alt="Page d\'accueil du site commercial Pondera" loading="lazy" width="1600" height="900">'
+         '<div><span class="project-tag" style="color:var(--accent-warm)">Site commercial · FR / EN · 33 pages</span>'
+         "<h3>Pondera — chaque rachat apporte ses prix, gardez les meilleurs</h3>"
+         "<p>Site statique Astro : animations accessibles (pause, clavier, sans JS), aucun script en ligne, données d'exemple fictives, "
+         "rien promis qui ne soit livré. Nom et domaine encore à l'étude.</p></div></a>"
          '<div class="deck-cards">'
          '<a class="deck-card" href="/presentations/plateforme-tarifs.html"><img src="/presentations/plateforme-tarifs/01.webp" alt="Première slide de la présentation commerciale" loading="lazy" width="1600" height="900">'
          '<div><span class="project-tag" style="color:var(--accent-warm)">Présentation commerciale · 38 slides</span>'
@@ -68,19 +74,24 @@ ACHATS = dict(
          '<div><span class="project-tag" style="color:var(--accent-warm)">Présentation technique · 21 slides</span>'
          "<h3>Hausses tarifaires — le socle est construit</h3><p>Constat, chaîne, calculs, état de réalisation, chiffrage, risques, décisions.</p></div></a>"
          "</div>"),
-        ("mon-role", "Mon rôle", "Business Analyst et suivi du projet",
-         '<div class="two-col">'
-         '<div class="arg-card arg-card--rh"><span class="arg-label">Analyse métier</span><ul>'
+        ("mon-role", "Mon rôle", "Je gère le projet complet",
+         '<div class="three-col">'
+         '<div class="arg-card arg-card--rh"><span class="arg-label">Cadrage & analyse métier</span><ul>'
          "<li><strong>Recueil des besoins</strong> auprès des acheteurs et de la direction Achats ; cartographie du processus actuel et cible.</li>"
          "<li><strong>24 règles de gestion</strong> formalisées (RG-xx), avec leurs cas limites, puis une revue critique complète des règles.</li>"
          "<li><strong>Cahier des charges</strong> versionné (v3) et <strong>traçabilité des exigences</strong> jusqu'aux tests.</li>"
          "<li><strong>Business case</strong> : 6 leviers chiffrés en 3 scénarios, conditions d'échec explicites.</li></ul></div>"
-         '<div class="arg-card arg-card--ok"><span class="arg-label">Suivi du projet</span><ul>'
+         '<div class="arg-card arg-card--ok"><span class="arg-label">Pilotage & suivi</span><ul>'
          "<li><strong>Backlog de 105 éléments</strong> décrits assez précisément pour être chiffrés, priorisés avec le référent métier.</li>"
          "<li><strong>Décisions datées</strong> et tracées (périmètre gelé, arbitrages, choix d'architecture).</li>"
          "<li><strong>Contrôles réguliers</strong> de l'avancement et revues de code datées : ce qui est réellement livré, pas ce qui est annoncé.</li>"
          "<li><strong>Recette</strong> sur fichiers réels rejoués, rapport remis à l'acheteur pour validation ; jalons go / no-go.</li>"
-         "<li><strong>Pilotage de lots délégués</strong> : chaque lot a sa demande écrite, ses critères d'acceptation et sa grille de contrôle.</li></ul></div></div>"),
+         "<li><strong>Pilotage de lots délégués</strong> : chaque lot a sa demande écrite, ses critères d'acceptation et sa grille de contrôle.</li></ul></div>"
+         '<div class="arg-card arg-card--tech"><span class="arg-label">Réalisation & mise en marché</span><ul>'
+         "<li><strong>Architecture et développement</strong> : moteur Python / DuckDB, interface R/Shiny, ≈ 3 000 tests, intégration continue.</li>"
+         "<li><strong>Déploiement</strong> : plan de fiabilité, sauvegardes, mises à jour sans perte, habilitations.</li>"
+         "<li><strong>Présentations</strong> commerciale et de décision, conçues et présentées.</li>"
+         '<li><strong>Site commercial</strong> bilingue du produit (Astro) : <a href="/pondera/" style="color:var(--accent)">le voir →</a></li></ul></div></div>'),
         ("parties-prenantes", "Parties prenantes", "Qui a besoin de quoi",
          '<div class="table-wrap"><table class="stack-table"><thead><tr><th>Acteur</th><th>Besoin</th><th>Réponse apportée</th></tr></thead>'
          f"<tbody>{stake_rows}</tbody></table></div>"),

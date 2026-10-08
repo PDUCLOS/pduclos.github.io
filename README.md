@@ -44,3 +44,9 @@ Les règles de masquage sont lues depuis `build/redact.local` (non versionné).
 
 HTML5, CSS3 (`assets/style.css`), JavaScript vanilla (`assets/site.js`), Google Fonts. Aucun framework.
 Générateur en Python standard + draw.io CLI.
+
+## Site commercial du projet achats (`/pondera/`)
+
+Copie construite du site Astro `site-commercial` (dépôt du projet), recompilée avec `base: '/pondera'`
+et des routes préfixées, sans le bandeau « texte à valider » et avec le secteur générique « industriel ».
+Le dépôt d'origine n'est pas modifié ; pour mettre à jour, reconstruire la copie et remplacer `pondera/`.

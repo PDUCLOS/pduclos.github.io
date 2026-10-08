@@ -232,7 +232,7 @@ def page_rh():
          "Mes projets suivent les standards d'équipe : conventions documentées, tests bloquants en CI, "
          "documentation d'architecture, diagrammes draw.io. Expérience de projets d'équipe en formation et en contexte international chez Carrier."),
         ("« Quel type de poste ? »",
-         "Data Analyst senior, Business Analyst data, Data Scientist, ML Engineer / MLOps, ou Lead Data dans l'industrie, l'énergie, la distribution B2B "
+         "Chef de projet data, Data Analyst senior, Data Scientist, ML Engineer / MLOps, ou Lead Data dans l'industrie, l'énergie, la distribution B2B "
          "ou la supply chain — là où la double compétence métier + data a le plus de valeur. Région lyonnaise, hybride."),
     ]
     obj_html = "".join(f'<details class="objection"><summary>{q}</summary><p>{a}</p></details>' for q, a in objections)
@@ -251,9 +251,9 @@ def page_rh():
                que se pose le décideur. Puis je construis l'outil qui y répond — et je le mets en production.</p>
             <div class="two-col">
                 <div class="arg-card arg-card--rh reveal"><span class="arg-label">Rôle actuel</span><ul>
-                    <li><strong>Business Analyst</strong> sur un projet achats réel, en cours</li>
-                    <li>Besoins, règles de gestion, business case, cahier des charges</li>
-                    <li><strong>Suivi du projet</strong> : backlog de 105 éléments, recette, jalons</li>
+                    <li><strong>Chef de projet de bout en bout</strong> sur un projet achats réel, en cours</li>
+                    <li>Cadrage, architecture, développement, recette, déploiement</li>
+                    <li>Mise en marché : présentations et <a href="/pondera/" style="color:var(--accent)">site commercial</a></li>
                     <li><a href="/projets/achats-negociation.html" style="color:var(--accent)">Voir le projet →</a></li></ul></div>
                 <div class="arg-card arg-card--rh reveal"><span class="arg-label">Impact business mesuré</span><ul>
                     <li><strong>−40 %</strong> de temps de traitement chez Carrier</li>
