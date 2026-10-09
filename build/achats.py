@@ -31,7 +31,7 @@ ACHATS = dict(
          "l'interface R/Shiny, recette avec les acheteurs, déploiement — et sa mise en marché, avec le site commercial.",
     kpis=[("≈ 1 %", "de la dépense suivie (gain central)"), ("105", "éléments de backlog suivis"), ("24", "règles de gestion formalisées"),
           ("6", "leviers de gain chiffrés"), ("≈ 3 000", "tests automatisés")],
-    links=[("Site commercial (Pondera)", "/pondera/", True),
+    links=[("Site commercial (Buyvera)", "/buyvera/", True),
            ("Présentation commerciale", "/presentations/plateforme-tarifs.html", False),
            ("Présentation technique", "/presentations/hausses-tarifaires.html", False)],
     context=[
@@ -59,13 +59,13 @@ ACHATS = dict(
     ],
     custom_sections=[
         ("presentations", "Mise en marché", "Site commercial et présentations du projet",
-         '<p style="margin-bottom:1.5rem">Le produit a son <strong>site commercial bilingue</strong> (Astro, nom de travail « Pondera ») et deux supports '
+         '<p style="margin-bottom:1.5rem">Le produit a son <strong>site commercial bilingue</strong> (Astro, marque Buyvera — buyvera.fr) et deux supports '
          "que j'ai conçus et présentés : l'un pour <strong>vendre</strong>, l'autre pour <strong>obtenir une décision</strong> de la direction.</p>"
-         '<a class="deck-card" href="/pondera/" style="margin-bottom:1.5rem"><img src="/presentations/pondera-home.webp" alt="Page d\'accueil du site commercial Pondera" loading="lazy" width="1600" height="900">'
+         '<a class="deck-card" href="/buyvera/" style="margin-bottom:1.5rem"><img src="/presentations/buyvera-home.webp" alt="Page d\'accueil du site commercial Buyvera" loading="lazy" width="1600" height="900">'
          '<div><span class="project-tag" style="color:var(--accent-warm)">Site commercial · FR / EN · 33 pages</span>'
-         "<h3>Pondera — chaque rachat apporte ses prix, gardez les meilleurs</h3>"
+         "<h3>Buyvera — chaque rachat apporte ses prix, gardez les meilleurs</h3>"
          "<p>Site statique Astro : animations accessibles (pause, clavier, sans JS), aucun script en ligne, données d'exemple fictives, "
-         "rien promis qui ne soit livré. Nom et domaine encore à l'étude.</p></div></a>"
+         "rien promis qui ne soit livré.</p></div></a>"
          '<div class="deck-cards">'
          '<a class="deck-card" href="/presentations/plateforme-tarifs.html"><img src="/presentations/plateforme-tarifs/01.webp" alt="Première slide de la présentation commerciale" loading="lazy" width="1600" height="900">'
          '<div><span class="project-tag" style="color:var(--accent-warm)">Présentation commerciale · 38 slides</span>'
@@ -91,7 +91,7 @@ ACHATS = dict(
          "<li><strong>Architecture et développement</strong> : moteur Python / DuckDB, interface R/Shiny, ≈ 3 000 tests, intégration continue.</li>"
          "<li><strong>Déploiement</strong> : plan de fiabilité, sauvegardes, mises à jour sans perte, habilitations.</li>"
          "<li><strong>Présentations</strong> commerciale et de décision, conçues et présentées.</li>"
-         '<li><strong>Site commercial</strong> bilingue du produit (Astro) : <a href="/pondera/" style="color:var(--accent)">le voir →</a></li></ul></div></div>'),
+         '<li><strong>Site commercial</strong> bilingue du produit (Astro) : <a href="/buyvera/" style="color:var(--accent)">le voir →</a></li></ul></div></div>'),
         ("parties-prenantes", "Parties prenantes", "Qui a besoin de quoi",
          '<div class="table-wrap"><table class="stack-table"><thead><tr><th>Acteur</th><th>Besoin</th><th>Réponse apportée</th></tr></thead>'
          f"<tbody>{stake_rows}</tbody></table></div>"),
