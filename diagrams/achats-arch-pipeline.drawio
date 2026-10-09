@@ -1,0 +1,612 @@
+<mxfile host="app.diagrams.net">
+ <diagram id="pipeline" name="Pipeline de données">
+  <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2330" pageHeight="1640" math="0" shadow="0">
+   <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="c1" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;1. Dépôt et lecture&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="40" y="132" width="348" height="768" as="geometry" />
+    </mxCell>
+    <mxCell id="c2" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;2. Mapping et gabarit&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="424" y="132" width="348" height="768" as="geometry" />
+    </mxCell>
+    <mxCell id="c3" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;3. Compte rendu et décision&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="808" y="132" width="348" height="768" as="geometry" />
+    </mxCell>
+    <mxCell id="c4" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;4. Normalisation (traiter)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="1192" y="132" width="348" height="768" as="geometry" />
+    </mxCell>
+    <mxCell id="c5" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;5. Rattachement des références&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="1576" y="132" width="348" height="768" as="geometry" />
+    </mxCell>
+    <mxCell id="c6" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;6. Comparaison N-1/N et analyse&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="1576" y="946" width="348" height="664" as="geometry" />
+    </mxCell>
+    <mxCell id="c7" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;7. Restitution et lecture&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="1192" y="946" width="348" height="664" as="geometry" />
+    </mxCell>
+    <mxCell id="c8" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;8. Contrôles et économies&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="808" y="946" width="348" height="664" as="geometry" />
+    </mxCell>
+    <mxCell id="c9" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;9. Export ERP et dossier&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="424" y="946" width="348" height="664" as="geometry" />
+    </mxCell>
+    <mxCell id="c10" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;10. Archivage et exploitation&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="40" y="946" width="348" height="664" as="geometry" />
+    </mxCell>
+    <mxCell id="cerp" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;Sources de référence (ERP)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="1972" y="132" width="316" height="1478" as="geometry" />
+    </mxCell>
+    <mxCell id="titre" value="&lt;font style=&quot;font-size:24px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;Buyvera · Pipeline de données : du fichier tarif aux décisions&lt;/b&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=24;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="40" y="18" width="1100" height="34" as="geometry" />
+    </mxCell>
+    <mxCell id="sous_titre" value="&lt;font style=&quot;font-size:12px&quot; color=&quot;#5B6B7A&quot;&gt;De gauche à droite et de haut en bas (1 à 5, puis 6 à 10 de droite à gauche). Chaque nom cité (module, table, commande) est vérifié contre le code à la génération.&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="40" y="56" width="1100" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="date" value="&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;03/10/2026 · généré par generer_drawio.py (ne pas éditer à la main)&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="40" y="102" width="1100" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_source" value="Fichier ou système externe" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#5B6B7A;strokeWidth=1.5;fillColor=#F5F3EE;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1180" y="14" width="148" height="52" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_moteur" value="Étape déterministe du moteur" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1336" y="14" width="148" height="52" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_humain" value="Décision humaine" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=2.5;fillColor=#FFE6CC;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1492" y="14" width="148" height="52" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_donnee" value="Donnée stockée (table DuckDB)" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1648" y="14" width="148" height="52" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_sortie" value="Sortie (livrable)" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7A5C99;strokeWidth=1.5;fillColor=#E1D5E7;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1804" y="14" width="148" height="52" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_option" value="Option, non livré" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7F7F7F;strokeWidth=1.5;fillColor=#FFFFFF;dashed=1;dashPattern=6 4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1960" y="14" width="148" height="52" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f1_a" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1190" y="80" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f1_b" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1230" y="80" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f1_t" value="enchaînement" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1238" y="71" width="90" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f2_a" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1380" y="80" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f2_b" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1420" y="80" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f2_t" value="lit ou écrit dans l'entrepôt" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1428" y="71" width="160" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f3_a" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1640" y="80" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f3_b" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1680" y="80" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f3_t" value="option, non livré" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1688" y="71" width="110" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f4_a" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1840" y="80" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f4_b" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1880" y="80" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f4_t" value="passage par un humain" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1888" y="71" width="150" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="p_fichier" value="&lt;b&gt;Fichier tarif du fournisseur&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;xlsx, xls, csv, txt&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#5B6B7A;strokeWidth=1.5;fillColor=#F5F3EE;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="170" width="190" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_pdf" value="&lt;b&gt;PDF (F8)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot; color=&quot;#5B6B7A&quot;&gt;prévu, non livré : lecture.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7F7F7F;strokeWidth=1.5;fillColor=#FFFFFF;dashed=1;dashPattern=6 4;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="254" y="170" width="124" height="54" as="geometry" />
+    </mxCell>
+    <mxCell id="p_depot" value="&lt;b&gt;Dépôt : empreinte SHA-256, archive en lecture seule, doublon refusé&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;traitement.py · cmd deposer&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="230" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="t_fichier_tarif" value="fichier_tarif" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="254" y="232" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_lecture" value="&lt;b&gt;Lecture du conteneur et du tableau tarifaire&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;lecture.py · lignes écartées avec motif&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="320" width="190" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="t_ligne_brute" value="ligne_brute" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="254" y="320" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_struct" value="&lt;b&gt;Détection de structure : en-tête, archétype F1 à F5&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;mapping.py · lecture.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="408" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="p_mapping" value="&lt;b&gt;Mapping des colonnes : alias, libellé proche, profil des données&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;mapping.py · config/alias_colonnes.yaml&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="434" y="170" width="190" height="88" as="geometry" />
+    </mxCell>
+    <mxCell id="p_gabarit" value="&lt;b&gt;Gabarit du fournisseur, versionné (JSON)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;gabarits.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="434" y="272" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="t_gabarit" value="gabarit_fichier" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="638" y="272" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_cle" value="&lt;b&gt;Clé unique du tarif, trouvée seule ou avec l'acheteur&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;cle_unique.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="434" y="348" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="p_valid_map" value="&lt;b&gt;Valide le mapping et la clé&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;cmd valider-mapping · valider-cle&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=2.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="434" y="424" width="190" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_onboard" value="&lt;b&gt;Nouveau fournisseur sans code&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;onboarding.py · cmd fournisseur ajouter&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="434" y="484" width="190" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="p_cr" value="&lt;b&gt;Compte rendu préalable : ce qui a été compris, points bloquants et alertes&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;compte_rendu.py · cmd compte-rendu&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="818" y="170" width="190" height="88" as="geometry" />
+    </mxCell>
+    <mxCell id="t_cr" value="compte_rendu" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1022" y="170" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_decision" value="&lt;b&gt;Décision tracée : poursuivre, poursuivre avec réserves ou arrêter&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;cmd decider · auteur et date consignés&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=2.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="818" y="272" width="190" height="88" as="geometry" />
+    </mxCell>
+    <mxCell id="t_decision" value="decision" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1022" y="272" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_rg24" value="&lt;b&gt;Traitement complet refusé sans décision « poursuivre » (RG-24)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;traitement.py · cmd traiter&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="818" y="374" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="p_cr_sortie" value="&lt;b&gt;Compte rendu en Markdown et PDF&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;restitution.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7A5C99;strokeWidth=1.5;fillColor=#E1D5E7;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="818" y="504" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="p_questions" value="&lt;b&gt;Réponses de l'acheteur aux ambiguïtés de lecture : unité, devise, base de prix, date&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;arbitrage_questions.py · cmd arbitrage questions · relues à chaque traitement&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=2.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="170" width="190" height="102" as="geometry" />
+    </mxCell>
+    <mxCell id="t_question" value="question_arbitrage" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1406" y="170" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_canon" value="&lt;b&gt;Forme canonique, nettoyage (l'absence n'est jamais 0, RG-01) et dates d'émission et d'application&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;ingestion.py · nettoyage.py · dates_tarif.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="286" width="190" height="104" as="geometry" />
+    </mxCell>
+    <mxCell id="p_remises" value="&lt;b&gt;Remises : l'article l'emporte sur la famille&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;remises.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="404" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="t_remise" value="remise" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1406" y="404" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_dim" value="&lt;b&gt;Dimensions lues dans les désignations&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;dimensions.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="480" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="x_bce" value="Taux BCE (XML ou CSV manuel)" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1406" y="480" width="124" height="58" as="geometry" />
+    </mxCell>
+    <mxCell id="p_devises" value="&lt;b&gt;Devises : taux de la date d'application, règle de change au choix&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;devises.py · conversion.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="556" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="t_taux" value="taux_change" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1406" y="556" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="t_conv" value="regle_conversion" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1406" y="610" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_unites" value="&lt;b&gt;Unités et base de prix (par 1 000, par 100)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;unites.py · base_prix.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="646" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="p_arrondi" value="&lt;b&gt;Arrondi monétaire réglé par l'administrateur&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;arrondi_monetaire.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="722" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="t_arrondi" value="reglage_arrondi" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1406" y="722" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_norm" value="&lt;b&gt;Prix normalisé : devise de comparaison (l'euro par défaut), par unité de comparaison&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;normalisation.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="798" width="190" height="92" as="geometry" />
+    </mxCell>
+    <mxCell id="t_norm" value="ligne_normalisee" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1406" y="798" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_maitre" value="&lt;b&gt;Référence maître commune à tous les fournisseurs (EF-73)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;rattachement.py · referentiel.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="170" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="t_maitre" value="reference_maitre" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1790" y="170" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_l0" value="&lt;b&gt;L0 : lien validé déjà établi (égalité stricte)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;rattachement.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="260" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="t_lien" value="lien_version" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1790" y="260" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_l1" value="&lt;b&gt;L1 : règles déclarées (préfixe, zéros, regex) et RG-06&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;rattachement.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="336" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="t_regle" value="regle_rattachement" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1790" y="336" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_l2" value="&lt;b&gt;L2 : identifiant fort secondaire côté ERP&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;rattachement.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="426" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="p_l3" value="&lt;b&gt;L3 : rapprochement approché, score au moins 92 et écart au moins 3 (RG-07)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;rattachement.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="502" width="190" height="92" as="geometry" />
+    </mxCell>
+    <mxCell id="p_l45" value="&lt;b&gt;L4 embeddings, L5 modèle local : interface seule, propose sans appliquer&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;llm_local.py · non branché&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7F7F7F;strokeWidth=1.5;fillColor=#FFFFFF;dashed=1;dashPattern=6 4;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="608" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="p_l6" value="&lt;b&gt;L6 : file humaine triée par enjeu ; arbitrage annulable&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;cmd arbitrer · arbitrer-masse · annuler&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=2.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="698" width="190" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="t_oper" value="operation" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1790" y="698" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="p_appl" value="&lt;b&gt;Références maîtres appliquées aux lignes (liens validés seuls)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;rattachement.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="786" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="e_erp" value="&lt;b&gt;ERP des sites&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;le moteur n'y écrit jamais&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#5B6B7A;strokeWidth=1.5;fillColor=#F5F3EE;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1982" y="170" width="170" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="e_conn" value="&lt;b&gt;Connecteurs génériques : vue SQL, service web, export planifié (fichier CSV ou XLSX déposé)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;erp/ · config/entites.yaml&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1982" y="230" width="170" height="92" as="geometry" />
+    </mxCell>
+    <mxCell id="e_contrat" value="&lt;b&gt;Contrat des jeux validé : articles, prix d'achat et volumes (obligatoires)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;erp/&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1982" y="336" width="170" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="t_erp3" value="article_erp&lt;br&gt;prix_erp&lt;br&gt;volume_achat" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="2166" y="336" width="112" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="e_sync" value="&lt;b&gt;Synchronisation horodatée, historisée&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;cmd erp synchroniser&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1982" y="426" width="170" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="t_sync" value="synchro_erp" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="2166" y="426" width="112" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="e_pa" value="&lt;b&gt;Historique des prix d'achat : changements datés&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;historique_pa.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1982" y="502" width="170" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="t_pa" value="pa_changement" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="2166" y="502" width="112" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="e_cmd" value="&lt;b&gt;Jeu optionnel : commandes de l'ERP, lues pour le contrôle des prix&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;commande_erp&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#5B6B7A;strokeWidth=1.5;fillColor=#F5F3EE;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1982" y="592" width="170" height="92" as="geometry" />
+    </mxCell>
+    <mxCell id="a_n1" value="&lt;b&gt;Version N-1 : dernière version traitée avant la version reçue&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;entrepot.py · traitement.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="984" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="a_garde" value="&lt;b&gt;Garde-fous : HT contre TTC, même arrondi ; sinon refus avant calcul&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;taxes.py · arrondi_monetaire.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="1074" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="a_var" value="&lt;b&gt;Variation N-1/N, hausse pondérée par les volumes de l'ERP&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;analyse.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="1164" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="t_var" value="variation" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1790" y="1164" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="a_impact" value="&lt;b&gt;Impact annualisé : vide si le volume est inconnu, jamais 0&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;analyse.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="1254" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="t_analyse" value="analyse_tarif" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1790" y="1254" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="a_seuil" value="&lt;b&gt;Hausse forte : seuil RG-10, réglable par l'acheteur dans la plage du responsable&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;analyse.py · seuils_acheteur.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="1344" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="a_alertes" value="&lt;b&gt;Alertes et anomalies : tarif non appliqué dans l'ERP, références non rattachées&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;analyse.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="1434" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="t_anom" value="anomalie" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1790" y="1434" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="a_seg" value="&lt;b&gt;Segmentations, classes ABC, hausse théorique par indice matière&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;analyse.py · indices.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1586" y="1524" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="r_classeur" value="&lt;b&gt;Classeur d'analyse à 6 onglets&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;restitution.py · cmd analyser&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7A5C99;strokeWidth=1.5;fillColor=#E1D5E7;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="984" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="r_memo" value="&lt;b&gt;Mémo de négociation d'une page (Markdown et PDF)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;restitution.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7A5C99;strokeWidth=1.5;fillColor=#E1D5E7;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="1060" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="r_qualite" value="&lt;b&gt;Rapport de qualité&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;restitution.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7A5C99;strokeWidth=1.5;fillColor=#E1D5E7;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="1136" width="190" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="r_ecrans" value="&lt;b&gt;Écrans de l'interface : 91 vues ui_* lues en lecture seule&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;vues_ui.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7A5C99;strokeWidth=1.5;fillColor=#E1D5E7;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="1196" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="r_acheteur" value="&lt;b&gt;L'acheteur lit l'analyse et exporte le mémo (statut « analyse »)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;écran E7 · droit d'export selon le profil&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=2.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1202" y="1286" width="190" height="88" as="geometry" />
+    </mxCell>
+    <mxCell id="k_prix" value="&lt;b&gt;Contrôle des prix des commandes : le prix payé est-il le prix convenu à la date ?&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;controle_prix.py · cmd controle-prix&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="818" y="984" width="190" height="92" as="geometry" />
+    </mxCell>
+    <mxCell id="t_cp" value="controle_prix_ligne" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1022" y="984" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="k_ack" value="&lt;b&gt;Acquitte les écarts, répond aux accusés de réception&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;cmd controle-prix acquitter · repondre&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=2.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="818" y="1090" width="190" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="k_eco" value="&lt;b&gt;Économies constatées : écart de prix × volume réellement acheté&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;economies.py · cmd economies&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="818" y="1178" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="t_eco" value="economie_ligne" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1022" y="1178" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="k_regle" value="&lt;b&gt;Le responsable fixe les conditions de prix intercompagnie&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;intercompagnies.py · cmd intercompagnie&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=2.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="818" y="1268" width="190" height="88" as="geometry" />
+    </mxCell>
+    <mxCell id="t_ic" value="regle_intercompagnie" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1022" y="1268" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="k_opp" value="&lt;b&gt;Opportunités d'achat intercompagnie, en lecture seule&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;interco_opportunites.py · non branché sur l'analyse&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="818" y="1370" width="190" height="88" as="geometry" />
+    </mxCell>
+    <mxCell id="x_classe" value="&lt;b&gt;Classement des lignes avant export : sûre, identique, à créer, à contrôler, refusée&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;export_erp.py · cmd export-erp classer&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="434" y="984" width="190" height="88" as="geometry" />
+    </mxCell>
+    <mxCell id="x_humain" value="&lt;b&gt;Contrôle des lignes à contrôler ; injection dans l'ERP hors de l'outil&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;lot 1 : classement seul, aucun fichier produit&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=2.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="434" y="1086" width="190" height="88" as="geometry" />
+    </mxCell>
+    <mxCell id="x_dossier" value="&lt;b&gt;Dossier de négociation : bilan PDF ou Word, support Excel, demande de reprise&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;dossier.py · cmd dossier&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7A5C99;strokeWidth=1.5;fillColor=#E1D5E7;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="434" y="1188" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="z_arch" value="&lt;b&gt;Archivage : copie vérifiée par empreinte vers le datalake, classée par fournisseur et date&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;archivage.py · cmd archive&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="984" width="190" height="92" as="geometry" />
+    </mxCell>
+    <mxCell id="t_arch" value="document_archive" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="254" y="984" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="z_journal" value="&lt;b&gt;Journal chaîné des exports et des archivages, ajout seul&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;archivage.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="1090" width="190" height="62" as="geometry" />
+    </mxCell>
+    <mxCell id="t_jex" value="journal_export" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=7;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#2E8B6A;strokeWidth=1.5;fillColor=#D5E8D4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="254" y="1090" width="124" height="46" as="geometry" />
+    </mxCell>
+    <mxCell id="z_sauv" value="&lt;b&gt;Sauvegarde vérifiée, restauration, mise à jour sans perte&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;sauvegarde.py · mise_a_jour.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=1.5;fillColor=#DAE8FC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="1166" width="190" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="z_datalake" value="&lt;b&gt;Documents classés dans le datalake (dossier local ou partage monté)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5B6B7A&quot;&gt;inactif tant que config/archivage.yaml n'a pas de cible&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#7A5C99;strokeWidth=1.5;fillColor=#E1D5E7;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="1256" width="190" height="102" as="geometry" />
+    </mxCell>
+    <mxCell id="e_f_c5__c6" value="après arbitrage" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1777.8" y="915.1" width="84.4" height="15.8" as="geometry" />
+    </mxCell>
+    <mxCell id="f_leg_f1_a__leg_f1_b" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leg_f1_a" target="leg_f1_b">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_leg_f2_a__leg_f2_b" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leg_f2_a" target="leg_f2_b">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_leg_f3_a__leg_f3_b" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#7F7F7F;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="leg_f3_a" target="leg_f3_b">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_leg_f4_a__leg_f4_b" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#D9731A;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leg_f4_a" target="leg_f4_b">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_fichier__p_depot" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_fichier" target="p_depot">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_depot__t_fichier_tarif" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_depot" target="t_fichier_tarif">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_depot__p_lecture" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_depot" target="p_lecture">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_lecture__t_ligne_brute" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_lecture" target="t_ligne_brute">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_lecture__p_struct" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_lecture" target="p_struct">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_fichier__p_depot_9" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_fichier" target="p_depot">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_mapping__p_gabarit" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_mapping" target="p_gabarit">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_gabarit__t_gabarit" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_gabarit" target="t_gabarit">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_gabarit__p_cle" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_gabarit" target="p_cle">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_cle__p_valid_map" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_cle" target="p_valid_map">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_cr__t_cr" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_cr" target="t_cr">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_cr__p_decision" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_cr" target="p_decision">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_decision__t_decision" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_decision" target="t_decision">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_decision__p_rg24" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_decision" target="p_rg24">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_t_question__p_questions" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_question" target="p_questions">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_questions__p_canon" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#D9731A;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_questions" target="p_canon">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_canon__p_remises" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_canon" target="p_remises">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_t_remise__p_remises" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_remise" target="p_remises">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_remises__p_dim" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_remises" target="p_dim">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_dim__p_devises" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_dim" target="p_devises">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_t_taux__p_devises" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_taux" target="p_devises">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_t_conv__p_devises" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_conv" target="p_devises">
+     <mxGeometry relative="1" as="geometry">
+      <Array as="points">
+       <mxPoint x="1399" y="633" />
+       <mxPoint x="1399" y="594" />
+      </Array>
+     </mxGeometry>
+    </mxCell>
+    <mxCell id="f_p_devises__p_unites" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_devises" target="p_unites">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_unites__p_arrondi" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_unites" target="p_arrondi">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_t_arrondi__p_arrondi" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_arrondi" target="p_arrondi">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_arrondi__p_norm" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_arrondi" target="p_norm">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_norm__t_norm" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_norm" target="t_norm">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_x_bce__t_taux" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x_bce" target="t_taux">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_maitre__t_maitre" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_maitre" target="t_maitre">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_maitre__p_l0" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_maitre" target="p_l0">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_t_lien__p_l0" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_lien" target="p_l0">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_l0__p_l1" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_l0" target="p_l1">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_t_regle__p_l1" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="t_regle" target="p_l1">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_l1__p_l2" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_l1" target="p_l2">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_l2__p_l3" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_l2" target="p_l3">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_l3__p_l45" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_l3" target="p_l45">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_l45__p_l6" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_l45" target="p_l6">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_l6__t_oper" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_l6" target="t_oper">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_p_l6__p_appl" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p_l6" target="p_appl">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_e_erp__e_conn" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="e_erp" target="e_conn">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_e_conn__e_contrat" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="e_conn" target="e_contrat">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_e_contrat__t_erp3" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;" edge="1" parent="1" source="e_contrat" target="t_erp3">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_e_contrat__e_sync" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="e_contrat" target="e_sync">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_e_sync__t_sync" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="e_sync" target="t_sync">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_e_sync__e_pa" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="e_sync" target="e_pa">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_e_pa__t_pa" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="e_pa" target="t_pa">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_a_n1__a_garde" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a_n1" target="a_garde">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_a_garde__a_var" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a_garde" target="a_var">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_a_var__t_var" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="a_var" target="t_var">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_a_var__a_impact" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a_var" target="a_impact">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_a_impact__t_analyse" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="a_impact" target="t_analyse">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_a_impact__a_seuil" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a_impact" target="a_seuil">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_a_seuil__a_alertes" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a_seuil" target="a_alertes">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_a_alertes__t_anom" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="a_alertes" target="t_anom">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_a_alertes__a_seg" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a_alertes" target="a_seg">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_k_prix__t_cp" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="k_prix" target="t_cp">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_k_prix__k_ack" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="k_prix" target="k_ack">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_k_ack__k_eco" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="k_ack" target="k_eco">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_k_eco__t_eco" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="k_eco" target="t_eco">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_k_regle__t_ic" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="k_regle" target="t_ic">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_k_regle__k_opp" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="k_regle" target="k_opp">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_x_classe__x_humain" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x_classe" target="x_humain">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_z_arch__t_arch" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="z_arch" target="t_arch">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_z_journal__t_jex" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="z_journal" target="t_jex">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_c1__c2" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c1" target="c2">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_c2__c3" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c2" target="c3">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_c3__c4" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c3" target="c4">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_c4__c5" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c4" target="c5">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_c5__c6" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c5" target="c6">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_c6__c7" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c6" target="c7">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_c7__c8" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c7" target="c8">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_c8__c9" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c8" target="c9">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_c9__c10" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c9" target="c10">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_cerp__c5" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cerp" target="c5">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_cerp__c6" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#2E8B6A;strokeWidth=1.3;exitX=0;exitY=0.8;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cerp" target="c6">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+   </root>
+  </mxGraphModel>
+ </diagram>
+</mxfile>

@@ -1,0 +1,221 @@
+<mxfile host="app.diagrams.net">
+ <diagram id="logique" name="Couches et règles">
+  <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1274" math="0" shadow="0">
+   <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="g_ecrire" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;Écrire : tout changement est tracé&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="790" y="140" width="370" height="502" as="geometry" />
+    </mxCell>
+    <mxCell id="g_calculer" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;Lire et calculer : la prudence d'abord&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="1180" y="140" width="370" height="502" as="geometry" />
+    </mxCell>
+    <mxCell id="g_autorite" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;Autorité, accès, périmètre&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="1570" y="140" width="370" height="502" as="geometry" />
+    </mxCell>
+    <mxCell id="g_profils" value="&lt;font style=&quot;font-size:14px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;Profils et droits (ui-shiny/R/config.R ; règles fermées dans tarifs/options_profil.py)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8C0C8;strokeWidth=1.5;fillColor=#FAFAF7;align=left;verticalAlign=top;spacingTop=6;fontStyle=0;" vertex="1" parent="1">
+     <mxGeometry x="40" y="804" width="1920" height="430" as="geometry" />
+    </mxCell>
+    <mxCell id="titre" value="&lt;font style=&quot;font-size:24px&quot; color=&quot;#1B2A41&quot;&gt;&lt;b&gt;Buyvera · Logique : couches, règles de la maison, profils et droits&lt;/b&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=24;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="40" y="18" width="1200" height="34" as="geometry" />
+    </mxCell>
+    <mxCell id="sous" value="&lt;font style=&quot;font-size:12px&quot; color=&quot;#5B6B7A&quot;&gt;Le moteur calcule et écrit ; l'entrepôt garde ; les vues exposent ; l'interface montre et demande.&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="40" y="56" width="1200" height="22" as="geometry" />
+    </mxCell>
+    <mxCell id="date" value="&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;03/10/2026 · généré par generer_drawio.py&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="40" y="84" width="1200" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_couche" value="Couche" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=2;fillColor=#E8EEF4;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1300" y="14" width="162" height="52" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_regle" value="Règle de la maison" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1470" y="14" width="162" height="52" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_droit_oui" value="Profil qui décide" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=1.5;fillColor=#FFE6CC;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1640" y="14" width="162" height="52" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_droit_lecture" value="Profil en consultation" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#5B6B7A;strokeWidth=1.5;fillColor=#F5F3EE;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1810" y="14" width="162" height="52" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f1_a" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1310" y="86" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f1_b" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1350" y="86" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f1_t" value="lit ou écrit" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1358" y="77" width="90" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f2_a" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1480" y="86" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f2_b" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1520" y="86" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f2_t" value="demande d'action" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1528" y="77" width="110" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f3_a" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1660" y="86" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f3_b" value="" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1700" y="86" width="1" height="1" as="geometry" />
+    </mxCell>
+    <mxCell id="leg_f3_t" value="refusé par construction" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1708" y="77" width="150" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="l_fichiers" value="&lt;b&gt;1. Fichiers&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot; color=&quot;#26333F&quot;&gt;Tarifs fournisseurs (xlsx, xls, csv), exports et services des ERP, taux de change, configuration en YAML&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#5B6B7A&quot;&gt;données réelles jamais versionnées&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#5B6B7A;strokeWidth=1.5;fillColor=#F5F3EE;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="100" y="140" width="500" height="84" as="geometry" />
+    </mxCell>
+    <mxCell id="l_moteur" value="&lt;b&gt;2. Moteur Python déterministe&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot; color=&quot;#26333F&quot;&gt;Règles de calcul sans IA ; une commande par action : python -m tarifs &amp;lt;commande&amp;gt; --json&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#5B6B7A&quot;&gt;seul à écrire dans l'entrepôt · traitement.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=2;fillColor=#E8EEF4;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="100" y="276" width="500" height="84" as="geometry" />
+    </mxCell>
+    <mxCell id="l_entrepot" value="&lt;b&gt;3. Entrepôt DuckDB&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot; color=&quot;#26333F&quot;&gt;120 tables : brut immuable, dérivé recalculable, tables en ajout seul, journal&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#5B6B7A&quot;&gt;data/entrepot.duckdb · un seul écrivain à la fois&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=2;fillColor=#E8EEF4;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="100" y="412" width="500" height="84" as="geometry" />
+    </mxCell>
+    <mxCell id="l_vues" value="&lt;b&gt;4. Vues ui_* : le contrat versionné&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot; color=&quot;#26333F&quot;&gt;91 vues ; VERSION_CONTRAT = 1.68 ; on ajoute des colonnes, on n'en retire pas sans changer la version&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#5B6B7A&quot;&gt;vues_ui.py · docs/CONTRAT_UI.md&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=2;fillColor=#E8EEF4;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="100" y="548" width="500" height="84" as="geometry" />
+    </mxCell>
+    <mxCell id="l_ui" value="&lt;b&gt;5. Interface R/Shiny&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot; color=&quot;#26333F&quot;&gt;Lit les vues ui_* en lecture seule ; chaque action passe par la commande du moteur&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#5B6B7A&quot;&gt;auteur et profil pris à la session · R/moteur.R&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#3C6E9B;strokeWidth=2;fillColor=#E8EEF4;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="100" y="684" width="500" height="84" as="geometry" />
+    </mxCell>
+    <mxCell id="e_f_l_fichiers__l_moteur" value="lecture" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="379.5" y="242.1" width="41" height="15.8" as="geometry" />
+    </mxCell>
+    <mxCell id="e_f_l_moteur__l_entrepot" value="écriture : seule voie" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="376.5" y="378.1" width="107.1" height="15.8" as="geometry" />
+    </mxCell>
+    <mxCell id="e_f_l_entrepot__l_vues" value="vues SQL" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="361.4" y="514.1" width="57.2" height="15.8" as="geometry" />
+    </mxCell>
+    <mxCell id="e_f_l_vues__l_ui" value="lecture seule" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="363.9" y="650.1" width="72.1" height="15.8" as="geometry" />
+    </mxCell>
+    <mxCell id="t_cli" value="demande d'action : CLI, auteur et profil de la session" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="652" y="424" width="100" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="t_interdit" value="écriture directe : jamais" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=10;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="18" y="568" width="76" height="44" as="geometry" />
+    </mxCell>
+    <mxCell id="ecrire_0" value="&lt;b&gt;Ajout seul, versionné, annulable&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Jamais de modification ni de suppression : une correction est une nouvelle version, annuler est une opération (EF-80)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;RG-17 · referentiel.py · lot_masse.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="800" y="190" width="350" height="94" as="geometry" />
+    </mxCell>
+    <mxCell id="ecrire_1" value="&lt;b&gt;Motif de 10 caractères au moins&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;pour chaque lot et chaque droit accordé ou retiré&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;lot_masse.MOTIF_MIN = 10&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="800" y="296" width="350" height="64" as="geometry" />
+    </mxCell>
+    <mxCell id="ecrire_2" value="&lt;b&gt;Auteur obligatoire&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;pris dans la session de l'interface, jamais deviné par le moteur&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;R/moteur.R · resoudre_auteur&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="800" y="372" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="ecrire_3" value="&lt;b&gt;Refus avant écriture&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;contrôle complet d'abord ; un lot passe en tout ou rien ; 500 lignes au plus&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;lot_masse.PLAFOND_LIGNES = 500&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="800" y="462" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="ecrire_4" value="&lt;b&gt;SQL en paramètres liés&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;aucune valeur n'est collée dans une requête&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;lot_masse.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="800" y="552" width="350" height="64" as="geometry" />
+    </mxCell>
+    <mxCell id="calculer_0" value="&lt;b&gt;L'absence n'est jamais 0 (RG-01)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;une valeur illisible reste vide avec son motif ; un impact sans volume reste vide&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;nettoyage.py · analyse.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1190" y="190" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="calculer_1" value="&lt;b&gt;Valeur d'origine conservée (RG-03)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;le prix lu dans le tarif ne disparaît jamais derrière le prix normalisé&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;nettoyage.py · normalisation.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1190" y="280" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="calculer_2" value="&lt;b&gt;Le doute va à un humain&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;un rattachement ambigu n'est jamais appliqué ; un lien proposé n'entre dans aucun calcul diffusé&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;rattachement.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1190" y="370" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="calculer_3" value="&lt;b&gt;Refuser plutôt que faux&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;HT contre TTC, ou arrondis différents : l'analyse est refusée avant tout calcul&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;traitement.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1190" y="460" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="calculer_4" value="&lt;b&gt;Brut séparé du dérivé&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;le dérivé se recalcule ; le brut ne change jamais&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;entrepot.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1190" y="550" width="350" height="64" as="geometry" />
+    </mxCell>
+    <mxCell id="autorite_0" value="&lt;b&gt;Le moteur reste l'autorité&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;l'interface lit et demande ; un assistant éventuel propose, le moteur contrôle, l'humain tranche&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;docs/PIPELINE_ASSISTANT_LLM.md&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1580" y="190" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="autorite_1" value="&lt;b&gt;Règles de profils fermées&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;listes dans options_profil.py, recopiées dans config.R (miroirs R) ; un test vérifie qu'elles concordent&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;PROFILS_SANS_COMMERCIAL · PROFILS_DROIT_EXPORT&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1580" y="280" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="autorite_2" value="&lt;b&gt;ERP en lecture seule&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;le moteur n'écrit jamais dans un ERP ; toute requête autre qu'un SELECT est refusée&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;erp/&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1580" y="370" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="autorite_3" value="&lt;b&gt;Aucune notification hors de l'outil&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;ni courriel ni message ; un résumé hebdomadaire est conçu (B-02), non livré&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;docs/BACKLOG.md · B-02&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1580" y="460" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="autorite_4" value="&lt;b&gt;Données réelles jamais versionnées&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;le dépôt et la démonstration ne contiennent que des données inventées&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;README.md · .gitignore&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1580" y="550" width="350" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="prof_acheteur" value="&lt;b&gt;Acheteur&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Décider : oui&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix de vente, marges, clients : non, sauf option de l'administrateur&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix d'achat : oui · éléments techniques : non&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Export : 5 000 lignes au plus · accueil : Tableau de bord&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Crée des comptes : appro&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;acheteur&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=1.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="850" width="464.5" height="124" as="geometry" />
+    </mxCell>
+    <mxCell id="prof_responsable" value="&lt;b&gt;Responsable achats&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Décider : oui&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix de vente, marges, clients : non, sauf option de l'administrateur&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix d'achat : oui · éléments techniques : non&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Export : 20 000 lignes au plus · accueil : Tableau de bord&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Crée des comptes : acheteur, appro&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;responsable&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=1.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="528.5" y="850" width="464.5" height="124" as="geometry" />
+    </mxCell>
+    <mxCell id="prof_appro" value="&lt;b&gt;Approvisionneur&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Décider : non, consultation seule&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix de vente, marges, clients : non, sauf option de l'administrateur&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix d'achat : oui · éléments techniques : non&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Export : 2 000 lignes au plus · accueil : Tarifs reçus&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;appro&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#5B6B7A;strokeWidth=1.5;fillColor=#F5F3EE;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1007" y="850" width="464.5" height="124" as="geometry" />
+    </mxCell>
+    <mxCell id="prof_referent" value="&lt;b&gt;Référent données&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Décider : oui&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix de vente, marges, clients : non, sauf option de l'administrateur&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix d'achat : oui · éléments techniques : oui&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Export : 20 000 lignes au plus · accueil : Rattachements à arbitrer&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;referent&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=1.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1485.5" y="850" width="464.5" height="124" as="geometry" />
+    </mxCell>
+    <mxCell id="prof_direction" value="&lt;b&gt;Direction Achats&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Décider : non, consultation seule&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix de vente, marges, clients : oui&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix d'achat : oui · éléments techniques : non&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Export : 5 000 lignes au plus · accueil : Pilotage&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;direction&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#5B6B7A;strokeWidth=1.5;fillColor=#F5F3EE;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="986" width="464.5" height="138" as="geometry" />
+    </mxCell>
+    <mxCell id="prof_finance" value="&lt;b&gt;Finance / comptabilité fournisseurs&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Décider : non, consultation seule&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix de vente, marges, clients : jamais (règle fermée)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix d'achat : oui · éléments techniques : non&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Export : 2 000 lignes au plus · accueil : Contrôle des prix&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;finance&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#5B6B7A;strokeWidth=1.5;fillColor=#F5F3EE;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="528.5" y="986" width="464.5" height="138" as="geometry" />
+    </mxCell>
+    <mxCell id="prof_architecte" value="&lt;b&gt;Data architecte&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Décider : oui&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix de vente, marges, clients : jamais (règle fermée)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix d'achat : non · éléments techniques : oui&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Export : 100 000 lignes au plus · accueil : Sources&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;architecte&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=1.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1007" y="986" width="464.5" height="138" as="geometry" />
+    </mxCell>
+    <mxCell id="prof_admin" value="&lt;b&gt;Administrateur&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Décider : oui&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix de vente, marges, clients : oui&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Prix d'achat : oui · éléments techniques : oui&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Export : 100 000 lignes au plus · accueil : Entités, ERP et taux&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;Crée des comptes : acheteur, appro, referent, responsable, direction, finance, architecte, admin&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;admin&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#D9731A;strokeWidth=1.5;fillColor=#FFE6CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1485.5" y="986" width="464.5" height="138" as="geometry" />
+    </mxCell>
+    <mxCell id="note_0" value="&lt;b&gt;Droit commercial effectif&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;valeur du profil, OU option validée par l'administrateur (motif, auteur, annulable) ; jamais pour architecte ni finance&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;options_profil.py&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="50" y="1142" width="464.5" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="note_1" value="&lt;b&gt;Export du dossier de négociation&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;accordé aux seuls architecte, acheteur, responsable et administrateur ; le moteur refuse aussi, avec journal&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;PROFILS_DROIT_EXPORT&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="528.5" y="1142" width="464.5" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="note_2" value="&lt;b&gt;Modification en masse des options&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;l'administrateur seul ; le profil de l'appelant est exigé ; tout ou rien&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;options_profil.PROFIL_ADMIN&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1007" y="1142" width="464.5" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="note_3" value="&lt;b&gt;Écrire dans l'outil&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#26333F&quot;&gt;seuls les profils qui peuvent décider ; la consultation seule est refusée avant tout appel&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5B6B7A&quot;&gt;R/moteur.R · resoudre_auteur&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#26333F;spacingLeft=8;spacingRight=8;spacingTop=4;spacingBottom=4;strokeColor=#B8860B;strokeWidth=1.5;fillColor=#FFF2CC;align=left;verticalAlign=middle;" vertex="1" parent="1">
+     <mxGeometry x="1485.5" y="1142" width="464.5" height="78" as="geometry" />
+    </mxCell>
+    <mxCell id="f_leg_f1_a__leg_f1_b" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leg_f1_a" target="leg_f1_b">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_leg_f2_a__leg_f2_b" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#D9731A;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="leg_f2_a" target="leg_f2_b">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_leg_f3_a__leg_f3_b" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#B3261E;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="leg_f3_a" target="leg_f3_b">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_l_fichiers__l_moteur" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="l_fichiers" target="l_moteur">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_l_moteur__l_entrepot" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="l_moteur" target="l_entrepot">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_l_entrepot__l_vues" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="l_entrepot" target="l_vues">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_l_vues__l_ui" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#1B2A41;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="l_vues" target="l_ui">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="f_l_ui__l_moteur" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#D9731A;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="l_ui" target="l_moteur">
+     <mxGeometry relative="1" as="geometry">
+      <Array as="points">
+       <mxPoint x="644" y="726" />
+       <mxPoint x="644" y="318" />
+      </Array>
+     </mxGeometry>
+    </mxCell>
+    <mxCell id="f_l_ui__l_entrepot" value="" style="edgeStyle=none;html=1;rounded=0;endArrow=block;endFill=1;endSize=5;strokeColor=#B3261E;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="l_ui" target="l_entrepot">
+     <mxGeometry relative="1" as="geometry">
+      <Array as="points">
+       <mxPoint x="56" y="726" />
+       <mxPoint x="56" y="454" />
+      </Array>
+     </mxGeometry>
+    </mxCell>
+   </root>
+  </mxGraphModel>
+ </diagram>
+</mxfile>

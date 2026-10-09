@@ -28,6 +28,9 @@ EXISTING = {
     "achats-parcours": "Purchasingsolution/docs/presentation-vendeur/02_parcours_tarif.drawio",
     "achats-cascade": "Purchasingsolution/docs/presentation-vendeur/03_cascade_rattachement.drawio",
     "achats-architecture": "Purchasingsolution/docs/ARCHITECTURE_PIPELINE.drawio",
+    "achats-arch-pipeline": "Purchasingsolution/tarifs-fournisseurs/docs/architecture/01_pipeline_donnees.drawio",
+    "achats-arch-logique": "Purchasingsolution/tarifs-fournisseurs/docs/architecture/03_logique_couches_et_regles.drawio",
+    "achats-arch-deploiement": "Purchasingsolution/tarifs-fournisseurs/docs/architecture/04_deploiement_et_ci.drawio",
 }
 # Masking rules live in build/redact.local (gitignored, tab-separated "regex<TAB>replacement")
 # so the sensitive values themselves never get published with the build script.

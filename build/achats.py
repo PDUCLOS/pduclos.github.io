@@ -29,8 +29,8 @@ ACHATS = dict(
     lead="Projet réel, en cours dans une direction Achats industrielle. Je <strong>pilote le projet de bout en bout</strong> : "
          "cadrage et analyse métier, business case, cahier des charges, architecture, développement du moteur Python / DuckDB et de "
          "l'interface R/Shiny, recette avec les acheteurs, déploiement — et sa mise en marché, avec le site commercial.",
-    kpis=[("≈ 1 %", "de la dépense suivie (gain central)"), ("105", "éléments de backlog suivis"), ("24", "règles de gestion formalisées"),
-          ("6", "leviers de gain chiffrés"), ("≈ 3 000", "tests automatisés")],
+    kpis=[("≈ 1 %", "de la dépense suivie (gain central)"), ("1.71", "contrat d'interface livré"), ("133", "éléments de backlog suivis"),
+          ("≈ 4 650", "tests automatisés"), ("6", "leviers de gain chiffrés")],
     links=[("Site commercial (Buyvera)", "/buyvera/", True),
            ("Présentation commerciale", "/presentations/plateforme-tarifs.html", False),
            ("Présentation technique", "/presentations/hausses-tarifaires.html", False)],
@@ -53,11 +53,45 @@ ACHATS = dict(
     tech=[
         "Moteur Python 3.12 piloté par configuration YAML : ajouter un fournisseur relève de la <strong>configuration, pas du code</strong>.",
         "<strong>Cascade de rattachement</strong> L0 exact → L1 règles → L2 approché (rapidfuzz) → L3 arbitrage humain, référentiel versionné et annulable.",
-        "Entrepôt DuckDB (68 tables, 42 vues d'interface sous contrat versionné), interface R/Shiny en lecture seule, 5 profils d'habilitation.",
-        "Qualité : ≈ 2 500 tests Python (pytest-xdist), 445 tests R (testthat), CI GitHub Actions Python 3.12 / 3.13 + ruff.",
+        "Entrepôt DuckDB (≈ 120 tables, 91 vues d'interface sous contrat versionné), interface R/Shiny en lecture seule, 8 profils d'habilitation fermés côté serveur.",
+        "Qualité : ≈ 3 850 tests Python (pytest-xdist), ≈ 800 tests R (testthat), CI GitHub Actions Python 3.12 / 3.13 + ruff, contrôle d'accès testé.",
         "Principe directeur : ce que le moteur ne sait pas lire reste <strong>vide avec son motif</strong> — jamais zéro, jamais deviné.",
     ],
     custom_sections=[
+        ("nouveautes", "Dernières livraisons", "Contrat d'interface 1.65 → 1.71 : ce qui vient d'être livré",
+         '<p style="margin-bottom:1.5rem">Le projet avance par versions du contrat d\'interface entre le moteur et l\'écran. '
+         "Voici les sept dernières, et ce qui prépare la suivante.</p>"
+         '<div class="three-col" style="margin-bottom:1.2rem">'
+         '<div class="arg-card arg-card--tech"><span class="arg-label">Lecture et qualité des tarifs</span><ul>'
+         "<li><strong>Clés de référence strictes</strong> : une collision est détectée, jamais fusionnée en silence (B-111).</li>"
+         "<li><strong>Date d'effet par ligne</strong> (B-112) et <strong>plausibilité des cotes</strong> (B-113).</li>"
+         "<li><strong>Familles inhabituelles</strong> détectées, avec diagnostic d'encodage des fichiers (B-114).</li>"
+         "<li><strong>Articles à créer et doublons</strong> regroupés par cotes, prix d'achat à mettre à jour, rejet en masse des nouveaux probables (B-116).</li>"
+         "<li><strong>Tarif complémentaire</strong> avec alerte de tarif partiel (B-121) ; colonne matricielle d'entité inconnue bloquée (B-122).</li></ul></div>"
+         '<div class="arg-card arg-card--tech"><span class="arg-label">PDF à tableaux & référentiels</span><ul>'
+         "<li><strong>Tarifs PDF à tableaux</strong> : extraction, puis dépôt validé ; seuil de confiance 0,90 et 24 règles PDF documentées (B-05).</li>"
+         "<li><strong>Table de correspondance des familles</strong> : import CSV / XLSX à six colonnes, modèle commenté, aperçu par défaut, application sur confirmation, "
+         "annulable (B-132).</li>"
+         "<li>Typage choisi par l'utilisateur et contrôlé sur les deux sources : « 007 » reste « 007 ».</li></ul></div>"
+         '<div class="arg-card arg-card--ok"><span class="arg-label">Exploitation sûre</span><ul>'
+         "<li><strong>Purge de la base de démonstration</strong> en quatre temps : plan, approbation, exécution, statut (B-120).</li>"
+         "<li>Garde-fous : environnement démo ou test uniquement, jeton à usage unique, phrase de confirmation, double validation administrateur.</li>"
+         "<li>Sauvegarde vérifiée avant toute purge, <strong>restauration automatique</strong> si l'opération échoue.</li></ul></div></div>"
+         '<div class="three-col">'
+         '<div class="arg-card arg-card--rh"><span class="arg-label">Identité & documentation</span><ul>'
+         "<li>Le produit s'appelle <strong>Buyvera</strong> à l'écran (buyvera.fr) ; le projet reste anonyme.</li>"
+         "<li>Documentation refaite : <strong>quatre schémas draw.io</strong> d'architecture (ci-dessous) et une simulation de groupe.</li>"
+         "<li><strong>Assistant LLM local</strong>, optionnel et déconnectable : spécification, pipeline et étude de modèles écrits (B-118) ; rien n'est développé avant décision.</li>"
+         "<li><strong>Budget IT et gains</strong> recalculés dans un classeur à formules (B-133).</li></ul></div>"
+         '<div class="arg-card arg-card--ok"><span class="arg-label">En cours — contrat 1.72</span><ul>'
+         "<li>Restauration guidée après purge ; lister et ranger les sauvegardes, avec leur schéma d'organisation.</li>"
+         "<li>Paquet de transfert vers une autre machine.</li>"
+         "<li>Sauvegarde automatique : modèles d'ordonnancement, statut et alerte de sauvegarde ancienne.</li></ul></div>"
+         '<div class="arg-card arg-card--rh"><span class="arg-label">Défauts connus, suivis au backlog</span><ul>'
+         "<li>B-123 : 42 liens corrects suspendus pour « prix incohérent ».</li>"
+         "<li>B-127 : les économies comptent des lignes en quarantaine.</li>"
+         "<li>B-119 : petits défauts d'interface.</li>"
+         "<li><em>Les défauts sont nommés et chiffrés, pas cachés : c'est la règle du projet.</em></li></ul></div></div>"),
         ("presentations", "Mise en marché", "Site commercial et présentations du projet",
          '<p style="margin-bottom:1.5rem">Le produit a son <strong>site commercial bilingue</strong> (Astro, marque Buyvera — buyvera.fr) et deux supports '
          "que j'ai conçus et présentés : l'un pour <strong>vendre</strong>, l'autre pour <strong>obtenir une décision</strong> de la direction.</p>"
@@ -82,13 +116,13 @@ ACHATS = dict(
          "<li><strong>Cahier des charges</strong> versionné (v3) et <strong>traçabilité des exigences</strong> jusqu'aux tests.</li>"
          "<li><strong>Business case</strong> : 6 leviers chiffrés en 3 scénarios, conditions d'échec explicites.</li></ul></div>"
          '<div class="arg-card arg-card--ok"><span class="arg-label">Pilotage & suivi</span><ul>'
-         "<li><strong>Backlog de 105 éléments</strong> décrits assez précisément pour être chiffrés, priorisés avec le référent métier.</li>"
+         "<li><strong>Backlog de 133 éléments</strong> décrits assez précisément pour être chiffrés, priorisés avec le référent métier.</li>"
          "<li><strong>Décisions datées</strong> et tracées (périmètre gelé, arbitrages, choix d'architecture).</li>"
          "<li><strong>Contrôles réguliers</strong> de l'avancement et revues de code datées : ce qui est réellement livré, pas ce qui est annoncé.</li>"
          "<li><strong>Recette</strong> sur fichiers réels rejoués, rapport remis à l'acheteur pour validation ; jalons go / no-go.</li>"
          "<li><strong>Pilotage de lots délégués</strong> : chaque lot a sa demande écrite, ses critères d'acceptation et sa grille de contrôle.</li></ul></div>"
          '<div class="arg-card arg-card--tech"><span class="arg-label">Réalisation & mise en marché</span><ul>'
-         "<li><strong>Architecture et développement</strong> : moteur Python / DuckDB, interface R/Shiny, ≈ 3 000 tests, intégration continue.</li>"
+         "<li><strong>Architecture et développement</strong> : moteur Python / DuckDB, interface R/Shiny, ≈ 4 650 tests, intégration continue.</li>"
          "<li><strong>Déploiement</strong> : plan de fiabilité, sauvegardes, mises à jour sans perte, habilitations.</li>"
          "<li><strong>Présentations</strong> commerciale et de décision, conçues et présentées.</li>"
          '<li><strong>Site commercial</strong> bilingue du produit (Astro) : <a href="/buyvera/" style="color:var(--accent)">le voir →</a></li></ul></div></div>'),
@@ -152,7 +186,7 @@ ACHATS = dict(
            ("s3n0", "s3n1", "doute", True), ("s3n0", "s4n0", "", False), ("s3n1", "s4n0", "", False),
            ("s4n0", "s4n1", "", False), ("s4n1", "s5n0", "", False), ("s5n0", "s6n0", "lecture seule", False),
            ("s6n0", "s6n1", "", False), ("s6n1", "s6n2", "", False)],
-    band=("Configuration YAML par fournisseur · pytest (≈ 2 500) · testthat (445) · GitHub Actions · ERP en lecture seule", "infra"),
+    band=("Configuration YAML par fournisseur · pytest (≈ 3 850) · testthat (≈ 800) · GitHub Actions · ERP en lecture seule", "infra"),
     steps=[
         "<strong>Déposer</strong> — le fichier est reçu tel quel, empreinté et archivé ; un doublon est refusé.",
         "<strong>Comprendre</strong> — gabarit reconnu, clé unique détectée, compte rendu de lecture présenté avant tout calcul.",
@@ -160,7 +194,10 @@ ACHATS = dict(
         "<strong>Analyser</strong> — hausse pondérée, impact annualisé, Pareto, remises, plafonds de prix spéciaux, écarts d'application ERP ; les aberrants partent en quarantaine.",
         "<strong>Négocier</strong> — mémo d'une page, support Excel et demande de reprise ; chaque chiffre renvoie à sa source.",
     ],
-    extra_diagrams=[("achats-parcours", "Parcours d'un tarif — et ce que l'outil refuse de faire"),
+    extra_diagrams=[("achats-arch-pipeline", "Pipeline de données : du fichier tarif aux décisions (10 étapes)"),
+                    ("achats-arch-logique", "Couches, règles de la maison, profils et droits"),
+                    ("achats-arch-deploiement", "Déploiement et intégration continue : aujourd'hui, cible, option LLM"),
+                    ("achats-parcours", "Parcours d'un tarif — et ce que l'outil refuse de faire"),
                     ("achats-cascade", "Cascade de rattachement aux références ERP"),
                     ("achats-architecture", "Architecture et flux de données")],
     langs=[("Python", 78), ("R", 18), ("YAML", 3), ("JavaScript", 1)],
@@ -175,10 +212,10 @@ ACHATS = dict(
         ("DuckDB", "Entrepôt analytique en fichier, vues sous contrat", "Analytique embarquée sans serveur"),
         ("R / Shiny", "Poste de travail acheteur, 5 profils", "Interface métier"),
         ("YAML", "Un fichier de configuration par fournisseur", "Évolutivité sans développement"),
-        ("pytest · testthat · GitHub Actions", "≈ 2 500 tests Python + 445 tests R, CI multi-versions", "Fiabilité des chiffres"),
+        ("pytest · testthat · GitHub Actions", "≈ 3 850 tests Python + ≈ 800 tests R, CI multi-versions", "Fiabilité des chiffres"),
     ],
     matrix=dict(ci="y", tests="y", docker="p", orch="p", tracking="n", monitoring="p", serving="y", deploy="p", iac="n"),
-    matrix_notes=dict(ci="Python 3.12 / 3.13, ruff ; R testthat", tests="≈ 2 500 tests Python + 445 tests R",
+    matrix_notes=dict(ci="Python 3.12 / 3.13, ruff ; R testthat", tests="≈ 3 850 tests Python + ≈ 800 tests R",
                       docker="Déploiement conteneurisé multi-utilisateurs planifié", orch="Campagnes planifiables, rejouables",
                       monitoring="Journal de toutes les opérations, registre des injections", serving="Interface R/Shiny",
                       deploy="Démonstration complète rejouable ; mise en service par lots"),
@@ -193,7 +230,8 @@ cands = [{"reference_erp": par_norm[c], "score": round(sc, 1),
           "separe": f"{refnorm} ≠ {c}"} for c, sc, _ in choix if sc >= s.get("seuil_candidat_min", 0)]'''),
     ],
     limits=[
-        "Déploiement conteneurisé multi-utilisateurs et connexion à l'annuaire d'entreprise encore au backlog.",
+        "Déploiement conteneurisé multi-utilisateurs (B-92) et connexion à l'annuaire d'entreprise encore au backlog.",
+        "Défauts connus et suivis : B-123 (liens suspendus à tort), B-127 (économies et quarantaine), B-119 (interface).",
         "Un seul profil sectoriel riche (industriel) en plus du profil générique ; interface en français.",
         "Gains estimés tant que la première campagne sur données réelles n'a pas eu lieu — la méthode de mesure est prête.",
         "Revue critique des règles métier menée : défauts critiques identifiés (paliers, remises, encodages) et corrigés un par un, avec test dédié.",

@@ -51,7 +51,7 @@
             <span class="project-tag" style="color:var(--accent)">Projet en cours · Chef de projet · Achats</span>
             <h1>Chef de projet achats : transformer chaque hausse tarifaire en <span class="highlight">argument chiffré</span></h1>
             <p class="lead">Projet réel, en cours dans une direction Achats industrielle. Je <strong>pilote le projet de bout en bout</strong> : cadrage et analyse métier, business case, cahier des charges, architecture, développement du moteur Python / DuckDB et de l'interface R/Shiny, recette avec les acheteurs, déploiement — et sa mise en marché, avec le site commercial.</p>
-            <div class="kpi-row"><div class="kpi"><b>≈ 1 %</b><span>de la dépense suivie (gain central)</span></div><div class="kpi"><b>105</b><span>éléments de backlog suivis</span></div><div class="kpi"><b>24</b><span>règles de gestion formalisées</span></div><div class="kpi"><b>6</b><span>leviers de gain chiffrés</span></div><div class="kpi"><b>≈ 3 000</b><span>tests automatisés</span></div></div>
+            <div class="kpi-row"><div class="kpi"><b>≈ 1 %</b><span>de la dépense suivie (gain central)</span></div><div class="kpi"><b>1.71</b><span>contrat d&#x27;interface livré</span></div><div class="kpi"><b>133</b><span>éléments de backlog suivis</span></div><div class="kpi"><b>≈ 4 650</b><span>tests automatisés</span></div><div class="kpi"><b>6</b><span>leviers de gain chiffrés</span></div></div>
             <div class="btn-row"><a href="/buyvera/" class="contact-btn contact-btn-primary">Site commercial (Buyvera) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="/presentations/plateforme-tarifs.html" class="contact-btn contact-btn-secondary">Présentation commerciale <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="/presentations/hausses-tarifaires.html" class="contact-btn contact-btn-secondary">Présentation technique <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </div>
     </header>
@@ -68,14 +68,22 @@
                 </div>
                 <div class="arg-card arg-card--tech reveal">
                     <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
-                    <ul><li>Moteur Python 3.12 piloté par configuration YAML : ajouter un fournisseur relève de la <strong>configuration, pas du code</strong>.</li><li><strong>Cascade de rattachement</strong> L0 exact → L1 règles → L2 approché (rapidfuzz) → L3 arbitrage humain, référentiel versionné et annulable.</li><li>Entrepôt DuckDB (68 tables, 42 vues d'interface sous contrat versionné), interface R/Shiny en lecture seule, 5 profils d'habilitation.</li><li>Qualité : ≈ 2 500 tests Python (pytest-xdist), 445 tests R (testthat), CI GitHub Actions Python 3.12 / 3.13 + ruff.</li><li>Principe directeur : ce que le moteur ne sait pas lire reste <strong>vide avec son motif</strong> — jamais zéro, jamais deviné.</li></ul>
+                    <ul><li>Moteur Python 3.12 piloté par configuration YAML : ajouter un fournisseur relève de la <strong>configuration, pas du code</strong>.</li><li><strong>Cascade de rattachement</strong> L0 exact → L1 règles → L2 approché (rapidfuzz) → L3 arbitrage humain, référentiel versionné et annulable.</li><li>Entrepôt DuckDB (≈ 120 tables, 91 vues d'interface sous contrat versionné), interface R/Shiny en lecture seule, 8 profils d'habilitation fermés côté serveur.</li><li>Qualité : ≈ 3 850 tests Python (pytest-xdist), ≈ 800 tests R (testthat), CI GitHub Actions Python 3.12 / 3.13 + ruff, contrôle d'accès testé.</li><li>Principe directeur : ce que le moteur ne sait pas lire reste <strong>vide avec son motif</strong> — jamais zéro, jamais deviné.</li></ul>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <section class="page-section alt" id="presentations">
+    <section class="page-section alt" id="nouveautes">
+        <div class="section-container">
+            <span class="section-label">// Dernières livraisons</span>
+            <h2>Contrat d'interface 1.65 → 1.71 : ce qui vient d'être livré</h2>
+            <p style="margin-bottom:1.5rem">Le projet avance par versions du contrat d'interface entre le moteur et l'écran. Voici les sept dernières, et ce qui prépare la suivante.</p><div class="three-col" style="margin-bottom:1.2rem"><div class="arg-card arg-card--tech"><span class="arg-label">Lecture et qualité des tarifs</span><ul><li><strong>Clés de référence strictes</strong> : une collision est détectée, jamais fusionnée en silence (B-111).</li><li><strong>Date d'effet par ligne</strong> (B-112) et <strong>plausibilité des cotes</strong> (B-113).</li><li><strong>Familles inhabituelles</strong> détectées, avec diagnostic d'encodage des fichiers (B-114).</li><li><strong>Articles à créer et doublons</strong> regroupés par cotes, prix d'achat à mettre à jour, rejet en masse des nouveaux probables (B-116).</li><li><strong>Tarif complémentaire</strong> avec alerte de tarif partiel (B-121) ; colonne matricielle d'entité inconnue bloquée (B-122).</li></ul></div><div class="arg-card arg-card--tech"><span class="arg-label">PDF à tableaux & référentiels</span><ul><li><strong>Tarifs PDF à tableaux</strong> : extraction, puis dépôt validé ; seuil de confiance 0,90 et 24 règles PDF documentées (B-05).</li><li><strong>Table de correspondance des familles</strong> : import CSV / XLSX à six colonnes, modèle commenté, aperçu par défaut, application sur confirmation, annulable (B-132).</li><li>Typage choisi par l'utilisateur et contrôlé sur les deux sources : « 007 » reste « 007 ».</li></ul></div><div class="arg-card arg-card--ok"><span class="arg-label">Exploitation sûre</span><ul><li><strong>Purge de la base de démonstration</strong> en quatre temps : plan, approbation, exécution, statut (B-120).</li><li>Garde-fous : environnement démo ou test uniquement, jeton à usage unique, phrase de confirmation, double validation administrateur.</li><li>Sauvegarde vérifiée avant toute purge, <strong>restauration automatique</strong> si l'opération échoue.</li></ul></div></div><div class="three-col"><div class="arg-card arg-card--rh"><span class="arg-label">Identité & documentation</span><ul><li>Le produit s'appelle <strong>Buyvera</strong> à l'écran (buyvera.fr) ; le projet reste anonyme.</li><li>Documentation refaite : <strong>quatre schémas draw.io</strong> d'architecture (ci-dessous) et une simulation de groupe.</li><li><strong>Assistant LLM local</strong>, optionnel et déconnectable : spécification, pipeline et étude de modèles écrits (B-118) ; rien n'est développé avant décision.</li><li><strong>Budget IT et gains</strong> recalculés dans un classeur à formules (B-133).</li></ul></div><div class="arg-card arg-card--ok"><span class="arg-label">En cours — contrat 1.72</span><ul><li>Restauration guidée après purge ; lister et ranger les sauvegardes, avec leur schéma d'organisation.</li><li>Paquet de transfert vers une autre machine.</li><li>Sauvegarde automatique : modèles d'ordonnancement, statut et alerte de sauvegarde ancienne.</li></ul></div><div class="arg-card arg-card--rh"><span class="arg-label">Défauts connus, suivis au backlog</span><ul><li>B-123 : 42 liens corrects suspendus pour « prix incohérent ».</li><li>B-127 : les économies comptent des lignes en quarantaine.</li><li>B-119 : petits défauts d'interface.</li><li><em>Les défauts sont nommés et chiffrés, pas cachés : c'est la règle du projet.</em></li></ul></div></div>
+        </div>
+    </section>
+
+    <section class="page-section" id="presentations">
         <div class="section-container">
             <span class="section-label">// Mise en marché</span>
             <h2>Site commercial et présentations du projet</h2>
@@ -83,15 +91,15 @@
         </div>
     </section>
 
-    <section class="page-section" id="mon-role">
+    <section class="page-section alt" id="mon-role">
         <div class="section-container">
             <span class="section-label">// Mon rôle</span>
             <h2>Je gère le projet complet</h2>
-            <div class="three-col"><div class="arg-card arg-card--rh"><span class="arg-label">Cadrage & analyse métier</span><ul><li><strong>Recueil des besoins</strong> auprès des acheteurs et de la direction Achats ; cartographie du processus actuel et cible.</li><li><strong>24 règles de gestion</strong> formalisées (RG-xx), avec leurs cas limites, puis une revue critique complète des règles.</li><li><strong>Cahier des charges</strong> versionné (v3) et <strong>traçabilité des exigences</strong> jusqu'aux tests.</li><li><strong>Business case</strong> : 6 leviers chiffrés en 3 scénarios, conditions d'échec explicites.</li></ul></div><div class="arg-card arg-card--ok"><span class="arg-label">Pilotage & suivi</span><ul><li><strong>Backlog de 105 éléments</strong> décrits assez précisément pour être chiffrés, priorisés avec le référent métier.</li><li><strong>Décisions datées</strong> et tracées (périmètre gelé, arbitrages, choix d'architecture).</li><li><strong>Contrôles réguliers</strong> de l'avancement et revues de code datées : ce qui est réellement livré, pas ce qui est annoncé.</li><li><strong>Recette</strong> sur fichiers réels rejoués, rapport remis à l'acheteur pour validation ; jalons go / no-go.</li><li><strong>Pilotage de lots délégués</strong> : chaque lot a sa demande écrite, ses critères d'acceptation et sa grille de contrôle.</li></ul></div><div class="arg-card arg-card--tech"><span class="arg-label">Réalisation & mise en marché</span><ul><li><strong>Architecture et développement</strong> : moteur Python / DuckDB, interface R/Shiny, ≈ 3 000 tests, intégration continue.</li><li><strong>Déploiement</strong> : plan de fiabilité, sauvegardes, mises à jour sans perte, habilitations.</li><li><strong>Présentations</strong> commerciale et de décision, conçues et présentées.</li><li><strong>Site commercial</strong> bilingue du produit (Astro) : <a href="/buyvera/" style="color:var(--accent)">le voir →</a></li></ul></div></div>
+            <div class="three-col"><div class="arg-card arg-card--rh"><span class="arg-label">Cadrage & analyse métier</span><ul><li><strong>Recueil des besoins</strong> auprès des acheteurs et de la direction Achats ; cartographie du processus actuel et cible.</li><li><strong>24 règles de gestion</strong> formalisées (RG-xx), avec leurs cas limites, puis une revue critique complète des règles.</li><li><strong>Cahier des charges</strong> versionné (v3) et <strong>traçabilité des exigences</strong> jusqu'aux tests.</li><li><strong>Business case</strong> : 6 leviers chiffrés en 3 scénarios, conditions d'échec explicites.</li></ul></div><div class="arg-card arg-card--ok"><span class="arg-label">Pilotage & suivi</span><ul><li><strong>Backlog de 133 éléments</strong> décrits assez précisément pour être chiffrés, priorisés avec le référent métier.</li><li><strong>Décisions datées</strong> et tracées (périmètre gelé, arbitrages, choix d'architecture).</li><li><strong>Contrôles réguliers</strong> de l'avancement et revues de code datées : ce qui est réellement livré, pas ce qui est annoncé.</li><li><strong>Recette</strong> sur fichiers réels rejoués, rapport remis à l'acheteur pour validation ; jalons go / no-go.</li><li><strong>Pilotage de lots délégués</strong> : chaque lot a sa demande écrite, ses critères d'acceptation et sa grille de contrôle.</li></ul></div><div class="arg-card arg-card--tech"><span class="arg-label">Réalisation & mise en marché</span><ul><li><strong>Architecture et développement</strong> : moteur Python / DuckDB, interface R/Shiny, ≈ 4 650 tests, intégration continue.</li><li><strong>Déploiement</strong> : plan de fiabilité, sauvegardes, mises à jour sans perte, habilitations.</li><li><strong>Présentations</strong> commerciale et de décision, conçues et présentées.</li><li><strong>Site commercial</strong> bilingue du produit (Astro) : <a href="/buyvera/" style="color:var(--accent)">le voir →</a></li></ul></div></div>
         </div>
     </section>
 
-    <section class="page-section alt" id="parties-prenantes">
+    <section class="page-section" id="parties-prenantes">
         <div class="section-container">
             <span class="section-label">// Parties prenantes</span>
             <h2>Qui a besoin de quoi</h2>
@@ -99,7 +107,7 @@
         </div>
     </section>
 
-    <section class="page-section" id="processus">
+    <section class="page-section alt" id="processus">
         <div class="section-container">
             <span class="section-label">// Processus as-is / to-be</span>
             <h2>Du fichier fournisseur au mémo de négociation</h2>
@@ -107,7 +115,7 @@
         </div>
     </section>
 
-    <section class="page-section alt" id="business-case">
+    <section class="page-section" id="business-case">
         <div class="section-container">
             <span class="section-label">// Business case</span>
             <h2>Six leviers de gain, chiffrés et bornés</h2>
@@ -115,7 +123,7 @@
         </div>
     </section>
 
-    <section class="page-section" id="risques">
+    <section class="page-section alt" id="risques">
         <div class="section-container">
             <span class="section-label">// Risques & conditions de succès</span>
             <h2>Ce qui rendrait ces chiffres faux</h2>
@@ -141,7 +149,13 @@
             <h2>Les diagrammes d'architecture du projet</h2>
             <p style="margin-bottom:2rem">Diagrammes draw.io réalisés pendant le projet et versionnés dans le dépôt
                (données d'infrastructure sensibles masquées).</p>
-            <div class="reveal" style="margin-bottom:2.5rem"><h3>Parcours d&#x27;un tarif — et ce que l&#x27;outil refuse de faire</h3>
+            <div class="reveal" style="margin-bottom:2.5rem"><h3>Pipeline de données : du fichier tarif aux décisions (10 étapes)</h3>
+                <div class="pipeline-figure"><img src="/diagrams/achats-arch-pipeline.svg" alt="Pipeline de données : du fichier tarif aux décisions (10 étapes)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-arch-pipeline.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-arch-pipeline.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-arch-pipeline.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Couches, règles de la maison, profils et droits</h3>
+                <div class="pipeline-figure"><img src="/diagrams/achats-arch-logique.svg" alt="Couches, règles de la maison, profils et droits" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-arch-logique.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-arch-logique.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-arch-logique.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Déploiement et intégration continue : aujourd&#x27;hui, cible, option LLM</h3>
+                <div class="pipeline-figure"><img src="/diagrams/achats-arch-deploiement.svg" alt="Déploiement et intégration continue : aujourd&#x27;hui, cible, option LLM" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-arch-deploiement.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-arch-deploiement.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-arch-deploiement.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Parcours d&#x27;un tarif — et ce que l&#x27;outil refuse de faire</h3>
                 <div class="pipeline-figure"><img src="/diagrams/achats-parcours.svg" alt="Parcours d&#x27;un tarif — et ce que l&#x27;outil refuse de faire" loading="lazy"></div>
             <div class="figure-actions"><a href="/diagrams/achats-parcours.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-parcours.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-parcours.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Cascade de rattachement aux références ERP</h3>
                 <div class="pipeline-figure"><img src="/diagrams/achats-cascade.svg" alt="Cascade de rattachement aux références ERP" loading="lazy"></div>
@@ -175,7 +189,7 @@
             </div>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
-                <tbody><tr><td>Analyse métier</td><td>Règles de gestion, cas limites, revue critique des règles (défauts critiques, lacunes)</td><td>Formaliser ce que l'acheteur fait implicitement</td></tr><tr><td>Business case</td><td>6 leviers chiffrés en 3 scénarios, conditions d'échec</td><td>Décision d'investissement argumentée</td></tr><tr><td>Cahier des charges + backlog</td><td>Exigences tracées, lots chiffrables, jalons go / no-go</td><td>Pilotage de projet</td></tr><tr><td>Python + pandas</td><td>Moteur de lecture, normalisation et analyse</td><td>Industrialiser des règles métier</td></tr><tr><td>rapidfuzz</td><td>Rapprochement approché des références</td><td>Matching robuste avec garde-fous</td></tr><tr><td>DuckDB</td><td>Entrepôt analytique en fichier, vues sous contrat</td><td>Analytique embarquée sans serveur</td></tr><tr><td>R / Shiny</td><td>Poste de travail acheteur, 5 profils</td><td>Interface métier</td></tr><tr><td>YAML</td><td>Un fichier de configuration par fournisseur</td><td>Évolutivité sans développement</td></tr><tr><td>pytest · testthat · GitHub Actions</td><td>≈ 2 500 tests Python + 445 tests R, CI multi-versions</td><td>Fiabilité des chiffres</td></tr></tbody></table></div>
+                <tbody><tr><td>Analyse métier</td><td>Règles de gestion, cas limites, revue critique des règles (défauts critiques, lacunes)</td><td>Formaliser ce que l'acheteur fait implicitement</td></tr><tr><td>Business case</td><td>6 leviers chiffrés en 3 scénarios, conditions d'échec</td><td>Décision d'investissement argumentée</td></tr><tr><td>Cahier des charges + backlog</td><td>Exigences tracées, lots chiffrables, jalons go / no-go</td><td>Pilotage de projet</td></tr><tr><td>Python + pandas</td><td>Moteur de lecture, normalisation et analyse</td><td>Industrialiser des règles métier</td></tr><tr><td>rapidfuzz</td><td>Rapprochement approché des références</td><td>Matching robuste avec garde-fous</td></tr><tr><td>DuckDB</td><td>Entrepôt analytique en fichier, vues sous contrat</td><td>Analytique embarquée sans serveur</td></tr><tr><td>R / Shiny</td><td>Poste de travail acheteur, 5 profils</td><td>Interface métier</td></tr><tr><td>YAML</td><td>Un fichier de configuration par fournisseur</td><td>Évolutivité sans développement</td></tr><tr><td>pytest · testthat · GitHub Actions</td><td>≈ 3 850 tests Python + ≈ 800 tests R, CI multi-versions</td><td>Fiabilité des chiffres</td></tr></tbody></table></div>
         </div>
     </section>
 
@@ -186,7 +200,7 @@
             <h2>Industrialisation : ce qui est en place</h2>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Pratique</th><th>Statut</th><th>Détail</th></tr></thead>
-                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Python 3.12 / 3.13, ruff ; R testthat</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>≈ 2 500 tests Python + 445 tests R</td></tr><tr><td>Docker</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Déploiement conteneurisé multi-utilisateurs planifié</td></tr><tr><td>Orchestration</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Campagnes planifiables, rejouables</td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Journal de toutes les opérations, registre des injections</td></tr><tr><td>API</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Interface R/Shiny</td></tr><tr><td>Déploiement</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Démonstration complète rejouable ; mise en service par lots</td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Python 3.12 / 3.13, ruff ; R testthat</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>≈ 3 850 tests Python + ≈ 800 tests R</td></tr><tr><td>Docker</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Déploiement conteneurisé multi-utilisateurs planifié</td></tr><tr><td>Orchestration</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Campagnes planifiables, rejouables</td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Journal de toutes les opérations, registre des injections</td></tr><tr><td>API</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Interface R/Shiny</td></tr><tr><td>Déploiement</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Démonstration complète rejouable ; mise en service par lots</td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
         </div>
     </section>
 
@@ -210,7 +224,7 @@ cands = [{&quot;reference_erp&quot;: par_norm[c], &quot;score&quot;: round(sc, 1
             <h2>Limites connues et prochaines étapes</h2>
             <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet
                à une équipe de décider en connaissance de cause.</p>
-            <div class="arg-card arg-card--ok"><ul><li>Déploiement conteneurisé multi-utilisateurs et connexion à l'annuaire d'entreprise encore au backlog.</li><li>Un seul profil sectoriel riche (industriel) en plus du profil générique ; interface en français.</li><li>Gains estimés tant que la première campagne sur données réelles n'a pas eu lieu — la méthode de mesure est prête.</li><li>Revue critique des règles métier menée : défauts critiques identifiés (paliers, remises, encodages) et corrigés un par un, avec test dédié.</li></ul></div>
+            <div class="arg-card arg-card--ok"><ul><li>Déploiement conteneurisé multi-utilisateurs (B-92) et connexion à l'annuaire d'entreprise encore au backlog.</li><li>Défauts connus et suivis : B-123 (liens suspendus à tort), B-127 (économies et quarantaine), B-119 (interface).</li><li>Un seul profil sectoriel riche (industriel) en plus du profil générique ; interface en français.</li><li>Gains estimés tant que la première campagne sur données réelles n'a pas eu lieu — la méthode de mesure est prête.</li><li>Revue critique des règles métier menée : défauts critiques identifiés (paliers, remises, encodages) et corrigés un par un, avec test dédié.</li></ul></div>
         </div>
     </section>
 
