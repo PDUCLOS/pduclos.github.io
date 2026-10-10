@@ -256,7 +256,7 @@ def page_rh():
                 <div class="arg-card arg-card--rh reveal"><span class="arg-label">Rôle actuel</span><ul>
                     <li><strong>Chef de projet de bout en bout</strong> sur un projet achats réel, en cours</li>
                     <li>Cadrage, architecture, développement, recette, déploiement</li>
-                    <li>Mise en marché : présentations et <a href="/buyvera/" style="color:var(--accent)">site commercial</a></li>
+                    <li>Mise en marché : présentations et <a href="https://buyvera.fr/" style="color:var(--accent)">site commercial</a></li>
                     <li><a href="/projets/achats-negociation.html" style="color:var(--accent)">Voir le projet →</a></li></ul></div>
                 <div class="arg-card arg-card--rh reveal"><span class="arg-label">Impact business mesuré</span><ul>
                     <li><strong>−40 %</strong> de temps de traitement chez Carrier</li>

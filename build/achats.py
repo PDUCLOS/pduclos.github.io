@@ -31,7 +31,7 @@ ACHATS = dict(
          "l'interface R/Shiny, recette avec les acheteurs, déploiement — et sa mise en marché, avec le site commercial.",
     kpis=[("≈ 1 %", "de la dépense suivie (gain central)"), ("1.71", "contrat d'interface livré"), ("133", "éléments de backlog suivis"),
           ("≈ 4 650", "tests automatisés"), ("6", "leviers de gain chiffrés")],
-    links=[("Site commercial (Buyvera)", "/buyvera/", True),
+    links=[("Site commercial (Buyvera)", "https://buyvera.fr/", True),
            ("Présentation commerciale", "/presentations/plateforme-tarifs.html", False),
            ("Présentation technique", "/presentations/hausses-tarifaires.html", False)],
     context=[
@@ -95,7 +95,7 @@ ACHATS = dict(
         ("presentations", "Mise en marché", "Site commercial et présentations du projet",
          '<p style="margin-bottom:1.5rem">Le produit a son <strong>site commercial bilingue</strong> (Astro, marque Buyvera — buyvera.fr) et deux supports '
          "que j'ai conçus et présentés : l'un pour <strong>vendre</strong>, l'autre pour <strong>obtenir une décision</strong> de la direction.</p>"
-         '<a class="deck-card" href="/buyvera/" style="margin-bottom:1.5rem"><img src="/presentations/buyvera-home.webp" alt="Page d\'accueil du site commercial Buyvera" loading="lazy" width="1600" height="900">'
+         '<a class="deck-card" href="https://buyvera.fr/" style="margin-bottom:1.5rem"><img src="/presentations/buyvera-home.webp" alt="Page d\'accueil du site commercial Buyvera" loading="lazy" width="1600" height="900">'
          '<div><span class="project-tag" style="color:var(--accent-warm)">Site commercial · FR / EN · 33 pages</span>'
          "<h3>Buyvera — chaque rachat apporte ses prix, gardez les meilleurs</h3>"
          "<p>Site statique Astro : animations accessibles (pause, clavier, sans JS), aucun script en ligne, données d'exemple fictives, "
@@ -125,7 +125,7 @@ ACHATS = dict(
          "<li><strong>Architecture et développement</strong> : moteur Python / DuckDB, interface R/Shiny, ≈ 4 650 tests, intégration continue.</li>"
          "<li><strong>Déploiement</strong> : plan de fiabilité, sauvegardes, mises à jour sans perte, habilitations.</li>"
          "<li><strong>Présentations</strong> commerciale et de décision, conçues et présentées.</li>"
-         '<li><strong>Site commercial</strong> bilingue du produit (Astro) : <a href="/buyvera/" style="color:var(--accent)">le voir →</a></li></ul></div></div>'),
+         '<li><strong>Site commercial</strong> bilingue du produit (Astro) : <a href="https://buyvera.fr/" style="color:var(--accent)">le voir →</a></li></ul></div></div>'),
         ("parties-prenantes", "Parties prenantes", "Qui a besoin de quoi",
          '<div class="table-wrap"><table class="stack-table"><thead><tr><th>Acteur</th><th>Besoin</th><th>Réponse apportée</th></tr></thead>'
          f"<tbody>{stake_rows}</tbody></table></div>"),

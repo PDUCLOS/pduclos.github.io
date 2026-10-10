@@ -1,1 +1,0 @@
-import{a as e}from"./anim.1igxcFK3.js";document.querySelectorAll(`[data-gz]`).forEach(t=>{e(t,(e,n)=>{t.style.transform=n?`none`:`scale(${(1.04+.04*Math.sin(e/6)).toFixed(4)})`})});

@@ -47,6 +47,7 @@ Générateur en Python standard + draw.io CLI.
 
 ## Site commercial du projet achats (`/buyvera/`)
 
-Copie construite du site Astro `site-commercial` (dépôt du projet), recompilée avec `base: '/buyvera'`
-et des routes préfixées, sans le bandeau « texte à valider » et avec le secteur générique « industriel ».
-Le dépôt d'origine n'est pas modifié ; pour mettre à jour, reconstruire la copie et remplacer `buyvera/` (script `build/buyvera.py`).
+Le site commercial est publié sur son propre domaine, **https://buyvera.fr** (depuis le 10/10/2026). Tous les liens du
+portfolio y pointent. Le dossier `buyvera/` ne contient plus qu'une page de redirection par adresse (même chemin sur
+buyvera.fr, `noindex`, canonical vers buyvera.fr), pour ne pas laisser deux sites identiques indexés ; `/pondera/`
+redirige aussi vers buyvera.fr. Régénérer ces pages : `python3 build/buyvera.py`.
