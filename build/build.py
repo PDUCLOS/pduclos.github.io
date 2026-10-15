@@ -8,7 +8,9 @@ from pathlib import Path
 from drawio import build_xml, write_and_export, slim_svg, DRAWIO_BIN
 from pages import project_page, MATRIX_COLS, MARK
 from projects import PROJECTS, GH
-from render import head, nav, FOOTER, badges, arrow, e
+from render import head, nav, FOOTER, footer, badges, arrow, e
+from i18n import T, MATRIX_COLS as MATRIX_COLS_I18N, home, project_path
+from pages import marks
 from presentations import DECKS, deck_page
 from competences import section as competences_section, home_skills
 import subprocess
@@ -69,13 +71,13 @@ def write(path, html):
     print("  page", path.relative_to(SITE))
 
 
-def hero(path_label, kicker, title_html, lead, extra=""):
+def hero(path_label, kicker, title_html, lead, extra="", lang="fr"):
     return f"""
     <header class="page-hero">
         <div class="hero-bg-grid"></div>
         <div class="hero-glow hero-glow-1"></div>
         <div class="hero-content">
-            <div class="breadcrumb"><a href="/">Accueil</a> / {path_label}</div>
+            <div class="breadcrumb"><a href="{home(lang)}">{T[lang]["home"]}</a> / {path_label}</div>
             <span class="project-tag" style="color:var(--accent)">{kicker}</span>
             <h1>{title_html}</h1>
             <p class="lead">{lead}</p>
@@ -85,21 +87,23 @@ def hero(path_label, kicker, title_html, lead, extra=""):
 """
 
 
-def matrix_table():
-    head_cells = "".join(f"<th>{label}</th>" for _, label in MATRIX_COLS)
+def matrix_table(projects=None, lang="fr"):
+    projects = projects or PROJECTS
+    mark = marks(lang)
+    head_cells = "".join(f"<th>{label}</th>" for _, label in MATRIX_COLS_I18N[lang])
     rows = []
-    for p in PROJECTS:
+    for p in projects:
         if not p.get("matrix"):
             continue
-        cells = "".join(f"<td>{MARK[p['matrix'][k]][0]}</td>" for k, _ in MATRIX_COLS)
-        rows.append(f'<tr><td><a href="/projets/{p["slug"]}.html">{e(p["short"])}</a></td>{cells}</tr>')
+        cells = "".join(f"<td>{mark[p['matrix'][k]][0]}</td>" for k, _ in MATRIX_COLS_I18N[lang])
+        rows.append(f'<tr><td><a href="{project_path(p["slug"], lang)}">{e(p["short"])}</a></td>{cells}</tr>')
     return f"""<div class="table-wrap" style="overflow-x:auto"><table class="matrix">
-        <thead><tr><th>Projet</th>{head_cells}</tr></thead><tbody>{''.join(rows)}</tbody></table></div>
-        <p class="code-caption" style="margin-top:0.8rem">● implémenté · ◐ partiel · — absent — établi à partir du code de chaque dépôt.</p>"""
+        <thead><tr><th>{T[lang]["matrix_project"]}</th>{head_cells}</tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+        <p class="code-caption" style="margin-top:0.8rem">{T[lang]["matrix_caption"]}</p>"""
 
 
-def tile(p):
-    return f"""<a class="proj-tile reveal" href="/projets/{p['slug']}.html">
+def tile(p, lang="fr"):
+    return f"""<a class="proj-tile reveal" href="{project_path(p['slug'], lang)}">
         <span class="project-tag">{e(p['kicker'])}</span>
         <h3>{e(p['short'])}</h3>
         <p>{p['lead']}</p>
@@ -427,20 +431,40 @@ def page_competences():
           + nav(PROJECTS, path) + body + competences_section(STACK, PROJECTS) + FOOTER)
 
 
-def patch_index():
-    """Replace nav in index.html between markers, keep the rest hand-edited."""
-    idx = SITE / "index.html"
+def patch_index(idx=None, projects=None, lang="fr", stack=None):
+    """Replace nav, tiles and skills in a hand-edited home page between markers, keep the rest."""
+    idx = idx or SITE / "index.html"
+    projects = projects or PROJECTS
     html = idx.read_text(encoding="utf-8")
-    new_nav = "<!-- NAV:START -->\n" + nav(PROJECTS, "/") + "    <!-- NAV:END -->"
+    new_nav = "<!-- NAV:START -->\n" + nav(projects, home(lang), lang) + "    <!-- NAV:END -->"
     html, n = re.subn(r"<!-- NAV:START -->.*?<!-- NAV:END -->", lambda _: new_nav, html, flags=re.S)
-    assert n == 1, "NAV markers missing in index.html"
-    tiles = "<!-- TILES:START -->\n" + "".join(tile(p) for p in PROJECTS if p["slug"] not in ("lyonflow", "carrier-reporting", "achats-negociation")) + "\n<!-- TILES:END -->"
+    assert n == 1, "NAV markers missing in " + str(idx)
+    tiles = "<!-- TILES:START -->\n" + "".join(tile(p, lang) for p in projects if p["slug"] not in ("lyonflow", "carrier-reporting", "achats-negociation")) + "\n<!-- TILES:END -->"
     html, n = re.subn(r"<!-- TILES:START -->.*?<!-- TILES:END -->", lambda _: tiles, html, flags=re.S)
-    assert n == 1, "TILES markers missing in index.html"
-    html, n = re.subn(r"<!-- SKILLS:START -->.*?<!-- SKILLS:END -->", lambda _: home_skills(STACK), html, flags=re.S)
-    assert n == 1, "SKILLS markers missing in index.html"
+    assert n == 1, "TILES markers missing in " + str(idx)
+    html, n = re.subn(r"<!-- SKILLS:START -->.*?<!-- SKILLS:END -->", lambda _: home_skills(stack or STACK, lang), html, flags=re.S)
+    assert n == 1, "SKILLS markers missing in " + str(idx)
     idx.write_text(html, encoding="utf-8")
-    print("  patched index.html")
+    print("  patched", idx.relative_to(SITE))
+
+
+def build_en():
+    """English site under /en/ : same generator, English content (projects_en, site_en)."""
+    from functools import partial
+    from types import SimpleNamespace
+    import site_en
+    from projects_en import PROJECTS as PROJECTS_EN
+    en = "en"
+    h = SimpleNamespace(
+        SITE=SITE, write=write, FOOTER=footer(en), e=e, arrow=arrow, badges=badges, dots=dots, PROJECTS=PROJECTS_EN,
+        head=partial(head, lang=en), nav=partial(nav, lang=en), hero=partial(hero, lang=en),
+        matrix_table=partial(matrix_table, PROJECTS_EN, en), tile=partial(tile, lang=en),
+        competences_section=lambda: competences_section(site_en.STACK_EN, PROJECTS_EN, en))
+    for p in PROJECTS_EN:
+        write(SITE / "en" / "projects" / f"{p['slug']}.html", project_page(p, PROJECTS_EN, en))
+    site_en.page_projects_index(h); site_en.page_stack(h); site_en.page_rh(h); site_en.page_tech(h)
+    site_en.page_competences(h)
+    patch_index(SITE / "en" / "index.html", PROJECTS_EN, en, site_en.STACK_EN)
 
 
 if __name__ == "__main__":
@@ -454,3 +478,5 @@ if __name__ == "__main__":
     for d in DECKS:
         write(SITE / "presentations" / f"{d['slug']}.html", deck_page(d, PROJECTS))
     page_projects_index(); page_stack(); page_competences(); page_rh(); page_tech(); patch_index()
+    print("pages (en)")
+    build_en()

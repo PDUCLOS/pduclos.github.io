@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Knowledge Copilot — 100% local RAG — Patrice Duclos</title>
+    <meta name="description" content="Question-answering assistant over 5,105 pages of technical bearing catalogs (Schaeffler, SKF, NTN-SNR, GGB): hybrid dense + BM25 search, Qwen2.5-7B LLM running locally via MLX, RAGAS evaluation and an instrumented API.">
+    <meta property="og:title" content="Industrial Knowledge Copilot — 100% local RAG — Patrice Duclos">
+    <meta property="og:description" content="Question-answering assistant over 5,105 pages of technical bearing catalogs (Schaeffler, SKF, NTN-SNR, GGB): hybrid dense + BM25 search, Qwen2.5-7B LLM running locally via MLX, RAGAS evaluation and an instrumented API.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/en/projects/copilot-maintenance.html">
+    <link rel="canonical" href="https://pduclos.github.io/en/projects/copilot-maintenance.html">
+    <link rel="alternate" hreflang="fr" href="https://pduclos.github.io/projets/copilot-maintenance.html">
+    <link rel="alternate" hreflang="en" href="https://pduclos.github.io/en/projects/copilot-maintenance.html">
+    <link rel="alternate" hreflang="x-default" href="https://pduclos.github.io/projets/copilot-maintenance.html">
+    <meta property="og:locale" content="en_US">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=5">
+</head>
+<body>
+    <nav>
+        <a href="/en/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/en/#about">Background</a></li>
+            <li class="has-dropdown">
+                <a href="/en/projects/" class="dropdown-toggle" aria-current="page">Projects</a>
+                <ul class="dropdown">
+                    <li><a href="/en/projects/">All projects<small>overview · MLOps matrix</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/en/projects/lyonflow.html">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html" aria-current="page">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html">Vibration-based predictive maintenance<small>Industrial ML · Signal · Digital twin</small></a></li><li><a href="/en/projects/marche-hvac.html">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/achats-negociation.html">Procurement — prices &amp; scorecards<small>Ongoing project · Project Manager · Procurement</small></a></li><li><a href="/en/projects/csvtraitement.html">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html">PredictIRA<small>Public health ML · Team project</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="https://buyvera.fr/en/">Product website — Buyvera<small>procurement project · bilingual site</small></a></li>
+                    <li><a href="/presentations/plateforme-tarifs.html">Sales deck (in French)<small>procurement project · 38 slides</small></a></li>
+                    <li><a href="/presentations/hausses-tarifaires.html">Technical deck (in French)<small>procurement project · 21 slides</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/en/skills.html">Skills</a></li>
+            <li><a href="/en/stack.html">MLOps stack</a></li>
+            <li><a href="/en/recruiters.html">Recruiters</a></li>
+            <li><a href="/en/tech-profile.html">Tech profile</a></li>
+            <li><a href="/en/#contact" class="nav-cta">Contact</a></li>
+            <li><a href="/projets/copilot-maintenance.html" class="lang-switch" hreflang="fr" lang="fr" title="Version française" aria-label="Version française">FR</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            
+            <div class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/projects/">Projects</a> / Maintenance copilot (local RAG)</div>
+            <span class="project-tag" style="color:var(--accent)">Generative AI · RAG · Local LLM</span>
+            <h1>An AI copilot for maintenance, <span class="highlight">with no data ever leaving the machine</span></h1>
+            <p class="lead">Question-answering assistant over 5,105 pages of technical bearing catalogs (Schaeffler, SKF, NTN-SNR, GGB): hybrid dense + BM25 search, Qwen2.5-7B LLM running locally via MLX, RAGAS evaluation and an instrumented API.</p>
+            <div class="kpi-row"><div class="kpi"><b>5,105</b><span>indexed pages</span></div><div class="kpi"><b>13</b><span>PDF catalogs</span></div><div class="kpi"><b>141</b><span>tests</span></div><div class="kpi"><b>0</b><span>data sent to the cloud</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/maintenance" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Source code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// In 30 seconds</span>
+            <h2>The problem, the answer, the proof</h2>
+            <div style="margin-bottom:2rem"><p>A maintenance technician wastes time looking up a tolerance, a tightening torque or a part reference in catalogs hundreds of pages long. Online AI assistants raise an <strong>industrial confidentiality</strong> issue.</p><p>This copilot answers in French or English, <strong>cites its sources</strong> (catalog and page) and runs entirely on an Apple Silicon machine, with no API key.</p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">For recruiters · business value</span>
+                    <ul><li>Generative AI applied to a real pain point in the field, drawn from 20 years in industrial distribution.</li><li><strong>Confidentiality by design</strong>: no data leaves the machine, transparency documented in line with the AI Act.</li><li>Sourced, verifiable answers: business user trust comes before demo appeal.</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">For tech teams · what the code proves</span>
+                    <ul><li>PyMuPDF ingestion → 500-token chunks (50 overlap) → multilingual <strong>bge-m3</strong> embeddings (1024 dim) → ChromaDB.</li><li><strong>Hybrid search</strong>: dense + BM25 merged with Reciprocal Rank Fusion, optional cross-encoder reranker.</li><li>Generation with 4-bit Qwen2.5-7B-Instruct via <strong>MLX</strong> (Metal), LangChain LCEL chain, FR/EN prompts, controlled 504 timeout.</li><li>Versioned FastAPI <code>/v1</code>, Prometheus metrics, JSON logs; Ubuntu + macOS CI, ChromaDB integration tests, CodeQL.</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline & architecture</span>
+            <h2>End-to-end architecture</h2>
+            <p>Pipeline rebuilt from an analysis of the repository: every block maps to real code. Play the data flow, click a block to follow its dependencies, or open the architecture diagrams.</p>
+            <div class="gh-cards"><a class="gh-card" href="https://github.com/PDUCLOS/maintenance" target="_blank" rel="noopener" data-repo="PDUCLOS/maintenance">
+            <span class="gh-name"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>maintenance</span>
+            <span class="gh-desc">Public repository on GitHub</span>
+            <span class="gh-meta"><span data-k="lang"></span><span data-k="push"></span><span data-k="stars"></span></span>
+        </a></div>
+            
+            <div class="pl" data-pl id="pl-copilot-maintenance">
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button></div>
+                <div class="pl-panel" data-panel="live">
+                    <div class="pl-toolbar">
+                        <button type="button" class="pl-play">▶ Play the data flow</button>
+                        <button type="button" class="pl-reset" hidden>Show all</button>
+                        <span class="pl-hint">Click a block to see what feeds it and what it feeds.</span>
+                    </div>
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:7">
+                        <svg class="pl-edges" aria-hidden="true"></svg>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">13 PDF catalogs</button></div><div class="pl-col" data-col="1" style="--k:#0284C7"><h4><span>02</span>Ingestion</h4><button type="button" class="pl-node" data-id="s1n0">PyMuPDF</button><button type="button" class="pl-node" data-id="s1n1">Chunker 500/50</button></div><div class="pl-col" data-col="2" style="--k:#7C3AED"><h4><span>03</span>Indexing</h4><button type="button" class="pl-node" data-id="s2n0">bge-m3 embeddings</button><button type="button" class="pl-node" data-id="s2n1">ChromaDB</button><button type="button" class="pl-node" data-id="s2n2">BM25 index</button></div><div class="pl-col" data-col="3" style="--k:#2563EB"><h4><span>04</span>Retrieval</h4><button type="button" class="pl-node" data-id="s3n0">Hybrid RRF</button><button type="button" class="pl-node" data-id="s3n1">Cross-encoder reranker</button></div><div class="pl-col" data-col="4" style="--k:#16A34A"><h4><span>05</span>Generation</h4><button type="button" class="pl-node" data-id="s4n0">Qwen2.5-7B (MLX)</button><button type="button" class="pl-node" data-id="s4n1">LCEL chain</button></div><div class="pl-col" data-col="5" style="--k:#0D9488"><h4><span>06</span>Serving</h4><button type="button" class="pl-node" data-id="s5n0">FastAPI /v1/query</button><button type="button" class="pl-node" data-id="s5n1">Streamlit (chat + sources)</button><button type="button" class="pl-node" data-id="s5n2">/metrics Prometheus</button></div><div class="pl-col" data-col="6" style="--k:#DB2777"><h4><span>07</span>Evaluation</h4><button type="button" class="pl-node" data-id="s6n0">RAGAS</button></div></div>
+                    </div></div>
+                    <div class="pl-band" style="--k:#475569">GitHub Actions (Ubuntu + macOS) · ChromaDB integration tests · CodeQL · multi-stage non-root Docker</div>
+                    <div class="pl-info" aria-live="polite"></div>
+                    <div class="pl-legend"><span><i class="solid"></i>data flow</span><span><i class="dash"></i>monitoring / retraining loop</span></div>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s1n1", "l": "", "d": false}, {"a": "s1n1", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s2n1", "l": "", "d": false}, {"a": "s1n1", "b": "s2n2", "l": "", "d": true}, {"a": "s2n1", "b": "s3n0", "l": "dense", "d": false}, {"a": "s2n2", "b": "s3n0", "l": "sparse", "d": false}, {"a": "s3n0", "b": "s3n1", "l": "", "d": false}, {"a": "s3n1", "b": "s4n1", "l": "context", "d": false}, {"a": "s4n0", "b": "s4n1", "l": "", "d": false}, {"a": "s4n1", "b": "s5n0", "l": "", "d": false}, {"a": "s5n1", "b": "s5n0", "l": "", "d": false}, {"a": "s5n0", "b": "s5n2", "l": "", "d": true}, {"a": "s6n0", "b": "s4n1", "l": "evaluates", "d": true}]</script>
+                </div>
+                <div class="pl-panel" data-panel="d0">
+                <h3 class="pl-panel-title">Pipeline diagram (draw.io)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/copilot-maintenance.svg" alt="Pipeline diagram (draw.io)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/copilot-maintenance.svg" target="_blank">⤢ Full screen (SVG)</a><a href="/diagrams/copilot-maintenance.drawio" download>⬇ .drawio file</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fcopilot-maintenance.drawio" target="_blank" rel="noopener">✎ Open in draw.io</a></div></div>
+            </div>
+            <h3 class="pl-steps-title">Step by step</h3>
+            <ol class="pipeline-steps"><li>PDFs are read page by page (page numbers kept for citation) and split into overlapping chunks.</li><li>Each chunk is embedded with bge-m3 (multilingual) and stored in ChromaDB; a lexical BM25 index is built in parallel.</li><li>For each question, both searches are merged with RRF (robust to different score scales), then reranked.</li><li>The local LLM generates an answer grounded in the context, citing the catalog and page.</li><li>RAGAS measures faithfulness, answer relevancy, context precision and context recall; each evaluation is frozen as a timestamped snapshot.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="points-forts">
+        <div class="section-container">
+            <span class="section-label">// Key strengths</span>
+            <h2>Key strengths of the solution</h2>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Privacy by design</strong>: local LLM (Qwen2.5 via MLX), no data sent to the cloud.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Robust retrieval</strong>: hybrid dense + BM25 merged with RRF, optional reranker, 5,105 pages indexed.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Sourced, verifiable answers</strong>: technician trust comes before demo effect.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Production-grade</strong>: versioned FastAPI API, Prometheus metrics, 141 tests, Ubuntu + macOS CI.</p></li></ol>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Tools & languages</span>
+            <h2>Tech stack and why these choices</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Languages (share of code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">Python</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:74%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">74%</span></div><div class="skill-item"><span class="skill-name">HTML</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:10%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">10%</span></div><div class="skill-item"><span class="skill-name">CSS</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:7%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">7%</span></div><div class="skill-item"><span class="skill-name">Shell</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:3%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">3%</span></div><div class="skill-item"><span class="skill-name">YAML</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:2%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">2%</span></div><div class="skill-item"><span class="skill-name">Makefile</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:2%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">2%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">Lines of code excluding notebooks, measured on the repository.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Keywords</h3>
+                    <div class="project-tech"><span class="tech-badge">RAG</span><span class="tech-badge">LLM</span><span class="tech-badge">MLX</span><span class="tech-badge">Qwen2.5</span><span class="tech-badge">bge-m3</span><span class="tech-badge">ChromaDB</span><span class="tech-badge">BM25</span><span class="tech-badge">LangChain</span><span class="tech-badge">RAGAS</span><span class="tech-badge">FastAPI</span><span class="tech-badge">Streamlit</span><span class="tech-badge">Prometheus</span><span class="tech-badge">CodeQL</span><span class="tech-badge">Docker</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Tool</th><th>Role in the project</th><th>What it demonstrates</th></tr></thead>
+                <tbody><tr><td>MLX + Qwen2.5-7B-Instruct 4-bit</td><td>Local generation on Apple GPU</td><td>On-device LLM, no API</td></tr><tr><td>bge-m3 (sentence-transformers)</td><td>FR/EN embeddings, 1024 dim</td><td>Multilingual semantic search</td></tr><tr><td>ChromaDB</td><td>Vector database</td><td>Vector storage</td></tr><tr><td>rank-bm25 + RRF</td><td>Lexical search and fusion</td><td>Hybrid retrieval</td></tr><tr><td>ms-marco-MiniLM</td><td>Cross-encoder reranking</td><td>Top-k precision</td></tr><tr><td>LangChain LCEL</td><td>Retriever → prompt → LLM chain</td><td>LLM orchestration</td></tr><tr><td>RAGAS</td><td>RAG quality evaluation</td><td>Measuring instead of assuming</td></tr><tr><td>FastAPI + Prometheus</td><td>Versioned API, latency counters and histograms</td><td>Instrumented service</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="mlops">
+        <div class="section-container">
+            <span class="section-label">// MLOps maturity</span>
+            <h2>Industrialization: what is in place</h2>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Practice</th><th>Status</th><th>Detail</th></tr></thead>
+                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>lint + tests on 2 OSes, integration, CodeQL</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>141 tests</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Multi-stage non-root API, ChromaDB in Compose</td></tr><tr><td>Orchestration</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tracking / registry</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Timestamped RAGAS evaluation snapshots</td></tr><tr><td>Monitoring / drift</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>/metrics Prometheus, JSON logs</td></tr><tr><td>API</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>FastAPI /query /ingest /eval</td></tr><tr><td>Deployment</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Local workstation (MLX requires Metal)</td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section" id="code">
+        <div class="section-container">
+            <span class="section-label">// Code excerpts</span>
+            <h2>The code that makes the difference</h2>
+            <p class="code-caption">src/rag/retriever.py — Reciprocal Rank Fusion of dense + BM25</p><pre class="code"><code>rrf_contrib = 1.0 / (_RRF_K0 + rank + 1)
+if cid in chunk_map:
+    chunk_map[cid][&quot;rrf&quot;] += rrf_contrib
+    if chunk_map[cid][&quot;chunk&quot;].retrieval_method == &quot;dense&quot;:
+        chunk_map[cid][&quot;chunk&quot;].retrieval_method = &quot;rrf&quot;</code></pre>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Critical review</span>
+            <h2>Known limitations and next steps</h2>
+            <p style="margin-bottom:1.5rem">Documenting limitations honestly is part of the job: it lets a team make informed decisions.</p>
+            <div class="arg-card arg-card--ok"><ul><li>Baseline RAGAS scores not yet published: the question / answer set is ready, the measured runs still need to be frozen.</li><li>Tool-calling agent removed (Qwen / Mistral comparison inconclusive) in favor of a more reliable RAG chain.</li><li>Deployment limited to Apple Silicon (MLX); a vLLM / llama.cpp variant would allow a Linux server.</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/en/projects/detection-fraude.html"><small>← Previous project</small>Automated fraud detection</a>
+            <a class="next" href="/en/projects/maintenance-predictive.html"><small>Next project →</small>Vibration-based predictive maintenance</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon, France ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=5"></script>
+</body>
+</html>

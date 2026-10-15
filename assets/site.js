@@ -27,6 +27,9 @@
 /* ---------- Pipeline interactif (pages projets) ---------- */
 (function () {
     var NS = 'http://www.w3.org/2000/svg';
+    var EN = (document.documentElement.lang || '').slice(0, 2) === 'en';
+    var L = EN ? { step: 'Step', from: 'fed by:', entry: 'pipeline entry point', to: 'feeds:', end: 'final output', up: 'block(s) upstream', down: 'downstream', upd: 'updated' }
+               : { step: 'Étape', from: 'reçoit de :', entry: 'point d\'entrée du pipeline', to: 'alimente :', end: 'restitution finale', up: 'brique(s) en amont', down: 'en aval', upd: 'màj' };
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function initPipeline(root) {
@@ -137,10 +140,10 @@
             var inn = edges.filter(function (e) { return e.b === id; }).map(function (e) { return e.a; });
             var out = edges.filter(function (e) { return e.a === id; }).map(function (e) { return e.b; });
             info.style.borderLeftColor = getComputedStyle(colEl).getPropertyValue('--k');
-            info.innerHTML = '<span class="pl-k" style="color:' + info.style.borderLeftColor + '">Étape · ' + stage + '</span><br><b>' + n.textContent + '</b>' +
-                (inn.length ? '<br>← reçoit de : ' + names(inn) : '<br>← point d\'entrée du pipeline') +
-                (out.length ? '<br>→ alimente : ' + names(out) : '<br>→ restitution finale') +
-                '<br><small>' + Object.keys(up).length + ' brique(s) en amont · ' + Object.keys(down).length + ' en aval</small>';
+            info.innerHTML = '<span class="pl-k" style="color:' + info.style.borderLeftColor + '">' + L.step + ' · ' + stage + '</span><br><b>' + n.textContent + '</b>' +
+                (inn.length ? '<br>← ' + L.from + ' ' + names(inn) : '<br>← ' + L.entry) +
+                (out.length ? '<br>→ ' + L.to + ' ' + names(out) : '<br>→ ' + L.end) +
+                '<br><small>' + Object.keys(up).length + ' ' + L.up + ' · ' + Object.keys(down).length + ' ' + L.down + '</small>';
         }
 
         root.querySelectorAll('.pl-node').forEach(function (n) {
@@ -167,7 +170,7 @@
                 cols[i].classList.add('live');
                 cols[i].querySelectorAll('.pl-node').forEach(function (n) { n.classList.add('down'); });
                 paths.forEach(function (p) { if (col(p.a) === i - 1 || (col(p.b) === i && col(p.a) < i)) p.el.classList.add('flow'); });
-                info.innerHTML = '<span class="pl-k" style="color:' + getComputedStyle(cols[i]).getPropertyValue('--k') + '">Étape ' + (i + 1) + ' / ' + cols.length + '</span><br><b>' +
+                info.innerHTML = '<span class="pl-k" style="color:' + getComputedStyle(cols[i]).getPropertyValue('--k') + '">' + L.step + ' ' + (i + 1) + ' / ' + cols.length + '</span><br><b>' +
                     cols[i].querySelector('h4').textContent.replace(/^\d+/, '') + '</b> — ' + names([].map.call(cols[i].querySelectorAll('.pl-node'), function (n) { return n.dataset.id; }));
                 i++;
                 setTimeout(step, reduce ? 600 : 1300);
@@ -209,13 +212,14 @@
     document.querySelectorAll('[data-pl]').forEach(initPipeline);
 
     // dépôts GitHub : langage, dernière mise à jour, étoiles (API publique, mise en cache par session)
-    var months = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+    var months = EN ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                    : ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
     document.querySelectorAll('.gh-card[data-repo]').forEach(function (card) {
         var repo = card.dataset.repo, key = 'gh:' + repo;
         function fill(r) {
             if (r.description) card.querySelector('.gh-desc').textContent = r.description;
             if (r.language) card.querySelector('[data-k="lang"]').textContent = '● ' + r.language;
-            if (r.pushed_at) { var d = new Date(r.pushed_at); card.querySelector('[data-k="push"]').textContent = 'màj ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear(); }
+            if (r.pushed_at) { var d = new Date(r.pushed_at); card.querySelector('[data-k="push"]').textContent = L.upd + ' ' + (EN ? months[d.getMonth()] + ' ' + d.getDate() + ', ' : d.getDate() + ' ' + months[d.getMonth()] + ' ') + d.getFullYear(); }
             if (r.stargazers_count) card.querySelector('[data-k="stars"]').textContent = '★ ' + r.stargazers_count;
         }
         var cached = null;

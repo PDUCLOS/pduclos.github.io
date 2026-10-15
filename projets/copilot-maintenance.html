@@ -10,10 +10,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pduclos.github.io/projets/copilot-maintenance.html">
     <link rel="canonical" href="https://pduclos.github.io/projets/copilot-maintenance.html">
+    <link rel="alternate" hreflang="fr" href="https://pduclos.github.io/projets/copilot-maintenance.html">
+    <link rel="alternate" hreflang="en" href="https://pduclos.github.io/en/projects/copilot-maintenance.html">
+    <link rel="alternate" hreflang="x-default" href="https://pduclos.github.io/projets/copilot-maintenance.html">
+    <meta property="og:locale" content="fr_FR">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css?v=4">
+    <link rel="stylesheet" href="/assets/style.css?v=5">
 </head>
 <body>
     <nav>
@@ -40,6 +44,7 @@
             <li><a href="/profil-rh.html">Recruteurs</a></li>
             <li><a href="/profil-tech.html">Profil technique</a></li>
             <li><a href="/#contact" class="nav-cta">Contact</a></li>
+            <li><a href="/en/projects/copilot-maintenance.html" class="lang-switch" hreflang="en" lang="en" title="English version" aria-label="English version">EN</a></li>
         </ul>
     </nav>
 
@@ -80,8 +85,7 @@
         <div class="section-container">
             <span class="section-label">// Pipeline & architecture</span>
             <h2>Architecture de bout en bout</h2>
-            <p>Pipeline reconstitué à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
-               Animez le flux, cliquez une brique pour suivre ses dépendances, ou ouvrez les schémas d'architecture.</p>
+            <p>Pipeline reconstitué à partir de l'analyse du dépôt : chaque brique correspond à du code réel. Animez le flux, cliquez une brique pour suivre ses dépendances, ou ouvrez les schémas d'architecture.</p>
             <div class="gh-cards"><a class="gh-card" href="https://github.com/PDUCLOS/maintenance" target="_blank" rel="noopener" data-repo="PDUCLOS/maintenance">
             <span class="gh-name"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>maintenance</span>
             <span class="gh-desc">Dépôt public sur GitHub</span>
@@ -185,8 +189,7 @@ if cid in chunk_map:
         <div class="section-container">
             <span class="section-label">// Regard critique</span>
             <h2>Limites connues et prochaines étapes</h2>
-            <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet
-               à une équipe de décider en connaissance de cause.</p>
+            <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet à une équipe de décider en connaissance de cause.</p>
             <div class="arg-card arg-card--ok"><ul><li>Scores RAGAS de référence encore à publier : le jeu de questions / réponses est prêt, les runs mesurés restent à figer.</li><li>Agent à appels d'outils retiré (comparaison Qwen / Mistral peu concluante) au profit d'une chaîne RAG plus fiable.</li><li>Déploiement limité à Apple Silicon (MLX) ; une variante vLLM / llama.cpp permettrait un serveur Linux.</li></ul></div>
         </div>
     </section>
@@ -203,6 +206,6 @@ if cid in chunk_map:
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>
-    <script src="/assets/site.js?v=4"></script>
+    <script src="/assets/site.js?v=5"></script>
 </body>
 </html>

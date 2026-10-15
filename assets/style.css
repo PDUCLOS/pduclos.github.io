@@ -1915,3 +1915,11 @@ a.cp-home:hover { transform: translateY(-3px); }
     .cp-certif-blocs li { flex-wrap: wrap; }
     .cp-radar { max-width: 100%; }
 }
+
+/* Sélecteur de langue */
+.nav-links a.lang-switch {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em;
+    border: 1px solid var(--border-light); border-radius: 6px; padding: 0.3rem 0.55rem; color: var(--text-secondary);
+}
+.nav-links a.lang-switch:hover { color: var(--accent); border-color: var(--accent); }
+.nav-links a.lang-switch::after { display: none; }

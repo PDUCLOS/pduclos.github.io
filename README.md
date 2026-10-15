@@ -21,6 +21,22 @@ Portfolio personnel : 20 ans d'expertise en distribution industrielle et une rec
 
 Les schémas sont dans `diagrams/` au format `.drawio` (source éditable) et `.svg` (affichage).
 
+## Version anglaise (`/en/`)
+
+Le site existe en anglais sous `/en/` : `/en/`, `/en/projects/`, `/en/projects/<slug>.html`, `/en/skills.html`,
+`/en/stack.html`, `/en/recruiters.html`, `/en/tech-profile.html`. Chaque page porte des balises `hreflang` vers sa
+traduction et le menu propose un sélecteur FR / EN. Les présentations du projet achats restent en français ;
+les schémas draw.io sont partagés (libellés en français), le pipeline interactif est traduit.
+
+| Fichier | Rôle |
+|---|---|
+| `build/i18n.py` | Correspondance des chemins FR ↔ EN et libellés d'interface |
+| `build/projects_en.py` (+ `projects_en_a.py`, `projects_en_b.py`, `achats_en.py`) | Contenu anglais des projets, même structure que `projects.py` |
+| `build/site_en.py` | Pages anglaises (projets, stack, recruteurs, profil technique, compétences) et données de compétences |
+| `en/index.html` | Accueil anglais, édité à la main comme `index.html` (marqueurs `NAV`, `TILES`, `SKILLS` régénérés) |
+
+Toute modification de contenu en français doit être reportée dans le fichier anglais correspondant.
+
 ## Génération
 
 Les pages projets, les pages d'audience, les diagrammes et le menu sont générés par `build/` :

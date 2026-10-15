@@ -77,13 +77,56 @@ EPREUVES = {
 }
 
 
+UI = {
+    "fr": dict(lvl="niveau {lvl} sur 5", radar_aria="Niveau moyen des outils par bloc de compétences", all="Tout voir",
+               official="Compétences certifiées (référentiel RNCP 38777)", base="Socle professionnel", exam="Épreuve validée",
+               meta="{c} compétences · {t} outils · {p} projets · niveau moyen {a} / 5", tools="Outils maîtrisés", used="Mis en œuvre dans",
+               badge="✓ Délivrée le 7 octobre 2026 par décision du jury", k_blocs="blocs validés", k_comps="compétences certifiées",
+               k_proj="projets de preuve",
+               intro="Quatre blocs validés devant jury, du cadrage de la gouvernance à l'exploitation de modèles en production. "
+                     "Chaque bloc ci-dessous est relié aux outils employés et aux projets où les vérifier.",
+               n_comps="{n} compétences", official_link="Fiche officielle France Compétences",
+               caption="Niveau moyen auto-évalué des outils de chaque bloc (1 à 5). Cliquez un bloc pour l'explorer.",
+               explore="Explorer", by_bloc="Compétences par bloc", filter="Filtrer par bloc", search="Rechercher un outil",
+               placeholder="Rechercher un outil : Airflow, RAG, Terraform…", empty="Aucun outil ne correspond à cette recherche.",
+               proofs="Preuves", matrix_title="Projets × blocs de compétences",
+               matrix_intro="Quels projets mobilisent quel bloc. Survolez une colonne pour la mettre en évidence.", project="Projet",
+               home_cert="compétences certifiées", home_biz="compétences métier", page="/competences.html"),
+    "en": dict(lvl="level {lvl} out of 5", radar_aria="Average tool level per skill block", all="Show all",
+               official="Certified skills (RNCP 38777 framework)", base="Professional foundation", exam="Assessment passed",
+               meta="{c} skills · {t} tools · {p} projects · average level {a} / 5", tools="Tools mastered", used="Applied in",
+               badge="✓ Awarded on October 7, 2026 by decision of the jury", k_blocs="blocks passed", k_comps="certified skills",
+               k_proj="supporting projects",
+               intro="Four blocks passed before a jury, from framing data governance to running models in production. "
+                     "Each block below is linked to the tools used and to the projects where you can check them.",
+               n_comps="{n} skills", official_link="Official France Compétences listing",
+               caption="Self-assessed average tool level per block (1 to 5). Click a block to explore it.",
+               explore="Explore", by_bloc="Skills by block", filter="Filter by block", search="Search for a tool",
+               placeholder="Search for a tool: Airflow, RAG, Terraform…", empty="No tool matches this search.",
+               proofs="Evidence", matrix_title="Projects × skill blocks",
+               matrix_intro="Which projects draw on which block. Hover over a column to highlight it.", project="Project",
+               home_cert="certified skills", home_biz="business skills", page="/en/skills.html"),
+}
+
+
+def _content(lang):
+    if lang == "en":
+        import site_en
+        return site_en.BLOCS_EN, site_en.CERTIF_EN, site_en.EPREUVES_EN
+    return BLOCS, CERTIF, EPREUVES
+
+
+def _ppath(slug, lang):
+    return f"/en/projects/{slug}.html" if lang == "en" else f"/projets/{slug}.html"
+
+
 def _levels(stack):
     return {name: (lvl, where) for _, items in stack for name, lvl, where in items}
 
 
-def _bar(lvl, color):
+def _bar(lvl, color, lang="fr"):
     segs = "".join(f'<i class="{"on" if i < lvl else ""}"></i>' for i in range(5))
-    return f'<span class="cp-bar" style="--c:{color}" role="img" aria-label="niveau {lvl} sur 5">{segs}</span>'
+    return f'<span class="cp-bar" style="--c:{color}" role="img" aria-label="{UI[lang]["lvl"].format(lvl=lvl)}">{segs}</span>'
 
 
 def _avg(tools, levels):
@@ -91,11 +134,12 @@ def _avg(tools, levels):
     return sum(vals) / len(vals)
 
 
-def radar(stack):
+def radar(stack, lang="fr"):
     """SVG radar : niveau moyen des outils de chaque bloc (dérivé de STACK)."""
     import math
+    blocs = _content(lang)[0]
     levels = _levels(stack)
-    n, cx, cy, r = len(BLOCS), 160, 150, 110
+    n, cx, cy, r = len(blocs), 160, 150, 110
     def pt(i, v):
         a = -math.pi / 2 + 2 * math.pi * i / n
         return cx + r * v / 5 * math.cos(a), cy + r * v / 5 * math.sin(a)
@@ -103,10 +147,10 @@ def radar(stack):
         f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in (pt(i, k) for i in range(n)))}" class="cp-ring"/>'
         for k in range(1, 6))
     spokes = "".join(f'<line x1="{cx}" y1="{cy}" x2="{pt(i, 5)[0]:.1f}" y2="{pt(i, 5)[1]:.1f}" class="cp-ring"/>' for i in range(n))
-    avgs = [_avg(b[5], levels) for b in BLOCS]
+    avgs = [_avg(b[5], levels) for b in blocs]
     shape = " ".join(f"{x:.1f},{y:.1f}" for x, y in (pt(i, v) for i, v in enumerate(avgs)))
     dots, labels = [], []
-    for i, (b, v) in enumerate(zip(BLOCS, avgs)):
+    for i, (b, v) in enumerate(zip(blocs, avgs)):
         x, y = pt(i, v)
         dots.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5" fill="{b[3]}" class="cp-radar-dot" data-bloc="{b[0]}">'
                     f'<title>{e(b[2])} : {v:.1f} / 5</title></circle>')
@@ -114,106 +158,114 @@ def radar(stack):
         anchor = "middle" if abs(lx - cx) < 20 else ("start" if lx > cx else "end")
         labels.append(f'<text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" class="cp-radar-label" data-bloc="{b[0]}">'
                       f'<tspan fill="{b[3]}">{e(b[0])}</tspan><tspan x="{lx:.1f}" dy="1.15em">{e(b[2])}</tspan></text>')
-    return f"""<svg class="cp-radar" viewBox="-20 -5 360 320" role="img" aria-label="Niveau moyen des outils par bloc de compétences">
+    return f"""<svg class="cp-radar" viewBox="-20 -5 360 320" role="img" aria-label="{UI[lang]['radar_aria']}">
         {rings}{spokes}<polygon points="{shape}" class="cp-shape"/>{''.join(dots)}{''.join(labels)}</svg>"""
 
 
-def section(stack, projects):
-    """Contenu interactif de la page /competences.html."""
+def section(stack, projects, lang="fr"):
+    """Contenu interactif de la page compétences (FR ou EN)."""
+    u = UI[lang]
+    blocs, certif, epreuves = _content(lang)
     levels = _levels(stack)
     by_slug = {p["slug"]: p for p in projects}
-    tabs = ['<button class="cp-tab" aria-pressed="true" data-filter="all">Tout voir</button>'] + [
+    tabs = [f'<button class="cp-tab" aria-pressed="true" data-filter="all">{u["all"]}</button>'] + [
         f'<button class="cp-tab" aria-pressed="false" data-filter="{b[0]}" style="--c:{b[3]}">'
-        f'<b>{e(b[0])}</b> {e(b[2])}</button>' for b in BLOCS]
+        f'<b>{e(b[0])}</b> {e(b[2])}</button>' for b in blocs]
     cards = []
-    for code, title, short, color, comps, tools, slugs in BLOCS:
+    for code, title, short, color, comps, tools, slugs in blocs:
         comp_li = "".join(f"<li>{e(c)}</li>" for c in comps)
         tool_rows = "".join(
-            f'<li class="cp-tool" data-name="{e(t.lower())}"><span>{e(t)}<small>{e(levels[t][1])}</small></span>{_bar(levels[t][0], color)}</li>'
+            f'<li class="cp-tool" data-name="{e(t.lower())}"><span>{e(t)}<small>{e(levels[t][1])}</small></span>{_bar(levels[t][0], color, lang)}</li>'
             for t in sorted(tools, key=lambda t: -levels[t][0]))
-        proj = "".join(f'<a class="cp-proj" href="/projets/{s}.html">{e(by_slug[s]["short"])}</a>' for s in slugs)
-        official = "Compétences certifiées (référentiel RNCP 38777)" if code.startswith("BC") else "Socle professionnel"
-        epreuve = (f'<p class="cp-epreuve"><b>Épreuve validée</b>{e(EPREUVES[code])}</p>' if code in EPREUVES else "")
+        proj = "".join(f'<a class="cp-proj" href="{_ppath(s, lang)}">{e(by_slug[s]["short"])}</a>' for s in slugs)
+        official = u["official"] if code.startswith("BC") else u["base"]
+        epreuve = (f'<p class="cp-epreuve"><b>{u["exam"]}</b>{e(epreuves[code])}</p>' if code in epreuves else "")
+        meta = u["meta"].format(c=len(comps), t=len(tools), p=len(slugs), a=f"{_avg(tools, levels):.1f}")
         cards.append(f"""
         <article class="cp-card" id="{code.lower()}" data-bloc="{code}" style="--c:{color}">
             <header class="cp-card-head">
                 <span class="cp-code">{e(code)}</span>
-                <div><h3>{e(title)}</h3><span class="cp-meta">{len(comps)} compétences · {len(tools)} outils · {len(slugs)} projets · niveau moyen {_avg(tools, levels):.1f} / 5</span></div>
+                <div><h3>{e(title)}</h3><span class="cp-meta">{meta}</span></div>
             </header>
             <div class="cp-card-body">
                 <div><h4>{official} · {len(comps)}</h4><ul class="cp-comps">{comp_li}</ul>{epreuve}</div>
-                <div><h4>Outils maîtrisés</h4><ul class="cp-tools">{tool_rows}</ul></div>
+                <div><h4>{u['tools']}</h4><ul class="cp-tools">{tool_rows}</ul></div>
             </div>
-            <footer class="cp-projs"><h4>Mis en œuvre dans</h4>{proj}</footer>
+            <footer class="cp-projs"><h4>{u['used']}</h4>{proj}</footer>
         </article>""")
     # matrice projets × blocs
     used = []
-    for b in BLOCS:
+    for b in blocs:
         for s in b[6]:
             if s not in used:
                 used.append(s)
     used.sort(key=lambda s: [p["slug"] for p in projects].index(s))
-    head_cells = "".join(f'<th data-bloc="{b[0]}" style="--c:{b[3]}">{e(b[0])}</th>' for b in BLOCS)
+    head_cells = "".join(f'<th data-bloc="{b[0]}" style="--c:{b[3]}">{e(b[0])}</th>' for b in blocs)
     rows = "".join(
-        f'<tr><td><a href="/projets/{s}.html">{e(by_slug[s]["short"])}</a></td>'
-        + "".join(f'<td data-bloc="{b[0]}" style="--c:{b[3]}">{"<span class=cp-dot></span>" if s in b[6] else ""}</td>' for b in BLOCS)
+        f'<tr><td><a href="{_ppath(s, lang)}">{e(by_slug[s]["short"])}</a></td>'
+        + "".join(f'<td data-bloc="{b[0]}" style="--c:{b[3]}">{"<span class=cp-dot></span>" if s in b[6] else ""}</td>' for b in blocs)
         + "</tr>" for s in used)
+    n_cert = sum(len(b[4]) for b in blocs if b[0].startswith('BC'))
+    n_proj = len({s for b in blocs for s in b[6]})
+    blocs_li = ''.join(f'<li style="--c:{b[3]}"><b>{e(b[0])}</b><span>{e(b[1])}</span><em>{u["n_comps"].format(n=len(b[4]))}</em></li>'
+                       for b in blocs if b[0].startswith('BC'))
     return f"""
     <section class="page-section">
         <div class="section-container cp-overview">
             <div class="cp-certif reveal">
-                <span class="cp-certif-badge">✓ Délivrée le 7 octobre 2026 par décision du jury</span>
-                <h2>{e(CERTIF['title'])}</h2>
-                <p class="cp-certif-sub">{e(CERTIF['org'])} · {e(CERTIF['rncp'])} · {e(CERTIF['level'])} · NSF 114b / 326 / 326t</p>
-                <div class="cp-kpis"><span><b>4</b>blocs validés</span><span><b>{sum(len(b[4]) for b in BLOCS if b[0].startswith('BC'))}</b>compétences certifiées</span><span><b>{len({s for b in BLOCS for s in b[6]})}</b>projets de preuve</span></div>
-                <p>Quatre blocs validés devant jury, du cadrage de la gouvernance à l'exploitation de modèles en production.
-                   Chaque bloc ci-dessous est relié aux outils employés et aux projets où les vérifier.</p>
-                <ol class="cp-certif-blocs">{''.join(f'<li style="--c:{b[3]}"><b>{e(b[0])}</b><span>{e(b[1])}</span><em>{len(b[4])} compétences</em></li>' for b in BLOCS if b[0].startswith('BC'))}</ol>
-                <a class="cp-link" href="{CERTIF['url']}" target="_blank" rel="noopener">Fiche officielle France Compétences {arrow()}</a>
+                <span class="cp-certif-badge">{u['badge']}</span>
+                <h2>{e(certif['title'])}</h2>
+                <p class="cp-certif-sub">{e(certif['org'])} · {e(certif['rncp'])} · {e(certif['level'])} · NSF 114b / 326 / 326t</p>
+                <div class="cp-kpis"><span><b>4</b>{u['k_blocs']}</span><span><b>{n_cert}</b>{u['k_comps']}</span><span><b>{n_proj}</b>{u['k_proj']}</span></div>
+                <p>{u['intro']}</p>
+                <ol class="cp-certif-blocs">{blocs_li}</ol>
+                <a class="cp-link" href="{certif['url']}" target="_blank" rel="noopener">{u['official_link']} {arrow()}</a>
             </div>
             <figure class="cp-radar-wrap reveal">
-                {radar(stack)}
-                <figcaption>Niveau moyen auto-évalué des outils de chaque bloc (1 à 5). Cliquez un bloc pour l'explorer.</figcaption>
+                {radar(stack, lang)}
+                <figcaption>{u['caption']}</figcaption>
             </figure>
         </div>
     </section>
 
     <section class="page-section alt" id="explorer">
         <div class="section-container">
-            <span class="section-label">// Explorer</span>
-            <h2>Compétences par bloc</h2>
+            <span class="section-label">// {u['explore']}</span>
+            <h2>{u['by_bloc']}</h2>
             <div class="cp-controls">
-                <div class="cp-tabs" role="group" aria-label="Filtrer par bloc">{''.join(tabs)}</div>
-                <label class="cp-search"><span class="sr-only">Rechercher un outil</span>
-                    <input type="search" placeholder="Rechercher un outil : Airflow, RAG, Terraform…" autocomplete="off"></label>
+                <div class="cp-tabs" role="group" aria-label="{u['filter']}">{''.join(tabs)}</div>
+                <label class="cp-search"><span class="sr-only">{u['search']}</span>
+                    <input type="search" placeholder="{u['placeholder']}" autocomplete="off"></label>
             </div>
-            <p class="cp-empty" hidden>Aucun outil ne correspond à cette recherche.</p>
+            <p class="cp-empty" hidden>{u['empty']}</p>
             <div class="cp-cards">{''.join(cards)}</div>
         </div>
     </section>
 
     <section class="page-section">
         <div class="section-container">
-            <span class="section-label">// Preuves</span>
-            <h2>Projets × blocs de compétences</h2>
-            <p style="margin-bottom:1.5rem">Quels projets mobilisent quel bloc. Survolez une colonne pour la mettre en évidence.</p>
+            <span class="section-label">// {u['proofs']}</span>
+            <h2>{u['matrix_title']}</h2>
+            <p style="margin-bottom:1.5rem">{u['matrix_intro']}</p>
             <div class="table-wrap" style="overflow-x:auto"><table class="matrix cp-matrix">
-                <thead><tr><th>Projet</th>{head_cells}</tr></thead><tbody>{rows}</tbody></table></div>
+                <thead><tr><th>{u['project']}</th>{head_cells}</tr></thead><tbody>{rows}</tbody></table></div>
         </div>
     </section>
 """
 
 
-def home_skills(stack):
+def home_skills(stack, lang="fr"):
     """Bloc compact pour la section #skills de l'accueil."""
+    u = UI[lang]
+    blocs = _content(lang)[0]
     levels = _levels(stack)
     cards = "".join(f"""
-                <a class="skill-group cp-home reveal" href="/competences.html#{b[0].lower()}" style="--c:{b[3]}">
+                <a class="skill-group cp-home reveal" href="{u['page']}#{b[0].lower()}" style="--c:{b[3]}">
                     <span class="cp-code">{e(b[0])}</span>
                     <h3 class="skill-group-title">{e(b[1])}</h3>
-                    <span class="cp-meta">{len(b[4])} {'compétences certifiées' if b[0].startswith('BC') else 'compétences métier'}</span>
+                    <span class="cp-meta">{len(b[4])} {u['home_cert'] if b[0].startswith('BC') else u['home_biz']}</span>
                     <div class="project-tech">{''.join(f'<span class="tech-badge">{e(t.split(" (")[0])}</span>' for t in sorted(b[5], key=lambda t: -levels[t][0])[:5])}</div>
-                </a>""" for b in BLOCS)
+                </a>""" for b in blocs)
     return f"""<!-- SKILLS:START -->
             <div class="skills-grid cp-home-grid">{cards}
             </div>

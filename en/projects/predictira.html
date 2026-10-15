@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PredictIRA — forecasting emergency department visits — Patrice Duclos</title>
+    <meta name="description" content="Weekly forecast of emergency department visits for acute respiratory infections by French department, based on weather, pollution, the flu index and Google Trends searches. LightGBM model served with Flask, then productionized as a containerized FastAPI API.">
+    <meta property="og:title" content="PredictIRA — forecasting emergency department visits — Patrice Duclos">
+    <meta property="og:description" content="Weekly forecast of emergency department visits for acute respiratory infections by French department, based on weather, pollution, the flu index and Google Trends searches. LightGBM model served with Flask, then productionized as a containerized FastAPI API.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/en/projects/predictira.html">
+    <link rel="canonical" href="https://pduclos.github.io/en/projects/predictira.html">
+    <link rel="alternate" hreflang="fr" href="https://pduclos.github.io/projets/predictira.html">
+    <link rel="alternate" hreflang="en" href="https://pduclos.github.io/en/projects/predictira.html">
+    <link rel="alternate" hreflang="x-default" href="https://pduclos.github.io/projets/predictira.html">
+    <meta property="og:locale" content="en_US">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=5">
+</head>
+<body>
+    <nav>
+        <a href="/en/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/en/#about">Background</a></li>
+            <li class="has-dropdown">
+                <a href="/en/projects/" class="dropdown-toggle" aria-current="page">Projects</a>
+                <ul class="dropdown">
+                    <li><a href="/en/projects/">All projects<small>overview · MLOps matrix</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/en/projects/lyonflow.html">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html">Vibration-based predictive maintenance<small>Industrial ML · Signal · Digital twin</small></a></li><li><a href="/en/projects/marche-hvac.html">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/achats-negociation.html">Procurement — prices &amp; scorecards<small>Ongoing project · Project Manager · Procurement</small></a></li><li><a href="/en/projects/csvtraitement.html">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html" aria-current="page">PredictIRA<small>Public health ML · Team project</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="https://buyvera.fr/en/">Product website — Buyvera<small>procurement project · bilingual site</small></a></li>
+                    <li><a href="/presentations/plateforme-tarifs.html">Sales deck (in French)<small>procurement project · 38 slides</small></a></li>
+                    <li><a href="/presentations/hausses-tarifaires.html">Technical deck (in French)<small>procurement project · 21 slides</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/en/skills.html">Skills</a></li>
+            <li><a href="/en/stack.html">MLOps stack</a></li>
+            <li><a href="/en/recruiters.html">Recruiters</a></li>
+            <li><a href="/en/tech-profile.html">Tech profile</a></li>
+            <li><a href="/en/#contact" class="nav-cta">Contact</a></li>
+            <li><a href="/projets/predictira.html" class="lang-switch" hreflang="fr" lang="fr" title="Version française" aria-label="Version française">FR</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            
+            <div class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/projects/">Projects</a> / PredictIRA</div>
+            <span class="project-tag" style="color:var(--accent)">Public health ML · Team project</span>
+            <h1>Anticipating <span class="highlight">respiratory emergencies</span> before the wave</h1>
+            <p class="lead">Weekly forecast of emergency department visits for acute respiratory infections by French department, based on weather, pollution, the flu index and Google Trends searches. LightGBM model served with Flask, then productionized as a containerized FastAPI API.</p>
+            <div class="kpi-row"><div class="kpi"><b>28</b><span>features</span></div><div class="kpi"><b>LightGBM</b><span>model</span></div><div class="kpi"><b>2</b><span>applications (Flask, FastAPI)</span></div><div class="kpi"><b>4</b><span>team members</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/PredictIRA" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Flask application <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/industrialisation" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">FastAPI API + Docker <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// In 30 seconds</span>
+            <h2>The problem, the answer, the proof</h2>
+            <div style="margin-bottom:2rem"><p>Respiratory epidemics overwhelm emergency departments every winter. Anticipating the load one to two weeks ahead makes it possible to adjust staffing and beds.</p><p>Training team project (M2i / Jedha): model design, then productionization as an API.</p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">For recruiters · business value</span>
+                    <ul><li>Teamwork in a group of 4 on a public-interest topic.</li><li>First move from notebook to a usable application, then to a containerized service.</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">For tech teams · what the code proves</span>
+                    <ul><li>Environmental features (O3, PM2.5, PM10, NO2…), flu index and search signals; cyclical encoding of the week.</li><li>Serialized LightGBM + <code>StandardScaler</code>, Flask form prefilled by department / week.</li><li>Productionization: FastAPI endpoint <code>POST /predict/</code>, Docker image, HTML client.</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline & architecture</span>
+            <h2>End-to-end architecture</h2>
+            <p>Pipeline rebuilt from an analysis of the repository: every block maps to real code. Play the data flow, click a block to follow its dependencies, or open the architecture diagrams.</p>
+            <div class="gh-cards"><a class="gh-card" href="https://github.com/PDUCLOS/PredictIRA" target="_blank" rel="noopener" data-repo="PDUCLOS/PredictIRA">
+            <span class="gh-name"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>PredictIRA</span>
+            <span class="gh-desc">Public repository on GitHub</span>
+            <span class="gh-meta"><span data-k="lang"></span><span data-k="push"></span><span data-k="stars"></span></span>
+        </a><a class="gh-card" href="https://github.com/PDUCLOS/industrialisation" target="_blank" rel="noopener" data-repo="PDUCLOS/industrialisation">
+            <span class="gh-name"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>industrialisation</span>
+            <span class="gh-desc">Public repository on GitHub</span>
+            <span class="gh-meta"><span data-k="lang"></span><span data-k="push"></span><span data-k="stars"></span></span>
+        </a></div>
+            
+            <div class="pl" data-pl id="pl-predictira">
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button></div>
+                <div class="pl-panel" data-panel="live">
+                    <div class="pl-toolbar">
+                        <button type="button" class="pl-play">▶ Play the data flow</button>
+                        <button type="button" class="pl-reset" hidden>Show all</button>
+                        <span class="pl-hint">Click a block to see what feeds it and what it feeds.</span>
+                    </div>
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:4">
+                        <svg class="pl-edges" aria-hidden="true"></svg>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">Weather · pollution</button><button type="button" class="pl-node" data-id="s0n1">Flu index</button><button type="button" class="pl-node" data-id="s0n2">Google Trends</button></div><div class="pl-col" data-col="1" style="--k:#2563EB"><h4><span>02</span>Preparation</h4><button type="button" class="pl-node" data-id="s1n0">Features + scaler</button></div><div class="pl-col" data-col="2" style="--k:#16A34A"><h4><span>03</span>Model</h4><button type="button" class="pl-node" data-id="s2n0">LightGBM</button></div><div class="pl-col" data-col="3" style="--k:#0D9488"><h4><span>04</span>Service</h4><button type="button" class="pl-node" data-id="s3n0">Flask (form)</button><button type="button" class="pl-node" data-id="s3n1">FastAPI + Docker</button></div></div>
+                    </div></div>
+                    
+                    <div class="pl-info" aria-live="polite"></div>
+                    <div class="pl-legend"><span><i class="solid"></i>data flow</span><span><i class="dash"></i>monitoring / retraining loop</span></div>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s0n1", "b": "s1n0", "l": "", "d": false}, {"a": "s0n2", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n1", "l": "", "d": false}]</script>
+                </div>
+                <div class="pl-panel" data-panel="d0">
+                <h3 class="pl-panel-title">Pipeline diagram (draw.io)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/predictira.svg" alt="Pipeline diagram (draw.io)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/predictira.svg" target="_blank">⤢ Full screen (SVG)</a><a href="/diagrams/predictira.drawio" download>⬇ .drawio file</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fpredictira.drawio" target="_blank" rel="noopener">✎ Open in draw.io</a></div></div>
+            </div>
+            <h3 class="pl-steps-title">Step by step</h3>
+            <ol class="pipeline-steps"><li>Weekly assembly of environmental, epidemiological and search features by department.</li><li>Normalization and training of a LightGBM regression model.</li><li>Flask application: the user picks a department and week, adjusts the features and gets the prediction.</li><li>Productionization: the same model exposed through a FastAPI API in a Docker container.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="points-forts">
+        <div class="section-container">
+            <span class="section-label">// Key strengths</span>
+            <h2>Key strengths of the solution</h2>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Public interest</strong>: weekly forecast of emergency department visits for acute respiratory infections, by department.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>From notebook to service</strong>: Flask application, then containerized FastAPI API.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Teamwork</strong> in a group of 4, from data to deployment.</p></li></ol>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Tools & languages</span>
+            <h2>Tech stack and why these choices</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Languages (share of code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">HTML / CSS</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:70%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">70%</span></div><div class="skill-item"><span class="skill-name">Python</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:30%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">30%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">Lines of code excluding notebooks, measured on the repository.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Keywords</h3>
+                    <div class="project-tech"><span class="tech-badge">LightGBM</span><span class="tech-badge">scikit-learn</span><span class="tech-badge">Flask</span><span class="tech-badge">FastAPI</span><span class="tech-badge">Docker</span><span class="tech-badge">Public health</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Tool</th><th>Role in the project</th><th>What it demonstrates</th></tr></thead>
+                <tbody><tr><td>LightGBM</td><td>Regression of visit counts</td><td>Gradient boosting</td></tr><tr><td>scikit-learn</td><td>Normalization</td><td>Data preparation</td></tr><tr><td>Flask + Jinja</td><td>Web application</td><td>First usable product</td></tr><tr><td>FastAPI + Docker</td><td>Containerized prediction API</td><td>Productionization</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="mlops">
+        <div class="section-container">
+            <span class="section-label">// MLOps maturity</span>
+            <h2>Industrialization: what is in place</h2>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Practice</th><th>Status</th><th>Detail</th></tr></thead>
+                <tbody><tr><td>CI/CD</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tests</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>python:3.9 image + uvicorn</td></tr><tr><td>Orchestration</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Flask, then FastAPI</td></tr><tr><td>Deployment</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section" id="code">
+        <div class="section-container">
+            <span class="section-label">// Code excerpts</span>
+            <h2>The code that makes the difference</h2>
+            <p class="code-caption">industrialisation/api.py — the minimal prediction API</p><pre class="code"><code>@app.post(&quot;/predict/&quot;)
+def predict(data: dict):
+    df = pd.DataFrame([data])
+    prediction = model.predict(df)
+    return {&quot;prediction_ira&quot;: int(prediction[0])}</code></pre>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Critical review</span>
+            <h2>Known limitations and next steps</h2>
+            <p style="margin-bottom:1.5rem">Documenting limitations honestly is part of the job: it lets a team make informed decisions.</p>
+            <div class="arg-card arg-card--ok"><ul><li>Early-training project: no tests, schema validation or published metrics in the repository.</li><li>What I took away and applied afterwards: Pydantic schemas, tests, CI and model monitoring (see LyonFlow and Stripe).</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/en/projects/gouvernance-spotify.html"><small>← Previous project</small>Data Governance — Spotify</a>
+            <a class="next" href="/en/projects/lyonflow.html"><small>Next project →</small>LyonFlow</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon, France ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=5"></script>
+</body>
+</html>
