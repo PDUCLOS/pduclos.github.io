@@ -19,7 +19,14 @@ Portfolio personnel : 20 ans d'expertise en distribution industrielle et une rec
 | `/projets/` | Tous | Index des projets + matrice de maturité MLOps |
 | `/projets/<slug>.html` | Tous | Une page par projet : problème, argumentaire RH / tech, pipeline interactif (flux animé, dépendances, schémas zoomables), points forts, dépôts GitHub, pipeline draw.io, stack, maturité MLOps, métriques, code, limites |
 
-Les schémas sont dans `diagrams/` au format `.drawio` (source éditable) et `.svg` (affichage).
+Les schémas sont publiés en `.svg` dans `diagrams/`. Les sources `.drawio` restent en local (ignorées par git) :
+elles ne sont ni publiées ni téléchargeables depuis le site.
+
+## Protection du contenu
+
+© Patrice Duclos, tous droits réservés (voir `LICENSE.txt`). Opposition à la fouille de textes et de données (IA) :
+`robots.txt` bloque les robots d'IA connus, `/.well-known/tdmrep.json` et les balises `tdm-reservation` / `noai`
+expriment la réserve de façon lisible par machine (directive (UE) 2019/790, art. 4).
 
 ## Version anglaise (`/en/`)
 

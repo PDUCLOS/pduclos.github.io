@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détection automatique de fraude bancaire — Patrice Duclos</title>
     <meta name="description" content="Pipeline conteneurisé qui interroge un flux de paiements chaque minute, score chaque transaction avec XGBoost via une API FastAPI, alerte sur Telegram au-delà d&#x27;un seuil métier et produit un rapport quotidien automatique.">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="Détection automatique de fraude bancaire — Patrice Duclos">
     <meta property="og:description" content="Pipeline conteneurisé qui interroge un flux de paiements chaque minute, score chaque transaction avec XGBoost via une API FastAPI, alerte sur Telegram au-delà d&#x27;un seuil métier et produit un rapport quotidien automatique.">
     <meta property="og:type" content="website">
@@ -116,12 +120,12 @@
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/detection-fraude.svg" alt="Schéma draw.io du pipeline" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/detection-fraude.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/detection-fraude.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fdetection-fraude.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d1">
+                <div class="pipeline-figure"><img src="/diagrams/detection-fraude.svg" alt="Schéma draw.io du pipeline" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/detection-fraude.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
                 <h3 class="pl-panel-title">Pipeline détaillé (entraînement, temps réel, rapport)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/fraude-pipeline.svg" alt="Pipeline détaillé (entraînement, temps réel, rapport)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/fraude-pipeline.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/fraude-pipeline.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Ffraude-pipeline.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+                <div class="pipeline-figure"><img src="/diagrams/fraude-pipeline.svg" alt="Pipeline détaillé (entraînement, temps réel, rapport)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/fraude-pipeline.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Étape par étape</h3>
             <ol class="pipeline-steps"><li>Chaque minute, Airflow récupère les transactions courantes (API publique, repli sur un fichier Kaggle avec curseur persistant).</li><li>Chaque transaction est envoyée à l'API FastAPI, qui construit les 10 features métier et calcule la probabilité de fraude.</li><li>Au-delà du seuil métier (0,7), une alerte part sur Telegram (et par e-mail en option) ; tous les résultats sont stockés dans PostgreSQL.</li><li>À 07:00, un second DAG génère le rapport HTML des fraudes de la veille.</li><li>Un dashboard Streamlit affiche KPIs, distribution des probabilités, carte et top 20 des transactions à risque.</li></ol>
@@ -220,7 +224,7 @@ return _mock_predict(transaction)</code></pre>
     </section>
 
     <footer>
-        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon · <a href="/LICENSE.txt" style="color:var(--text-muted)">Tous droits réservés · fouille de données et IA interdites</a> ·
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>

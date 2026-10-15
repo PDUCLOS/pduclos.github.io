@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plateforme polyglotte de détection de fraude temps réel — Patrice Duclos</title>
     <meta name="description" content="Architecture de données unifiée façon Stripe : PostgreSQL transactionnel, CDC Debezium vers Kafka, feature store Redis, MongoDB, entrepôt Snowflake — avec XGBoost, MLflow, dérive Evidently, réentraînement automatique et une cible AWS entièrement décrite en Terraform.">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="Plateforme polyglotte de détection de fraude temps réel — Patrice Duclos">
     <meta property="og:description" content="Architecture de données unifiée façon Stripe : PostgreSQL transactionnel, CDC Debezium vers Kafka, feature store Redis, MongoDB, entrepôt Snowflake — avec XGBoost, MLflow, dérive Evidently, réentraînement automatique et une cible AWS entièrement décrite en Terraform.">
     <meta property="og:type" content="website">
@@ -112,16 +116,16 @@
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/stripe-fraude-temps-reel.svg" alt="Schéma draw.io du pipeline" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/stripe-fraude-temps-reel.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-fraude-temps-reel.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-fraude-temps-reel.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d1">
+                <div class="pipeline-figure"><img src="/diagrams/stripe-fraude-temps-reel.svg" alt="Schéma draw.io du pipeline" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-fraude-temps-reel.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
                 <h3 class="pl-panel-title">Architecture de données unifiée (implémentation réelle)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/stripe-architecture.svg" alt="Architecture de données unifiée (implémentation réelle)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/stripe-architecture.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-architecture.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-architecture.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d2">
+                <div class="pipeline-figure"><img src="/diagrams/stripe-architecture.svg" alt="Architecture de données unifiée (implémentation réelle)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-architecture.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
                 <h3 class="pl-panel-title">Cible AWS (Terraform)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/stripe-aws.svg" alt="Cible AWS (Terraform)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/stripe-aws.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-aws.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-aws.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+                <div class="pipeline-figure"><img src="/diagrams/stripe-aws.svg" alt="Cible AWS (Terraform)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-aws.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Étape par étape</h3>
             <ol class="pipeline-steps"><li>Un producteur insère des transactions synthétiques (5 % de fraude injectée) dans PostgreSQL 16, configuré en réplication logique.</li><li>Debezium lit le journal WAL et publie chaque changement dans Kafka (<code>stripe.public.transactions</code>).</li><li>Le scorer enrichit chaque transaction avec les vélocités client stockées dans Redis, puis la note (règles ou XGBoost) : autoriser, revoir (≥ 0,60) ou bloquer (≥ 0,85).</li><li>Le score est réécrit de façon idempotente dans PostgreSQL ; les événements et alertes partent dans Kafka puis MongoDB.</li><li>Le moniteur compare toutes les 2 minutes les données récentes à la référence (Evidently) et la performance réellement servie ; il relance l'entraînement si nécessaire.</li><li>Chaque nuit, Airflow exporte vers le modèle en étoile Snowflake et rafraîchit les vues matérialisées.</li><li>Le dashboard Streamlit (authentifié) expose KPIs, alertes, dérive et comparaison règles / modèle.</li></ol>
@@ -231,7 +235,7 @@ if reasons and cooldown_ok:
     </section>
 
     <footer>
-        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon · <a href="/LICENSE.txt" style="color:var(--text-muted)">Tous droits réservés · fouille de données et IA interdites</a> ·
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>

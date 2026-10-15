@@ -39,7 +39,7 @@ T = {
         deck_sales="Présentation commerciale", deck_sales_sub="projet achats · 38 slides",
         deck_tech="Présentation technique", deck_tech_sub="projet achats · 21 slides",
         switch_label="English version", switch_text="EN",
-        footer="Data Analyst · Data Scientist · MLOps — Lyon",
+        footer="Data Analyst · Data Scientist · MLOps — Lyon", rights="Tous droits réservés · fouille de données et IA interdites",
         # project page
         p_30s="En 30 secondes", p_30s_title="Le problème, la réponse, la preuve",
         p_rh="Pour le recruteur · valeur business", p_tech="Pour l'équipe technique · ce que le code prouve",
@@ -59,7 +59,7 @@ T = {
         p_lim_intro="Documenter honnêtement les limites fait partie du travail : c'est ce qui permet "
                     "à une équipe de décider en connaissance de cause.",
         p_prev="← Projet précédent", p_next="Projet suivant →",
-        fig_full="⤢ Plein écran (SVG)", fig_dl="⬇ Fichier .drawio", fig_open="✎ Ouvrir dans draw.io",
+        fig_full="⤢ Plein écran (SVG)",
         # pipeline
         pl_live="▶ Pipeline interactif", pl_play="▶ Animer le flux de données", pl_reset="Tout afficher",
         pl_hint="Cliquez une brique pour voir ce qu'elle reçoit et ce qu'elle alimente.",
@@ -75,7 +75,7 @@ T = {
         deck_sales="Sales deck (in French)", deck_sales_sub="procurement project · 38 slides",
         deck_tech="Technical deck (in French)", deck_tech_sub="procurement project · 21 slides",
         switch_label="Version française", switch_text="FR",
-        footer="Data Analyst · Data Scientist · MLOps — Lyon, France",
+        footer="Data Analyst · Data Scientist · MLOps — Lyon, France", rights="All rights reserved · no text and data mining or AI use",
         p_30s="In 30 seconds", p_30s_title="The problem, the answer, the proof",
         p_rh="For recruiters · business value", p_tech="For tech teams · what the code proves",
         p_pipe_label="Pipeline & architecture", p_pipe_title="End-to-end architecture",
@@ -93,7 +93,7 @@ T = {
         p_lim_label="Critical review", p_lim_title="Known limitations and next steps",
         p_lim_intro="Documenting limitations honestly is part of the job: it lets a team make informed decisions.",
         p_prev="← Previous project", p_next="Next project →",
-        fig_full="⤢ Full screen (SVG)", fig_dl="⬇ .drawio file", fig_open="✎ Open in draw.io",
+        fig_full="⤢ Full screen (SVG)",
         pl_live="▶ Interactive pipeline", pl_play="▶ Play the data flow", pl_reset="Show all",
         pl_hint="Click a block to see what feeds it and what it feeds.",
         pl_flow="data flow", pl_loop="monitoring / retraining loop",

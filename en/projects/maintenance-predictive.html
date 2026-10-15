@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predictive maintenance — bearing diagnostics — Patrice Duclos</title>
     <meta name="description" content="Bearing fault detection on the Paderborn dataset (32 bearings, 4 operating conditions) using explainable physical features, with one key question: does a model trained on artificial faults hold up on real faults?">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="Predictive maintenance — bearing diagnostics — Patrice Duclos">
     <meta property="og:description" content="Bearing fault detection on the Paderborn dataset (32 bearings, 4 operating conditions) using explainable physical features, with one key question: does a model trained on artificial faults hold up on real faults?">
     <meta property="og:type" content="website">
@@ -112,8 +116,8 @@
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Pipeline diagram (draw.io)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/maintenance-predictive.svg" alt="Pipeline diagram (draw.io)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/maintenance-predictive.svg" target="_blank">⤢ Full screen (SVG)</a><a href="/diagrams/maintenance-predictive.drawio" download>⬇ .drawio file</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fmaintenance-predictive.drawio" target="_blank" rel="noopener">✎ Open in draw.io</a></div></div>
+                <div class="pipeline-figure"><img src="/diagrams/maintenance-predictive.svg" alt="Pipeline diagram (draw.io)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/maintenance-predictive.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Step by step</h3>
             <ol class="pipeline-steps"><li>Download of the Paderborn signals, parsing of file names (bearing, operating condition, fault) and physical plausibility checks.</li><li>Hierarchical storage site → area → machine → asset → bearing in TimescaleDB.</li><li>Computation of time-domain indicators and characteristic fault frequencies from the bearing geometry.</li><li>Comparison of a threshold baseline and XGBoost, with cross-validation grouped by asset (no bearing in both train and test).</li><li>MLflow tracking (dataset hash, macro F1, balanced accuracy) and Evidently train / test drift report.</li><li>Streamlit delivery: alerts, spectra, factory digital twin, glossary.</li></ol>
@@ -203,7 +207,7 @@
     </section>
 
     <footer>
-        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon, France ·
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon, France · <a href="/LICENSE.txt" style="color:var(--text-muted)">All rights reserved · no text and data mining or AI use</a> ·
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>

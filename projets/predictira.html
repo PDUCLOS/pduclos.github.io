@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PredictIRA — prévoir les passages aux urgences — Patrice Duclos</title>
     <meta name="description" content="Prédiction hebdomadaire des passages aux urgences pour infections respiratoires aiguës par département, à partir de la météo, de la pollution, de l&#x27;indice grippal et des recherches Google Trends. Modèle LightGBM servi par Flask, puis industrialisé en API FastAPI conteneurisée.">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="PredictIRA — prévoir les passages aux urgences — Patrice Duclos">
     <meta property="og:description" content="Prédiction hebdomadaire des passages aux urgences pour infections respiratoires aiguës par département, à partir de la météo, de la pollution, de l&#x27;indice grippal et des recherches Google Trends. Modèle LightGBM servi par Flask, puis industrialisé en API FastAPI conteneurisée.">
     <meta property="og:type" content="website">
@@ -116,8 +120,8 @@
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/predictira.svg" alt="Schéma draw.io du pipeline" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/predictira.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/predictira.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fpredictira.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+                <div class="pipeline-figure"><img src="/diagrams/predictira.svg" alt="Schéma draw.io du pipeline" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/predictira.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Étape par étape</h3>
             <ol class="pipeline-steps"><li>Assemblage hebdomadaire des variables environnementales, épidémiologiques et de recherche par département.</li><li>Normalisation et entraînement d'un modèle LightGBM de régression.</li><li>Application Flask : l'utilisateur choisit département et semaine, ajuste les variables, obtient la prédiction.</li><li>Industrialisation : même modèle exposé par une API FastAPI dans un conteneur Docker.</li></ol>
@@ -194,7 +198,7 @@ def predict(data: dict):
     </section>
 
     <footer>
-        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon · <a href="/LICENSE.txt" style="color:var(--text-muted)">Tous droits réservés · fouille de données et IA interdites</a> ·
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>

@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LyonFlow — Plateforme MLOps trafic multimodal — Patrice Duclos</title>
     <meta name="description" content="Plateforme MLOps de bout en bout, en production sur VPS : 9 sources open data, architecture Medallion sur PostgreSQL/PostGIS, 27 DAGs Airflow, modèles XGBoost réentraînés automatiquement, routage multimodal pgRouting et un dashboard à 3 personas.">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="LyonFlow — Plateforme MLOps trafic multimodal — Patrice Duclos">
     <meta property="og:description" content="Plateforme MLOps de bout en bout, en production sur VPS : 9 sources open data, architecture Medallion sur PostgreSQL/PostGIS, 27 DAGs Airflow, modèles XGBoost réentraînés automatiquement, routage multimodal pgRouting et un dashboard à 3 personas.">
     <meta property="og:type" content="website">
@@ -116,24 +120,24 @@
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow.svg" alt="Schéma draw.io du pipeline" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d1">
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow.svg" alt="Schéma draw.io du pipeline" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
                 <h3 class="pl-panel-title">Flux de données Medallion</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-medallion.svg" alt="Flux de données Medallion" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-medallion.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-medallion.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-medallion.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d2">
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-medallion.svg" alt="Flux de données Medallion" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-medallion.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
                 <h3 class="pl-panel-title">Les 4 piliers ML</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-ml.svg" alt="Les 4 piliers ML" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-ml.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-ml.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-ml.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d3">
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-ml.svg" alt="Les 4 piliers ML" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-ml.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d3">
                 <h3 class="pl-panel-title">Infrastructure de production (VPS, conteneurs)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-infra.svg" alt="Infrastructure de production (VPS, conteneurs)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-infra.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-infra.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-infra.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d4">
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-infra.svg" alt="Infrastructure de production (VPS, conteneurs)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-infra.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d4">
                 <h3 class="pl-panel-title">Orchestration Airflow</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-airflow.svg" alt="Orchestration Airflow" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-airflow.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-airflow.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-airflow.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-airflow.svg" alt="Orchestration Airflow" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-airflow.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Étape par étape</h3>
             <ol class="pipeline-steps"><li><strong>Collecte</strong> — 9 sources ouvertes sans clé, DAGs Airflow cadencés de 5 min (trafic, bus, Vélo'v) à 6 h (vigilance météo).</li><li><strong>Bronze</strong> — stockage brut JSONB immuable : on peut toujours rejouer l'historique.</li><li><strong>Silver</strong> — déduplication (<code>DISTINCT ON</code>), parsing SIRI, reprojection géographique (4326 / 2154), filtrage des capteurs défaillants.</li><li><strong>Gold</strong> — features ML (lags, moyennes glissantes, calendrier scolaire, météo) et vues matérialisées métier (goulots, retards par tronçon).</li><li><strong>Modélisation</strong> — XGBoost vitesse H+1h (inférence toutes les 15 min), XGBoost Vélo'v H+1h, routage voiture <code>pgr_dijkstra</code> sur le réseau OSM avec vitesses injectées.</li><li><strong>MLOps</strong> — suivi MLflow, comparaison continue aux données TomTom, rapport de dérive quotidien, réentraînement automatique.</li><li><strong>Restitution</strong> — API FastAPI (prédiction, recommandation, goulots) et dashboard Streamlit 18 pages / 59 widgets, sans aucune donnée simulée.</li></ol>
@@ -235,7 +239,7 @@ make rollback-vps            # retour à la release précédente</code></pre>
     </section>
 
     <footer>
-        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon · <a href="/LICENSE.txt" style="color:var(--text-muted)">Tous droits réservés · fouille de données et IA interdites</a> ·
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>

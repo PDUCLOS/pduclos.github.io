@@ -26,6 +26,10 @@ def head(title, description, path, lang="fr"):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{e(title)}</title>
     <meta name="description" content="{e(description)}">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="{e(title)}">
     <meta property="og:description" content="{e(description)}">
     <meta property="og:type" content="website">
@@ -98,7 +102,7 @@ def nav(projects, current="", lang="fr"):
 def footer(lang="fr"):
     return f"""
     <footer>
-        © 2026 Patrice Duclos — {T[lang]['footer']} ·
+        © 2026 Patrice Duclos — {T[lang]['footer']} · <a href="/LICENSE.txt" style="color:var(--text-muted)">{T[lang]['rights']}</a> ·
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>
@@ -110,7 +114,7 @@ def footer(lang="fr"):
 
 FOOTER = """
     <footer>
-        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon · <a href="/LICENSE.txt" style="color:var(--text-muted)">Tous droits réservés</a> ·
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>

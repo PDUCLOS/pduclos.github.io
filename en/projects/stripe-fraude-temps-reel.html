@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polyglot real-time fraud detection platform — Patrice Duclos</title>
     <meta name="description" content="Stripe-style unified data architecture: transactional PostgreSQL, Debezium CDC to Kafka, Redis feature store, MongoDB, Snowflake warehouse — with XGBoost, MLflow, Evidently drift, automatic retraining and an AWS target fully described in Terraform.">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="Polyglot real-time fraud detection platform — Patrice Duclos">
     <meta property="og:description" content="Stripe-style unified data architecture: transactional PostgreSQL, Debezium CDC to Kafka, Redis feature store, MongoDB, Snowflake warehouse — with XGBoost, MLflow, Evidently drift, automatic retraining and an AWS target fully described in Terraform.">
     <meta property="og:type" content="website">
@@ -112,16 +116,16 @@
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Pipeline diagram (draw.io)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/stripe-fraude-temps-reel.svg" alt="Pipeline diagram (draw.io)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/stripe-fraude-temps-reel.svg" target="_blank">⤢ Full screen (SVG)</a><a href="/diagrams/stripe-fraude-temps-reel.drawio" download>⬇ .drawio file</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-fraude-temps-reel.drawio" target="_blank" rel="noopener">✎ Open in draw.io</a></div></div><div class="pl-panel" data-panel="d1">
+                <div class="pipeline-figure"><img src="/diagrams/stripe-fraude-temps-reel.svg" alt="Pipeline diagram (draw.io)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-fraude-temps-reel.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
                 <h3 class="pl-panel-title">Unified data architecture (actual implementation)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/stripe-architecture.svg" alt="Unified data architecture (actual implementation)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/stripe-architecture.svg" target="_blank">⤢ Full screen (SVG)</a><a href="/diagrams/stripe-architecture.drawio" download>⬇ .drawio file</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-architecture.drawio" target="_blank" rel="noopener">✎ Open in draw.io</a></div></div><div class="pl-panel" data-panel="d2">
+                <div class="pipeline-figure"><img src="/diagrams/stripe-architecture.svg" alt="Unified data architecture (actual implementation)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-architecture.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
                 <h3 class="pl-panel-title">AWS target (Terraform)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/stripe-aws.svg" alt="AWS target (Terraform)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/stripe-aws.svg" target="_blank">⤢ Full screen (SVG)</a><a href="/diagrams/stripe-aws.drawio" download>⬇ .drawio file</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-aws.drawio" target="_blank" rel="noopener">✎ Open in draw.io</a></div></div>
+                <div class="pipeline-figure"><img src="/diagrams/stripe-aws.svg" alt="AWS target (Terraform)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-aws.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Step by step</h3>
             <ol class="pipeline-steps"><li>A producer inserts synthetic transactions (5% injected fraud) into PostgreSQL 16, configured for logical replication.</li><li>Debezium reads the WAL and publishes every change to Kafka (<code>stripe.public.transactions</code>).</li><li>The scorer enriches each transaction with customer velocities stored in Redis, then scores it (rules or XGBoost): allow, review (≥ 0.60) or block (≥ 0.85).</li><li>The score is written back idempotently to PostgreSQL; events and alerts go to Kafka, then MongoDB.</li><li>Every 2 minutes, the monitor compares recent data to the reference (Evidently) and to the performance actually served; it retriggers training when needed.</li><li>Every night, Airflow exports to the Snowflake star schema and refreshes the materialized views.</li><li>The Streamlit dashboard (authenticated) shows KPIs, alerts, drift and a rules vs. model comparison.</li></ol>
@@ -231,7 +235,7 @@ if reasons and cooldown_ok:
     </section>
 
     <footer>
-        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon, France ·
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon, France · <a href="/LICENSE.txt" style="color:var(--text-muted)">All rights reserved · no text and data mining or AI use</a> ·
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>

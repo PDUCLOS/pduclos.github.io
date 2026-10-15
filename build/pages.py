@@ -1,7 +1,6 @@
 """Render project pages from the PROJECTS data (French or English)."""
 from functools import partial
-from urllib.parse import quote
-from render import head, nav, footer, badges, arrow, e, REPO_RAW
+from render import head, nav, footer, badges, arrow, e
 from pipeline import interactive, repo_cards, strengths
 from i18n import T, MATRIX_COLS as MATRIX_COLS_I18N, MARK_LABEL, home, project_path
 
@@ -18,16 +17,10 @@ def marks(lang="fr"):
 MARK = marks("fr")
 
 
-def drawio_links(path, lang="fr"):
-    raw = f"{REPO_RAW}{path}"
-    t = T[lang]
-    return (f'<a href="{path}" download>{t["fig_dl"]}</a>'
-            f'<a href="https://app.diagrams.net/#U{quote(raw, safe="")}" target="_blank" rel="noopener">{t["fig_open"]}</a>')
-
-
 def figure(svg, drawio, alt, lang="fr"):
-    return f"""<div class="pipeline-figure"><img src="{svg}" alt="{e(alt)}" loading="lazy"></div>
-            <div class="figure-actions"><a href="{svg}" target="_blank">{T[lang]["fig_full"]}</a>{drawio_links(drawio, lang)}</div>"""
+    """Schéma affiché en SVG ; les sources .drawio ne sont pas publiées (travail protégé)."""
+    return f"""<div class="pipeline-figure"><img src="{svg}" alt="{e(alt)}" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="{svg}" target="_blank">{T[lang]["fig_full"]}</a></div>"""
 
 
 def lang_bars(langs):

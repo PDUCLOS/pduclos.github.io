@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industrial Knowledge Copilot — 100% local RAG — Patrice Duclos</title>
     <meta name="description" content="Question-answering assistant over 5,105 pages of technical bearing catalogs (Schaeffler, SKF, NTN-SNR, GGB): hybrid dense + BM25 search, Qwen2.5-7B LLM running locally via MLX, RAGAS evaluation and an instrumented API.">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="Industrial Knowledge Copilot — 100% local RAG — Patrice Duclos">
     <meta property="og:description" content="Question-answering assistant over 5,105 pages of technical bearing catalogs (Schaeffler, SKF, NTN-SNR, GGB): hybrid dense + BM25 search, Qwen2.5-7B LLM running locally via MLX, RAGAS evaluation and an instrumented API.">
     <meta property="og:type" content="website">
@@ -112,8 +116,8 @@
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Pipeline diagram (draw.io)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/copilot-maintenance.svg" alt="Pipeline diagram (draw.io)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/copilot-maintenance.svg" target="_blank">⤢ Full screen (SVG)</a><a href="/diagrams/copilot-maintenance.drawio" download>⬇ .drawio file</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fcopilot-maintenance.drawio" target="_blank" rel="noopener">✎ Open in draw.io</a></div></div>
+                <div class="pipeline-figure"><img src="/diagrams/copilot-maintenance.svg" alt="Pipeline diagram (draw.io)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/copilot-maintenance.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Step by step</h3>
             <ol class="pipeline-steps"><li>PDFs are read page by page (page numbers kept for citation) and split into overlapping chunks.</li><li>Each chunk is embedded with bge-m3 (multilingual) and stored in ChromaDB; a lexical BM25 index is built in parallel.</li><li>For each question, both searches are merged with RRF (robust to different score scales), then reranked.</li><li>The local LLM generates an answer grounded in the context, citing the catalog and page.</li><li>RAGAS measures faithfulness, answer relevancy, context precision and context recall; each evaluation is frozen as a timestamped snapshot.</li></ol>
@@ -202,7 +206,7 @@ if cid in chunk_map:
     </section>
 
     <footer>
-        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon, France ·
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon, France · <a href="/LICENSE.txt" style="color:var(--text-muted)">All rights reserved · no text and data mining or AI use</a> ·
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>

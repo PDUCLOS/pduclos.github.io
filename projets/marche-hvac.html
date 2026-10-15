@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marché HVAC — prévision des installations de pompes à chaleur — Patrice Duclos</title>
     <meta name="description" content="Pipeline complet de l&#x27;open data à la prédiction : 5 collecteurs (ADEME DPE, Open-Meteo, INSEE, Eurostat, SITADEL), entrepôt en étoile, benchmark Ridge / LightGBM / Prophet / LSTM, API FastAPI, dashboard, Airflow et Kubernetes.">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="Marché HVAC — prévision des installations de pompes à chaleur — Patrice Duclos">
     <meta property="og:description" content="Pipeline complet de l&#x27;open data à la prédiction : 5 collecteurs (ADEME DPE, Open-Meteo, INSEE, Eurostat, SITADEL), entrepôt en étoile, benchmark Ridge / LightGBM / Prophet / LSTM, API FastAPI, dashboard, Airflow et Kubernetes.">
     <meta property="og:type" content="website">
@@ -112,8 +116,8 @@
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/marche-hvac.svg" alt="Schéma draw.io du pipeline" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/marche-hvac.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/marche-hvac.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fmarche-hvac.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+                <div class="pipeline-figure"><img src="/diagrams/marche-hvac.svg" alt="Schéma draw.io du pipeline" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/marche-hvac.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Étape par étape</h3>
             <ol class="pipeline-steps"><li>Le 1er de chaque mois, Airflow (ou le CronJob Kubernetes) lance les collecteurs sur les 96 départements.</li><li>Les données brutes sont nettoyées, fusionnées et chargées dans un schéma en étoile ; les valeurs aberrantes sont détectées par trois méthodes.</li><li>Le feature engineering produit lags, moyennes et écarts glissants à 3 et 6 mois.</li><li>Cinq familles de modèles sont entraînées sur un découpage temporel, puis expliquées avec SHAP.</li><li>Les modèles sont servis par FastAPI et visualisés dans un dashboard Streamlit (carte de France, prévisions, comparatif).</li></ol>
@@ -205,7 +209,7 @@ spec:
     </section>
 
     <footer>
-        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon ·
+        © 2026 Patrice Duclos — Data Analyst · Data Scientist · MLOps — Lyon · <a href="/LICENSE.txt" style="color:var(--text-muted)">Tous droits réservés · fouille de données et IA interdites</a> ·
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>

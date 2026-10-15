@@ -1,3 +1,5 @@
 build/redact.local
 build/__pycache__/
 .DS_Store
+# Sources draw.io : gardées en local, jamais publiées
+diagrams/*.drawio

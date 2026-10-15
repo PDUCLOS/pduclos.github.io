@@ -1,0 +1,28 @@
+﻿© 2026 Patrice Duclos. Tous droits réservés. / All rights reserved.
+
+FRANÇAIS
+Le contenu de ce site et de ce dépôt (textes, schémas d'architecture, pipelines, code de génération,
+présentations, images et mise en page) est protégé par le droit d'auteur. Toute reproduction, adaptation,
+redistribution ou réutilisation, totale ou partielle, est interdite sans autorisation écrite préalable.
+
+Opposition à la fouille de textes et de données : conformément à l'article L122-5-3 du Code de la propriété
+intellectuelle et à l'article 4 de la directive (UE) 2019/790, l'auteur s'oppose expressément à toute fouille
+de textes et de données de ce contenu, y compris pour l'entraînement, l'alimentation ou l'utilisation de
+systèmes d'intelligence artificielle. Cette réserve est également exprimée de façon lisible par machine
+(robots.txt, /.well-known/tdmrep.json, balises meta « tdm-reservation » et « noai »).
+
+La consultation du site à titre personnel, notamment dans le cadre d'un recrutement, reste libre.
+
+ENGLISH
+The content of this website and repository (text, architecture diagrams, pipelines, generator code,
+presentations, images and layout) is protected by copyright. Any reproduction, adaptation, redistribution
+or reuse, in whole or in part, is prohibited without prior written permission.
+
+Text and data mining opt-out: under Article 4 of Directive (EU) 2019/790, the author expressly reserves the
+rights to this content against any text and data mining, including for training, feeding or operating
+artificial intelligence systems. This reservation is also expressed in machine-readable form (robots.txt,
+/.well-known/tdmrep.json, "tdm-reservation" and "noai" meta tags).
+
+Viewing the website for personal purposes, including recruitment, remains free.
+
+Contact: patrice.noel.duclos@gmail.com
