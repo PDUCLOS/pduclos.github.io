@@ -737,7 +737,7 @@ spec:
         lead="Deux serveurs Model Context Protocol qui permettent à un assistant IA (Claude Desktop, par exemple) d'interroger "
              "data.gouv.fr et data.grandlyon.com, y compris les couches géographiques WFS.",
         kpis=[("11", "outils exposés"), ("2", "portails open data"), ("stdio", "transport MCP")],
-        links=[],
+        links=[("Code source", GH + "MCP", True)],
         context=[
             "Les LLM sont puissants mais ne connaissent pas les données publiques à jour. Le Model Context Protocol "
             "standardise la façon de leur donner des outils.",
@@ -926,3 +926,80 @@ def predict(data: dict):
 
 # Business-analyst project, shown right after Carrier.
 PROJECTS.insert([p["slug"] for p in PROJECTS].index("carrier-reporting") + 1, ACHATS)
+
+# Points forts de chaque solution, repris en tête de la section « Points forts » des pages projets.
+STRENGTHS = {
+    "lyonflow": [
+        "<strong>En production, pas en notebook</strong> : servi en ligne, supervisé (Prometheus / Grafana), sauvegardé chaque nuit, déploiement et retour arrière en une commande.",
+        "<strong>Boucle MLOps fermée</strong> : MLflow registry, dérive PSI quotidienne, réentraînement XGBoost automatique.",
+        "<strong>Choix d'architecture mesuré</strong> : 3 modèles spécialisés au lieu d'un, MAE 5,8 → 3,2 (−45 %).",
+        "<strong>Pensé pour la décision</strong> : 3 personas (usager, opérateur, élu), croisement retard bus × congestion pour arbitrer un investissement.",
+    ],
+    "stripe-fraude-temps-reel": [
+        "<strong>Temps réel de bout en bout</strong> : CDC Debezium → Kafka → scoring (cible sous la seconde), score réécrit de façon idempotente.",
+        "<strong>Zéro training / serving skew</strong> : feature store Redis et même vecteur de features à l'entraînement et à l'inférence.",
+        "<strong>Modèle qui se surveille seul</strong> : réentraînement automatique sur dérive ou baisse de rappel / précision, avec délai de carence.",
+        "<strong>Architecture chiffrée et conforme</strong> : 9 modules Terraform AWS, FinOps ~3 100 → ~2 400 $/mois, aucun numéro de carte stocké.",
+    ],
+    "detection-fraude": [
+        "<strong>Besoin métier → service automatisé</strong> : ingestion chaque minute, alertes Telegram / e-mail, rapport quotidien à 07:00, API.",
+        "<strong>Arbitrage métier assumé</strong> : priorité au rappel (0,83), seuil réglable par l'équipe sans redéploiement.",
+        "<strong>Features reproductibles en production</strong> : la V1 plus précise mais non servable a été abandonnée.",
+        "<strong>Exploitable</strong> : 6 services Docker avec health checks, repli visible sur un scoreur de secours.",
+    ],
+    "copilot-maintenance": [
+        "<strong>Confidentialité by design</strong> : LLM local (Qwen2.5 via MLX), aucune donnée envoyée au cloud.",
+        "<strong>Recherche robuste</strong> : hybride dense + BM25 fusionnée par RRF, reranker optionnel, 5 105 pages indexées.",
+        "<strong>Réponses sourcées et vérifiables</strong> : la confiance du technicien passe avant l'effet démo.",
+        "<strong>Industrialisé</strong> : API FastAPI versionnée, métriques Prometheus, 141 tests, CI Ubuntu + macOS.",
+    ],
+    "maintenance-predictive": [
+        "<strong>Physique avant le ML</strong> : features de défaut BPFO / BPFI / BSF / FTF calculées depuis la géométrie des roulements.",
+        "<strong>Validation sans fuite</strong> : CV groupée par actif et garde-fou <code>assert_no_asset_leakage</code>.",
+        "<strong>Traçabilité complète</strong> : TimescaleDB, MLflow, hash du dataset, dérive Evidently.",
+        "<strong>Rigueur</strong> : CI « zéro mock » sur données réelles, résultats négatifs publiés tels quels.",
+    ],
+    "marche-hvac": [
+        "<strong>Connaissance terrain</strong> : variables choisies par le métier (MaPrimeRénov', CEE, type de logement).",
+        "<strong>Prévision honnête</strong> : split temporel, TimeSeriesSplit, 5 familles de modèles comparées, explicabilité SHAP.",
+        "<strong>Extensible</strong> : collecteurs en plugins, schéma en étoile portable (SQLite, PostgreSQL, SQL Server).",
+        "<strong>Prêt à déployer</strong> : 562 tests, Docker non-root, DAG Airflow mensuel et CronJob Kubernetes équivalent.",
+    ],
+    "carrier-reporting": [
+        "<strong>Impact mesuré</strong> : −40 % de temps de traitement, environ 100 K€ d'erreurs détectées chaque mois.",
+        "<strong>Vision unifiée</strong> : modèle sémantique Power BI sur 5 sources SAP.",
+        "<strong>Contrôle qualité automatisé</strong> : mesures DAX et règles d'anomalies sur les données de référence.",
+        "<strong>Contexte international</strong> : équipes européennes Customer Care et Master Data, FR / EN.",
+    ],
+    "achats-negociation": [
+        "<strong>Projet piloté de bout en bout</strong> : cadrage, business case en 3 scénarios, architecture, recette, déploiement, mise en marché.",
+        "<strong>Jamais deviné</strong> : ce que le moteur ne sait pas lire reste vide avec son motif, jamais zéro.",
+        "<strong>Évolutif par configuration</strong> : ajouter un fournisseur relève du YAML, pas du code ; cascade de rattachement L0 → L3 avec arbitrage humain.",
+        "<strong>Qualité industrielle</strong> : ≈ 4 650 tests, 91 vues d'interface sous contrat versionné, 8 profils d'habilitation.",
+    ],
+    "csvtraitement": [
+        "<strong>Gros volumes sans saturer la mémoire</strong> : lecture en streaming par blocs de 10 000 lignes, 500 K+ lignes traitées.",
+        "<strong>Détection automatique</strong> de l'encodage, du séparateur et du type de colonnes.",
+        "<strong>Conformité</strong> : masquage des données personnelles (e-mail, téléphone, IBAN, NIR).",
+        "<strong>Humain dans la boucle</strong> : aucune correction appliquée sans validation, undo / redo.",
+    ],
+    "mcp-open-data": [
+        "<strong>IA agentique</strong> : 11 outils MCP qui donnent à un assistant l'accès direct à l'open data.",
+        "<strong>Requêtes géographiques</strong> : WFS 2.0 avec filtre CQL sur le Grand Lyon.",
+        "<strong>Robuste</strong> : timeouts, erreurs HTTP renvoyées proprement au LLM, un Dockerfile par serveur.",
+        "<strong>Transposable</strong> à un ERP ou un entrepôt interne.",
+    ],
+    "gouvernance-spotify": [
+        "<strong>Posture de conseil</strong> : diagnostic sur 9 dimensions, recommandation, budget, décision demandée.",
+        "<strong>Pragmatique</strong> : pilote de 6 mois sur un domaine avant généralisation, ROI visé ×3.",
+        "<strong>Rôles clairs</strong> : DPO, CDO, data stewards, comité de gouvernance.",
+        "<strong>Mesurable</strong> : KPIs de gouvernance (−10 % de données manquantes, 100 % des consentements tracés, incidents sous 24 h).",
+    ],
+    "predictira": [
+        "<strong>Intérêt public</strong> : prévision hebdomadaire des passages aux urgences pour infections respiratoires aiguës, par département.",
+        "<strong>Du notebook au service</strong> : application Flask, puis API FastAPI conteneurisée.",
+        "<strong>Travail d'équipe</strong> à 4, de la donnée au déploiement.",
+    ],
+}
+for _p in PROJECTS:
+    _p.setdefault("strengths", STRENGTHS.get(_p["slug"]))

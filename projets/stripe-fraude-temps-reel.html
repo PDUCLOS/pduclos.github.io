@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css?v=3">
+    <link rel="stylesheet" href="/assets/style.css?v=4">
 </head>
 <body>
     <nav>
@@ -35,6 +35,7 @@
                     <li><a href="/presentations/hausses-tarifaires.html">Présentation technique<small>projet achats · 21 slides</small></a></li>
                 </ul>
             </li>
+            <li><a href="/competences.html">Compétences</a></li>
             <li><a href="/stack.html">Stack MLOps</a></li>
             <li><a href="/profil-rh.html">Recruteurs</a></li>
             <li><a href="/profil-tech.html">Profil technique</a></li>
@@ -77,27 +78,57 @@
 
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
-            <span class="section-label">// Pipeline</span>
+            <span class="section-label">// Pipeline & architecture</span>
             <h2>Architecture de bout en bout</h2>
-            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
-               Le fichier source est téléchargeable et modifiable.</p>
-            <div class="pipeline-figure"><img src="/diagrams/stripe-fraude-temps-reel.svg" alt="Pipeline Stripe — fraude temps réel" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/stripe-fraude-temps-reel.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-fraude-temps-reel.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-fraude-temps-reel.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div>
+            <p>Pipeline reconstitué à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Animez le flux, cliquez une brique pour suivre ses dépendances, ou ouvrez les schémas d'architecture.</p>
+            <div class="gh-cards"><a class="gh-card" href="https://github.com/PDUCLOS/BLOC2-STRIPE" target="_blank" rel="noopener" data-repo="PDUCLOS/BLOC2-STRIPE">
+            <span class="gh-name"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>BLOC2-STRIPE</span>
+            <span class="gh-desc">Dépôt public sur GitHub</span>
+            <span class="gh-meta"><span data-k="lang"></span><span data-k="push"></span><span data-k="stars"></span></span>
+        </a></div>
+            
+            <div class="pl" data-pl id="pl-stripe-fraude-temps-reel">
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Pipeline interactif</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Schéma draw.io du pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Architecture de données unifiée (implémentation réelle)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">Cible AWS (Terraform)</button></div>
+                <div class="pl-panel" data-panel="live">
+                    <div class="pl-toolbar">
+                        <button type="button" class="pl-play">▶ Animer le flux de données</button>
+                        <button type="button" class="pl-reset" hidden>Tout afficher</button>
+                        <span class="pl-hint">Cliquez une brique pour voir ce qu'elle reçoit et ce qu'elle alimente.</span>
+                    </div>
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:7">
+                        <svg class="pl-edges" aria-hidden="true"></svg>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Source</h4><button type="button" class="pl-node" data-id="s0n0">Producteur transactions (5 tx/s)</button></div><div class="pl-col" data-col="1" style="--k:#7C3AED"><h4><span>02</span>OLTP</h4><button type="button" class="pl-node" data-id="s1n0">PostgreSQL 16 (3NF, ACID)</button></div><div class="pl-col" data-col="2" style="--k:#0284C7"><h4><span>03</span>Streaming</h4><button type="button" class="pl-node" data-id="s2n0">Debezium CDC (WAL)</button><button type="button" class="pl-node" data-id="s2n1">Kafka KRaft</button></div><div class="pl-col" data-col="3" style="--k:#16A34A"><h4><span>04</span>Scoring</h4><button type="button" class="pl-node" data-id="s3n0">Redis feature store</button><button type="button" class="pl-node" data-id="s3n1">Scorer temps réel</button><button type="button" class="pl-node" data-id="s3n2">XGBoost / règles</button></div><div class="pl-col" data-col="4" style="--k:#DB2777"><h4><span>05</span>MLOps</h4><button type="button" class="pl-node" data-id="s4n0">MLflow registry</button><button type="button" class="pl-node" data-id="s4n1">Evidently + retrain</button></div><div class="pl-col" data-col="5" style="--k:#7C3AED"><h4><span>06</span>Stockage</h4><button type="button" class="pl-node" data-id="s5n0">MongoDB (logs, alertes)</button><button type="button" class="pl-node" data-id="s5n1">Snowflake OLAP</button></div><div class="pl-col" data-col="6" style="--k:#E11D48"><h4><span>07</span>Restitution</h4><button type="button" class="pl-node" data-id="s6n0">Streamlit (auth)</button><button type="button" class="pl-node" data-id="s6n1">Airflow ETL 02:00</button></div></div>
+                    </div></div>
+                    <div class="pl-band" style="--k:#475569">GitHub Actions : lint · terraform validate · e2e sur stack complète · Terraform AWS (VPC, RDS, MSK, ElastiCache, ECS, MWAA)</div>
+                    <div class="pl-info" aria-live="polite"></div>
+                    <div class="pl-legend"><span><i class="solid"></i>flux de données</span><span><i class="dash"></i>boucle de suivi / réentraînement</span></div>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "INSERT", "d": false}, {"a": "s1n0", "b": "s2n0", "l": "WAL", "d": false}, {"a": "s2n0", "b": "s2n1", "l": "", "d": false}, {"a": "s2n1", "b": "s3n1", "l": "", "d": false}, {"a": "s3n0", "b": "s3n1", "l": "", "d": false}, {"a": "s3n1", "b": "s3n2", "l": "", "d": false}, {"a": "s3n1", "b": "s1n0", "l": "write-back", "d": true}, {"a": "s3n2", "b": "s4n0", "l": "", "d": true}, {"a": "s4n1", "b": "s4n0", "l": "retrain", "d": true}, {"a": "s2n1", "b": "s5n0", "l": "", "d": false}, {"a": "s1n0", "b": "s6n1", "l": "", "d": true}, {"a": "s6n1", "b": "s5n1", "l": "", "d": true}, {"a": "s5n0", "b": "s6n0", "l": "", "d": false}]</script>
+                </div>
+                <div class="pl-panel" data-panel="d0">
+                <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/stripe-fraude-temps-reel.svg" alt="Schéma draw.io du pipeline" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-fraude-temps-reel.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-fraude-temps-reel.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-fraude-temps-reel.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d1">
+                <h3 class="pl-panel-title">Architecture de données unifiée (implémentation réelle)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/stripe-architecture.svg" alt="Architecture de données unifiée (implémentation réelle)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-architecture.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-architecture.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-architecture.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">Cible AWS (Terraform)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/stripe-aws.svg" alt="Cible AWS (Terraform)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/stripe-aws.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-aws.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-aws.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+            </div>
+            <h3 class="pl-steps-title">Étape par étape</h3>
             <ol class="pipeline-steps"><li>Un producteur insère des transactions synthétiques (5 % de fraude injectée) dans PostgreSQL 16, configuré en réplication logique.</li><li>Debezium lit le journal WAL et publie chaque changement dans Kafka (<code>stripe.public.transactions</code>).</li><li>Le scorer enrichit chaque transaction avec les vélocités client stockées dans Redis, puis la note (règles ou XGBoost) : autoriser, revoir (≥ 0,60) ou bloquer (≥ 0,85).</li><li>Le score est réécrit de façon idempotente dans PostgreSQL ; les événements et alertes partent dans Kafka puis MongoDB.</li><li>Le moniteur compare toutes les 2 minutes les données récentes à la référence (Evidently) et la performance réellement servie ; il relance l'entraînement si nécessaire.</li><li>Chaque nuit, Airflow exporte vers le modèle en étoile Snowflake et rafraîchit les vues matérialisées.</li><li>Le dashboard Streamlit (authentifié) expose KPIs, alertes, dérive et comparaison règles / modèle.</li></ol>
         </div>
     </section>
 
-    <section class="page-section" id="schemas">
+    <section class="page-section" id="points-forts">
         <div class="section-container">
-            <span class="section-label">// Schémas détaillés</span>
-            <h2>Les diagrammes d'architecture du projet</h2>
-            <p style="margin-bottom:2rem">Diagrammes draw.io réalisés pendant le projet et versionnés dans le dépôt
-               (données d'infrastructure sensibles masquées).</p>
-            <div class="reveal" style="margin-bottom:2.5rem"><h3>Architecture de données unifiée (implémentation réelle)</h3>
-                <div class="pipeline-figure"><img src="/diagrams/stripe-architecture.svg" alt="Architecture de données unifiée (implémentation réelle)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/stripe-architecture.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-architecture.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-architecture.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Cible AWS (Terraform)</h3>
-                <div class="pipeline-figure"><img src="/diagrams/stripe-aws.svg" alt="Cible AWS (Terraform)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/stripe-aws.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/stripe-aws.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fstripe-aws.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+            <span class="section-label">// Points forts</span>
+            <h2>Les points forts de la solution</h2>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Temps réel de bout en bout</strong> : CDC Debezium → Kafka → scoring (cible sous la seconde), score réécrit de façon idempotente.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Zéro training / serving skew</strong> : feature store Redis et même vecteur de features à l'entraînement et à l'inférence.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Modèle qui se surveille seul</strong> : réentraînement automatique sur dérive ou baisse de rappel / précision, avec délai de carence.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Architecture chiffrée et conforme</strong> : 9 modules Terraform AWS, FinOps ~3 100 → ~2 400 $/mois, aucun numéro de carte stocké.</p></li></ol>
         </div>
     </section>
 
@@ -201,6 +232,6 @@ if reasons and cooldown_ok:
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>
-    <script src="/assets/site.js?v=3"></script>
+    <script src="/assets/site.js?v=4"></script>
 </body>
 </html>

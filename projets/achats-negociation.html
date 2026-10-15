@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css?v=3">
+    <link rel="stylesheet" href="/assets/style.css?v=4">
 </head>
 <body>
     <nav>
@@ -35,6 +35,7 @@
                     <li><a href="/presentations/hausses-tarifaires.html">Présentation technique<small>projet achats · 21 slides</small></a></li>
                 </ul>
             </li>
+            <li><a href="/competences.html">Compétences</a></li>
             <li><a href="/stack.html">Stack MLOps</a></li>
             <li><a href="/profil-rh.html">Recruteurs</a></li>
             <li><a href="/profil-tech.html">Profil technique</a></li>
@@ -52,7 +53,7 @@
             <h1>Chef de projet achats : transformer chaque hausse tarifaire en <span class="highlight">argument chiffré</span></h1>
             <p class="lead">Projet réel, en cours dans une direction Achats industrielle. Je <strong>pilote le projet de bout en bout</strong> : cadrage et analyse métier, business case, cahier des charges, architecture, développement du moteur Python / DuckDB et de l'interface R/Shiny, recette avec les acheteurs, déploiement — et sa mise en marché, avec le site commercial.</p>
             <div class="kpi-row"><div class="kpi"><b>≈ 1 %</b><span>de la dépense suivie (gain central)</span></div><div class="kpi"><b>1.71</b><span>contrat d&#x27;interface livré</span></div><div class="kpi"><b>133</b><span>éléments de backlog suivis</span></div><div class="kpi"><b>≈ 4 650</b><span>tests automatisés</span></div><div class="kpi"><b>6</b><span>leviers de gain chiffrés</span></div></div>
-            <div class="btn-row"><a href="https://buyvera.fr/" class="contact-btn contact-btn-primary">Site commercial (Buyvera) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="/presentations/plateforme-tarifs.html" class="contact-btn contact-btn-secondary">Présentation commerciale <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="/presentations/hausses-tarifaires.html" class="contact-btn contact-btn-secondary">Présentation technique <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+            <div class="btn-row"><a href="https://buyvera.fr/" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Site commercial (Buyvera) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="/presentations/plateforme-tarifs.html" class="contact-btn contact-btn-secondary">Présentation commerciale <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="/presentations/hausses-tarifaires.html" class="contact-btn contact-btn-secondary">Présentation technique <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </div>
     </header>
 
@@ -133,35 +134,69 @@
 
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
-            <span class="section-label">// Pipeline</span>
+            <span class="section-label">// Pipeline & architecture</span>
             <h2>Architecture de bout en bout</h2>
-            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
-               Le fichier source est téléchargeable et modifiable.</p>
-            <div class="pipeline-figure"><img src="/diagrams/achats-negociation.svg" alt="Pipeline Achats — tarifs &amp; scorecards" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/achats-negociation.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-negociation.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-negociation.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div>
+            <p>Pipeline reconstitué à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Animez le flux, cliquez une brique pour suivre ses dépendances, ou ouvrez les schémas d'architecture.</p>
+            
+            
+            <div class="pl" data-pl id="pl-achats-negociation">
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Pipeline interactif</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Schéma draw.io du pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Pipeline de données : du fichier tarif aux décisions (10 étapes)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">Couches, règles de la maison, profils et droits</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">Déploiement et intégration continue : aujourd&#x27;hui, cible, option LLM</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d4">Parcours d&#x27;un tarif — et ce que l&#x27;outil refuse de faire</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d5">Cascade de rattachement aux références ERP</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d6">Architecture et flux de données</button></div>
+                <div class="pl-panel" data-panel="live">
+                    <div class="pl-toolbar">
+                        <button type="button" class="pl-play">▶ Animer le flux de données</button>
+                        <button type="button" class="pl-reset" hidden>Tout afficher</button>
+                        <span class="pl-hint">Cliquez une brique pour voir ce qu'elle reçoit et ce qu'elle alimente.</span>
+                    </div>
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:7">
+                        <svg class="pl-edges" aria-hidden="true"></svg>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">Tarifs fournisseurs (xlsx, csv, pdf)</button><button type="button" class="pl-node" data-id="s0n1">ERP des entités</button><button type="button" class="pl-node" data-id="s0n2">Taux de change BCE</button></div><div class="pl-col" data-col="1" style="--k:#0284C7"><h4><span>02</span>Ingestion</h4><button type="button" class="pl-node" data-id="s1n0">Gabarit + clé unique</button><button type="button" class="pl-node" data-id="s1n1">Compte rendu préalable</button></div><div class="pl-col" data-col="2" style="--k:#2563EB"><h4><span>03</span>Normalisation</h4><button type="button" class="pl-node" data-id="s2n0">Devises, unités</button><button type="button" class="pl-node" data-id="s2n1">Masques de référence</button></div><div class="pl-col" data-col="3" style="--k:#16A34A"><h4><span>04</span>Rattachement</h4><button type="button" class="pl-node" data-id="s3n0">Cascade L0 → L2</button><button type="button" class="pl-node" data-id="s3n1">Arbitrage humain (L3)</button></div><div class="pl-col" data-col="4" style="--k:#2563EB"><h4><span>05</span>Analyse</h4><button type="button" class="pl-node" data-id="s4n0">Hausse pondérée volumes</button><button type="button" class="pl-node" data-id="s4n1">Prix spéciaux, écarts ERP</button></div><div class="pl-col" data-col="5" style="--k:#7C3AED"><h4><span>06</span>Entrepôt</h4><button type="button" class="pl-node" data-id="s5n0">DuckDB + journal</button></div><div class="pl-col" data-col="6" style="--k:#E11D48"><h4><span>07</span>Restitution</h4><button type="button" class="pl-node" data-id="s6n0">Interface R/Shiny</button><button type="button" class="pl-node" data-id="s6n1">Mémo + dossier Excel</button><button type="button" class="pl-node" data-id="s6n2">Scorecards + Board</button></div></div>
+                    </div></div>
+                    <div class="pl-band" style="--k:#475569">Configuration YAML par fournisseur · pytest (≈ 3 850) · testthat (≈ 800) · GitHub Actions · ERP en lecture seule</div>
+                    <div class="pl-info" aria-live="polite"></div>
+                    <div class="pl-legend"><span><i class="solid"></i>flux de données</span><span><i class="dash"></i>boucle de suivi / réentraînement</span></div>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s0n1", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s1n1", "l": "", "d": false}, {"a": "s1n1", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s2n1", "l": "", "d": false}, {"a": "s2n1", "b": "s3n0", "l": "", "d": false}, {"a": "s3n0", "b": "s3n1", "l": "doute", "d": true}, {"a": "s3n0", "b": "s4n0", "l": "", "d": false}, {"a": "s3n1", "b": "s4n0", "l": "", "d": false}, {"a": "s4n0", "b": "s4n1", "l": "", "d": false}, {"a": "s4n1", "b": "s5n0", "l": "", "d": false}, {"a": "s5n0", "b": "s6n0", "l": "lecture seule", "d": false}, {"a": "s6n0", "b": "s6n1", "l": "", "d": false}, {"a": "s6n1", "b": "s6n2", "l": "", "d": false}]</script>
+                </div>
+                <div class="pl-panel" data-panel="d0">
+                <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/achats-negociation.svg" alt="Schéma draw.io du pipeline" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-negociation.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-negociation.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-negociation.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d1">
+                <h3 class="pl-panel-title">Pipeline de données : du fichier tarif aux décisions (10 étapes)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/achats-arch-pipeline.svg" alt="Pipeline de données : du fichier tarif aux décisions (10 étapes)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-arch-pipeline.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-arch-pipeline.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-arch-pipeline.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">Couches, règles de la maison, profils et droits</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/achats-arch-logique.svg" alt="Couches, règles de la maison, profils et droits" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-arch-logique.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-arch-logique.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-arch-logique.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d3">
+                <h3 class="pl-panel-title">Déploiement et intégration continue : aujourd&#x27;hui, cible, option LLM</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/achats-arch-deploiement.svg" alt="Déploiement et intégration continue : aujourd&#x27;hui, cible, option LLM" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-arch-deploiement.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-arch-deploiement.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-arch-deploiement.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d4">
+                <h3 class="pl-panel-title">Parcours d&#x27;un tarif — et ce que l&#x27;outil refuse de faire</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/achats-parcours.svg" alt="Parcours d&#x27;un tarif — et ce que l&#x27;outil refuse de faire" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-parcours.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-parcours.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-parcours.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d5">
+                <h3 class="pl-panel-title">Cascade de rattachement aux références ERP</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/achats-cascade.svg" alt="Cascade de rattachement aux références ERP" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-cascade.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-cascade.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-cascade.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d6">
+                <h3 class="pl-panel-title">Architecture et flux de données</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/achats-architecture.svg" alt="Architecture et flux de données" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/achats-architecture.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-architecture.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-architecture.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+            </div>
+            <h3 class="pl-steps-title">Étape par étape</h3>
             <ol class="pipeline-steps"><li><strong>Déposer</strong> — le fichier est reçu tel quel, empreinté et archivé ; un doublon est refusé.</li><li><strong>Comprendre</strong> — gabarit reconnu, clé unique détectée, compte rendu de lecture présenté avant tout calcul.</li><li><strong>Rattacher</strong> — chaque référence fournisseur est reliée à l'article ERP par la cascade ; l'acheteur n'arbitre que les doutes, une seule fois.</li><li><strong>Analyser</strong> — hausse pondérée, impact annualisé, Pareto, remises, plafonds de prix spéciaux, écarts d'application ERP ; les aberrants partent en quarantaine.</li><li><strong>Négocier</strong> — mémo d'une page, support Excel et demande de reprise ; chaque chiffre renvoie à sa source.</li></ol>
         </div>
     </section>
 
-    <section class="page-section" id="schemas">
+    <section class="page-section" id="points-forts">
         <div class="section-container">
-            <span class="section-label">// Schémas détaillés</span>
-            <h2>Les diagrammes d'architecture du projet</h2>
-            <p style="margin-bottom:2rem">Diagrammes draw.io réalisés pendant le projet et versionnés dans le dépôt
-               (données d'infrastructure sensibles masquées).</p>
-            <div class="reveal" style="margin-bottom:2.5rem"><h3>Pipeline de données : du fichier tarif aux décisions (10 étapes)</h3>
-                <div class="pipeline-figure"><img src="/diagrams/achats-arch-pipeline.svg" alt="Pipeline de données : du fichier tarif aux décisions (10 étapes)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/achats-arch-pipeline.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-arch-pipeline.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-arch-pipeline.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Couches, règles de la maison, profils et droits</h3>
-                <div class="pipeline-figure"><img src="/diagrams/achats-arch-logique.svg" alt="Couches, règles de la maison, profils et droits" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/achats-arch-logique.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-arch-logique.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-arch-logique.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Déploiement et intégration continue : aujourd&#x27;hui, cible, option LLM</h3>
-                <div class="pipeline-figure"><img src="/diagrams/achats-arch-deploiement.svg" alt="Déploiement et intégration continue : aujourd&#x27;hui, cible, option LLM" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/achats-arch-deploiement.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-arch-deploiement.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-arch-deploiement.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Parcours d&#x27;un tarif — et ce que l&#x27;outil refuse de faire</h3>
-                <div class="pipeline-figure"><img src="/diagrams/achats-parcours.svg" alt="Parcours d&#x27;un tarif — et ce que l&#x27;outil refuse de faire" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/achats-parcours.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-parcours.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-parcours.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Cascade de rattachement aux références ERP</h3>
-                <div class="pipeline-figure"><img src="/diagrams/achats-cascade.svg" alt="Cascade de rattachement aux références ERP" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/achats-cascade.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-cascade.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-cascade.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Architecture et flux de données</h3>
-                <div class="pipeline-figure"><img src="/diagrams/achats-architecture.svg" alt="Architecture et flux de données" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/achats-architecture.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/achats-architecture.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fachats-architecture.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+            <span class="section-label">// Points forts</span>
+            <h2>Les points forts de la solution</h2>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Projet piloté de bout en bout</strong> : cadrage, business case en 3 scénarios, architecture, recette, déploiement, mise en marché.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Jamais deviné</strong> : ce que le moteur ne sait pas lire reste vide avec son motif, jamais zéro.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Évolutif par configuration</strong> : ajouter un fournisseur relève du YAML, pas du code ; cascade de rattachement L0 → L3 avec arbitrage humain.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Qualité industrielle</strong> : ≈ 4 650 tests, 91 vues d'interface sous contrat versionné, 8 profils d'habilitation.</p></li></ol>
         </div>
     </section>
 
@@ -240,6 +275,6 @@ cands = [{&quot;reference_erp&quot;: par_norm[c], &quot;score&quot;: round(sc, 1
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>
-    <script src="/assets/site.js?v=3"></script>
+    <script src="/assets/site.js?v=4"></script>
 </body>
 </html>

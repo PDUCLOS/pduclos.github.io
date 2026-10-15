@@ -1,6 +1,7 @@
 """Render project pages from the PROJECTS data."""
 from urllib.parse import quote
 from render import head, nav, FOOTER, badges, arrow, e, REPO_RAW
+from pipeline import interactive, repo_cards, strengths
 
 MATRIX_COLS = [("ci", "CI/CD"), ("tests", "Tests"), ("docker", "Docker"), ("orch", "Orchestration"),
                ("tracking", "Tracking / registry"), ("monitoring", "Monitoring / drift"),
@@ -92,28 +93,22 @@ def project_page(p, projects):
 {custom}
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
-            <span class="section-label">// Pipeline</span>
+            <span class="section-label">// Pipeline & architecture</span>
             <h2>Architecture de bout en bout</h2>
-            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
-               Le fichier source est téléchargeable et modifiable.</p>
-            {figure(f'/diagrams/{slug}.svg', f'/diagrams/{slug}.drawio', 'Pipeline ' + p['short'])}
+            <p>Pipeline reconstitué à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Animez le flux, cliquez une brique pour suivre ses dépendances, ou ouvrez les schémas d'architecture.</p>
+            {repo_cards(p)}
+            {interactive(p, [(slug, 'Schéma draw.io du pipeline')] + list(p.get('extra_diagrams', [])), figure)}
+            <h3 class="pl-steps-title">Étape par étape</h3>
             <ol class="pipeline-steps">{''.join(f'<li>{x}</li>' for x in p['steps'])}</ol>
         </div>
     </section>
-""")
-    if p.get("extra_diagrams"):
-        figs = []
-        for d_slug, caption in p["extra_diagrams"]:
-            figs.append(f"""<div class="reveal" style="margin-bottom:2.5rem"><h3>{e(caption)}</h3>
-                {figure(f'/diagrams/{d_slug}.svg', f'/diagrams/{d_slug}.drawio', caption)}</div>""")
-        out.append(f"""
-    <section class="page-section" id="schemas">
+
+    <section class="page-section" id="points-forts">
         <div class="section-container">
-            <span class="section-label">// Schémas détaillés</span>
-            <h2>Les diagrammes d'architecture du projet</h2>
-            <p style="margin-bottom:2rem">Diagrammes draw.io réalisés pendant le projet et versionnés dans le dépôt
-               (données d'infrastructure sensibles masquées).</p>
-            {''.join(figs)}
+            <span class="section-label">// Points forts</span>
+            <h2>Les points forts de la solution</h2>
+            <ol class="pf-grid">{strengths(p)}</ol>
         </div>
     </section>
 """)

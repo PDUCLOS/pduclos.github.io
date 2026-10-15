@@ -10,6 +10,7 @@ from pages import project_page, MATRIX_COLS, MARK
 from projects import PROJECTS, GH
 from render import head, nav, FOOTER, badges, arrow, e
 from presentations import DECKS, deck_page
+from competences import section as competences_section, home_skills
 import subprocess
 
 SITE = Path(__file__).resolve().parent.parent
@@ -222,7 +223,7 @@ def page_rh():
     path = "/profil-rh.html"
     objections = [
         ("« C'est une reconversion : a-t-il vraiment le niveau ? »",
-         "Deux certifications RNCP obtenues (niveau 6, puis niveau 7 Bac+5 Lead Data Science / AI Architect en 2026), une certification Databricks, "
+         "Deux certifications RNCP obtenues (niveau 6, puis niveau 7 Bac+5 Architecte en intelligence artificielle en 2026), une certification Databricks, "
          "10 mois chez Carrier avec des résultats chiffrés, et une plateforme MLOps <strong>en production</strong> accessible en ligne. "
          "La reconversion est terminée ; ce qui reste, c'est 20 ans de terrain que les profils juniors n'ont pas."),
         ("« Senior métier, mais junior technique ? »",
@@ -235,7 +236,7 @@ def page_rh():
          "Mes projets suivent les standards d'équipe : conventions documentées, tests bloquants en CI, "
          "documentation d'architecture, diagrammes draw.io. Expérience de projets d'équipe en formation et en contexte international chez Carrier."),
         ("« Quel type de poste ? »",
-         "Chef de projet data, Data Analyst senior, Data Scientist, ML Engineer / MLOps, ou Lead Data dans l'industrie, l'énergie, la distribution B2B "
+         "Chef de projet data, Data Analyst senior, Data Scientist, ML Engineer / MLOps ou Architecte IA dans l'industrie, l'énergie, la distribution B2B "
          "ou la supply chain — là où la double compétence métier + data a le plus de valeur. Région lyonnaise, hybride."),
     ]
     obj_html = "".join(f'<details class="objection"><summary>{q}</summary><p>{a}</p></details>' for q, a in objections)
@@ -314,7 +315,7 @@ def page_rh():
             <span class="section-label">// Formation</span>
             <h2>Diplômes et certifications</h2>
             <div class="certifications-grid">
-                <div class="certification-card"><div class="certification-icon">🚀</div><div><h3 class="certification-title">Lead Data Science / AI Architect</h3><p class="certification-org">Jedha — RNCP 38777, niveau 7 (Bac+5)</p><span class="certification-year">2026 · obtenue ✓</span></div></div>
+                <div class="certification-card"><div class="certification-icon">🚀</div><div><h3 class="certification-title">Architecte en intelligence artificielle</h3><p class="certification-org">Jedha — RNCP 38777, niveau 7 (Bac+5) · <a href="/competences.html" style="color:var(--accent);text-decoration:none">4 blocs détaillés →</a></p><span class="certification-year">2026 · obtenue ✓</span></div></div>
                 <div class="certification-card"><div class="certification-icon">🎓</div><div><h3 class="certification-title">Concepteur Développeur en Sciences des Données</h3><p class="certification-org">Jedha / M2i — RNCP niveau 6 (Bac+4)</p><span class="certification-year">2024 – 2025</span></div></div>
                 <div class="certification-card"><div class="certification-icon">📜</div><div><h3 class="certification-title">Databricks Lakehouse Fundamentals</h3><p class="certification-org">Databricks Academy</p><span class="certification-year">2025</span></div></div>
                 <div class="certification-card"><div class="certification-icon">⚙️</div><div><h3 class="certification-title">DUT Génie Mécanique et Productique</h3><p class="certification-org">IUT B Villeurbanne</p><span class="certification-year">2000 – 2002</span></div></div>
@@ -413,6 +414,19 @@ def page_tech():
           + nav(PROJECTS, path) + body + FOOTER)
 
 
+def page_competences():
+    path = "/competences.html"
+    body = hero("Compétences", "// Architecte en IA · RNCP 38777 · niveau 7",
+                'Compétences — <span class="highlight">certifiées et prouvées</span> par le code',
+                "Mes compétences organisées selon les quatre blocs de la certification Architecte en intelligence artificielle "
+                "(Jedha, niveau 7, obtenue en 2026), complétées par vingt ans de pilotage métier. "
+                "Filtrez par bloc, cherchez un outil, puis ouvrez le projet qui le met en œuvre.")
+    write(SITE / "competences.html",
+          head("Compétences — Patrice Duclos",
+               "Compétences de Patrice Duclos selon les blocs RNCP 38777 Architecte en IA : gouvernance, architecture, pipelines, solutions d'IA.", path)
+          + nav(PROJECTS, path) + body + competences_section(STACK, PROJECTS) + FOOTER)
+
+
 def patch_index():
     """Replace nav in index.html between markers, keep the rest hand-edited."""
     idx = SITE / "index.html"
@@ -423,6 +437,8 @@ def patch_index():
     tiles = "<!-- TILES:START -->\n" + "".join(tile(p) for p in PROJECTS if p["slug"] not in ("lyonflow", "carrier-reporting", "achats-negociation")) + "\n<!-- TILES:END -->"
     html, n = re.subn(r"<!-- TILES:START -->.*?<!-- TILES:END -->", lambda _: tiles, html, flags=re.S)
     assert n == 1, "TILES markers missing in index.html"
+    html, n = re.subn(r"<!-- SKILLS:START -->.*?<!-- SKILLS:END -->", lambda _: home_skills(STACK), html, flags=re.S)
+    assert n == 1, "SKILLS markers missing in index.html"
     idx.write_text(html, encoding="utf-8")
     print("  patched index.html")
 
@@ -437,4 +453,4 @@ if __name__ == "__main__":
         write(SITE / "projets" / f"{p['slug']}.html", project_page(p, PROJECTS))
     for d in DECKS:
         write(SITE / "presentations" / f"{d['slug']}.html", deck_page(d, PROJECTS))
-    page_projects_index(); page_stack(); page_rh(); page_tech(); patch_index()
+    page_projects_index(); page_stack(); page_competences(); page_rh(); page_tech(); patch_index()

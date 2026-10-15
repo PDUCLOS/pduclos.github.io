@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css?v=3">
+    <link rel="stylesheet" href="/assets/style.css?v=4">
 </head>
 <body>
     <nav>
@@ -35,6 +35,7 @@
                     <li><a href="/presentations/hausses-tarifaires.html">Présentation technique<small>projet achats · 21 slides</small></a></li>
                 </ul>
             </li>
+            <li><a href="/competences.html">Compétences</a></li>
             <li><a href="/stack.html">Stack MLOps</a></li>
             <li><a href="/profil-rh.html">Recruteurs</a></li>
             <li><a href="/profil-tech.html">Profil technique</a></li>
@@ -77,31 +78,69 @@
 
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
-            <span class="section-label">// Pipeline</span>
+            <span class="section-label">// Pipeline & architecture</span>
             <h2>Architecture de bout en bout</h2>
-            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
-               Le fichier source est téléchargeable et modifiable.</p>
-            <div class="pipeline-figure"><img src="/diagrams/lyonflow.svg" alt="Pipeline LyonFlow" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div>
+            <p>Pipeline reconstitué à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Animez le flux, cliquez une brique pour suivre ses dépendances, ou ouvrez les schémas d'architecture.</p>
+            <div class="gh-cards"><a class="gh-card" href="https://github.com/PDUCLOS/lyonflowfull" target="_blank" rel="noopener" data-repo="PDUCLOS/lyonflowfull">
+            <span class="gh-name"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>lyonflowfull</span>
+            <span class="gh-desc">Dépôt public sur GitHub</span>
+            <span class="gh-meta"><span data-k="lang"></span><span data-k="push"></span><span data-k="stars"></span></span>
+        </a><a class="gh-card" href="https://github.com/PDUCLOS/databrickslyonflow" target="_blank" rel="noopener" data-repo="PDUCLOS/databrickslyonflow">
+            <span class="gh-name"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>databrickslyonflow</span>
+            <span class="gh-desc">Dépôt public sur GitHub</span>
+            <span class="gh-meta"><span data-k="lang"></span><span data-k="push"></span><span data-k="stars"></span></span>
+        </a></div>
+            
+            <div class="pl" data-pl id="pl-lyonflow">
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Pipeline interactif</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Schéma draw.io du pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Flux de données Medallion</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">Les 4 piliers ML</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">Infrastructure de production (VPS, conteneurs)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d4">Orchestration Airflow</button></div>
+                <div class="pl-panel" data-panel="live">
+                    <div class="pl-toolbar">
+                        <button type="button" class="pl-play">▶ Animer le flux de données</button>
+                        <button type="button" class="pl-reset" hidden>Tout afficher</button>
+                        <span class="pl-hint">Cliquez une brique pour voir ce qu'elle reçoit et ce qu'elle alimente.</span>
+                    </div>
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:6">
+                        <svg class="pl-edges" aria-hidden="true"></svg>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">Boucles trafic Grand Lyon</button><button type="button" class="pl-node" data-id="s0n1">TCL SIRI Lite</button><button type="button" class="pl-node" data-id="s0n2">Vélo&#x27;v GBFS</button><button type="button" class="pl-node" data-id="s0n3">Open-Meteo + air</button><button type="button" class="pl-node" data-id="s0n4">TomTom · chantiers</button></div><div class="pl-col" data-col="1" style="--k:#0284C7"><h4><span>02</span>Ingestion</h4><button type="button" class="pl-node" data-id="s1n0">Airflow collect_bronze (*/5 min)</button><button type="button" class="pl-node" data-id="s1n1">Collecteurs DataCollector</button></div><div class="pl-col" data-col="2" style="--k:#7C3AED"><h4><span>03</span>Medallion</h4><button type="button" class="pl-node" data-id="s2n0">Bronze JSONB immuable</button><button type="button" class="pl-node" data-id="s2n1">Silver nettoyé</button><button type="button" class="pl-node" data-id="s2n2">Gold features + vues</button></div><div class="pl-col" data-col="3" style="--k:#16A34A"><h4><span>04</span>ML</h4><button type="button" class="pl-node" data-id="s3n0">XGBoost vitesse H+1h</button><button type="button" class="pl-node" data-id="s3n1">XGBoost Vélo&#x27;v H+1h</button><button type="button" class="pl-node" data-id="s3n2">pgRouting Dijkstra</button></div><div class="pl-col" data-col="4" style="--k:#DB2777"><h4><span>05</span>MLOps</h4><button type="button" class="pl-node" data-id="s4n0">MLflow registry</button><button type="button" class="pl-node" data-id="s4n1">Drift PSI + Evidently</button><button type="button" class="pl-node" data-id="s4n2">Prometheus · Grafana</button></div><div class="pl-col" data-col="5" style="--k:#0D9488"><h4><span>06</span>Service</h4><button type="button" class="pl-node" data-id="s5n0">FastAPI (X-API-Key)</button><button type="button" class="pl-node" data-id="s5n1">Nginx + TLS</button><button type="button" class="pl-node" data-id="s5n2">Streamlit 3 personas</button></div></div>
+                    </div></div>
+                    <div class="pl-band" style="--k:#475569">Docker Compose · GitHub Actions (ruff · mypy · bandit · pytest) · make deploy-vps / rollback-vps · backup nocturne</div>
+                    <div class="pl-info" aria-live="polite"></div>
+                    <div class="pl-legend"><span><i class="solid"></i>flux de données</span><span><i class="dash"></i>boucle de suivi / réentraînement</span></div>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s0n1", "b": "s1n0", "l": "", "d": false}, {"a": "s0n2", "b": "s1n0", "l": "", "d": false}, {"a": "s0n3", "b": "s1n1", "l": "", "d": false}, {"a": "s0n4", "b": "s1n1", "l": "", "d": false}, {"a": "s1n0", "b": "s2n0", "l": "", "d": false}, {"a": "s1n1", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s2n1", "l": "", "d": false}, {"a": "s2n1", "b": "s2n2", "l": "", "d": false}, {"a": "s2n2", "b": "s3n0", "l": "features", "d": false}, {"a": "s2n2", "b": "s3n1", "l": "", "d": false}, {"a": "s2n2", "b": "s3n2", "l": "", "d": false}, {"a": "s3n0", "b": "s4n0", "l": "log", "d": true}, {"a": "s3n1", "b": "s4n0", "l": "", "d": true}, {"a": "s4n1", "b": "s3n0", "l": "retrain", "d": true}, {"a": "s3n0", "b": "s5n0", "l": "", "d": false}, {"a": "s3n2", "b": "s5n2", "l": "", "d": false}, {"a": "s5n0", "b": "s5n1", "l": "", "d": false}, {"a": "s5n2", "b": "s5n1", "l": "", "d": false}]</script>
+                </div>
+                <div class="pl-panel" data-panel="d0">
+                <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow.svg" alt="Schéma draw.io du pipeline" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d1">
+                <h3 class="pl-panel-title">Flux de données Medallion</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-medallion.svg" alt="Flux de données Medallion" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-medallion.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-medallion.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-medallion.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">Les 4 piliers ML</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-ml.svg" alt="Les 4 piliers ML" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-ml.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-ml.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-ml.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d3">
+                <h3 class="pl-panel-title">Infrastructure de production (VPS, conteneurs)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-infra.svg" alt="Infrastructure de production (VPS, conteneurs)" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-infra.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-infra.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-infra.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="pl-panel" data-panel="d4">
+                <h3 class="pl-panel-title">Orchestration Airflow</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-airflow.svg" alt="Orchestration Airflow" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-airflow.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-airflow.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-airflow.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+            </div>
+            <h3 class="pl-steps-title">Étape par étape</h3>
             <ol class="pipeline-steps"><li><strong>Collecte</strong> — 9 sources ouvertes sans clé, DAGs Airflow cadencés de 5 min (trafic, bus, Vélo'v) à 6 h (vigilance météo).</li><li><strong>Bronze</strong> — stockage brut JSONB immuable : on peut toujours rejouer l'historique.</li><li><strong>Silver</strong> — déduplication (<code>DISTINCT ON</code>), parsing SIRI, reprojection géographique (4326 / 2154), filtrage des capteurs défaillants.</li><li><strong>Gold</strong> — features ML (lags, moyennes glissantes, calendrier scolaire, météo) et vues matérialisées métier (goulots, retards par tronçon).</li><li><strong>Modélisation</strong> — XGBoost vitesse H+1h (inférence toutes les 15 min), XGBoost Vélo'v H+1h, routage voiture <code>pgr_dijkstra</code> sur le réseau OSM avec vitesses injectées.</li><li><strong>MLOps</strong> — suivi MLflow, comparaison continue aux données TomTom, rapport de dérive quotidien, réentraînement automatique.</li><li><strong>Restitution</strong> — API FastAPI (prédiction, recommandation, goulots) et dashboard Streamlit 18 pages / 59 widgets, sans aucune donnée simulée.</li></ol>
         </div>
     </section>
 
-    <section class="page-section" id="schemas">
+    <section class="page-section" id="points-forts">
         <div class="section-container">
-            <span class="section-label">// Schémas détaillés</span>
-            <h2>Les diagrammes d'architecture du projet</h2>
-            <p style="margin-bottom:2rem">Diagrammes draw.io réalisés pendant le projet et versionnés dans le dépôt
-               (données d'infrastructure sensibles masquées).</p>
-            <div class="reveal" style="margin-bottom:2.5rem"><h3>Flux de données Medallion</h3>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-medallion.svg" alt="Flux de données Medallion" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-medallion.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-medallion.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-medallion.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Les 4 piliers ML</h3>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-ml.svg" alt="Les 4 piliers ML" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-ml.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-ml.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-ml.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Infrastructure de production (VPS, conteneurs)</h3>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-infra.svg" alt="Infrastructure de production (VPS, conteneurs)" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-infra.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-infra.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-infra.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div><div class="reveal" style="margin-bottom:2.5rem"><h3>Orchestration Airflow</h3>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-airflow.svg" alt="Orchestration Airflow" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-airflow.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/lyonflow-airflow.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Flyonflow-airflow.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+            <span class="section-label">// Points forts</span>
+            <h2>Les points forts de la solution</h2>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>En production, pas en notebook</strong> : servi en ligne, supervisé (Prometheus / Grafana), sauvegardé chaque nuit, déploiement et retour arrière en une commande.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Boucle MLOps fermée</strong> : MLflow registry, dérive PSI quotidienne, réentraînement XGBoost automatique.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Choix d'architecture mesuré</strong> : 3 modèles spécialisés au lieu d'un, MAE 5,8 → 3,2 (−45 %).</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Pensé pour la décision</strong> : 3 personas (usager, opérateur, élu), croisement retard bus × congestion pour arbitrer un investissement.</p></li></ol>
         </div>
     </section>
 
@@ -197,6 +236,6 @@ make rollback-vps            # retour à la release précédente</code></pre>
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>
-    <script src="/assets/site.js?v=3"></script>
+    <script src="/assets/site.js?v=4"></script>
 </body>
 </html>

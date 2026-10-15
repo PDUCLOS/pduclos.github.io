@@ -1,7 +1,7 @@
 # Portfolio — Patrice Duclos, Data Analyst Senior · Data Scientist · MLOps
 
 Portfolio personnel : 20 ans d'expertise en distribution industrielle et une reconversion data certifiée
-(Jedha RNCP niveau 6, puis niveau 7 Bac+5 Lead Data Science / AI Architect obtenu en 2026).
+(Jedha RNCP niveau 6, puis niveau 7 Bac+5 Architecte en intelligence artificielle obtenu en 2026).
 
 ## Site live
 
@@ -14,9 +14,10 @@ Portfolio personnel : 20 ans d'expertise en distribution industrielle et une rec
 | `/` | Tous | Accueil, parcours, projets phares, compétences, contact |
 | `/profil-rh.html` | Recruteurs, managers | Proposition de valeur, impact chiffré, objections fréquentes |
 | `/profil-tech.html` | Équipes data / tech | Compétences reliées aux preuves dans le code, décisions d'ingénierie |
+| `/competences.html` | Tous | Compétences par bloc de la certification Architecte en IA (RNCP 38777) : filtres, recherche, radar, matrice projets × blocs |
 | `/stack.html` | Tech | Outils et langages par étape du cycle MLOps, niveau et projets associés |
 | `/projets/` | Tous | Index des projets + matrice de maturité MLOps |
-| `/projets/<slug>.html` | Tous | Une page par projet : problème, argumentaire RH / tech, pipeline draw.io, stack, maturité MLOps, métriques, code, limites |
+| `/projets/<slug>.html` | Tous | Une page par projet : problème, argumentaire RH / tech, pipeline interactif (flux animé, dépendances, schémas zoomables), points forts, dépôts GitHub, pipeline draw.io, stack, maturité MLOps, métriques, code, limites |
 
 Les schémas sont dans `diagrams/` au format `.drawio` (source éditable) et `.svg` (affichage).
 
@@ -30,6 +31,8 @@ Les pages projets, les pages d'audience, les diagrammes et le menu sont génér�
 | `build/drawio.py` | Génère les `.drawio` et les exporte en SVG via draw.io desktop |
 | `build/pages.py` | Gabarit d'une page projet |
 | `build/render.py` | En-tête, navigation, pied de page communs |
+| `build/competences.py` | Blocs RNCP 38777, page compétences et section compétences de l'accueil |
+| `build/pipeline.py` | Pipeline interactif, cartes de dépôts GitHub et points forts des pages projets |
 | `build/build.py` | Point d'entrée ; réexporte aussi les schémas d'origine des dépôts en masquant les données sensibles |
 
 ```bash
@@ -38,7 +41,7 @@ python3 build/build.py --no-diagrams   # pages seulement
 ```
 
 Les règles de masquage sont lues depuis `build/redact.local` (non versionné).
-`index.html` est édité à la main, sauf le menu et les tuiles projets, remplacés entre les marqueurs `NAV` et `TILES`.
+`index.html` est édité à la main, sauf le menu et les tuiles projets, remplacés entre les marqueurs `NAV`, `TILES` et `SKILLS`.
 
 ## Stack technique
 

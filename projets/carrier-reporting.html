@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css?v=3">
+    <link rel="stylesheet" href="/assets/style.css?v=4">
 </head>
 <body>
     <nav>
@@ -35,6 +35,7 @@
                     <li><a href="/presentations/hausses-tarifaires.html">Présentation technique<small>projet achats · 21 slides</small></a></li>
                 </ul>
             </li>
+            <li><a href="/competences.html">Compétences</a></li>
             <li><a href="/stack.html">Stack MLOps</a></li>
             <li><a href="/profil-rh.html">Recruteurs</a></li>
             <li><a href="/profil-tech.html">Profil technique</a></li>
@@ -77,13 +78,45 @@
 
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
-            <span class="section-label">// Pipeline</span>
+            <span class="section-label">// Pipeline & architecture</span>
             <h2>Architecture de bout en bout</h2>
-            <p>Schéma draw.io généré à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
-               Le fichier source est téléchargeable et modifiable.</p>
-            <div class="pipeline-figure"><img src="/diagrams/carrier-reporting.svg" alt="Pipeline Carrier — Reporting HVAC Europe" loading="lazy"></div>
-            <div class="figure-actions"><a href="/diagrams/carrier-reporting.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/carrier-reporting.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fcarrier-reporting.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div>
+            <p>Pipeline reconstitué à partir de l'analyse du dépôt : chaque brique correspond à du code réel.
+               Animez le flux, cliquez une brique pour suivre ses dépendances, ou ouvrez les schémas d'architecture.</p>
+            
+            
+            <div class="pl" data-pl id="pl-carrier-reporting">
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Pipeline interactif</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Schéma draw.io du pipeline</button></div>
+                <div class="pl-panel" data-panel="live">
+                    <div class="pl-toolbar">
+                        <button type="button" class="pl-play">▶ Animer le flux de données</button>
+                        <button type="button" class="pl-reset" hidden>Tout afficher</button>
+                        <span class="pl-hint">Cliquez une brique pour voir ce qu'elle reçoit et ce qu'elle alimente.</span>
+                    </div>
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:5">
+                        <svg class="pl-edges" aria-hidden="true"></svg>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">5 extractions SAP</button></div><div class="pl-col" data-col="1" style="--k:#0284C7"><h4><span>02</span>Préparation</h4><button type="button" class="pl-node" data-id="s1n0">Power Query (M)</button></div><div class="pl-col" data-col="2" style="--k:#7C3AED"><h4><span>03</span>Modèle</h4><button type="button" class="pl-node" data-id="s2n0">Modèle sémantique Power BI</button></div><div class="pl-col" data-col="3" style="--k:#2563EB"><h4><span>04</span>Contrôles</h4><button type="button" class="pl-node" data-id="s3n0">Mesures DAX</button><button type="button" class="pl-node" data-id="s3n1">Règles d&#x27;anomalies</button></div><div class="pl-col" data-col="4" style="--k:#E11D48"><h4><span>05</span>Pilotage</h4><button type="button" class="pl-node" data-id="s4n0">Dashboards Master Data</button><button type="button" class="pl-node" data-id="s4n1">Dashboards Business HVAC</button></div></div>
+                    </div></div>
+                    
+                    <div class="pl-info" aria-live="polite"></div>
+                    <div class="pl-legend"><span><i class="solid"></i>flux de données</span><span><i class="dash"></i>boucle de suivi / réentraînement</span></div>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n1", "l": "", "d": false}, {"a": "s3n0", "b": "s4n1", "l": "", "d": false}, {"a": "s3n1", "b": "s4n0", "l": "", "d": false}]</script>
+                </div>
+                <div class="pl-panel" data-panel="d0">
+                <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/carrier-reporting.svg" alt="Schéma draw.io du pipeline" loading="lazy"></div>
+            <div class="figure-actions"><a href="/diagrams/carrier-reporting.svg" target="_blank">⤢ Plein écran (SVG)</a><a href="/diagrams/carrier-reporting.drawio" download>⬇ Fichier .drawio</a><a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FPDUCLOS%2Fpduclos.github.io%2Fmain%2Fdiagrams%2Fcarrier-reporting.drawio" target="_blank" rel="noopener">✎ Ouvrir dans draw.io</a></div></div>
+            </div>
+            <h3 class="pl-steps-title">Étape par étape</h3>
             <ol class="pipeline-steps"><li>Consolidation de 5 sources SAP en un flux unique via Power Query.</li><li>Modélisation sémantique et mesures DAX de pilotage et de contrôle.</li><li>Détection des anomalies de données de référence et remontée aux équipes concernées.</li><li>Diffusion de dashboards Master Data et Business HVAC à l'échelle européenne.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="points-forts">
+        <div class="section-container">
+            <span class="section-label">// Points forts</span>
+            <h2>Les points forts de la solution</h2>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Impact mesuré</strong> : −40 % de temps de traitement, environ 100 K€ d'erreurs détectées chaque mois.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Vision unifiée</strong> : modèle sémantique Power BI sur 5 sources SAP.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Contrôle qualité automatisé</strong> : mesures DAX et règles d'anomalies sur les données de référence.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Contexte international</strong> : équipes européennes Customer Care et Master Data, FR / EN.</p></li></ol>
         </div>
     </section>
 
@@ -126,6 +159,6 @@
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>
-    <script src="/assets/site.js?v=3"></script>
+    <script src="/assets/site.js?v=4"></script>
 </body>
 </html>
