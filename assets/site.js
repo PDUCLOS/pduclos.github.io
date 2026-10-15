@@ -43,8 +43,18 @@
         var col = function (id) { return +id.slice(1, id.indexOf('n')); };
         var paths = [];
 
+        var scroller = root.querySelector('.pl-scroll');
+        var nCols = root.querySelectorAll('.pl-col').length;
+        function layout() {
+            // horizontal si chaque colonne dispose d'au moins ~118 px, sinon étapes empilées (flux de haut en bas)
+            var w = scroller.clientWidth;
+            root.classList.toggle('vertical', w < nCols * 118);
+            root.classList.toggle('compact', w >= nCols * 118 && w < nCols * 150);
+        }
         function draw() {
             if (!canvas.offsetWidth) return;
+            layout();
+            var vertical = root.classList.contains('vertical');
             svg.innerHTML = '';
             paths = [];
             var c = canvas.getBoundingClientRect();
@@ -54,7 +64,28 @@
                 if (!a || !b) return;
                 var ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
                 var d, lx, ly;
-                if (col(ed.b) > col(ed.a)) {
+                if (vertical) {
+                    if (col(ed.b) > col(ed.a)) {
+                        var vx1 = ra.left + ra.width / 2 - c.left, vy1 = ra.bottom - c.top;
+                        var vx2 = rb.left + rb.width / 2 - c.left, vy2 = rb.top - c.top;
+                        var vk = Math.max(20, (vy2 - vy1) / 2);
+                        d = 'M' + vx1 + ',' + vy1 + ' C' + vx1 + ',' + (vy1 + vk) + ' ' + vx2 + ',' + (vy2 - vk) + ' ' + vx2 + ',' + vy2;
+                        lx = (vx1 + vx2) / 2 + 4; ly = (vy1 + vy2) / 2;
+                    } else if (col(ed.b) === col(ed.a)) {
+                        var left = ra.left < rb.left;
+                        var hy = ra.top + ra.height / 2 - c.top;
+                        var hx1 = (left ? ra.right : ra.left) - c.left, hx2 = (left ? rb.left : rb.right) - c.left;
+                        d = 'M' + hx1 + ',' + hy + ' L' + hx2 + ',' + (rb.top + rb.height / 2 - c.top);
+                        lx = (hx1 + hx2) / 2; ly = hy - 6;
+                    } else {
+                        // boucle de retour : longe le bord droit du canevas
+                        back++;
+                        var rx = c.width - 10 - back * 7;
+                        var ry1 = ra.top + ra.height / 2 - c.top, ry2 = rb.top + rb.height / 2 - c.top;
+                        d = 'M' + (ra.right - c.left) + ',' + ry1 + ' C' + rx + ',' + ry1 + ' ' + rx + ',' + ry2 + ' ' + (rb.right - c.left) + ',' + ry2;
+                        lx = rx - 4; ly = (ry1 + ry2) / 2;
+                    }
+                } else if (col(ed.b) > col(ed.a)) {
                     var x1 = ra.right - c.left, y1 = ra.top + ra.height / 2 - c.top;
                     var x2 = rb.left - c.left, y2 = rb.top + rb.height / 2 - c.top;
                     var k = Math.max(30, (x2 - x1) / 2);
@@ -205,7 +236,7 @@
 
         root.classList.add('ready');
         show('live');
-        if ('ResizeObserver' in window) new ResizeObserver(function () { draw(); }).observe(canvas);
+        if ('ResizeObserver' in window) new ResizeObserver(function () { draw(); }).observe(scroller);
         else window.addEventListener('resize', draw);
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
     }
