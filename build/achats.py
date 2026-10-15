@@ -21,8 +21,8 @@ stake_rows = "".join(f"<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>" for a, b, 
 
 ACHATS = dict(
     slug="achats-negociation",
-    short="Achats — tarifs & scorecards",
-    kicker="Projet en cours · Chef de projet · Achats",
+    short="Buyvera — négociation achats",
+    kicker="Projet phare · Produit commercialisable · Chef de projet",
     badge="PROJET EN COURS · CHEF DE PROJET DE BOUT EN BOUT",
     title="Plateforme d'aide à la négociation achats",
     title_html='Chef de projet achats : transformer chaque hausse tarifaire en <span class="highlight">argument chiffré</span>',

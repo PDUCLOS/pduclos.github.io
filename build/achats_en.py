@@ -21,8 +21,8 @@ stake_rows = "".join(f"<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>" for a, b, 
 
 ACHATS = dict(
     slug="achats-negociation",
-    short="Procurement — prices & scorecards",
-    kicker="Ongoing project · Project Manager · Procurement",
+    short="Buyvera — procurement negotiation",
+    kicker="Flagship project · Marketable product · Project Manager",
     badge="ONGOING PROJECT · END-TO-END PROJECT MANAGER",
     title="Procurement negotiation support platform",
     title_html='Procurement Project Manager: turning every price increase into a <span class="highlight">quantified argument</span>',

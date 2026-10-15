@@ -924,8 +924,8 @@ def predict(data: dict):
     ),
 ]
 
-# Business-analyst project, shown right after Carrier.
-PROJECTS.insert([p["slug"] for p in PROJECTS].index("carrier-reporting") + 1, ACHATS)
+# Buyvera (procurement product, commercially viable): flagship project, listed first.
+PROJECTS.insert(0, ACHATS)
 
 # Points forts de chaque solution, repris en tête de la section « Points forts » des pages projets.
 STRENGTHS = {
