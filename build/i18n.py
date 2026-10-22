@@ -39,7 +39,7 @@ T = {
         deck_sales="Présentation commerciale", deck_sales_sub="projet achats · 38 slides",
         deck_tech="Présentation technique", deck_tech_sub="projet achats · 21 slides",
         switch_label="English version", switch_text="EN",
-        footer="Architecte IA · Analytics Engineer — Lyon", rights="Tous droits réservés · fouille de données et IA interdites",
+        footer="Analytics Engineer — Lyon", rights="Tous droits réservés · fouille de données et IA interdites",
         # project page
         p_30s="En 30 secondes", p_30s_title="Le problème, la réponse, la preuve",
         p_rh="Pour le recruteur · valeur business", p_tech="Pour l'équipe technique · ce que le code prouve",
@@ -75,7 +75,7 @@ T = {
         deck_sales="Sales deck (in French)", deck_sales_sub="procurement project · 38 slides",
         deck_tech="Technical deck (in French)", deck_tech_sub="procurement project · 21 slides",
         switch_label="Version française", switch_text="FR",
-        footer="AI Architect · Analytics Engineer — Lyon, France", rights="All rights reserved · no text and data mining or AI use",
+        footer="Analytics Engineer — Lyon, France", rights="All rights reserved · no text and data mining or AI use",
         p_30s="In 30 seconds", p_30s_title="The problem, the answer, the proof",
         p_rh="For recruiters · business value", p_tech="For tech teams · what the code proves",
         p_pipe_label="Pipeline & architecture", p_pipe_title="End-to-end architecture",
