@@ -339,7 +339,7 @@ def predict(data: dict):
 # Key strengths of each solution, shown at the top of the "Key strengths" section of project pages.
 STRENGTHS_EN = {
     "lyonflow": [
-        "<strong>In production, not in a notebook</strong>: served online, monitored (Prometheus / Grafana), backed up nightly, one-command deployment and rollback.",
+        "<strong>In production, not in a notebook</strong>: deployed on a server, monitored (Prometheus / Grafana), backed up nightly, one-command deployment and rollback.",
         "<strong>Closed MLOps loop</strong>: MLflow registry, daily PSI drift, automatic XGBoost retraining.",
         "<strong>Measured architecture choice</strong>: 3 specialized models instead of one, MAE 5.8 → 3.2 (−45%).",
         "<strong>Built for decision-making</strong>: 3 personas (rider, operator, elected official), bus delay × congestion cross-analysis to prioritize investment.",

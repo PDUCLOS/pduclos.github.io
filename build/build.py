@@ -228,7 +228,7 @@ def page_rh():
     objections = [
         ("« C'est une reconversion : a-t-il vraiment le niveau ? »",
          "Deux certifications RNCP obtenues (niveau 6, puis niveau 7 Bac+5 Architecte en intelligence artificielle en 2026), une certification Databricks, "
-         "10 mois chez Carrier avec des résultats chiffrés, et une plateforme MLOps <strong>en production</strong> accessible en ligne. "
+         "10 mois chez Carrier avec des résultats chiffrés, et une plateforme MLOps déployée <strong>en production</strong>. "
          "La reconversion est terminée ; ce qui reste, c'est 20 ans de terrain que les profils juniors n'ont pas."),
         ("« Senior métier, mais junior technique ? »",
          "Le code est public et vérifiable : environ 1 600 tests automatisés cumulés, intégration continue, Docker, Airflow, MLflow, "
@@ -272,7 +272,7 @@ def page_rh():
                     <li>HVAC, énergie, supply chain, grands comptes</li>
                     <li>Crédibilité immédiate face aux équipes terrain</li></ul></div>
                 <div class="arg-card arg-card--rh reveal"><span class="arg-label">Livraison de bout en bout</span><ul>
-                    <li>Plateforme <strong>en production</strong> (LyonFlow), consultable en ligne</li>
+                    <li>Produit en ligne : <a href="https://buyvera.fr/" style="color:var(--accent)">Buyvera</a>, site commercial et démonstration</li>
                     <li>{len(PROJECTS)} projets documentés, du besoin à l'API</li>
                     <li>Business case achats : leviers chiffrés, plan en 8 lots, conditions d'échec</li></ul></div>
             </div>

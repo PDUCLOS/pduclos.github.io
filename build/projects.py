@@ -19,7 +19,7 @@ PROJECTS = [
              "multimodal pgRouting et un dashboard à 3 personas.",
         kpis=[("9", "sources open data"), ("27", "DAGs Airflow"), ("620", "tests pytest"), ("59", "widgets / 18 pages"),
               ("−45 %", "MAE (3 modèles vs 1)")],
-        links=[("Démo live", "/live/", True), ("Code source", GH + "lyonflowfull", False),
+        links=[("Code source", GH + "lyonflowfull", True),
                ("Variante Databricks", GH + "databrickslyonflow", False)],
         context=[
             "La Métropole de Lyon publie des dizaines de flux ouverts (boucles de comptage, positions des bus TCL, "
@@ -30,7 +30,7 @@ PROJECTS = [
             "dans une application pensée pour trois publics.",
         ],
         rh=[
-            "<strong>Un produit en production</strong>, pas un notebook : accessible en ligne, supervisé, sauvegardé chaque nuit.",
+            "<strong>Un produit en production</strong>, pas un notebook : déployé sur serveur, supervisé, sauvegardé chaque nuit.",
             "Pensé pour <strong>3 utilisateurs métier</strong> (usager, opérateur TCL, élu) — même logique que le pilotage commercial : chaque décideur a sa vue.",
             "Le croisement <strong>retard bus × congestion</strong> distingue un problème opérationnel d'un besoin d'infrastructure (voie dédiée) : un argument chiffré pour un arbitrage budgétaire.",
             "Projet porté seul de bout en bout : cadrage, données, modèles, déploiement, documentation RGPD.",
@@ -930,7 +930,7 @@ PROJECTS.insert(0, ACHATS)
 # Points forts de chaque solution, repris en tête de la section « Points forts » des pages projets.
 STRENGTHS = {
     "lyonflow": [
-        "<strong>En production, pas en notebook</strong> : servi en ligne, supervisé (Prometheus / Grafana), sauvegardé chaque nuit, déploiement et retour arrière en une commande.",
+        "<strong>En production, pas en notebook</strong> : déployé sur serveur, supervisé (Prometheus / Grafana), sauvegardé chaque nuit, déploiement et retour arrière en une commande.",
         "<strong>Boucle MLOps fermée</strong> : MLflow registry, dérive PSI quotidienne, réentraînement XGBoost automatique.",
         "<strong>Choix d'architecture mesuré</strong> : 3 modèles spécialisés au lieu d'un, MAE 5,8 → 3,2 (−45 %).",
         "<strong>Pensé pour la décision</strong> : 3 personas (usager, opérateur, élu), croisement retard bus × congestion pour arbitrer un investissement.",

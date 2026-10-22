@@ -192,7 +192,7 @@ def page_rh(h):
         ("“It's a career change: is he really at the level?”",
          "Two RNCP certifications earned (RNCP is the French national qualification register): level 6, then level 7 (Master's level) "
          "Architecte en intelligence artificielle (AI Architect) in 2026, plus a Databricks certification, "
-         "10 months at Carrier with quantified results, and an MLOps platform <strong>in production</strong> available online. "
+         "10 months at Carrier with quantified results, and an MLOps platform deployed <strong>in production</strong>. "
          "The career change is complete; what remains is 20 years of field experience that junior profiles don't have."),
         ("“Senior on the business side, but junior on the tech side?”",
          "The code is public and verifiable: around 1,600 automated tests in total, continuous integration, Docker, Airflow, MLflow, "
@@ -236,7 +236,7 @@ def page_rh(h):
                     <li>HVAC, energy, supply chain, key accounts</li>
                     <li>Immediate credibility with field teams</li></ul></div>
                 <div class="arg-card arg-card--rh reveal"><span class="arg-label">End-to-end delivery</span><ul>
-                    <li>Platform <strong>in production</strong> (LyonFlow), available online</li>
+                    <li>Product online: <a href="https://buyvera.fr/en/" style="color:var(--accent)">Buyvera</a>, sales website and demo</li>
                     <li>{len(PROJECTS)} documented projects, from need to API</li>
                     <li>Procurement business case: quantified levers, 8-phase plan, failure conditions</li></ul></div>
             </div>

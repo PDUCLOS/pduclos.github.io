@@ -14,7 +14,7 @@ PART_A = [
              "pgRouting routing and a dashboard for 3 personas.",
         kpis=[("9", "open data sources"), ("27", "Airflow DAGs"), ("620", "pytest tests"), ("59", "widgets / 18 pages"),
               ("−45%", "MAE (3 models vs 1)")],
-        links=[("Live demo", "/live/", True), ("Source code", GH + "lyonflowfull", False),
+        links=[("Source code", GH + "lyonflowfull", True),
                ("Databricks variant", GH + "databrickslyonflow", False)],
         context=[
             "The Lyon Metropolitan Area publishes dozens of open data feeds (traffic counting loops, TCL bus positions, "
@@ -25,7 +25,7 @@ PART_A = [
             "in an application designed for three audiences.",
         ],
         rh=[
-            "<strong>A product in production</strong>, not a notebook: available online, monitored, backed up every night.",
+            "<strong>A product in production</strong>, not a notebook: deployed on a server, monitored, backed up every night.",
             "Designed for <strong>3 business users</strong> (commuter, TCL operator, elected official) — same logic as sales management: each decision-maker gets their own view.",
             "Cross-referencing <strong>bus delays × congestion</strong> separates an operational problem from an infrastructure need (dedicated lane): a quantified argument for a budget decision.",
             "Project carried out solo end to end: scoping, data, models, deployment, GDPR documentation.",
