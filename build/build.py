@@ -240,7 +240,7 @@ def page_rh():
          "Mes projets suivent les standards d'équipe : conventions documentées, tests bloquants en CI, "
          "documentation d'architecture, diagrammes draw.io. Expérience de projets d'équipe en formation et en contexte international chez Carrier."),
         ("« Quel type de poste ? »",
-         "Chef de projet data, Data Analyst senior, Data Scientist, ML Engineer / MLOps ou Architecte IA dans l'industrie, l'énergie, la distribution B2B "
+         "Architecte IA ou Analytics Engineer — ou chef de projet data — dans l'industrie, l'énergie, la distribution B2B "
          "ou la supply chain — là où la double compétence métier + data a le plus de valeur. Région lyonnaise, hybride."),
     ]
     obj_html = "".join(f'<details class="objection"><summary>{q}</summary><p>{a}</p></details>' for q, a in objections)
@@ -357,7 +357,7 @@ def page_tech():
                          for t, d, s in proofs)
     body = hero("Profil technique", "// Pour les équipes data / tech",
                 'Profil technique — <span class="highlight">les preuves dans le code</span>',
-                "Data Scientist / ML Engineer orienté production. Voici ce que je sais faire, où le vérifier, "
+                "Architecte IA et Analytics Engineer orienté production. Voici ce que je sais faire, où le vérifier, "
                 "et comment je raisonne sur les compromis.",
                 '<div class="btn-row"><a class="contact-btn contact-btn-primary" href="https://github.com/PDUCLOS" target="_blank" rel="noopener">GitHub ' + arrow() + '</a>'
                 '<a class="contact-btn contact-btn-secondary" href="/stack.html">Stack détaillée ' + arrow() + '</a></div>')

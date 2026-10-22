@@ -737,7 +737,7 @@ spec:
         lead="Deux serveurs Model Context Protocol qui permettent à un assistant IA (Claude Desktop, par exemple) d'interroger "
              "data.gouv.fr et data.grandlyon.com, y compris les couches géographiques WFS.",
         kpis=[("11", "outils exposés"), ("2", "portails open data"), ("stdio", "transport MCP")],
-        links=[("Code source", GH + "MCP", True)],
+        links=[],
         context=[
             "Les LLM sont puissants mais ne connaissent pas les données publiques à jour. Le Model Context Protocol "
             "standardise la façon de leur donner des outils.",

@@ -149,7 +149,7 @@ PART_B = [
         lead="Two Model Context Protocol servers that let an AI assistant (Claude Desktop, for example) query "
              "data.gouv.fr and data.grandlyon.com, including WFS geographic layers.",
         kpis=[("11", "tools exposed"), ("2", "open data portals"), ("stdio", "MCP transport")],
-        links=[("Source code", GH + "MCP", True)],
+        links=[],
         context=[
             "LLMs are powerful but have no knowledge of up-to-date public data. The Model Context Protocol "
             "standardizes how tools are provided to them.",

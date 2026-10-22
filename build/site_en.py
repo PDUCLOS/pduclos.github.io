@@ -204,7 +204,7 @@ def page_rh(h):
          "My projects follow team standards: documented conventions, blocking tests in CI, "
          "architecture documentation, draw.io diagrams. Experience with team projects during training and in an international setting at Carrier."),
         ("“What kind of role?”",
-         "Data Project Manager, Senior Data Analyst, Data Scientist, ML Engineer / MLOps or AI Architect in industry, energy, B2B distribution "
+         "AI Architect or Analytics Engineer — or Data Project Manager — in industry, energy, B2B distribution "
          "or supply chain — where combined business and data expertise brings the most value. Lyon area, hybrid."),
     ]
     obj_html = "".join(f'<details class="objection"><summary>{q}</summary><p>{a}</p></details>' for q, a in objections)
@@ -322,7 +322,7 @@ def page_tech(h):
                          for t, d, s in proofs)
     body = h.hero("Tech profile", "// For data / tech teams",
                   'Tech profile — <span class="highlight">the proof is in the code</span>',
-                  "Production-oriented Data Scientist / ML Engineer. Here is what I can do, where to verify it, "
+                  "Production-oriented AI Architect and Analytics Engineer. Here is what I can do, where to verify it, "
                   "and how I reason about trade-offs.",
                   '<div class="btn-row"><a class="contact-btn contact-btn-primary" href="https://github.com/PDUCLOS" target="_blank" rel="noopener">GitHub ' + arrow() + '</a>'
                   '<a class="contact-btn contact-btn-secondary" href="/en/stack.html">Detailed stack ' + arrow() + '</a></div>')
