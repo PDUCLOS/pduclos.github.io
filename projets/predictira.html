@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PredictIRA — prévoir les passages aux urgences — Patrice Duclos</title>
-    <meta name="description" content="Prédiction hebdomadaire des passages aux urgences pour infections respiratoires aiguës par département, à partir de la météo, de la pollution, de l&#x27;indice grippal et des recherches Google Trends. Modèle LightGBM servi par Flask, puis industrialisé en API FastAPI conteneurisée.">
+    <title>PredictIRA — estimer les passages aux urgences respiratoires — Patrice Duclos</title>
+    <meta name="description" content="Estimation hebdomadaire des passages aux urgences pour infections respiratoires aiguës, par département, à partir des recherches Google de symptômes, de la pollution, de la météo et de l&#x27;indice grippal. Projet d&#x27;équipe relancé en 2026 : mesuré sur 429 semaines de 2024, six défauts corrigés, API FastAPI validée, déployable sur Kubernetes.">
     <meta name="robots" content="index, follow, noai, noimageai">
     <meta name="tdm-reservation" content="1">
     <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
     <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
-    <meta property="og:title" content="PredictIRA — prévoir les passages aux urgences — Patrice Duclos">
-    <meta property="og:description" content="Prédiction hebdomadaire des passages aux urgences pour infections respiratoires aiguës par département, à partir de la météo, de la pollution, de l&#x27;indice grippal et des recherches Google Trends. Modèle LightGBM servi par Flask, puis industrialisé en API FastAPI conteneurisée.">
+    <meta property="og:title" content="PredictIRA — estimer les passages aux urgences respiratoires — Patrice Duclos">
+    <meta property="og:description" content="Estimation hebdomadaire des passages aux urgences pour infections respiratoires aiguës, par département, à partir des recherches Google de symptômes, de la pollution, de la météo et de l&#x27;indice grippal. Projet d&#x27;équipe relancé en 2026 : mesuré sur 429 semaines de 2024, six défauts corrigés, API FastAPI validée, déployable sur Kubernetes.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pduclos.github.io/projets/predictira.html">
     <link rel="canonical" href="https://pduclos.github.io/projets/predictira.html">
@@ -36,7 +36,7 @@
                 <ul class="dropdown">
                     <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
-                    <li><a href="/projets/achats-negociation.html">Buyvera — négociation achats<small>Projet phare · Produit commercialisable · Chef de projet</small></a></li><li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/copilote-erp.html">Copilote ERP sourcé (RAG + SQL + LLMOps)<small>IA générative · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · Jumeau numérique</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html" aria-current="page">PredictIRA<small>ML santé publique · Projet d&#x27;équipe</small></a></li>
+                    <li><a href="/projets/achats-negociation.html">Buyvera — négociation achats<small>Projet phare · Produit commercialisable · Chef de projet</small></a></li><li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/copilote-erp.html">Copilote ERP sourcé (RAG + SQL + LLMOps)<small>IA générative · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · MLOps</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html" aria-current="page">PredictIRA<small>ML santé publique · Projet d&#x27;équipe relancé en 2026</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
                     <li><a href="https://buyvera.fr/">Site commercial — Buyvera<small>projet achats · site produit bilingue</small></a></li>
                     <li><a href="/presentations/plateforme-tarifs.html">Présentation commerciale<small>projet achats · 38 slides</small></a></li>
@@ -58,11 +58,11 @@
         <div class="hero-content">
             
             <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / PredictIRA</div>
-            <span class="project-tag" style="color:var(--accent)">ML santé publique · Projet d&#x27;équipe</span>
-            <h1>Anticiper les <span class="highlight">urgences respiratoires</span> avant la vague</h1>
-            <p class="lead">Prédiction hebdomadaire des passages aux urgences pour infections respiratoires aiguës par département, à partir de la météo, de la pollution, de l'indice grippal et des recherches Google Trends. Modèle LightGBM servi par Flask, puis industrialisé en API FastAPI conteneurisée.</p>
-            <div class="kpi-row"><div class="kpi"><b>28</b><span>variables</span></div><div class="kpi"><b>LightGBM</b><span>modèle</span></div><div class="kpi"><b>2</b><span>applications (Flask, FastAPI)</span></div><div class="kpi"><b>4</b><span>équipiers</span></div></div>
-            <div class="btn-row"><a href="https://github.com/PDUCLOS/PredictIRA" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Application Flask <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/industrialisation" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">API FastAPI + Docker <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+            <span class="project-tag" style="color:var(--accent)">ML santé publique · Projet d&#x27;équipe relancé en 2026</span>
+            <h1>Estimer les <span class="highlight">urgences respiratoires</span> de la semaine, et le mesurer honnêtement</h1>
+            <p class="lead">Estimation hebdomadaire des passages aux urgences pour infections respiratoires aiguës, par département, à partir des recherches Google de symptômes, de la pollution, de la météo et de l'indice grippal. Projet d'équipe relancé en 2026 : mesuré sur 429 semaines de 2024, six défauts corrigés, API FastAPI validée, déployable sur Kubernetes.</p>
+            <div class="kpi-row"><div class="kpi"><b>0,926</b><span>R² sur 2024 (hors entraînement)</span></div><div class="kpi"><b>41</b><span>MAE, passages / semaine</span></div><div class="kpi"><b>24</b><span>variables</span></div><div class="kpi"><b>13</b><span>tests</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/PredictIRA/tree/feat/vitrine-predictira" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Code source (v2) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/PredictIRA" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Dépôt d&#x27;origine <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/industrialisation/tree/feat/vitrine-predictira" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Dépôt « industrialisation » <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </div>
     </header>
 
@@ -70,20 +70,100 @@
         <div class="section-container">
             <span class="section-label">// En 30 secondes</span>
             <h2>Le problème, la réponse, la preuve</h2>
-            <div style="margin-bottom:2rem"><p>Les épidémies respiratoires saturent les urgences chaque hiver. Anticiper la charge d'une à deux semaines permet d'adapter les effectifs et les lits.</p><p>Projet d'équipe de formation (M2i / Jedha) : conception du modèle, puis industrialisation en API.</p></div>
+            <div style="margin-bottom:2rem"><p>Les épidémies respiratoires saturent les urgences chaque hiver, et les données hospitalières consolidées arrivent avec retard. L'objectif : <strong>estimer la charge de la semaine en cours</strong> à partir de signaux disponibles tout de suite (recherches de symptômes, pollution, météo, indice grippal).</p><p>Projet d'équipe de formation (M2i) à 4, relancé en 2026 : audit, mesure sur 2024 comparée à une référence naïve, corrections, nouvelle API et déploiement Kubernetes.</p></div>
             <div class="two-col">
                 <div class="arg-card arg-card--rh reveal">
                     <span class="arg-label">Pour le recruteur · valeur business</span>
-                    <ul><li>Travail en équipe de 4 sur un sujet d'intérêt public.</li><li>Premier passage du notebook à une application utilisable, puis à un service conteneurisé.</li></ul>
+                    <ul><li><strong>Honnêteté sur le résultat</strong> : comparé à « même valeur que la semaine précédente », le modèle seul fait légèrement moins bien sur 2024 (MAE 41,2 contre 39,5). C'est écrit, et la piste qui en découle aussi.</li><li><strong>Reprise d'un projet existant</strong> : six défauts reproduits avant d'être corrigés, chacun couvert par un test ou une validation.</li><li>Travail en équipe de 4 sur un sujet d'intérêt public.</li></ul>
                 </div>
                 <div class="arg-card arg-card--tech reveal">
                     <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
-                    <ul><li>Variables environnementales (O3, PM2.5, PM10, NO2…), indice grippal et signaux de recherche ; encodage cyclique de la semaine.</li><li>LightGBM + <code>StandardScaler</code> sérialisés, formulaire Flask prérempli par département / semaine.</li><li>Industrialisation : endpoint FastAPI <code>POST /predict/</code>, image Docker, client HTML.</li></ul>
+                    <ul><li>LightGBM (100 arbres) sur <strong>24 variables</strong> : 12 symptômes Google Trends, CO, NO₂, O₃, PM2.5, SO₂, IQA, pression, T° max, indice grippal, département, année, semaine (<code>week_cos</code>).</li><li><strong>Audit des pickles</strong> (<code>pickletools</code>), unpickler à liste blanche, export en texte LightGBM + JSON : plus aucun pickle chargé à l'exécution.</li><li>API <strong>FastAPI</strong> : schéma Pydantic (24 champs obligatoires, bornes physiques, champs inconnus refusés), lot de 1 à 1 000 lignes ; interface Flask d'origine montée sur <code>/</code> (a2wsgi).</li><li>Évaluation reproductible (<code>scripts/evaluate.py</code>) ; latence d'inférence 0,431 ms p50 par ligne, <code>POST /api/predict</code> 7,05 ms p50 de bout en bout.</li><li>Dockerfile <code>python:3.12-slim</code> non root, kustomize base + overlays <code>local</code> / <code>cloud</code> (HPA 2 → 6, NetworkPolicy, PDB).</li></ul>
                 </div>
             </div>
         </div>
     </section>
 
+
+    <section class="page-section alt" id="video">
+        <div class="section-container">
+            <span class="section-label">// Présentation</span>
+            <h2>Le projet en 1 min 59</h2>
+            
+<video controls preload="none" poster="/media/predictira/poster.webp" style="width:100%;border-radius:12px;border:1px solid var(--border);background:#0f1830">
+    <source src="/media/predictira/presentation.mp4" type="video/mp4">
+</video>
+<p class="code-caption" style="margin-top:.8rem">1 min 59 · générée par <code>scripts/promo_video.py</code> à partir des vraies captures (narration de synthèse).</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="resultats">
+        <div class="section-container">
+            <span class="section-label">// Résultats mesurés</span>
+            <h2>Le modèle face à « même valeur que la semaine précédente »</h2>
+            
+<p>Test : 2024-S01 → S39, 11 départements d'Auvergne-Rhône-Alpes, <strong>429 semaines</strong>, très probablement hors entraînement
+(le scaler livré a été ajusté sur 2 733 lignes d'année moyenne 2021,9 ; non démontrable sans les données d'entraînement).
+La référence est la <strong>persistance S-1</strong> : « même valeur que la semaine précédente ».</p>
+<div class="three-col" style="margin:1.2rem 0">
+    <div class="arg-card arg-card--tech"><span class="arg-label">Le modèle seul</span><ul>
+        <li>MAE <strong>41,2</strong> passages / semaine, R² <strong>0,926</strong>, WAPE 16,1 %.</li>
+        <li>La persistance fait <strong>légèrement mieux</strong> : MAE 39,5, R² 0,930.</li></ul></div>
+    <div class="arg-card arg-card--tech"><span class="arg-label">Selon la saison</span><ul>
+        <li>Hiver (S01–S13) : modèle 65,9, persistance 68,7.</li>
+        <li>Printemps-été (S14–S39) : modèle 28,9, persistance 24,9.</li></ul></div>
+    <div class="arg-card arg-card--ok"><span class="arg-label">La piste</span><ul>
+        <li>Erreurs complémentaires : la moyenne 50/50 non ajustée donne MAE <strong>30,6</strong> (−26 %).</li>
+        <li>Évaluée sur la période qui l'a suggérée : <strong>une piste, pas un résultat validé</strong>.</li></ul></div>
+</div>
+<div class="two-col">
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/predictira/eval-series.webp" alt="Séries 2024 observé, LightGBM et persistance pour le Rhône, l'Isère et le Cantal" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Observé, modèle et persistance S-1 sur 2024 (Rhône, Isère, Cantal).</p></div>
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/predictira/eval-scatter.webp" alt="Nuage observé contre prédit, 429 semaines" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Observé contre prédit, 429 semaines. MAE par département : de 16,4 (Cantal) à 121,3 (Rhône).</p></div>
+</div>
+<p class="code-caption" style="margin-top:1rem">Le modèle à 28 variables du dépôt « industrialisation » a été mesuré puis écarté : MAE 510,3, biais +487,5.
+Prochaine étape naturelle : réentraîner avec la valeur S-1 comme variable.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="corrections">
+        <div class="section-container">
+            <span class="section-label">// Audit 2026</span>
+            <h2>Six défauts reproduits, puis corrigés</h2>
+            
+<div class="table-wrap"><table class="stack-table">
+    <thead><tr><th>Constat (reproduit)</th><th>Correction</th></tr></thead>
+    <tbody>
+        <tr><td>Préremplissage par égalité exacte de <code>week_cos</code> : <strong>9 semaines sur 39 sans résultat</strong> (arrondi flottant), S27 → S25 et S29 → S23 (même cosinus pour s et 52 − s).</td>
+            <td>Semaine reconstruite par le rang puis contrôlée par le cosinus ; un test rejoue l'ancien filtre.</td></tr>
+        <tr><td>Champ caché <code>week_cos</code> rempli avec le numéro brut de la semaine (ex. 10).</td>
+            <td>Cosinus calculé dans le navigateur ; erreur 404 affichée.</td></tr>
+        <tr><td>Puy-de-Dôme (63) proposé dans l'interface, absent des données.</td>
+            <td>Liste des départements générée depuis les données.</td></tr>
+        <tr><td>Champ vide → NaN : une prédiction était quand même renvoyée.</td>
+            <td>Pydantic : 400 (champ vide), 422 (non numérique, hors bornes, inconnu).</td></tr>
+        <tr><td>Dépôt « industrialisation » : le client envoie 5 variables inconnues du modèle et en omet 5 ; LightGBM prédit par position (1 115 passages, valeur sans signification).</td>
+            <td>Client corrigé ; l'API renvoie 422 avec la liste des variables manquantes / inconnues.</td></tr>
+        <tr><td>Modèles livrés en pickle (exécution de code possible au chargement).</td>
+            <td>Export texte LightGBM + JSON, lecture des pickles sous liste blanche ; plus aucun pickle chargé à l'exécution.</td></tr>
+    </tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section" id="demo">
+        <div class="section-container">
+            <span class="section-label">// Démo réelle</span>
+            <h2>Captures prises sur l'application en fonctionnement</h2>
+            
+<div class="two-col">
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/predictira/demo-prediction.webp" alt="Formulaire de prédiction prérempli pour le Rhône, 2024-S05" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Interface d'origine corrigée : Rhône, 2024-S05, 1 363,57 passages prédits pour 1 738 observés.</p></div>
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/predictira/demo-swagger.webp" alt="Swagger de l'API PredictIRA 2.0.0" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">API v2 : <code>POST /predict</code>, <code>/predict/batch</code> (1 à 1 000 lignes), schéma Pydantic de 24 champs obligatoires.</p></div>
+</div>
+        </div>
+    </section>
 
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
@@ -101,30 +181,46 @@
         </a></div>
             
             <div class="pl" data-pl id="pl-predictira">
-                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Pipeline interactif</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Schéma draw.io du pipeline</button></div>
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Pipeline interactif</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Schéma draw.io du pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Architecture applicative : un conteneur, deux interfaces, un modèle sans pickle</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">Données, modèle et évaluation honnête sur 2024</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">Déploiement Kubernetes : kustomize base + overlays local / cloud</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d4">Audit 2026 : constats et corrections</button></div>
                 <div class="pl-panel" data-panel="live">
                     <div class="pl-toolbar">
                         <button type="button" class="pl-play">▶ Animer le flux de données</button>
                         <button type="button" class="pl-reset" hidden>Tout afficher</button>
                         <span class="pl-hint">Cliquez une brique pour voir ce qu'elle reçoit et ce qu'elle alimente.</span>
                     </div>
-                    <div class="pl-scroll"><div class="pl-canvas" style="--n:4">
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:5">
                         <svg class="pl-edges" aria-hidden="true"></svg>
-                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">Météo · pollution</button><button type="button" class="pl-node" data-id="s0n1">Indice grippal</button><button type="button" class="pl-node" data-id="s0n2">Google Trends</button></div><div class="pl-col" data-col="1" style="--k:#2563EB"><h4><span>02</span>Préparation</h4><button type="button" class="pl-node" data-id="s1n0">Features + scaler</button></div><div class="pl-col" data-col="2" style="--k:#16A34A"><h4><span>03</span>Modèle</h4><button type="button" class="pl-node" data-id="s2n0">LightGBM</button></div><div class="pl-col" data-col="3" style="--k:#0D9488"><h4><span>04</span>Service</h4><button type="button" class="pl-node" data-id="s3n0">Flask (formulaire)</button><button type="button" class="pl-node" data-id="s3n1">FastAPI + Docker</button></div></div>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">Google Trends (12 symptômes)</button><button type="button" class="pl-node" data-id="s0n1">Air · météo</button><button type="button" class="pl-node" data-id="s0n2">Indice grippal</button></div><div class="pl-col" data-col="1" style="--k:#2563EB"><h4><span>02</span>Préparation</h4><button type="button" class="pl-node" data-id="s1n0">Table département × semaine</button><button type="button" class="pl-node" data-id="s1n1">StandardScaler (JSON)</button></div><div class="pl-col" data-col="2" style="--k:#16A34A"><h4><span>03</span>Modèle</h4><button type="button" class="pl-node" data-id="s2n0">LightGBM 24 variables</button></div><div class="pl-col" data-col="3" style="--k:#DB2777"><h4><span>04</span>Mesure</h4><button type="button" class="pl-node" data-id="s3n0">2024 vs persistance S-1</button></div><div class="pl-col" data-col="4" style="--k:#0D9488"><h4><span>05</span>Service</h4><button type="button" class="pl-node" data-id="s4n0">FastAPI /api (Pydantic)</button><button type="button" class="pl-node" data-id="s4n1">Flask / (a2wsgi)</button></div></div>
                     </div></div>
-                    
+                    <div class="pl-band" style="--k:#475569">Docker python:3.12-slim (non root) · 13 tests pytest · kustomize local / cloud</div>
                     <div class="pl-info" aria-live="polite"></div>
                     <div class="pl-legend"><span><i class="solid"></i>flux de données</span><span><i class="dash"></i>boucle de suivi / réentraînement</span></div>
-                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s0n1", "b": "s1n0", "l": "", "d": false}, {"a": "s0n2", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n1", "l": "", "d": false}]</script>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s0n1", "b": "s1n0", "l": "", "d": false}, {"a": "s0n2", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s1n1", "l": "", "d": false}, {"a": "s1n1", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n0", "l": "évalue", "d": true}, {"a": "s2n0", "b": "s4n0", "l": "", "d": false}, {"a": "s2n0", "b": "s4n1", "l": "", "d": false}]</script>
                 </div>
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
                 <div class="pipeline-figure"><img src="/diagrams/predictira.svg" alt="Schéma draw.io du pipeline" loading="lazy" draggable="false"></div>
-            <div class="figure-actions"><a href="/diagrams/predictira.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
+            <div class="figure-actions"><a href="/diagrams/predictira.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
+                <h3 class="pl-panel-title">Architecture applicative : un conteneur, deux interfaces, un modèle sans pickle</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/predictira-app.svg" alt="Architecture applicative : un conteneur, deux interfaces, un modèle sans pickle" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/predictira-app.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">Données, modèle et évaluation honnête sur 2024</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/predictira-donnees-evaluation.svg" alt="Données, modèle et évaluation honnête sur 2024" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/predictira-donnees-evaluation.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d3">
+                <h3 class="pl-panel-title">Déploiement Kubernetes : kustomize base + overlays local / cloud</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/predictira-kubernetes.svg" alt="Déploiement Kubernetes : kustomize base + overlays local / cloud" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/predictira-kubernetes.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d4">
+                <h3 class="pl-panel-title">Audit 2026 : constats et corrections</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/predictira-audit.svg" alt="Audit 2026 : constats et corrections" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/predictira-audit.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Étape par étape</h3>
-            <ol class="pipeline-steps"><li>Assemblage hebdomadaire des variables environnementales, épidémiologiques et de recherche par département.</li><li>Normalisation et entraînement d'un modèle LightGBM de régression.</li><li>Application Flask : l'utilisateur choisit département et semaine, ajuste les variables, obtient la prédiction.</li><li>Industrialisation : même modèle exposé par une API FastAPI dans un conteneur Docker.</li></ol>
+            <ol class="pipeline-steps"><li><strong>Table hebdomadaire</strong> — département × semaine, semaine encodée par <code>week_cos</code> (reconstruite par le rang, puis contrôlée).</li><li><strong>Normalisation</strong> — <code>StandardScaler</code> livré, relu sous liste blanche et exporté en JSON.</li><li><strong>Modèle</strong> — LightGBM 24 variables exporté en texte : estimation des passages de la semaine (nowcasting).</li><li><strong>Mesure</strong> — 429 semaines de 2024 comparées à la persistance S-1, par période et par département.</li><li><strong>Service</strong> — une seule application : API FastAPI validée par Pydantic sur <code>/api</code>, interface Flask d'origine sur <code>/</code>.</li><li><strong>Déploiement</strong> — image Docker non root, manifestes kustomize rendus et validés.</li></ol>
         </div>
     </section>
 
@@ -132,7 +228,7 @@
         <div class="section-container">
             <span class="section-label">// Points forts</span>
             <h2>Les points forts de la solution</h2>
-            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Intérêt public</strong> : prévision hebdomadaire des passages aux urgences pour infections respiratoires aiguës, par département.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Du notebook au service</strong> : application Flask, puis API FastAPI conteneurisée.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Travail d'équipe</strong> à 4, de la donnée au déploiement.</p></li></ol>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Mesure honnête</strong> : 429 semaines de 2024 comparées à une référence naïve ; le modèle seul ne la bat pas, et c'est affiché.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Une piste chiffrée</strong> : erreurs complémentaires, la moyenne modèle + persistance réduit la MAE de 26 % (à valider).</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Audit qui rend le projet fiable</strong> : six défauts reproduits et corrigés, plus aucun pickle chargé, 13 tests.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Du projet de formation au service</strong> : API FastAPI validée par Pydantic, image Docker non root, kustomize local / cloud.</p></li></ol>
         </div>
     </section>
 
@@ -150,11 +246,11 @@
                 <span class="code-caption">30%</span></div></div>
                     <p class="code-caption" style="margin-top:1rem">Lignes de code hors notebooks, calculées sur le dépôt.</p></div>
                 <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
-                    <div class="project-tech"><span class="tech-badge">LightGBM</span><span class="tech-badge">scikit-learn</span><span class="tech-badge">Flask</span><span class="tech-badge">FastAPI</span><span class="tech-badge">Docker</span><span class="tech-badge">Santé publique</span></div></div>
+                    <div class="project-tech"><span class="tech-badge">LightGBM</span><span class="tech-badge">FastAPI</span><span class="tech-badge">Pydantic</span><span class="tech-badge">Flask</span><span class="tech-badge">Docker</span><span class="tech-badge">Kubernetes</span><span class="tech-badge">pytest</span><span class="tech-badge">Évaluation</span><span class="tech-badge">Santé publique</span></div></div>
             </div>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
-                <tbody><tr><td>LightGBM</td><td>Régression du nombre de passages</td><td>Gradient boosting</td></tr><tr><td>scikit-learn</td><td>Normalisation</td><td>Préparation des données</td></tr><tr><td>Flask + Jinja</td><td>Application web</td><td>Premier produit utilisable</td></tr><tr><td>FastAPI + Docker</td><td>API de prédiction conteneurisée</td><td>Industrialisation</td></tr></tbody></table></div>
+                <tbody><tr><td>LightGBM</td><td>Régression du nombre de passages, modèle exporté en texte</td><td>Gradient boosting</td></tr><tr><td>scikit-learn (StandardScaler)</td><td>Normalisation, relue sous liste blanche puis exportée en JSON</td><td>Préparation des données</td></tr><tr><td>FastAPI + Pydantic</td><td>API /predict et /predict/batch, schéma strict de 24 champs</td><td>Service de modèles</td></tr><tr><td>Flask + a2wsgi</td><td>Interface d'origine montée dans la même application</td><td>Reprise de l'existant</td></tr><tr><td>pytest</td><td>13 tests, dont le rejeu de l'ancien filtre et le refus d'un pickle malveillant</td><td>Non-régression</td></tr><tr><td>Docker</td><td>python:3.12-slim, non root, healthcheck</td><td>Conteneurisation</td></tr><tr><td>Kubernetes (kustomize)</td><td>HPA, PDB, NetworkPolicy, overlays local / cloud</td><td>Déploiement</td></tr></tbody></table></div>
         </div>
     </section>
 
@@ -165,7 +261,16 @@
             <h2>Industrialisation : ce qui est en place</h2>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Pratique</th><th>Statut</th><th>Détail</th></tr></thead>
-                <tbody><tr><td>CI/CD</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tests</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Image python:3.9 + uvicorn</td></tr><tr><td>Orchestration</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Flask puis FastAPI</td></tr><tr><td>Déploiement</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+                <tbody><tr><td>CI/CD</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>13 tests pytest</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>Dockerfile python:3.12-slim non root ; build non vérifié (moteur arrêté)</td></tr><tr><td>Orchestration</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>FastAPI + Pydantic, Flask monté sur /</td></tr><tr><td>Déploiement</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Manifestes validés (kubectl kustomize), non appliqués sur cluster</td></tr><tr><td>IaC / K8s</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>kustomize base + overlays local / cloud</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="resultats">
+        <div class="section-container">
+            <span class="section-label">// Résultats</span>
+            <h2>Métriques mesurées</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Modèle</th><th>MAE</th><th>RMSE</th><th>R²</th><th>WAPE</th><th>Biais moyen</th></tr></thead><tbody><tr><td>LightGBM 24 variables (application Flask)</td><td>41,2</td><td>69,5</td><td>0,926</td><td>16,1 %</td><td>−2,5</td></tr><tr><td>Référence : persistance S-1</td><td>39,5</td><td>67,8</td><td>0,930</td><td>15,4 %</td><td>+11,4</td></tr><tr><td>Exploratoire : moyenne 50/50 modèle + persistance</td><td>30,6</td><td>50,0</td><td>0,962</td><td>11,9 %</td><td>+4,5</td></tr><tr><td>LightGBM 28 variables (dépôt « industrialisation »)</td><td>510,3</td><td>534,7</td><td>−3,358</td><td>198,8 %</td><td>+487,5</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">Test : 2024-S01 → S39, 11 départements, 429 semaines ; cible moyenne observée 256,7 passages / semaine. Seul, le modèle ne bat pas la persistance ; la moyenne 50/50, choisie a priori, est évaluée sur la période qui l'a suggérée : c'est une piste, pas un résultat validé.</p>
         </div>
     </section>
 
@@ -173,11 +278,28 @@
         <div class="section-container">
             <span class="section-label">// Extraits de code</span>
             <h2>Le code qui fait la différence</h2>
-            <p class="code-caption">industrialisation/api.py — l&#x27;API de prédiction minimale</p><pre class="code"><code>@app.post(&quot;/predict/&quot;)
-def predict(data: dict):
-    df = pd.DataFrame([data])
-    prediction = model.predict(df)
-    return {&quot;prediction_ira&quot;: int(prediction[0])}</code></pre>
+            <p class="code-caption">Code d&#x27;origine (app.py) — le filtre défectueux</p><pre class="code"><code>def get_data(year, week, dept):
+    week_cos = cos(2 * pi * week / 52)
+    print (week_cos)
+    # Filtrer le DataFrame
+    filtered_df = df[(df[&quot;year&quot;] == year) &amp; (df[&quot;week_cos&quot;] == week_cos) &amp; (df[&quot;dept&quot;] == dept)]</code></pre><p class="code-caption">predictira/data.py — la correction</p><pre class="code"><code>def load_dataset(root: str | Path) -&gt; pd.DataFrame:
+    df = pd.read_csv(Path(root) / &quot;df_Test_Indust.csv&quot;)
+    # week_cos seul est ambigu : cos(2π·w/52) = cos(2π·(52-w)/52), donc S30 et S22 sont
+    # indiscernables. Le fichier est trié chronologiquement par département (2024-S01→S39,
+    # puis la ligne 2023-S52) : on reconstruit la semaine par le rang, puis on vérifie le cosinus.
+    df[&quot;week&quot;] = df.groupby([&quot;dept&quot;, &quot;year&quot;]).cumcount() + 1
+    df.loc[df[&quot;year&quot;] == 2023, &quot;week&quot;] = 52
+    expected = np.cos(2 * np.pi * df[&quot;week&quot;] / 52)
+    if not np.allclose(expected, df[&quot;week_cos&quot;], atol=1e-9):
+        raise ValueError(&quot;Ordre des semaines incohérent avec week_cos&quot;)
+    return df</code></pre><p class="code-caption">predictira/safe_load.py — pickles hérités lus sous liste blanche</p><pre class="code"><code>class _AllowListUnpickler(numpy_pickle.NumpyUnpickler):
+    def find_class(self, module, name):
+        if (module, name) not in ALLOWED:
+            raise pickle.UnpicklingError(f&quot;classe interdite dans le pickle : {module}.{name}&quot;)
+        return super().find_class(module, name)</code></pre><p class="code-caption">predictira/api.py — l&#x27;endpoint de prédiction validé</p><pre class="code"><code>@api.post(&quot;/predict&quot;, response_model=Prediction)
+def predict(features: Features) -&gt; Prediction:
+    value = float(model.predict_frame(pd.DataFrame([features.model_dump()]))[0])
+    return Prediction(prediction=round(value, 1), modele=MODEL_NAME)</code></pre>
         </div>
     </section>
 
@@ -186,7 +308,7 @@ def predict(data: dict):
             <span class="section-label">// Regard critique</span>
             <h2>Limites connues et prochaines étapes</h2>
             <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet à une équipe de décider en connaissance de cause.</p>
-            <div class="arg-card arg-card--ok"><ul><li>Projet de début de formation : pas de tests, de validation de schéma ni de métriques publiées dans le dépôt.</li><li>Ce que j'en ai retenu et appliqué ensuite : schémas Pydantic, tests, CI et suivi des modèles (voir LyonFlow et Stripe).</li></ul></div>
+            <div class="arg-card arg-card--ok"><ul><li>Nowcasting : le modèle estime la semaine courante à partir de ses propres signaux ; ce n'est pas une prévision à J+7.</li><li>Seul, il ne bat pas la persistance S-1 sur 2024 (MAE 41,2 contre 39,5) ; la combinaison des deux est la piste d'amélioration, non validée.</li><li>11 départements d'Auvergne-Rhône-Alpes seulement ; le département est une variable numérique (31,5 % du gain) : aucune généralisation possible à d'autres départements.</li><li>39 semaines de test, dont 13 d'hiver : estimation de l'erreur hivernale fragile. Semaine encodée sans sinus : s et 52 − s sont indiscernables pour le modèle.</li><li>Aucune source de données citée et pas de données d'entraînement : réentraînement impossible, absence de 2024 dans l'entraînement probable mais non démontrable.</li><li><code>docker build</code> non exécuté pendant la session (contenu de l'image testé dans un environnement vierge) ; Kubernetes validé par rendu seulement.</li></ul></div>
         </div>
     </section>
 

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Csvtraitement — fixing ERP exports — Patrice Duclos</title>
-    <meta name="description" content="Python application (GUI + CLI) that detects and fixes defects in ERP exports: shifted columns, mixed FR/US decimal formats, invalid dates, duplicates, personal data — with human validation before export.">
+    <meta name="description" content="Python application (Tkinter GUI + CLI) that detects and fixes defects in ERP exports: shifted columns, FR/US decimals, invalid dates, masked values, duplicates, personal data — with human review before export. Tested on 1,000,000 rows against ground truth.">
     <meta name="robots" content="index, follow, noai, noimageai">
     <meta name="tdm-reservation" content="1">
     <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
     <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="Csvtraitement — fixing ERP exports — Patrice Duclos">
-    <meta property="og:description" content="Python application (GUI + CLI) that detects and fixes defects in ERP exports: shifted columns, mixed FR/US decimal formats, invalid dates, duplicates, personal data — with human validation before export.">
+    <meta property="og:description" content="Python application (Tkinter GUI + CLI) that detects and fixes defects in ERP exports: shifted columns, FR/US decimals, invalid dates, masked values, duplicates, personal data — with human review before export. Tested on 1,000,000 rows against ground truth.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pduclos.github.io/en/projects/csvtraitement.html">
     <link rel="canonical" href="https://pduclos.github.io/en/projects/csvtraitement.html">
@@ -36,7 +36,7 @@
                 <ul class="dropdown">
                     <li><a href="/en/projects/">All projects<small>overview · MLOps matrix</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
-                    <li><a href="/en/projects/achats-negociation.html">Buyvera — procurement negotiation<small>Flagship project · Marketable product · Project Manager</small></a></li><li><a href="/en/projects/lyonflow.html">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/copilote-erp.html">Grounded ERP copilot (RAG + SQL + LLMOps)<small>Generative AI · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html">Vibration-based predictive maintenance<small>Industrial ML · Signal · Digital twin</small></a></li><li><a href="/en/projects/marche-hvac.html">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/csvtraitement.html" aria-current="page">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html">PredictIRA<small>Public health ML · Team project</small></a></li>
+                    <li><a href="/en/projects/achats-negociation.html">Buyvera — procurement negotiation<small>Flagship project · Marketable product · Project Manager</small></a></li><li><a href="/en/projects/lyonflow.html">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/copilote-erp.html">Grounded ERP copilot (RAG + SQL + LLMOps)<small>Generative AI · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html">Vibration-based predictive maintenance<small>Industrial ML · Signal · MLOps</small></a></li><li><a href="/en/projects/marche-hvac.html">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/csvtraitement.html" aria-current="page">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html">PredictIRA<small>Public health ML · Team project, revived in 2026</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
                     <li><a href="https://buyvera.fr/en/">Product website — Buyvera<small>procurement project · bilingual site</small></a></li>
                     <li><a href="/presentations/plateforme-tarifs.html">Sales deck (in French)<small>procurement project · 38 slides</small></a></li>
@@ -59,10 +59,10 @@
             
             <div class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/projects/">Projects</a> / Csvtraitement</div>
             <span class="project-tag" style="color:var(--accent)">Python tool · ERP data quality</span>
-            <h1><span class="highlight">Clean</span> ERP exports, even at 500,000 rows</h1>
-            <p class="lead">Python application (GUI + CLI) that detects and fixes defects in ERP exports: shifted columns, mixed FR/US decimal formats, invalid dates, duplicates, personal data — with human validation before export.</p>
-            <div class="kpi-row"><div class="kpi"><b>500K+</b><span>rows processed</span></div><div class="kpi"><b>59</b><span>tests</span></div><div class="kpi"><b>6</b><span>formats read / written</span></div><div class="kpi"><b>A→F</b><span>quality score</span></div></div>
-            <div class="btn-row"><a href="https://github.com/PDUCLOS/Csvtraitement" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Source code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+            <h1><span class="highlight">Clean</span> ERP exports, even at one million rows</h1>
+            <p class="lead">Python application (Tkinter GUI + CLI) that detects and fixes defects in ERP exports: shifted columns, FR/US decimals, invalid dates, masked values, duplicates, personal data — with human review before export. Tested on 1,000,000 rows against ground truth.</p>
+            <div class="kpi-row"><div class="kpi"><b>1M</b><span>rows processed in 63 s</span></div><div class="kpi"><b>100%</b><span>column shifts found, 0 false positives</span></div><div class="kpi"><b>×120</b><span>faster fuzzy duplicates</span></div><div class="kpi"><b>84</b><span>tests</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/Csvtraitement" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Source code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/Csvtraitement/tree/feat/vitrine-csvtraitement" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Showcase branch (video, diagrams, measurements) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </div>
     </header>
 
@@ -70,20 +70,89 @@
         <div class="section-container">
             <span class="section-label">// In 30 seconds</span>
             <h2>The problem, the answer, the proof</h2>
-            <div style="margin-bottom:2rem"><p>Every analyst who works with SAP knows the problem: a CSV export with a shifted column, amounts “1.234,56” and “1,234.56” mixed together, dates like <code>00.00.0000</code> or <code>#REF!</code> errors. Manual cleanup takes hours and remains error-prone.</p><p>Csvtraitement automates detection, suggests corrections, and lets the user validate before exporting.</p></div>
+            <div style="margin-bottom:2rem"><p>Every analyst who works with SAP knows the problem: a CSV export with a shifted column, amounts “1.234,56” and “1,234.56” mixed together, dates like <code>00.00.0000</code> or <code>#REF!</code> errors. Manual cleanup takes hours and remains error-prone.</p><p>Csvtraitement automates detection, suggests corrections, and lets the user validate before exporting. To find out what it is really worth, it was measured on synthetic exports where every injected defect is known: the measurement revealed six bugs in the code, fixed since.</p></div>
             <div class="two-col">
                 <div class="arg-card arg-card--rh reveal">
                     <span class="arg-label">For recruiters · business value</span>
-                    <ul><li>Born from a day-to-day pain point with SAP extracts.</li><li>Direct time savings for Procurement, sales administration and management control / finance teams.</li><li>Human in the loop: no correction is applied without validation.</li></ul>
+                    <ul><li>Born from a day-to-day pain point with SAP extracts.</li><li>Direct time savings for Procurement, sales administration and management control / finance teams.</li><li>Human in the loop in the GUI: no correction applied without validation, undo / redo.</li><li><strong>Verification mindset</strong>: each claim of the project page re-checked, measured, and corrected when it was wrong.</li></ul>
                 </div>
                 <div class="arg-card arg-card--tech reveal">
                     <span class="arg-label">For tech teams · what the code proves</span>
-                    <ul><li><strong>Streaming reads in 10,000-row chunks</strong>; Parquet read with <code>iter_batches</code>: no memory saturation.</li><li>Automatic encoding and separator detection (score mean / (1 + standard deviation)), column typing on a sample.</li><li>Exact and fuzzy duplicates (<code>SequenceMatcher</code> &gt; 85% with prefix blocking), file reconciliation, personal data masking (email, phone, IBAN, French social security number).</li><li>8-tab Tkinter interface, batch CLI, undo / redo, 27 modules with logging, type hints and docstrings.</li></ul>
+                    <ul><li><strong>Streaming reads in 10,000-row chunks</strong> (<code>csv.reader</code>); Parquet read with <code>iter_batches</code>.</li><li>Automatic encoding and separator detection (score mean / (1 + standard deviation)), column typing on a sample.</li><li>Realignment of shifted rows: a text field split by an unescaped separator is <strong>stitched back</strong>, not truncated.</li><li>Exact and fuzzy duplicates: <strong>multi-key blocking</strong> on discriminating columns + <code>difflib</code> prefilter (same decisions as <code>ratio()</code>).</li><li>Personal data masking (email, phone, IBAN, French social security number), PII columns detected automatically.</li><li>8-tab Tkinter interface, batch CLI; CLI Docker image and Kubernetes CronJob (kustomize) for nightly processing.</li></ul>
                 </div>
             </div>
         </div>
     </section>
 
+
+    <section class="page-section alt" id="video">
+        <div class="section-container">
+            <span class="section-label">// Overview</span>
+            <h2>The project in 1 min 54</h2>
+            
+<video controls preload="none" poster="/media/csvtraitement/poster.webp" style="width:100%;border-radius:12px;border:1px solid var(--border);background:#0f1830">
+    <source src="/media/csvtraitement/presentation.mp4" type="video/mp4">
+</video>
+<p class="code-caption" style="margin-top:.8rem">1 min 54, narrated in French · generated by <code>scripts/promo_video.py</code> (synthetic voice, synthesized background sound). All data shown is synthetic.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="demo">
+        <div class="section-container">
+            <span class="section-label">// Real demo</span>
+            <h2>Interface screenshots on a demo export</h2>
+            
+<div class="pipeline-figure" style="padding:.6rem;margin-bottom:.4rem;min-width:0"><img src="/media/csvtraitement/avant-apres.webp" alt="Row 30 before and after correction" loading="lazy" draggable="false" style="min-width:0"></div>
+<p class="code-caption" style="margin-bottom:1.6rem">Row 30: the quantity is missing, everything is shifted by one column. After correction: empty cell inserted at the right place, ISO dates, numeric amounts.</p>
+<div class="two-col">
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem;min-width:0"><img src="/media/csvtraitement/demo-anomalies.webp" alt="Anomalies tab: detected column shifts" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Anomalies tab: each shifted row, its type (extra / missing column) and the column where the shift starts.</p></div>
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem;min-width:0"><img src="/media/csvtraitement/demo-doublons.webp" alt="Duplicates tab: exact and fuzzy groups" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Duplicates tab: exact duplicates and near-duplicates (similarity &gt; 85%), with the column that differs.</p></div>
+</div>
+<p class="code-caption" style="margin-top:1rem">Real screenshots of the Tkinter interface (French UI, <code>scripts/capture_gui.py</code>) on the 1,000-row synthetic demo export.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="approach">
+        <div class="section-container">
+            <span class="section-label">// Approach</span>
+            <h2>Measure, fix, verify</h2>
+            
+<div class="three-col" style="margin-bottom:1.2rem">
+    <div class="arg-card arg-card--tech"><span class="arg-label">1 · Measure against ground truth</span><ul>
+        <li>Synthetic ERP export generator: 11 SAP-style columns, <strong>8 known injected anomaly types</strong>.</li>
+        <li>Benchmark from 10,000 to <strong>1,000,000 rows</strong>: time, memory, detection rate, false positives.</li></ul></div>
+    <div class="arg-card arg-card--tech"><span class="arg-label">2 · Fix what the measurement reveals</span><ul>
+        <li><strong>Unusable CLI</strong>: every analysis raised <code>UnboundLocalError</code>.</li>
+        <li><strong>Quadratic fuzzy duplicates</strong>: a single block as soon as the 1st column has a constant prefix; 240 s → 2.0 s on 10,000 rows.</li>
+        <li><strong>Text lost during realignment</strong> (“Martinez;SARL” lost “SARL”): 32% → 100% of rows restored.</li>
+        <li><strong>Masked values never cleaned</strong> (<code>#REF!</code> exported as is); <code>--compare</code> / <code>--reconcile</code>: 0/2 → 2/2 differences found.</li></ul></div>
+    <div class="arg-card arg-card--ok"><span class="arg-label">3 · Verify</span><ul>
+        <li><strong>100%</strong> of column shifts found, <strong>0</strong> false positives, identical rates from 10,000 to 1,000,000 rows.</li>
+        <li><strong>84 pytest tests</strong> passing (59 initially, all passing too).</li>
+        <li>README fixed: it advertised an MIT license, while the LICENSE file is “all rights reserved”.</li></ul></div>
+</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="volumes">
+        <div class="section-container">
+            <span class="section-label">// Volumes</span>
+            <h2>Time and memory from 10,000 to 1,000,000 rows</h2>
+            
+<div class="table-wrap"><table class="stack-table">
+<thead><tr><th>Rows</th><th>File</th><th>Core (detection → CSV export)</th><th>Quality score</th><th>XLSX export</th><th>Peak memory</th></tr></thead>
+<tbody>
+<tr><td>10,000</td><td>1.4 MB</td><td>0.97 s</td><td>0.61 s</td><td>1.77 s</td><td>110 MB</td></tr>
+<tr><td>100,000</td><td>14 MB</td><td>7.28 s</td><td>6.12 s</td><td>13.8 s</td><td>516 MB</td></tr>
+<tr><td>500,000</td><td>71 MB</td><td>35.3 s</td><td>31.3 s</td><td>69.2 s</td><td>2.22 GB</td></tr>
+<tr><td>1,000,000</td><td>142 MB</td><td><strong>63.5 s</strong></td><td>52.3 s</td><td>133.8 s</td><td>2.42 GB</td></tr>
+</tbody></table></div>
+<p class="code-caption" style="margin-top:.8rem">One process per size, on a single core, on a machine shared with other workloads: these are orders of magnitude. Core throughput: 10,300 to 15,700 rows/s.
+Reading is streamed, but corrections are kept in memory for human review (preview, undo): 1.47 GB after corrections at 1M rows.</p>
+        </div>
+    </section>
 
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
@@ -97,7 +166,7 @@
         </a></div>
             
             <div class="pl" data-pl id="pl-csvtraitement">
-                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button></div>
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Pipeline: from a “dirty” ERP file to a corrected file, in 6 steps (French labels)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">What is streamed, and what stays in memory (French labels)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">Fuzzy duplicates: multi-key blocking and prefilter, 240 s → 2.0 s (French labels)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d4">Deployment: a batch job (CronJob), not a server (French labels)</button></div>
                 <div class="pl-panel" data-panel="live">
                     <div class="pl-toolbar">
                         <button type="button" class="pl-play">▶ Play the data flow</button>
@@ -117,10 +186,26 @@
                 <h3 class="pl-panel-title">Pipeline diagram (draw.io)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
                 <div class="pipeline-figure"><img src="/diagrams/csvtraitement.svg" alt="Pipeline diagram (draw.io)" loading="lazy" draggable="false"></div>
-            <div class="figure-actions"><a href="/diagrams/csvtraitement.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
+            <div class="figure-actions"><a href="/diagrams/csvtraitement.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
+                <h3 class="pl-panel-title">Pipeline: from a “dirty” ERP file to a corrected file, in 6 steps (French labels)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/csvtraitement-pipeline.svg" alt="Pipeline: from a “dirty” ERP file to a corrected file, in 6 steps (French labels)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/csvtraitement-pipeline.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">What is streamed, and what stays in memory (French labels)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/csvtraitement-memoire.svg" alt="What is streamed, and what stays in memory (French labels)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/csvtraitement-memoire.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d3">
+                <h3 class="pl-panel-title">Fuzzy duplicates: multi-key blocking and prefilter, 240 s → 2.0 s (French labels)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/csvtraitement-doublons.svg" alt="Fuzzy duplicates: multi-key blocking and prefilter, 240 s → 2.0 s (French labels)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/csvtraitement-doublons.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d4">
+                <h3 class="pl-panel-title">Deployment: a batch job (CronJob), not a server (French labels)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/csvtraitement-deploiement.svg" alt="Deployment: a batch job (CronJob), not a server (French labels)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/csvtraitement-deploiement.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Step by step</h3>
-            <ol class="pipeline-steps"><li>Reads any tabular format, converted into a CSV stream processed in chunks.</li><li>Detects the encoding, separator and type of each column on a representative sample.</li><li>Cell-by-cell detection of column shifts, weighted quality score, duplicate search.</li><li>Suggested corrections (dates, decimals, accounting parentheses, realignment) and optional masking of personal data.</li><li>User validation, then XLSX export with corrected cells highlighted and a report sheet.</li></ol>
+            <ol class="pipeline-steps"><li>Reads any tabular format (6 read: CSV, XLSX, XLS, ODS, JSON, Parquet), converted into a CSV stream processed in chunks.</li><li>Detects the encoding, separator and type of each column on a sample (first 1,000 + 1,000 random rows).</li><li>Cell-by-cell detection of column shifts, weighted quality score, exact and fuzzy duplicate search.</li><li>Suggested corrections (ISO dates, decimals, accounting parentheses, masked values, realignment) and optional masking of personal data.</li><li>User validation, then export (5 formats written) — in XLSX, corrected cells highlighted and a report sheet.</li><li>On a server: the same CLI, without GUI, scheduled every night by a Kubernetes CronJob.</li></ol>
         </div>
     </section>
 
@@ -128,7 +213,7 @@
         <div class="section-container">
             <span class="section-label">// Key strengths</span>
             <h2>Key strengths of the solution</h2>
-            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Large volumes without memory saturation</strong>: streaming reads in 10,000-row chunks, 500K+ rows processed.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Automatic detection</strong> of encoding, separator and column types.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Compliance</strong>: personal data masking (email, phone, IBAN, French social security number).</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Human in the loop</strong>: no correction applied without validation, undo / redo.</p></li></ol>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Measured, not claimed</strong>: 1,000,000 rows in 63.5 s, with ground truth on 8 anomaly types.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Zero false positives</strong>: 100% of column shifts found, 100% of shifted rows restored identically.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Performance fixed</strong>: fuzzy duplicates ×120 faster (240 s → 2.0 s), 15/15 near-duplicates found instead of 14/15.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Human in the loop</strong>: review of corrections in the GUI, undo / redo, annotated XLSX export.</p></li></ol>
         </div>
     </section>
 
@@ -143,11 +228,11 @@
                 <span class="code-caption">100%</span></div></div>
                     <p class="code-caption" style="margin-top:1rem">Lines of code excluding notebooks, measured on the repository.</p></div>
                 <div class="skill-group"><h3 class="skill-group-title">Keywords</h3>
-                    <div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Tkinter</span><span class="tech-badge">CLI</span><span class="tech-badge">Streaming</span><span class="tech-badge">Data Quality</span><span class="tech-badge">chardet</span><span class="tech-badge">xlsxwriter</span><span class="tech-badge">pyarrow</span><span class="tech-badge">pytest</span></div></div>
+                    <div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Tkinter</span><span class="tech-badge">CLI</span><span class="tech-badge">Streaming</span><span class="tech-badge">Data Quality</span><span class="tech-badge">chardet</span><span class="tech-badge">xlsxwriter</span><span class="tech-badge">pyarrow</span><span class="tech-badge">pytest</span><span class="tech-badge">Docker</span><span class="tech-badge">Kubernetes</span></div></div>
             </div>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Tool</th><th>Role in the project</th><th>What it demonstrates</th></tr></thead>
-                <tbody><tr><td>Python standard library</td><td>csv, difflib, statistics, argparse, logging</td><td>Robust without heavy dependencies</td></tr><tr><td>chardet</td><td>Encoding detection</td><td>Resilience to heterogeneous exports</td></tr><tr><td>xlsxwriter (constant_memory)</td><td>Annotated Excel export</td><td>Large volumes without memory saturation</td></tr><tr><td>pyarrow</td><td>Parquet read / write</td><td>Data interoperability</td></tr><tr><td>Tkinter</td><td>8-tab graphical interface</td><td>A tool non-developers can use</td></tr><tr><td>pytest</td><td>59 tests on detection, analysis, correction</td><td>Reliable core logic</td></tr></tbody></table></div>
+                <tbody><tr><td>Python standard library</td><td>csv, difflib, statistics, argparse, logging</td><td>Robust without heavy dependencies</td></tr><tr><td>chardet</td><td>Encoding detection</td><td>Resilience to heterogeneous exports</td></tr><tr><td>xlsxwriter (constant_memory)</td><td>Annotated Excel export</td><td>Large-volume writes</td></tr><tr><td>pyarrow</td><td>Parquet read / write</td><td>Data interoperability</td></tr><tr><td>Tkinter</td><td>8-tab graphical interface</td><td>A tool non-developers can use</td></tr><tr><td>pytest</td><td>84 tests, including end-to-end on synthetic exports with ground truth</td><td>Measured reliability</td></tr><tr><td>Docker + Kubernetes (kustomize)</td><td>Non-root CLI image, nightly CronJob, PVC</td><td>Industrialized batch processing</td></tr></tbody></table></div>
         </div>
     </section>
 
@@ -158,7 +243,16 @@
             <h2>Industrialization: what is in place</h2>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Practice</th><th>Status</th><th>Detail</th></tr></thead>
-                <tbody><tr><td>CI/CD</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>59 tests (detector, analyzer, corrector)</td></tr><tr><td>Docker</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Orchestration</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Deployment</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Installable package + Windows launcher</td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+                <tbody><tr><td>CI/CD</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>84 pytest tests (detection, correction, end-to-end with ground truth)</td></tr><tr><td>Docker</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>CLI Dockerfile (python:3.12-slim, non-root); build not verified</td></tr><tr><td>Orchestration</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Nightly Kubernetes CronJob (02:00, Forbid)</td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Deployment</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Manifests rendered with kubectl kustomize; not applied to a cluster</td></tr><tr><td>IaC / K8s</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>kustomize: base + local / cloud overlays (Azure Files)</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="resultats">
+        <div class="section-container">
+            <span class="section-label">// Results</span>
+            <h2>Measured metrics</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Injected anomaly (100,000 rows)</th><th>Injected</th><th>Result</th><th>False positives</th></tr></thead><tbody><tr><td>Extra column (unescaped separator)</td><td>990</td><td>990 detected, pieces stitched back</td><td>0</td></tr><tr><td>Missing column</td><td>513</td><td>513 detected, empty cell at the right place</td><td>0</td></tr><tr><td>Shifted row restored identically</td><td>1,503</td><td>1,503 (100%)</td><td>—</td></tr><tr><td>Invalid date 00.00.0000</td><td>974</td><td>974 cleared</td><td>0</td></tr><tr><td>Masked value (#REF!, N/A, NULL, -, ??)</td><td>994</td><td>994 cleared</td><td>0</td></tr><tr><td>US-format amount</td><td>1,963</td><td>1,963 in the right format on output</td><td>0</td></tr><tr><td>Accounting parentheses (1.234,56)</td><td>520</td><td>520 → negative</td><td>0</td></tr><tr><td>Exact duplicate</td><td>464</td><td>464</td><td>0</td></tr><tr><td>Near-duplicate (2 swapped letters)</td><td>197</td><td>197</td><td>0</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">Measured on 27/10/2026 on a synthetic SAP-style export (11 columns, <code>;</code> separator, FR decimals). Identical rates at 10,000, 500,000 and 1,000,000 rows (duplicates not measured at 1M). At 1M: 15,046 / 15,046 shifted rows restored identically (32% before the fix).</p>
         </div>
     </section>
 
@@ -166,15 +260,20 @@
         <div class="section-container">
             <span class="section-label">// Code excerpts</span>
             <h2>The code that makes the difference</h2>
-            <p class="code-caption">core/detector.py — the most consistent separator wins</p><pre class="code"><code>for sep in CANDIDATE_SEPARATORS:
-    counts = [line.count(sep) for line in lines]
-
-    # Skip if never present
-    if max(counts) == 0:
-        continue
-
-    avg_count = mean(counts)
-    std_count = stdev(counts) if len(counts) &gt; 1 else 0.0</code></pre>
+            <p class="code-caption">core/dedup.py — prefilter: cheap upper bounds before ratio(), same decisions</p><pre class="code"><code>    sm = SequenceMatcher(None, s1, s2)
+    if threshold &gt; 0.0:
+        bound = sm.real_quick_ratio()
+        if bound &lt; threshold:
+            return bound
+        bound = sm.quick_ratio()
+        if bound &lt; threshold:
+            return bound
+    return sm.ratio()</code></pre><p class="code-caption">core/fixer.py — stitching back a text field split by an unescaped separator</p><pre class="code"><code>        if (merge_text and 0 &lt; col &lt; len(cells)
+                and profiles[col - 1].dominant_category == &#x27;text&#x27;):
+            # Typical ERP case: unescaped separator inside a text field
+            # (&quot;Dupont;Fils&quot;) -&gt; stitch both pieces back instead of losing one.
+            merged = cells[col - 1] + separator + cells[col]
+            new_cells = cells[:col - 1] + [merged] + cells[col + 1:]</code></pre>
         </div>
     </section>
 
@@ -183,7 +282,7 @@
             <span class="section-label">// Critical review</span>
             <h2>Known limitations and next steps</h2>
             <p style="margin-bottom:1.5rem">Documenting limitations honestly is part of the job: it lets a team make informed decisions.</p>
-            <div class="arg-card arg-card--ok"><ul><li>No GitHub Actions CI or Docker image yet.</li><li>Test coverage focused on the core (detection, analysis, correction); secondary modules still to be covered.</li></ul></div>
+            <div class="arg-card arg-card--ok"><ul><li><strong>Memory</strong>: reading is streamed, but every modified row is kept for review (preview, undo); memory grows linearly (1.47 GB after corrections at 1M rows, 2.4 GB peak with XLSX export). Next step: a “counters only” batch mode.</li><li><strong>Synthetic data only</strong>: not yet tested on real exports (mixed encodings, multiple headers, subtotals).</li><li><strong>Lenient quality score</strong>: 92.7/100 (A) on a file where 6.5% of rows are defective; track the non-compliant row rate instead.</li><li><strong>Ambiguity</strong>: a missing cell next to a masked value cannot be placed with certainty (4 cases out of 1,503 in an exploratory run); the final result is correct, but the position of the gap is arbitrary.</li><li><strong>Whitespace</strong>: the space following a separator is dropped on read (“Martinez; SARL” becomes “Martinez;SARL”).</li><li><strong>Duplicates</strong>: the index keeps all rows in memory; not measured at 1M rows.</li><li><strong>Formats</strong>: 6 read, 5 written (no XLS); XLS reading untested for lack of a file.</li><li><strong>CLI</strong>: with <code>--fix</code>, corrections are applied directly (JSON report), without human review.</li><li><strong>Deployment not verified</strong>: <code>docker build</code> / <code>docker run</code> not executed, no cluster available; the 2 Gi limit is derived from measured peaks. No GitHub Actions CI.</li></ul></div>
         </div>
     </section>
 

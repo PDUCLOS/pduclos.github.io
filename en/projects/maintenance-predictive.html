@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predictive maintenance — bearing diagnostics — Patrice Duclos</title>
-    <meta name="description" content="Bearing fault detection on the Paderborn dataset (32 bearings, 4 operating conditions) using explainable physical features, with one key question: does a model trained on artificial faults hold up on real faults?">
+    <meta name="description" content="Fault diagnosis on the 32 real bearings of the Paderborn test rig from 5 explainable vibration indicators, with a validation that never puts the same bearing in both training and test, and a quantified measurement of the gap between lab-made and real faults. The model is served by a FastAPI API, containerizable and deployable on Kubernetes.">
     <meta name="robots" content="index, follow, noai, noimageai">
     <meta name="tdm-reservation" content="1">
     <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
     <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="Predictive maintenance — bearing diagnostics — Patrice Duclos">
-    <meta property="og:description" content="Bearing fault detection on the Paderborn dataset (32 bearings, 4 operating conditions) using explainable physical features, with one key question: does a model trained on artificial faults hold up on real faults?">
+    <meta property="og:description" content="Fault diagnosis on the 32 real bearings of the Paderborn test rig from 5 explainable vibration indicators, with a validation that never puts the same bearing in both training and test, and a quantified measurement of the gap between lab-made and real faults. The model is served by a FastAPI API, containerizable and deployable on Kubernetes.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pduclos.github.io/en/projects/maintenance-predictive.html">
     <link rel="canonical" href="https://pduclos.github.io/en/projects/maintenance-predictive.html">
@@ -36,7 +36,7 @@
                 <ul class="dropdown">
                     <li><a href="/en/projects/">All projects<small>overview · MLOps matrix</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
-                    <li><a href="/en/projects/achats-negociation.html">Buyvera — procurement negotiation<small>Flagship project · Marketable product · Project Manager</small></a></li><li><a href="/en/projects/lyonflow.html">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/copilote-erp.html">Grounded ERP copilot (RAG + SQL + LLMOps)<small>Generative AI · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html" aria-current="page">Vibration-based predictive maintenance<small>Industrial ML · Signal · Digital twin</small></a></li><li><a href="/en/projects/marche-hvac.html">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/csvtraitement.html">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html">PredictIRA<small>Public health ML · Team project</small></a></li>
+                    <li><a href="/en/projects/achats-negociation.html">Buyvera — procurement negotiation<small>Flagship project · Marketable product · Project Manager</small></a></li><li><a href="/en/projects/lyonflow.html">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/copilote-erp.html">Grounded ERP copilot (RAG + SQL + LLMOps)<small>Generative AI · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html" aria-current="page">Vibration-based predictive maintenance<small>Industrial ML · Signal · MLOps</small></a></li><li><a href="/en/projects/marche-hvac.html">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/csvtraitement.html">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html">PredictIRA<small>Public health ML · Team project, revived in 2026</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
                     <li><a href="https://buyvera.fr/en/">Product website — Buyvera<small>procurement project · bilingual site</small></a></li>
                     <li><a href="/presentations/plateforme-tarifs.html">Sales deck (in French)<small>procurement project · 38 slides</small></a></li>
@@ -58,11 +58,11 @@
         <div class="hero-content">
             
             <div class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/projects/">Projects</a> / Vibration-based predictive maintenance</div>
-            <span class="project-tag" style="color:var(--accent)">Industrial ML · Signal · Digital twin</span>
+            <span class="project-tag" style="color:var(--accent)">Industrial ML · Signal · MLOps</span>
             <h1>From lab to shop floor: <span class="highlight">detecting a failing bearing</span></h1>
-            <p class="lead">Bearing fault detection on the Paderborn dataset (32 bearings, 4 operating conditions) using explainable physical features, with one key question: does a model trained on artificial faults hold up on real faults?</p>
-            <div class="kpi-row"><div class="kpi"><b>189</b><span>tests</span></div><div class="kpi"><b>0.738</b><span>XGBoost macro F1</span></div><div class="kpi"><b>5.4 GB</b><span>raw signals</span></div><div class="kpi"><b>5 folds</b><span>CV grouped by asset</span></div></div>
-            <div class="btn-row"><a href="https://github.com/PDUCLOS/MLindustrial" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Source code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+            <p class="lead">Fault diagnosis on the 32 real bearings of the Paderborn test rig from 5 explainable vibration indicators, with a validation that never puts the same bearing in both training and test, and a quantified measurement of the gap between lab-made and real faults. The model is served by a FastAPI API, containerizable and deployable on Kubernetes.</p>
+            <div class="kpi-row"><div class="kpi"><b>223</b><span>tests (0 failures)</span></div><div class="kpi"><b>0.734</b><span>XGBoost macro F1, grouped CV</span></div><div class="kpi"><b>0.62</b><span>macro F1 artificial → real</span></div><div class="kpi"><b>23.2 ms</b><span>indicators per measurement, CPU</span></div><div class="kpi"><b>5.4 GB</b><span>Paderborn archives</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/MLindustrial" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Source code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/MLindustrial/tree/feat/vitrine-maintenance-predictive" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Showcase branch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </div>
     </header>
 
@@ -70,20 +70,120 @@
         <div class="section-container">
             <span class="section-label">// In 30 seconds</span>
             <h2>The problem, the answer, the proof</h2>
-            <div style="margin-bottom:2rem"><p>Most predictive maintenance demos test a model on the same bearings it saw during training: the scores look great and don't hold up on the shop floor.</p><p>This project honestly measures the lab / field gap, compares a vibration sensor with the <strong>motor current already available on every drive</strong> (no extra sensor needed) and favors indicators a maintenance manager can understand.</p></div>
+            <div style="margin-bottom:2rem"><p>Most predictive maintenance demos test a model on the same bearings it saw during training: the scores look great and don't hold up on the shop floor.</p><p>This project measures the lab / field gap, compares a vibration sensor with the <strong>motor current already available on every drive</strong> (no extra sensor needed) and favors indicators a maintenance manager can understand.</p><p>Measured result: trained on machined faults, the model misses <strong>about 1 real fault in 5</strong>, versus about 1 in 14 when it has seen real faults. And it does not clearly beat a simple kurtosis rule.</p></div>
             <div class="two-col">
                 <div class="arg-card arg-card--rh reveal">
                     <span class="arg-label">For recruiters · business value</span>
-                    <ul><li>Real domain expertise (field deployments with IFM, Schaeffler, SKF) put to work for data.</li><li><strong>Sensor cost / value</strong> reasoning: can we avoid instrumenting a machine?</li><li>Negative results published as they are: rigor comes before showcasing.</li></ul>
+                    <ul><li>Real domain expertise (field deployments with IFM, Schaeffler, SKF) put to work for data.</li><li><strong>Sensor cost / value</strong> reasoning: can we avoid instrumenting a machine?</li><li>Results published as they are, including when the model misses a real fault or fails to beat a simple rule.</li><li>Project taken over and verified: figures reproduced, failing tests fixed, delivered all the way to an API and Kubernetes.</li></ul>
                 </div>
                 <div class="arg-card arg-card--tech reveal">
                     <span class="arg-label">For tech teams · what the code proves</span>
-                    <ul><li>Physical features: RMS, kurtosis, crest factor and <strong>BPFO / BPFI / BSF / FTF fault frequencies</strong> computed from the geometry.</li><li>Splits by asset / condition / artificial→real, <code>StratifiedGroupKFold</code> and an <code>assert_no_asset_leakage</code> safeguard.</li><li>TimescaleDB (features hypertable), MLflow backed by PostgreSQL, dataset hash for traceability, Evidently drift.</li><li>CI: Python 3.11 / 3.12 matrix, “zero mock” audit, full ML pipeline on real data with MLflow artifacts.</li><li>Physical simulators, SimPy factory simulation and Asset Administration Shell export (Industry 4.0).</li></ul>
+                    <ul><li>5 time-domain indicators (RMS, peak-to-peak, crest factor, kurtosis, skewness); <strong>BPFO / BPFI / BSF / FTF</strong> fault frequencies computed from the geometry, envelope analysis still disabled.</li><li><code>StratifiedGroupKFold</code> grouped by bearing and an <code>assert_no_asset_leakage</code> safeguard; artificial → real benchmark over 20 splits of the healthy bearings.</li><li>PostgreSQL / TimescaleDB (fallback without the extension), MLflow, dataset hash for traceability, Evidently drift.</li><li><strong>FastAPI</strong> service (<code>/predict</code> + demo page) using the same indicator functions as training; <code>Dockerfile.api</code> and <strong>kustomize</strong> local / prod manifests.</li><li>CI: ruff (pinned rules), 223 tests, ML pipeline smoke test on 2 real bearings (K001, KA01).</li><li>Physical simulators, SimPy factory simulation and Asset Administration Shell export (Industry 4.0).</li></ul>
                 </div>
             </div>
         </div>
     </section>
 
+
+    <section class="page-section alt" id="video">
+        <div class="section-container">
+            <span class="section-label">// Overview</span>
+            <h2>The project in 1 min 58</h2>
+            
+<video controls preload="none" poster="/media/maintenance-predictive/poster.webp" style="width:100%;border-radius:12px;border:1px solid var(--border);background:#0f1830">
+    <source src="/media/maintenance-predictive/presentation.mp4" type="video/mp4">
+</video>
+<p class="code-caption" style="margin-top:.8rem">1 min 58 · narrated video generated by <code>scripts/promo_video.py</code> from real captures of the API and the dashboard.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="demo">
+        <div class="section-container">
+            <span class="section-label">// Live demo</span>
+            <h2>Three bearings never seen by the served model</h2>
+            
+<p style="margin-bottom:1.2rem">The served model is retrained on 29 bearings (2,319 measurements); three bearings are held out
+and were chosen before any result: K006 (healthy), KI08 (artificial fault), KA22 (real fault).</p>
+<div class="two-col">
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/maintenance-predictive/demo-artificiel.webp" alt="API demo page: bearing KI08 with an artificial fault detected at 99.6%" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">KI08, artificial fault never seen: detected, P(fault) = 0.9961.</p></div>
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/maintenance-predictive/demo-reel-manque.webp" alt="API demo page: bearing KA22 with a real fault wrongly classified as healthy" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">KA22, real fault: wrongly classified as healthy (P(fault) = 0.1198). The error is shown, not hidden; the kurtosis rule does catch it on this measurement.</p></div>
+</div>
+<div class="table-wrap" style="margin-top:1.5rem"><table class="stack-table">
+    <thead><tr><th>Measurement</th><th>Ground truth</th><th>XGBoost</th><th>P(fault)</th><th>Kurtosis rule (≤ 13.3845 ⇒ fault)</th></tr></thead>
+    <tbody>
+        <tr><td>K006 N15_M07_F10</td><td>healthy</td><td>healthy ✔</td><td>0.0094</td><td>healthy ✔</td></tr>
+        <tr><td>K006 N09_M07_F10</td><td>healthy</td><td>healthy ✔</td><td>0.0083</td><td>healthy ✔</td></tr>
+        <tr><td>KI08 N15_M07_F10</td><td>artificial</td><td>fault ✔</td><td>0.9961</td><td>fault ✔</td></tr>
+        <tr><td>KI08 N09_M07_F10</td><td>artificial</td><td>fault ✔</td><td>0.9778</td><td>healthy ✘</td></tr>
+        <tr><td>KA22 N15_M07_F10</td><td><strong>real</strong></td><td>healthy ✘</td><td>0.1198</td><td>fault ✔</td></tr>
+        <tr><td>KA22 N09_M07_F10</td><td><strong>real</strong></td><td>healthy ✘</td><td>0.0229</td><td>healthy ✘</td></tr>
+    </tbody></table></div>
+<div class="two-col" style="margin-top:2rem;align-items:start">
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/maintenance-predictive/dashboard-indicateurs.webp" alt="Streamlit dashboard: distribution of vibration indicators by health state" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Streamlit dashboard on the 32 bearings: 7,677 signals, 46,062 computed indicators.</p></div>
+    <div class="arg-card arg-card--tech" style="min-width:0"><span class="arg-label">Measured timings (CPU)</span><ul>
+        <li>5 indicators on a 256,001-point measurement: <strong>23.2 ms</strong> (median of 50).</li>
+        <li>Single XGBoost prediction: <strong>0.91 ms</strong>; batch of 2,559 measurements: 3.3 ms.</li>
+        <li>End-to-end <code>POST /predict</code>: 317 ms, dominated by the JSON of 256,000 floats.</li>
+        <li>Full training: 154 ms on CPU, 365 ms on GPU: <strong>the GPU brings nothing at this scale</strong>.</li>
+        <li>Exported model: 279,048 bytes (XGBoost JSON).</li></ul></div>
+</div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="artificiel-reel">
+        <div class="section-container">
+            <span class="section-label">// Key result</span>
+            <h2>Lab-made faults versus real faults</h2>
+            
+<p style="margin-bottom:1.2rem">The project's question: does a model trained on faults <strong>machined in a lab</strong> recognize faults
+<strong>that developed in operation</strong>? Training on 12 bearings with artificial faults + 3 healthy (1,199 measurements), testing on
+14 bearings with real faults + the 3 other healthy ones (1,360 measurements), repeated over the 20 possible 3 / 3 splits of the 6 healthy bearings.
+Control: same healthy bearings, real faults learned with grouped cross-validation.</p>
+<div class="table-wrap"><table class="stack-table">
+    <thead><tr><th>Scenario</th><th>Macro F1</th><th>Balanced accuracy</th><th>Fault recall</th><th>Healthy recall</th></tr></thead>
+    <tbody>
+        <tr><td>Artificial → real</td><td><strong>0.620 ± 0.102</strong></td><td>0.646 ± 0.109</td><td>0.809 ± 0.098</td><td>0.484 ± 0.229</td></tr>
+        <tr><td>Control real → real</td><td><strong>0.694 ± 0.107</strong></td><td>0.690 ± 0.105</td><td>0.930 ± 0.030</td><td>0.449 ± 0.218</td></tr>
+    </tbody></table></div>
+<div class="two-col" style="margin-top:1.5rem">
+    <div class="arg-card arg-card--tech"><span class="arg-label">Reading</span><ul>
+        <li>Trained on machined faults, the model misses <strong>about 1 real fault in 5</strong>, versus about 1 in 14 when it has seen real faults.</li>
+        <li>Recognition of healthy bearings stays weak in both cases: there are only 6 healthy bearings.</li>
+        <li>Exploratory measurement, to be confirmed with envelope analysis.</li></ul></div>
+    <div class="arg-card arg-card--ok"><span class="arg-label">A bias avoided</span><ul>
+        <li>The existing <code>split_artificial_to_real()</code> function put all healthy bearings in training: the test set held a single class and macro F1 was meaningless.</li>
+        <li>The benchmark therefore splits healthy bearings between train and test, and calls <code>assert_no_asset_leakage</code> on every split.</li></ul></div>
+</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="corrections">
+        <div class="section-container">
+            <span class="section-label">// Takeover</span>
+            <h2>What I verified, fixed and added</h2>
+            
+<p style="margin-bottom:1.2rem">Before adding anything, I re-ran the existing code on the 2,560 official files (5.4 GB of archives,
+22.4 GB extracted). Full ingestion in 473 s: 2,559 measurements kept, 1 unreadable file excluded and listed. The baselines are reproduced
+to the thousandth; vibration XGBoost gives 0.734 ± 0.206 versus 0.738 published, a gap about 50 times smaller than the standard deviation.</p>
+<div class="three-col">
+    <div class="arg-card arg-card--tech"><span class="arg-label">Tests and CI</span><ul>
+        <li><strong>Broken lint CI</strong>: ruff 0.16.5 enabled 67 extra rules; rule set pinned in <code>pyproject.toml</code>.</li>
+        <li><strong>Two tests that tested nothing</strong> (result without <code>assert</code>, overly broad <code>pytest.raises(Exception)</code>).</li>
+        <li>An integration test that was <strong>always skipped</strong> now loads a real .mat file.</li></ul></div>
+    <div class="arg-card arg-card--tech"><span class="arg-label">Running outside Docker</span><ul>
+        <li>TimescaleDB is no longer mandatory: falls back to a regular table with a warning on PostgreSQL.</li>
+        <li>Dashboard: hard-coded MLflow address replaced by <code>MLFLOW_TRACKING_URI</code> (Alerts and Results tabs were empty otherwise).</li>
+        <li>Service: <code>xgb.Booster</code> instead of <code>XGBClassifier</code>, which required scikit-learn in the image.</li></ul></div>
+    <div class="arg-card arg-card--ok"><span class="arg-label">Additions</span><ul>
+        <li><strong>FastAPI</strong> API + demo page, same indicator functions as in training, 9 tests.</li>
+        <li><code>Dockerfile.api</code>, <strong>Kubernetes</strong> manifests (kustomize: local 6 objects, prod 8 objects).</li>
+        <li>Reproducible benchmark, architecture diagrams, showcase page and video. <strong>223 tests passed</strong>, 0 failures.</li></ul></div>
+</div>
+        </div>
+    </section>
 
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
@@ -97,30 +197,46 @@
         </a></div>
             
             <div class="pl" data-pl id="pl-maintenance-predictive">
-                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button></div>
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Data and ML pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">Evaluation protocol: grouped CV and artificial → real</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">Inference service and Kubernetes</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d4">From vibration signal to indicators</button></div>
                 <div class="pl-panel" data-panel="live">
                     <div class="pl-toolbar">
                         <button type="button" class="pl-play">▶ Play the data flow</button>
                         <button type="button" class="pl-reset" hidden>Show all</button>
                         <span class="pl-hint">Click a block to see what feeds it and what it feeds.</span>
                     </div>
-                    <div class="pl-scroll"><div class="pl-canvas" style="--n:7">
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:8">
                         <svg class="pl-edges" aria-hidden="true"></svg>
-                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Source</h4><button type="button" class="pl-node" data-id="s0n0">Paderborn .mat (5.4 GB)</button></div><div class="pl-col" data-col="1" style="--k:#0284C7"><h4><span>02</span>Ingestion</h4><button type="button" class="pl-node" data-id="s1n0">Loaders + physical checks</button><button type="button" class="pl-node" data-id="s1n1">Parquet</button></div><div class="pl-col" data-col="2" style="--k:#7C3AED"><h4><span>03</span>Storage</h4><button type="button" class="pl-node" data-id="s2n0">TimescaleDB (hypertable)</button></div><div class="pl-col" data-col="3" style="--k:#2563EB"><h4><span>04</span>Features</h4><button type="button" class="pl-node" data-id="s3n0">Time domain: RMS, kurtosis</button><button type="button" class="pl-node" data-id="s3n1">BPFO/BPFI frequencies</button></div><div class="pl-col" data-col="4" style="--k:#16A34A"><h4><span>05</span>Models</h4><button type="button" class="pl-node" data-id="s4n0">Thresholds (baseline)</button><button type="button" class="pl-node" data-id="s4n1">XGBoost</button><button type="button" class="pl-node" data-id="s4n2">CV grouped by asset</button></div><div class="pl-col" data-col="5" style="--k:#DB2777"><h4><span>06</span>Tracking</h4><button type="button" class="pl-node" data-id="s5n0">MLflow (Postgres)</button><button type="button" class="pl-node" data-id="s5n1">Evidently drift</button></div><div class="pl-col" data-col="6" style="--k:#E11D48"><h4><span>07</span>Delivery</h4><button type="button" class="pl-node" data-id="s6n0">Streamlit digital twin</button><button type="button" class="pl-node" data-id="s6n1">AAS export</button></div></div>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Source</h4><button type="button" class="pl-node" data-id="s0n0">Paderborn .mat (5.4 GB)</button></div><div class="pl-col" data-col="1" style="--k:#0284C7"><h4><span>02</span>Ingestion</h4><button type="button" class="pl-node" data-id="s1n0">Loaders + physical checks</button><button type="button" class="pl-node" data-id="s1n1">Parquet</button></div><div class="pl-col" data-col="2" style="--k:#7C3AED"><h4><span>03</span>Storage</h4><button type="button" class="pl-node" data-id="s2n0">PostgreSQL / TimescaleDB</button></div><div class="pl-col" data-col="3" style="--k:#2563EB"><h4><span>04</span>Features</h4><button type="button" class="pl-node" data-id="s3n0">Time domain: RMS, kurtosis</button><button type="button" class="pl-node" data-id="s3n1">BPFO/BPFI frequencies</button></div><div class="pl-col" data-col="4" style="--k:#16A34A"><h4><span>05</span>Models</h4><button type="button" class="pl-node" data-id="s4n0">Thresholds (baseline)</button><button type="button" class="pl-node" data-id="s4n1">XGBoost</button><button type="button" class="pl-node" data-id="s4n2">CV grouped by bearing</button></div><div class="pl-col" data-col="5" style="--k:#DB2777"><h4><span>06</span>Tracking</h4><button type="button" class="pl-node" data-id="s5n0">MLflow</button><button type="button" class="pl-node" data-id="s5n1">Evidently drift</button></div><div class="pl-col" data-col="6" style="--k:#E11D48"><h4><span>07</span>Delivery</h4><button type="button" class="pl-node" data-id="s6n0">Streamlit digital twin</button><button type="button" class="pl-node" data-id="s6n1">AAS export</button></div><div class="pl-col" data-col="7" style="--k:#0D9488"><h4><span>08</span>Serving</h4><button type="button" class="pl-node" data-id="s7n0">FastAPI /predict + demo</button><button type="button" class="pl-node" data-id="s7n1">Kubernetes (kustomize)</button></div></div>
                     </div></div>
-                    <div class="pl-band" style="--k:#475569">uv · GitHub Actions (ruff, pytest, zero-mock audit, ML pipeline on real data) · Docker Compose</div>
+                    <div class="pl-band" style="--k:#475569">uv · GitHub Actions (ruff, pytest, ML smoke test on 2 real bearings) · Docker Compose · Dockerfile.api · kustomize</div>
                     <div class="pl-info" aria-live="polite"></div>
                     <div class="pl-legend"><span><i class="solid"></i>data flow</span><span><i class="dash"></i>monitoring / retraining loop</span></div>
-                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s1n1", "l": "", "d": false}, {"a": "s1n1", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n1", "l": "", "d": false}, {"a": "s3n0", "b": "s4n0", "l": "", "d": false}, {"a": "s3n1", "b": "s4n1", "l": "", "d": false}, {"a": "s4n2", "b": "s4n1", "l": "", "d": true}, {"a": "s4n1", "b": "s5n0", "l": "log", "d": false}, {"a": "s4n0", "b": "s5n0", "l": "", "d": false}, {"a": "s5n1", "b": "s6n0", "l": "", "d": true}, {"a": "s4n1", "b": "s6n0", "l": "", "d": false}, {"a": "s6n0", "b": "s6n1", "l": "", "d": true}]</script>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s1n1", "l": "", "d": false}, {"a": "s1n1", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n1", "l": "", "d": false}, {"a": "s3n0", "b": "s4n0", "l": "", "d": false}, {"a": "s3n1", "b": "s4n1", "l": "", "d": false}, {"a": "s4n2", "b": "s4n1", "l": "", "d": true}, {"a": "s4n1", "b": "s5n0", "l": "log", "d": false}, {"a": "s4n0", "b": "s5n0", "l": "", "d": false}, {"a": "s5n1", "b": "s6n0", "l": "", "d": true}, {"a": "s4n1", "b": "s6n0", "l": "", "d": false}, {"a": "s6n0", "b": "s6n1", "l": "", "d": true}, {"a": "s4n1", "b": "s7n0", "l": "exported model", "d": false}, {"a": "s7n0", "b": "s7n1", "l": "", "d": true}]</script>
                 </div>
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Pipeline diagram (draw.io)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
                 <div class="pipeline-figure"><img src="/diagrams/maintenance-predictive.svg" alt="Pipeline diagram (draw.io)" loading="lazy" draggable="false"></div>
-            <div class="figure-actions"><a href="/diagrams/maintenance-predictive.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
+            <div class="figure-actions"><a href="/diagrams/maintenance-predictive.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
+                <h3 class="pl-panel-title">Data and ML pipeline</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/maintenance-predictive-pipeline.svg" alt="Data and ML pipeline" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/maintenance-predictive-pipeline.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">Evaluation protocol: grouped CV and artificial → real</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/maintenance-predictive-evaluation.svg" alt="Evaluation protocol: grouped CV and artificial → real" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/maintenance-predictive-evaluation.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d3">
+                <h3 class="pl-panel-title">Inference service and Kubernetes</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/maintenance-predictive-service-kubernetes.svg" alt="Inference service and Kubernetes" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/maintenance-predictive-service-kubernetes.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d4">
+                <h3 class="pl-panel-title">From vibration signal to indicators</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/maintenance-predictive-signal-indicateurs.svg" alt="From vibration signal to indicators" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/maintenance-predictive-signal-indicateurs.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Step by step</h3>
-            <ol class="pipeline-steps"><li>Download of the Paderborn signals, parsing of file names (bearing, operating condition, fault) and physical plausibility checks.</li><li>Hierarchical storage site → area → machine → asset → bearing in TimescaleDB.</li><li>Computation of time-domain indicators and characteristic fault frequencies from the bearing geometry.</li><li>Comparison of a threshold baseline and XGBoost, with cross-validation grouped by asset (no bearing in both train and test).</li><li>MLflow tracking (dataset hash, macro F1, balanced accuracy) and Evidently train / test drift report.</li><li>Streamlit delivery: alerts, spectra, factory digital twin, glossary.</li></ol>
+            <ol class="pipeline-steps"><li>Download of the 32 Paderborn archives (5.4 GB, 22.4 GB extracted), parsing of file names (bearing, operating condition, fault) and physical plausibility checks; 1 unreadable file excluded and listed.</li><li>Full ingestion in 473 s: 2,559 measurements, 7,677 signals, 46,062 indicators, stored site → area → machine → asset → bearing.</li><li>Computation of time-domain indicators and characteristic fault frequencies from the bearing geometry.</li><li>Comparison of a threshold baseline and XGBoost, with cross-validation grouped by bearing (no bearing in both train and test).</li><li>Artificial → real benchmark: training on machined faults, testing on real faults, healthy bearings spread over 20 splits.</li><li>MLflow tracking (dataset hash, macro F1, balanced accuracy) and Evidently train / test drift report.</li><li>Model export (29 bearings, 3 held out for the demo) and FastAPI service; image and Kubernetes manifests.</li><li>Streamlit delivery: alerts, indicators, factory digital twin, glossary.</li></ol>
         </div>
     </section>
 
@@ -128,7 +244,7 @@
         <div class="section-container">
             <span class="section-label">// Key strengths</span>
             <h2>Key strengths of the solution</h2>
-            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Physics before ML</strong>: BPFO / BPFI / BSF / FTF fault features computed from bearing geometry.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Leak-free validation</strong>: asset-grouped CV and an <code>assert_no_asset_leakage</code> safeguard.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Full traceability</strong>: TimescaleDB, MLflow, dataset hash, Evidently drift.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Rigor</strong>: “zero mock” CI on real data, negative results published as is.</p></li></ol>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Leak-free validation</strong>: CV grouped by bearing and an <code>assert_no_asset_leakage</code> safeguard, including in the artificial → real benchmark.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Lab / field gap quantified</strong>: 0.620 macro F1 artificial → real versus 0.694 for the control; ~1 real fault in 5 missed.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Figures reproduced before being published</strong>: baselines to the thousandth, XGBoost within 0.004, 6 real failures fixed.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>From signal to API</strong>: 5 explainable indicators in 23.2 ms, FastAPI, dedicated image and Kubernetes manifests.</p></li></ol>
         </div>
     </section>
 
@@ -149,11 +265,11 @@
                 <span class="code-caption">1%</span></div></div>
                     <p class="code-caption" style="margin-top:1rem">Lines of code excluding notebooks, measured on the repository.</p></div>
                 <div class="skill-group"><h3 class="skill-group-title">Keywords</h3>
-                    <div class="project-tech"><span class="tech-badge">Signal processing</span><span class="tech-badge">SciPy</span><span class="tech-badge">XGBoost</span><span class="tech-badge">scikit-learn</span><span class="tech-badge">TimescaleDB</span><span class="tech-badge">MLflow</span><span class="tech-badge">Evidently</span><span class="tech-badge">Polars</span><span class="tech-badge">Streamlit</span><span class="tech-badge">SimPy</span><span class="tech-badge">uv</span><span class="tech-badge">Docker</span><span class="tech-badge">GitHub Actions</span><span class="tech-badge">Industry 4.0</span></div></div>
+                    <div class="project-tech"><span class="tech-badge">Signal processing</span><span class="tech-badge">SciPy</span><span class="tech-badge">XGBoost</span><span class="tech-badge">scikit-learn</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">TimescaleDB</span><span class="tech-badge">MLflow</span><span class="tech-badge">Evidently</span><span class="tech-badge">Polars</span><span class="tech-badge">Streamlit</span><span class="tech-badge">FastAPI</span><span class="tech-badge">Docker</span><span class="tech-badge">Kubernetes</span><span class="tech-badge">SimPy</span><span class="tech-badge">uv</span><span class="tech-badge">GitHub Actions</span><span class="tech-badge">Industry 4.0</span></div></div>
             </div>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Tool</th><th>Role in the project</th><th>What it demonstrates</th></tr></thead>
-                <tbody><tr><td>NumPy / SciPy</td><td>Signal processing, spectra, envelope</td><td>Explainable physical features</td></tr><tr><td>XGBoost / scikit-learn</td><td>Fault classification</td><td>ML on industrial data</td></tr><tr><td>TimescaleDB</td><td>Time series, features hypertable</td><td>Storage suited to sensor data</td></tr><tr><td>MLflow</td><td>Baseline vs GBM experiments, dataset hash</td><td>Traceability and reproducibility</td></tr><tr><td>Evidently</td><td>Train / test drift (KS)</td><td>Detecting distribution shift</td></tr><tr><td>SimPy</td><td>Discrete-event factory simulation</td><td>Digital twin</td></tr><tr><td>uv + ruff + pytest</td><td>Dependency management, code quality</td><td>Engineering hygiene</td></tr></tbody></table></div>
+                <tbody><tr><td>NumPy / SciPy</td><td>Signal processing, time-domain indicators, spectra</td><td>Explainable physical features</td></tr><tr><td>XGBoost / scikit-learn</td><td>Fault classification, CV grouped by bearing</td><td>ML on industrial data</td></tr><tr><td>PostgreSQL / TimescaleDB</td><td>Measurements and indicators; hypertable when the extension is present</td><td>Storage suited to sensor data</td></tr><tr><td>MLflow</td><td>Baseline vs GBM experiments, dataset hash</td><td>Traceability and reproducibility</td></tr><tr><td>Evidently</td><td>Train / test drift (KS)</td><td>Detecting distribution shift</td></tr><tr><td>FastAPI</td><td>/predict API and demo page on real measurements</td><td>Model serving</td></tr><tr><td>Docker + Kubernetes (kustomize)</td><td>Dedicated API image, local / prod overlays</td><td>Deployment</td></tr><tr><td>SimPy</td><td>Discrete-event factory simulation</td><td>Digital twin</td></tr><tr><td>uv + ruff + pytest</td><td>Locked dependencies, code quality, 223 tests</td><td>Engineering hygiene</td></tr></tbody></table></div>
         </div>
     </section>
 
@@ -164,7 +280,7 @@
             <h2>Industrialization: what is in place</h2>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Practice</th><th>Status</th><th>Detail</th></tr></thead>
-                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>CI + ML pipeline + tagged releases</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>189 tests including anti-leakage</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>db, mlflow, app, dashboard</td></tr><tr><td>Orchestration</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tracking / registry</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>MLflow backed by PostgreSQL</td></tr><tr><td>Monitoring / drift</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Evidently + temporal drift</td></tr><tr><td>API</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Deployment</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>GitHub Releases</td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>ruff + pytest + ML smoke test on 2 real bearings</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>223 tests including anti-leakage and 9 API tests</td></tr><tr><td>Docker</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Dockerfile.api and Compose; build not verified in this session (image simulated in a clean venv)</td></tr><tr><td>Orchestration</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tracking / registry</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>MLflow, dataset hash</td></tr><tr><td>Monitoring / drift</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Evidently + temporal drift</td></tr><tr><td>API</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>FastAPI /predict + demo page</td></tr><tr><td>Deployment</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>kustomize local / prod manifests rendered, not applied to a cluster</td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
         </div>
     </section>
 
@@ -172,8 +288,8 @@
         <div class="section-container">
             <span class="section-label">// Results</span>
             <h2>Measured metrics</h2>
-            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Model (5-fold CV grouped by asset)</th><th>Macro F1</th></tr></thead><tbody><tr><td>Kurtosis threshold</td><td>0.682 ± 0.158</td></tr><tr><td>Crest factor threshold</td><td>0.576 ± 0.174</td></tr><tr><td>XGBoost vibration (5 features)</td><td>0.738 ± 0.208</td></tr><tr><td>XGBoost vibration + current (15 features)</td><td>0.726 ± 0.222</td></tr><tr><td>XGBoost current only (10 features)</td><td>0.542 ± 0.121</td></tr></tbody></table></div>
-            <p style="margin-top:1.2rem">Honest conclusion: at this stage, XGBoost does not clearly beat a simple kurtosis rule (overlapping intervals). Phase 3 (training on artificial faults, testing on real faults) is the next measurement.</p>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Approach</th><th>Measured macro F1</th><th>Previously published</th></tr></thead><tbody><tr><td>Kurtosis threshold (5-fold CV grouped by bearing)</td><td>0.682 ± 0.158</td><td>0.682 ± 0.158</td></tr><tr><td>Crest factor threshold</td><td>0.576 ± 0.174</td><td>0.576 ± 0.174</td></tr><tr><td>RMS threshold</td><td>0.430 ± 0.090</td><td>0.430 ± 0.090</td></tr><tr><td>XGBoost vibration (5 indicators)</td><td>0.734 ± 0.206</td><td>0.738 ± 0.208</td></tr><tr><td>XGBoost vibration + current (15 indicators)</td><td>0.726 ± 0.219</td><td>0.726 ± 0.222</td></tr><tr><td>XGBoost current only (10 indicators)</td><td>0.550 ± 0.123</td><td>0.542 ± 0.121</td></tr><tr><td>Artificial → real (20 splits of healthy bearings)</td><td>0.620 ± 0.102</td><td>—</td></tr><tr><td>Control real → real</td><td>0.694 ± 0.107</td><td>—</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">Measured on 27/10/2026. The deterministic baselines are reproduced to the thousandth; the small XGBoost differences most likely come from the library version (xgboost 3.4.1) and change no conclusion. Honest conclusion: XGBoost does not clearly beat a simple kurtosis rule (overlapping intervals, per-fold F1 from 0.473 to 0.978), and the gap between artificial and real faults is real.</p>
         </div>
     </section>
 
@@ -181,12 +297,28 @@
         <div class="section-container">
             <span class="section-label">// Code excerpts</span>
             <h2>The code that makes the difference</h2>
-            <p class="code-caption">src/features/fault_frequencies.py — bearing physics</p><pre class="code"><code>def bpfo(n_balls, fr_hz, d_mm, big_d_mm, phi_deg=0.0):
-    &quot;&quot;&quot;Ball Pass Frequency Outer race - outer race fault.&quot;&quot;&quot;
-    return (n_balls / 2) * fr_hz * (1 - _geometry_factor(d_mm, big_d_mm, phi_deg))</code></pre><p class="code-caption">src/data/splits.py — safeguard against train/test leakage</p><pre class="code"><code>def assert_no_asset_leakage(train_df, test_df, asset_col=&quot;asset_id&quot;):
+            <p class="code-caption">src/data/splits.py — safeguard against train/test leakage</p><pre class="code"><code>def assert_no_asset_leakage(
+    train_df: pd.DataFrame, test_df: pd.DataFrame, asset_col: str = &quot;asset_id&quot;
+) -&gt; None:
+    &quot;&quot;&quot;Garde-fou : leve une erreur si un asset_id apparait dans train ET test.&quot;&quot;&quot;
     leaked = set(train_df[asset_col]) &amp; set(test_df[asset_col])
     if leaked:
-        raise ValueError(f&quot;Fuite de donnees : assets presents dans train ET test : {leaked}&quot;)</code></pre>
+        raise ValueError(f&quot;Fuite de donnees : assets presents dans train ET test : {leaked}&quot;)</code></pre><p class="code-caption">scripts/bench_vitrine.py — artificial → real generalization</p><pre class="code"><code>    for train_h in itertools.combinations(healthy, 3):
+        h_train = df[df[&quot;code&quot;].isin(train_h)]
+        h_test = df[(df[&quot;origin&quot;] == &quot;na&quot;) &amp; ~df[&quot;code&quot;].isin(train_h)]
+
+        # (a) artificiel -&gt; reel
+        train = pd.concat([art, h_train])
+        test = pd.concat([real, h_test])
+        assert_no_asset_leakage(train, test, asset_col=&quot;asset_id&quot;)
+        m = train_gbm(train[FEATURE_ORDER].to_numpy(), train[&quot;label&quot;].to_numpy())
+        transfer.append(scores(test[&quot;label&quot;], m.predict(test[FEATURE_ORDER].to_numpy())))</code></pre><p class="code-caption">src/serving/predictor.py — inference with the same indicators as training</p><pre class="code"><code>    def features_from_signal(self, signal: np.ndarray) -&gt; dict[str, float]:
+        x = np.asarray(signal, dtype=np.float64)
+        if x.ndim != 1 or x.size &lt; MIN_SAMPLES:
+            raise ValueError(f&quot;signal 1D d&#x27;au moins {MIN_SAMPLES} echantillons attendu&quot;)
+        if not np.all(np.isfinite(x)):
+            raise ValueError(&quot;signal contenant des valeurs non finies&quot;)
+        return {f&quot;vibration_{k}&quot;: v for k, v in time_domain_features(x).items()}</code></pre>
         </div>
     </section>
 
@@ -195,7 +327,7 @@
             <span class="section-label">// Critical review</span>
             <h2>Known limitations and next steps</h2>
             <p style="margin-bottom:1.5rem">Documenting limitations honestly is part of the job: it lets a team make informed decisions.</p>
-            <div class="arg-card arg-card--ok"><ul><li>Phase 3 (artificial → real) not yet run: this is the measurement that will validate real-world value.</li><li>Envelope analysis / kurtogram disabled until it is stable.</li><li>No inference API: the current deliverable is the study and the dashboard.</li></ul></div>
+            <div class="arg-card arg-card--ok"><ul><li>A single test rig, a single bearing model (6203), 32 bearings of which 6 healthy: standard deviations of 0.10 to 0.21 on macro F1; no guarantee of transfer to another machine.</li><li>Time-domain indicators only: envelope analysis (BPFO / BPFI) stays disabled until band selection (kurtogram) is stable.</li><li>Mixed operating conditions: generalization to an unseen operating condition is not measured.</li><li>The artificial → real benchmark is exploratory; the full phase 3 awaits the kurtogram decision.</li><li>Not verified in this session: <code>docker build</code> / <code>docker compose up</code>, TimescaleDB hypertable, deployment to a real cluster, API memory in a container, GitHub Actions CI (verified locally).</li><li>Data under CC BY-NC 4.0 license (non-commercial use, citing Lessmeier et al., 2016).</li></ul></div>
         </div>
     </section>
 

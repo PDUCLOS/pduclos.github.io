@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Csvtraitement — réparer les exports ERP — Patrice Duclos</title>
-    <meta name="description" content="Application Python (interface graphique + CLI) qui détecte et corrige les défauts des exports ERP : colonnes décalées, formats décimaux FR/US mélangés, dates invalides, doublons, données personnelles — avec validation humaine avant export.">
+    <meta name="description" content="Application Python (interface Tkinter + CLI) qui détecte et corrige les défauts des exports ERP : colonnes décalées, décimales FR/US, dates invalides, valeurs masquées, doublons, données personnelles — avec revue humaine avant export. Testée sur 1 000 000 de lignes avec vérité terrain.">
     <meta name="robots" content="index, follow, noai, noimageai">
     <meta name="tdm-reservation" content="1">
     <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
     <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="Csvtraitement — réparer les exports ERP — Patrice Duclos">
-    <meta property="og:description" content="Application Python (interface graphique + CLI) qui détecte et corrige les défauts des exports ERP : colonnes décalées, formats décimaux FR/US mélangés, dates invalides, doublons, données personnelles — avec validation humaine avant export.">
+    <meta property="og:description" content="Application Python (interface Tkinter + CLI) qui détecte et corrige les défauts des exports ERP : colonnes décalées, décimales FR/US, dates invalides, valeurs masquées, doublons, données personnelles — avec revue humaine avant export. Testée sur 1 000 000 de lignes avec vérité terrain.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pduclos.github.io/projets/csvtraitement.html">
     <link rel="canonical" href="https://pduclos.github.io/projets/csvtraitement.html">
@@ -36,7 +36,7 @@
                 <ul class="dropdown">
                     <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
-                    <li><a href="/projets/achats-negociation.html">Buyvera — négociation achats<small>Projet phare · Produit commercialisable · Chef de projet</small></a></li><li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/copilote-erp.html">Copilote ERP sourcé (RAG + SQL + LLMOps)<small>IA générative · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · Jumeau numérique</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/csvtraitement.html" aria-current="page">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe</small></a></li>
+                    <li><a href="/projets/achats-negociation.html">Buyvera — négociation achats<small>Projet phare · Produit commercialisable · Chef de projet</small></a></li><li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/copilote-erp.html">Copilote ERP sourcé (RAG + SQL + LLMOps)<small>IA générative · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · MLOps</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/csvtraitement.html" aria-current="page">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe relancé en 2026</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
                     <li><a href="https://buyvera.fr/">Site commercial — Buyvera<small>projet achats · site produit bilingue</small></a></li>
                     <li><a href="/presentations/plateforme-tarifs.html">Présentation commerciale<small>projet achats · 38 slides</small></a></li>
@@ -59,10 +59,10 @@
             
             <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / Csvtraitement</div>
             <span class="project-tag" style="color:var(--accent)">Outil Python · Qualité de données ERP</span>
-            <h1>Des exports ERP <span class="highlight">propres</span>, même à 500 000 lignes</h1>
-            <p class="lead">Application Python (interface graphique + CLI) qui détecte et corrige les défauts des exports ERP : colonnes décalées, formats décimaux FR/US mélangés, dates invalides, doublons, données personnelles — avec validation humaine avant export.</p>
-            <div class="kpi-row"><div class="kpi"><b>500 K+</b><span>lignes traitées</span></div><div class="kpi"><b>59</b><span>tests</span></div><div class="kpi"><b>6</b><span>formats lus / écrits</span></div><div class="kpi"><b>A→F</b><span>score qualité</span></div></div>
-            <div class="btn-row"><a href="https://github.com/PDUCLOS/Csvtraitement" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Code source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+            <h1>Des exports ERP <span class="highlight">propres</span>, même à un million de lignes</h1>
+            <p class="lead">Application Python (interface Tkinter + CLI) qui détecte et corrige les défauts des exports ERP : colonnes décalées, décimales FR/US, dates invalides, valeurs masquées, doublons, données personnelles — avec revue humaine avant export. Testée sur 1 000 000 de lignes avec vérité terrain.</p>
+            <div class="kpi-row"><div class="kpi"><b>1 M</b><span>lignes traitées en 63 s</span></div><div class="kpi"><b>100 %</b><span>décalages trouvés, 0 faux positif</span></div><div class="kpi"><b>×120</b><span>doublons flous plus rapides</span></div><div class="kpi"><b>84</b><span>tests</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/Csvtraitement" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Code source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/Csvtraitement/tree/feat/vitrine-csvtraitement" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Branche vitrine (vidéo, schémas, mesures) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </div>
     </header>
 
@@ -70,20 +70,89 @@
         <div class="section-container">
             <span class="section-label">// En 30 secondes</span>
             <h2>Le problème, la réponse, la preuve</h2>
-            <div style="margin-bottom:2rem"><p>Tout analyste qui travaille avec SAP connaît le problème : un export CSV avec une colonne décalée, des montants « 1.234,56 » et « 1,234.56 » mélangés, des dates <code>00.00.0000</code> ou des <code>#REF!</code>. Le nettoyage manuel prend des heures et reste source d'erreurs.</p><p>Csvtraitement automatise la détection, propose les corrections, et laisse l'utilisateur valider avant d'exporter.</p></div>
+            <div style="margin-bottom:2rem"><p>Tout analyste qui travaille avec SAP connaît le problème : un export CSV avec une colonne décalée, des montants « 1.234,56 » et « 1,234.56 » mélangés, des dates <code>00.00.0000</code> ou des <code>#REF!</code>. Le nettoyage manuel prend des heures et reste source d'erreurs.</p><p>Csvtraitement automatise la détection, propose les corrections, et laisse l'utilisateur valider avant d'exporter. Pour savoir ce qu'il vaut vraiment, il a été mesuré sur des exports synthétiques dont chaque défaut injecté est connu : la mesure a révélé six défauts du code, corrigés depuis.</p></div>
             <div class="two-col">
                 <div class="arg-card arg-card--rh reveal">
                     <span class="arg-label">Pour le recruteur · valeur business</span>
-                    <ul><li>Né d'un irritant vécu au quotidien sur des extractions SAP.</li><li>Gain de temps direct pour les équipes Achats, ADV, contrôle de gestion.</li><li>Humain dans la boucle : aucune correction n'est appliquée sans validation.</li></ul>
+                    <ul><li>Né d'un irritant vécu au quotidien sur des extractions SAP.</li><li>Gain de temps direct pour les équipes Achats, ADV, contrôle de gestion.</li><li>Humain dans la boucle dans l'interface : aucune correction appliquée sans validation, undo / redo.</li><li><strong>Démarche de vérification</strong> : affirmations de la fiche reprises une à une, mesurées, corrigées quand elles étaient fausses.</li></ul>
                 </div>
                 <div class="arg-card arg-card--tech reveal">
                     <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
-                    <ul><li>Lecture en <strong>streaming par blocs de 10 000 lignes</strong> ; Parquet lu en <code>iter_batches</code> : pas de saturation mémoire.</li><li>Détection automatique de l'encodage et du séparateur (score moyenne / (1 + écart-type)), typage de colonnes sur échantillon.</li><li>Doublons exacts et approchés (<code>SequenceMatcher</code> &gt; 85 % avec blocage par préfixe), réconciliation de fichiers, masquage de données personnelles (e-mail, téléphone, IBAN, NIR).</li><li>Interface Tkinter 8 onglets, CLI batch, undo / redo, 27 modules journalisés, type hints et docstrings.</li></ul>
+                    <ul><li>Lecture en <strong>flux par blocs de 10 000 lignes</strong> (<code>csv.reader</code>) ; Parquet lu en <code>iter_batches</code>.</li><li>Détection automatique de l'encodage et du séparateur (score moyenne / (1 + écart-type)), typage de colonnes sur échantillon.</li><li>Réalignement des lignes décalées : un champ texte coupé par un séparateur non échappé est <strong>recollé</strong>, pas tronqué.</li><li>Doublons exacts et flous : <strong>blocage multi-clés</strong> sur les colonnes discriminantes + préfiltre <code>difflib</code> (mêmes décisions que <code>ratio()</code>).</li><li>Masquage de données personnelles (e-mail, téléphone, IBAN, NIR), colonnes PII détectées automatiquement.</li><li>Interface Tkinter 8 onglets, CLI batch ; image Docker CLI et CronJob Kubernetes (kustomize) pour le traitement de nuit.</li></ul>
                 </div>
             </div>
         </div>
     </section>
 
+
+    <section class="page-section alt" id="video">
+        <div class="section-container">
+            <span class="section-label">// Présentation</span>
+            <h2>Le projet en 1 min 54</h2>
+            
+<video controls preload="none" poster="/media/csvtraitement/poster.webp" style="width:100%;border-radius:12px;border:1px solid var(--border);background:#0f1830">
+    <source src="/media/csvtraitement/presentation.mp4" type="video/mp4">
+</video>
+<p class="code-caption" style="margin-top:.8rem">1 min 54 · générée par <code>scripts/promo_video.py</code> (narration de synthèse, fond sonore synthétisé). Toutes les données affichées sont synthétiques.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="demo">
+        <div class="section-container">
+            <span class="section-label">// Démo réelle</span>
+            <h2>Captures de l'interface sur un export de démonstration</h2>
+            
+<div class="pipeline-figure" style="padding:.6rem;margin-bottom:.4rem;min-width:0"><img src="/media/csvtraitement/avant-apres.webp" alt="Ligne 30 avant et après correction" loading="lazy" draggable="false" style="min-width:0"></div>
+<p class="code-caption" style="margin-bottom:1.6rem">Ligne 30 : la quantité manque, tout est décalé d'une colonne. Après correction : cellule vide insérée au bon endroit, dates ISO, montants numériques.</p>
+<div class="two-col">
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem;min-width:0"><img src="/media/csvtraitement/demo-anomalies.webp" alt="Onglet Anomalies : décalages de colonnes détectés" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Onglet Anomalies : chaque ligne décalée, le type (colonne en trop / manquante) et la colonne où commence le décalage.</p></div>
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem;min-width:0"><img src="/media/csvtraitement/demo-doublons.webp" alt="Onglet Doublons : groupes exacts et flous" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Onglet Doublons : doublons exacts et quasi-doublons (similarité &gt; 85 %), avec la colonne qui diffère.</p></div>
+</div>
+<p class="code-caption" style="margin-top:1rem">Captures réelles de l'interface Tkinter (<code>scripts/capture_gui.py</code>) sur l'export de démonstration synthétique de 1 000 lignes.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="demarche">
+        <div class="section-container">
+            <span class="section-label">// Démarche</span>
+            <h2>Mesurer, corriger, vérifier</h2>
+            
+<div class="three-col" style="margin-bottom:1.2rem">
+    <div class="arg-card arg-card--tech"><span class="arg-label">1 · Mesurer avec une vérité terrain</span><ul>
+        <li>Générateur d'exports ERP synthétiques : 11 colonnes façon SAP, <strong>8 types d'anomalies injectées</strong> et connues.</li>
+        <li>Banc de 10 000 à <strong>1 000 000 de lignes</strong> : temps, mémoire, taux de détection, faux positifs.</li></ul></div>
+    <div class="arg-card arg-card--tech"><span class="arg-label">2 · Corriger ce que la mesure révèle</span><ul>
+        <li><strong>CLI inutilisable</strong> : toute analyse levait <code>UnboundLocalError</code>.</li>
+        <li><strong>Doublons flous quadratiques</strong> : un seul bloc dès que la 1re colonne a un préfixe constant ; 240 s → 2,0 s sur 10 000 lignes.</li>
+        <li><strong>Texte perdu au réalignement</strong> (« Martinez;SARL » perdait « SARL ») : 32 % → 100 % de lignes restituées.</li>
+        <li><strong>Valeurs masquées jamais nettoyées</strong> (<code>#REF!</code> exporté tel quel) ; <code>--compare</code> / <code>--reconcile</code> : 0/2 → 2/2 écarts trouvés.</li></ul></div>
+    <div class="arg-card arg-card--ok"><span class="arg-label">3 · Vérifier</span><ul>
+        <li><strong>100 %</strong> des décalages trouvés, <strong>0</strong> faux positif, taux identiques de 10 000 à 1 000 000 de lignes.</li>
+        <li><strong>84 tests</strong> pytest verts (59 au départ, tous verts aussi).</li>
+        <li>README corrigé : il annonçait une licence MIT, le fichier LICENSE est « tous droits réservés ».</li></ul></div>
+</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="volumes">
+        <div class="section-container">
+            <span class="section-label">// Volumes</span>
+            <h2>Temps et mémoire de 10 000 à 1 000 000 de lignes</h2>
+            
+<div class="table-wrap"><table class="stack-table">
+<thead><tr><th>Lignes</th><th>Fichier</th><th>Cœur (détection → export CSV)</th><th>Score qualité</th><th>Export XLSX</th><th>Pic mémoire</th></tr></thead>
+<tbody>
+<tr><td>10 000</td><td>1,4 Mo</td><td>0,97 s</td><td>0,61 s</td><td>1,77 s</td><td>110 Mo</td></tr>
+<tr><td>100 000</td><td>14 Mo</td><td>7,28 s</td><td>6,12 s</td><td>13,8 s</td><td>516 Mo</td></tr>
+<tr><td>500 000</td><td>71 Mo</td><td>35,3 s</td><td>31,3 s</td><td>69,2 s</td><td>2,22 Go</td></tr>
+<tr><td>1 000 000</td><td>142 Mo</td><td><strong>63,5 s</strong></td><td>52,3 s</td><td>133,8 s</td><td>2,42 Go</td></tr>
+</tbody></table></div>
+<p class="code-caption" style="margin-top:.8rem">Un processus par taille, sur un cœur, machine partagée avec d'autres traitements : ce sont des ordres de grandeur. Débit du cœur : 10 300 à 15 700 lignes/s.
+La lecture est en flux, mais les corrections sont gardées en mémoire pour la revue humaine (preview, undo) : 1,47 Go après corrections à 1 M de lignes.</p>
+        </div>
+    </section>
 
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
@@ -97,7 +166,7 @@
         </a></div>
             
             <div class="pl" data-pl id="pl-csvtraitement">
-                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Pipeline interactif</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Schéma draw.io du pipeline</button></div>
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Pipeline interactif</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Schéma draw.io du pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Pipeline : du fichier ERP « sale » au fichier corrigé, en 6 étapes</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">Ce qui est lu en flux, et ce qui reste en mémoire</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">Doublons flous : blocage multi-clés et préfiltre, 240 s → 2,0 s</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d4">Déploiement : un traitement par lots (CronJob), pas un serveur</button></div>
                 <div class="pl-panel" data-panel="live">
                     <div class="pl-toolbar">
                         <button type="button" class="pl-play">▶ Animer le flux de données</button>
@@ -117,10 +186,26 @@
                 <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
                 <div class="pipeline-figure"><img src="/diagrams/csvtraitement.svg" alt="Schéma draw.io du pipeline" loading="lazy" draggable="false"></div>
-            <div class="figure-actions"><a href="/diagrams/csvtraitement.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
+            <div class="figure-actions"><a href="/diagrams/csvtraitement.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
+                <h3 class="pl-panel-title">Pipeline : du fichier ERP « sale » au fichier corrigé, en 6 étapes</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/csvtraitement-pipeline.svg" alt="Pipeline : du fichier ERP « sale » au fichier corrigé, en 6 étapes" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/csvtraitement-pipeline.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">Ce qui est lu en flux, et ce qui reste en mémoire</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/csvtraitement-memoire.svg" alt="Ce qui est lu en flux, et ce qui reste en mémoire" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/csvtraitement-memoire.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d3">
+                <h3 class="pl-panel-title">Doublons flous : blocage multi-clés et préfiltre, 240 s → 2,0 s</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/csvtraitement-doublons.svg" alt="Doublons flous : blocage multi-clés et préfiltre, 240 s → 2,0 s" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/csvtraitement-doublons.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d4">
+                <h3 class="pl-panel-title">Déploiement : un traitement par lots (CronJob), pas un serveur</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/csvtraitement-deploiement.svg" alt="Déploiement : un traitement par lots (CronJob), pas un serveur" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/csvtraitement-deploiement.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Étape par étape</h3>
-            <ol class="pipeline-steps"><li>Lecture de n'importe quel format tabulaire, converti en flux CSV traité par blocs.</li><li>Détection de l'encodage, du séparateur et du type de chaque colonne sur un échantillon représentatif.</li><li>Repérage cellule par cellule des décalages de colonnes, calcul d'un score qualité pondéré, recherche de doublons.</li><li>Proposition de corrections (dates, décimales, parenthèses comptables, réalignement) et masquage optionnel des données personnelles.</li><li>Validation par l'utilisateur, puis export XLSX avec cellules corrigées surlignées et feuille de rapport.</li></ol>
+            <ol class="pipeline-steps"><li>Lecture de n'importe quel format tabulaire (6 lus : CSV, XLSX, XLS, ODS, JSON, Parquet), converti en flux CSV traité par blocs.</li><li>Détection de l'encodage, du séparateur et du type de chaque colonne sur un échantillon (1 000 premières + 1 000 lignes aléatoires).</li><li>Repérage cellule par cellule des décalages de colonnes, score qualité pondéré, recherche de doublons exacts et flous.</li><li>Corrections proposées (dates ISO, décimales, parenthèses comptables, valeurs masquées, réalignement) et masquage optionnel des données personnelles.</li><li>Validation par l'utilisateur, puis export (5 formats écrits) — en XLSX, cellules corrigées surlignées et feuille de rapport.</li><li>Sur un serveur : la même CLI, sans interface, planifiée chaque nuit par un CronJob Kubernetes.</li></ol>
         </div>
     </section>
 
@@ -128,7 +213,7 @@
         <div class="section-container">
             <span class="section-label">// Points forts</span>
             <h2>Les points forts de la solution</h2>
-            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Gros volumes sans saturer la mémoire</strong> : lecture en streaming par blocs de 10 000 lignes, 500 K+ lignes traitées.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Détection automatique</strong> de l'encodage, du séparateur et du type de colonnes.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Conformité</strong> : masquage des données personnelles (e-mail, téléphone, IBAN, NIR).</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Humain dans la boucle</strong> : aucune correction appliquée sans validation, undo / redo.</p></li></ol>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Mesuré, pas affirmé</strong> : 1 000 000 de lignes en 63,5 s, avec une vérité terrain sur 8 types d'anomalies.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Zéro faux positif</strong> : 100 % des décalages de colonnes trouvés, 100 % des lignes décalées restituées à l'identique.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Performance corrigée</strong> : doublons flous ×120 plus rapides (240 s → 2,0 s), 15/15 quasi-doublons trouvés au lieu de 14/15.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Humain dans la boucle</strong> : revue des corrections dans l'interface, undo / redo, export XLSX annoté.</p></li></ol>
         </div>
     </section>
 
@@ -143,11 +228,11 @@
                 <span class="code-caption">100%</span></div></div>
                     <p class="code-caption" style="margin-top:1rem">Lignes de code hors notebooks, calculées sur le dépôt.</p></div>
                 <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
-                    <div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Tkinter</span><span class="tech-badge">CLI</span><span class="tech-badge">Streaming</span><span class="tech-badge">Data Quality</span><span class="tech-badge">chardet</span><span class="tech-badge">xlsxwriter</span><span class="tech-badge">pyarrow</span><span class="tech-badge">pytest</span></div></div>
+                    <div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">Tkinter</span><span class="tech-badge">CLI</span><span class="tech-badge">Streaming</span><span class="tech-badge">Data Quality</span><span class="tech-badge">chardet</span><span class="tech-badge">xlsxwriter</span><span class="tech-badge">pyarrow</span><span class="tech-badge">pytest</span><span class="tech-badge">Docker</span><span class="tech-badge">Kubernetes</span></div></div>
             </div>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
-                <tbody><tr><td>Python standard library</td><td>csv, difflib, statistics, argparse, logging</td><td>Solide sans dépendances lourdes</td></tr><tr><td>chardet</td><td>Détection d'encodage</td><td>Robustesse aux exports hétérogènes</td></tr><tr><td>xlsxwriter (constant_memory)</td><td>Export Excel annoté</td><td>Gros volumes sans saturation mémoire</td></tr><tr><td>pyarrow</td><td>Lecture / écriture Parquet</td><td>Interopérabilité data</td></tr><tr><td>Tkinter</td><td>Interface graphique 8 onglets</td><td>Outil utilisable par un non-développeur</td></tr><tr><td>pytest</td><td>59 tests sur détection, analyse, correction</td><td>Fiabilité du cœur métier</td></tr></tbody></table></div>
+                <tbody><tr><td>Python standard library</td><td>csv, difflib, statistics, argparse, logging</td><td>Solide sans dépendances lourdes</td></tr><tr><td>chardet</td><td>Détection d'encodage</td><td>Robustesse aux exports hétérogènes</td></tr><tr><td>xlsxwriter (constant_memory)</td><td>Export Excel annoté</td><td>Gros volumes en écriture</td></tr><tr><td>pyarrow</td><td>Lecture / écriture Parquet</td><td>Interopérabilité data</td></tr><tr><td>Tkinter</td><td>Interface graphique 8 onglets</td><td>Outil utilisable par un non-développeur</td></tr><tr><td>pytest</td><td>84 tests, dont bout en bout sur exports synthétiques avec vérité terrain</td><td>Fiabilité mesurée</td></tr><tr><td>Docker + Kubernetes (kustomize)</td><td>Image CLI non root, CronJob nocturne, PVC</td><td>Industrialisation du traitement par lots</td></tr></tbody></table></div>
         </div>
     </section>
 
@@ -158,7 +243,16 @@
             <h2>Industrialisation : ce qui est en place</h2>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Pratique</th><th>Statut</th><th>Détail</th></tr></thead>
-                <tbody><tr><td>CI/CD</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>59 tests (détecteur, analyseur, correcteur)</td></tr><tr><td>Docker</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Orchestration</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Déploiement</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Paquet installable + lanceur Windows</td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+                <tbody><tr><td>CI/CD</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>84 tests pytest (détection, correction, bout en bout avec vérité terrain)</td></tr><tr><td>Docker</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Dockerfile CLI (python:3.12-slim, non root) ; build non vérifié</td></tr><tr><td>Orchestration</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>CronJob Kubernetes nocturne (02:00, Forbid)</td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Déploiement</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Manifestes rendus par kubectl kustomize ; non appliqués sur un cluster</td></tr><tr><td>IaC / K8s</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>kustomize : base + overlays local / cloud (Azure Files)</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="resultats">
+        <div class="section-container">
+            <span class="section-label">// Résultats</span>
+            <h2>Métriques mesurées</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Anomalie injectée (100 000 lignes)</th><th>Injectées</th><th>Résultat</th><th>Faux positifs</th></tr></thead><tbody><tr><td>Colonne en trop (séparateur non échappé)</td><td>990</td><td>990 détectées, morceaux recollés</td><td>0</td></tr><tr><td>Colonne manquante</td><td>513</td><td>513 détectées, cellule vide au bon endroit</td><td>0</td></tr><tr><td>Ligne décalée restituée à l&#x27;identique</td><td>1 503</td><td>1 503 (100 %)</td><td>—</td></tr><tr><td>Date invalide 00.00.0000</td><td>974</td><td>974 vidées</td><td>0</td></tr><tr><td>Valeur masquée (#REF!, N/A, NULL, -, ??)</td><td>994</td><td>994 vidées</td><td>0</td></tr><tr><td>Montant au format US</td><td>1 963</td><td>1 963 au bon format en sortie</td><td>0</td></tr><tr><td>Parenthèses comptables (1.234,56)</td><td>520</td><td>520 → négatif</td><td>0</td></tr><tr><td>Doublon exact</td><td>464</td><td>464</td><td>0</td></tr><tr><td>Quasi-doublon (2 lettres inversées)</td><td>197</td><td>197</td><td>0</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">Mesuré le 27/10/2026 sur un export synthétique façon SAP (11 colonnes, séparateur <code>;</code>, décimales FR). Taux identiques à 10 000, 500 000 et 1 000 000 de lignes (doublons non mesurés à 1 M). À 1 M : 15 046 / 15 046 lignes décalées restituées à l'identique (32 % avant correctif).</p>
         </div>
     </section>
 
@@ -166,15 +260,20 @@
         <div class="section-container">
             <span class="section-label">// Extraits de code</span>
             <h2>Le code qui fait la différence</h2>
-            <p class="code-caption">core/detector.py — le séparateur le plus régulier gagne</p><pre class="code"><code>for sep in CANDIDATE_SEPARATORS:
-    counts = [line.count(sep) for line in lines]
-
-    # Ignorer si jamais présent
-    if max(counts) == 0:
-        continue
-
-    avg_count = mean(counts)
-    std_count = stdev(counts) if len(counts) &gt; 1 else 0.0</code></pre>
+            <p class="code-caption">core/dedup.py — préfiltre : bornes supérieures bon marché avant ratio(), mêmes décisions</p><pre class="code"><code>    sm = SequenceMatcher(None, s1, s2)
+    if threshold &gt; 0.0:
+        bound = sm.real_quick_ratio()
+        if bound &lt; threshold:
+            return bound
+        bound = sm.quick_ratio()
+        if bound &lt; threshold:
+            return bound
+    return sm.ratio()</code></pre><p class="code-caption">core/fixer.py — recoller un champ texte coupé par un séparateur non échappé</p><pre class="code"><code>        if (merge_text and 0 &lt; col &lt; len(cells)
+                and profiles[col - 1].dominant_category == &#x27;text&#x27;):
+            # Cas typique ERP : séparateur non échappé dans un champ texte
+            # (&quot;Dupont;Fils&quot;) -&gt; on recolle les deux morceaux au lieu d&#x27;en perdre un.
+            merged = cells[col - 1] + separator + cells[col]
+            new_cells = cells[:col - 1] + [merged] + cells[col + 1:]</code></pre>
         </div>
     </section>
 
@@ -183,7 +282,7 @@
             <span class="section-label">// Regard critique</span>
             <h2>Limites connues et prochaines étapes</h2>
             <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet à une équipe de décider en connaissance de cause.</p>
-            <div class="arg-card arg-card--ok"><ul><li>Pas encore de CI GitHub Actions ni d'image Docker.</li><li>Couverture de tests concentrée sur le cœur (détection, analyse, correction) ; modules annexes à couvrir.</li></ul></div>
+            <div class="arg-card arg-card--ok"><ul><li><strong>Mémoire</strong> : la lecture est en flux, mais chaque ligne modifiée est gardée pour la revue (preview, undo) ; la mémoire croît linéairement (1,47 Go après corrections à 1 M de lignes, pic 2,4 Go avec export XLSX). Piste : mode batch « compteurs seuls ».</li><li><strong>Données uniquement synthétiques</strong> : pas encore testé sur de vrais exports (encodages mixtes, en-têtes multiples, sous-totaux).</li><li><strong>Score qualité indulgent</strong> : 92,7/100 (A) sur un fichier dont 6,5 % des lignes sont défectueuses ; suivre plutôt le taux de lignes non conformes.</li><li><strong>Ambiguïté</strong> : une cellule manquante voisine d'une valeur masquée ne peut pas être placée avec certitude (4 cas sur 1 503 lors d'un run exploratoire) ; le résultat final est juste, mais la position du trou est arbitraire.</li><li><strong>Espaces</strong> : l'espace qui suit un séparateur est supprimé à la lecture (« Martinez; SARL » devient « Martinez;SARL »).</li><li><strong>Doublons</strong> : l'index garde toutes les lignes en mémoire ; non mesuré à 1 M de lignes.</li><li><strong>Formats</strong> : 6 lus, 5 écrits (pas de XLS) ; lecture XLS non testée faute de fichier.</li><li><strong>CLI</strong> : avec <code>--fix</code>, les corrections sont appliquées directement (rapport JSON), sans revue humaine.</li><li><strong>Déploiement non vérifié</strong> : <code>docker build</code> / <code>docker run</code> non exécutés, aucun cluster disponible ; la limite de 2 Gi est déduite des pics mesurés. Pas de CI GitHub Actions.</li></ul></div>
         </div>
     </section>
 

@@ -1006,3 +1006,19 @@ STRENGTHS = {
 }
 for _p in PROJECTS:
     _p.setdefault("strengths", STRENGTHS.get(_p["slug"]))
+
+# Vitrines (2026-10-27): per-project overrides written from each repo's docs/PORTFOLIO.md.
+import importlib.util as _ilu
+import pathlib as _pl
+
+def _vitrine(slug, lang):
+    path = _pl.Path(__file__).with_name("vitrine_" + slug.replace("-", "_") + ".py")
+    if not path.exists():
+        return {}
+    spec = _ilu.spec_from_file_location(path.stem, path)
+    mod = _ilu.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return getattr(mod, lang + "_UPDATES", {})
+
+for _p in PROJECTS:
+    _p.update(_vitrine(_p["slug"], "FR"))

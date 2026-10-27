@@ -158,7 +158,7 @@ STACK = [
                                 ("Model Context Protocol", 3, "Serveurs MCP")]),
     ("MLOps & qualité", [("MLflow (tracking + registry)", 4, "LyonFlow, Stripe, Maintenance prédictive"),
                          ("Drift : Evidently / PSI", 4, "LyonFlow, Stripe, Maintenance prédictive"),
-                         ("pytest (≈ 1 600 tests cumulés)", 4, "LyonFlow 620, HVAC 562, MLindustrial 189…"),
+                         ("pytest (≈ 1 600 tests cumulés)", 4, "LyonFlow 653, HVAC 559, MLindustrial 223…"),
                          ("GitHub Actions (ruff, mypy, bandit, CodeQL)", 4, "LyonFlow, Stripe, HVAC, RAG, MLindustrial"),
                          ("Prometheus / Grafana", 3, "LyonFlow, Copilote maintenance")]),
     ("Déploiement & infrastructure", [("Docker / Docker Compose", 4, "tous les projets industrialisés"),

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HVAC market — forecasting heat pump installations — Patrice Duclos</title>
-    <meta name="description" content="Complete pipeline from open data to prediction: 5 collectors (ADEME DPE, Open-Meteo, INSEE, Eurostat, SITADEL), star-schema warehouse, Ridge / LightGBM / Prophet / LSTM benchmark, FastAPI API, dashboard, Airflow and Kubernetes.">
+    <meta name="description" content="Complete pipeline from open data to prediction: 5 collectors (ADEME DPE, Open-Meteo, INSEE, Eurostat, SITADEL), star-schema warehouse, Ridge / LightGBM / Prophet / LSTM benchmark, FastAPI API, dashboard, Airflow and Kubernetes. An audit found target leakage in the original scores: it is fixed, and the model is now compared with naive forecasts.">
     <meta name="robots" content="index, follow, noai, noimageai">
     <meta name="tdm-reservation" content="1">
     <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
     <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="HVAC market — forecasting heat pump installations — Patrice Duclos">
-    <meta property="og:description" content="Complete pipeline from open data to prediction: 5 collectors (ADEME DPE, Open-Meteo, INSEE, Eurostat, SITADEL), star-schema warehouse, Ridge / LightGBM / Prophet / LSTM benchmark, FastAPI API, dashboard, Airflow and Kubernetes.">
+    <meta property="og:description" content="Complete pipeline from open data to prediction: 5 collectors (ADEME DPE, Open-Meteo, INSEE, Eurostat, SITADEL), star-schema warehouse, Ridge / LightGBM / Prophet / LSTM benchmark, FastAPI API, dashboard, Airflow and Kubernetes. An audit found target leakage in the original scores: it is fixed, and the model is now compared with naive forecasts.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pduclos.github.io/en/projects/marche-hvac.html">
     <link rel="canonical" href="https://pduclos.github.io/en/projects/marche-hvac.html">
@@ -36,7 +36,7 @@
                 <ul class="dropdown">
                     <li><a href="/en/projects/">All projects<small>overview · MLOps matrix</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
-                    <li><a href="/en/projects/achats-negociation.html">Buyvera — procurement negotiation<small>Flagship project · Marketable product · Project Manager</small></a></li><li><a href="/en/projects/lyonflow.html">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/copilote-erp.html">Grounded ERP copilot (RAG + SQL + LLMOps)<small>Generative AI · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html">Vibration-based predictive maintenance<small>Industrial ML · Signal · Digital twin</small></a></li><li><a href="/en/projects/marche-hvac.html" aria-current="page">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/csvtraitement.html">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html">PredictIRA<small>Public health ML · Team project</small></a></li>
+                    <li><a href="/en/projects/achats-negociation.html">Buyvera — procurement negotiation<small>Flagship project · Marketable product · Project Manager</small></a></li><li><a href="/en/projects/lyonflow.html">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/copilote-erp.html">Grounded ERP copilot (RAG + SQL + LLMOps)<small>Generative AI · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html">Vibration-based predictive maintenance<small>Industrial ML · Signal · MLOps</small></a></li><li><a href="/en/projects/marche-hvac.html" aria-current="page">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/csvtraitement.html">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html">PredictIRA<small>Public health ML · Team project, revived in 2026</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
                     <li><a href="https://buyvera.fr/en/">Product website — Buyvera<small>procurement project · bilingual site</small></a></li>
                     <li><a href="/presentations/plateforme-tarifs.html">Sales deck (in French)<small>procurement project · 38 slides</small></a></li>
@@ -60,9 +60,9 @@
             <div class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/projects/">Projects</a> / French HVAC market</div>
             <span class="project-tag" style="color:var(--accent)">Data Engineering · Forecasting · Energy</span>
             <h1>Anticipating the <span class="highlight">heat pump</span> market, department by department</h1>
-            <p class="lead">Complete pipeline from open data to prediction: 5 collectors (ADEME DPE, Open-Meteo, INSEE, Eurostat, SITADEL), star-schema warehouse, Ridge / LightGBM / Prophet / LSTM benchmark, FastAPI API, dashboard, Airflow and Kubernetes.</p>
-            <div class="kpi-row"><div class="kpi"><b>96</b><span>departments</span></div><div class="kpi"><b>5</b><span>open data sources</span></div><div class="kpi"><b>562</b><span>tests</span></div><div class="kpi"><b>5</b><span>model families</span></div></div>
-            <div class="btn-row"><a href="https://github.com/PDUCLOS/Projet-HVAC" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Source code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+            <p class="lead">Complete pipeline from open data to prediction: 5 collectors (ADEME DPE, Open-Meteo, INSEE, Eurostat, SITADEL), star-schema warehouse, Ridge / LightGBM / Prophet / LSTM benchmark, FastAPI API, dashboard, Airflow and Kubernetes. An audit found <strong>target leakage</strong> in the original scores: it is fixed, and the model is now compared with naive forecasts.</p>
+            <div class="kpi-row"><div class="kpi"><b>−24%</b><span>error (RMSE) vs naive forecast, 2025</span></div><div class="kpi"><b>0.968</b><span>Ridge R² on 2025, after the fix</span></div><div class="kpi"><b>96</b><span>departments</span></div><div class="kpi"><b>5</b><span>open data sources</span></div><div class="kpi"><b>559</b><span>passing tests</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/Projet-HVAC" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Source code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/Projet-HVAC/tree/feat/vitrine-marche-hvac" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Showcase branch (audit and fixes) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </div>
     </header>
 
@@ -74,16 +74,72 @@
             <div class="two-col">
                 <div class="arg-card arg-card--rh reveal">
                     <span class="arg-label">For recruiters · business value</span>
-                    <ul><li>A topic chosen from <strong>my own industry</strong>: the variables (MaPrimeRénov', CEE, housing type) come from field knowledge.</li><li>A deliverable a sales leadership team can use: map of France, forecasts, model comparison.</li><li>Documented governance (GDPR, AI Act).</li></ul>
+                    <ul><li>A topic chosen from <strong>my own industry</strong>: the variables (MaPrimeRénov', CEE, housing type) come from field knowledge.</li><li><strong>Honesty about results</strong>: I audited my own project, found target leakage that inflated the scores, and republished more modest but true figures.</li><li>A deliverable a sales leadership team can use: map of France, forecasts, comparison with a naive forecast.</li><li>Documented governance (GDPR, AI Act).</li></ul>
                 </div>
                 <div class="arg-card arg-card--tech reveal">
                     <span class="arg-label">For tech teams · what the code proves</span>
-                    <ul><li>Collectors built on a <strong>plugin architecture</strong> (<code>BaseCollector</code> + registry), no API key required.</li><li>SQLAlchemy star schema (SQLite, PostgreSQL 16 or SQL Server), outlier detection with IQR / Z-score / Isolation Forest.</li><li>Temporal train / validation / test split + <code>TimeSeriesSplit</code>; SHAP explainability.</li><li>FastAPI with 6 endpoints, 6-page Streamlit app, multi-stage non-root Docker, monthly Airflow DAG <strong>and</strong> an equivalent Kubernetes CronJob.</li><li>CI: pytest 3.11 / 3.12 with coverage, ruff, Docker build + smoke test.</li></ul>
+                    <ul><li>Collectors built on a <strong>plugin architecture</strong> (<code>BaseCollector</code> + registry), no API key required.</li><li>SQLAlchemy star schema (SQLite, PostgreSQL 16 or SQL Server), outlier detection with IQR / Z-score / Isolation Forest.</li><li>Temporal train / validation / test split, <code>TimeSeriesSplit</code> on date-sorted rows, rolling features shifted by one month, <strong>anti-leakage tests</strong>.</li><li>Benchmark against two <strong>naive forecasts</strong> (persistence and seasonal); SHAP explainability.</li><li>FastAPI with 6 endpoints, 6-page Streamlit app, multi-stage non-root Docker, monthly Airflow DAG <strong>and</strong> an equivalent Kubernetes CronJob.</li><li>CI: pytest 3.11 / 3.12 with coverage, ruff (46 errors fixed), Docker build + smoke test.</li></ul>
                 </div>
             </div>
         </div>
     </section>
 
+
+    <section class="page-section alt" id="video">
+        <div class="section-container">
+            <span class="section-label">// Overview</span>
+            <h2>The project in 1 min 34</h2>
+            
+<video controls preload="none" poster="/media/marche-hvac/poster.webp" style="width:100%;border-radius:12px;border:1px solid var(--border);background:#0f1830">
+    <source src="/media/marche-hvac/presentation.mp4" type="video/mp4">
+</video>
+<p class="code-caption" style="margin-top:.8rem">1 min 34, narrated in French · generated by <code>scripts/promo_video.py</code> from real screenshots (synthetic voice).</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="audit">
+        <div class="section-container">
+            <span class="section-label">// Audit</span>
+            <h2>What I fixed: target leakage</h2>
+            
+<p style="margin-bottom:1.2rem">The originally published scores (Ridge: R² 0.9996, RMSE 9.2) were <strong>wrong</strong>. I reproduced them exactly,
+then found the cause: some features already contained the value to predict. Here is what was fixed, and what the models are really worth.</p>
+<div class="three-col" style="margin-bottom:1.2rem">
+    <div class="arg-card arg-card--tech"><span class="arg-label">1 · The leak</span><ul>
+        <li>Rolling means and standard deviations computed <strong>including the month to predict</strong>.</li>
+        <li><code>lag_1m + diff_1m</code> rebuilt the target exactly: Ridge found the sum, hence R² 0.9996.</li>
+        <li>Cross-validation split <strong>departments</strong>, not time (the dataset was sorted by department).</li></ul></div>
+    <div class="arg-card arg-card--tech"><span class="arg-label">2 · The fix</span><ul>
+        <li>Windows, <code>diff_1m</code> and <code>pct_1m</code> computed on the series <strong>shifted by one month</strong>.</li>
+        <li>Rows sorted by date before <code>TimeSeriesSplit</code>.</li>
+        <li><strong>3 anti-leakage tests</strong> (they fail on the old code) and 1 on fold ordering.</li></ul></div>
+    <div class="arg-card arg-card--ok"><span class="arg-label">3 · The real scores</span><ul>
+        <li>Ridge over the 12 months of 2025: <strong>R² 0.968, RMSE 83.5</strong>.</li>
+        <li><strong>−24.5% RMSE</strong> versus the “same as last month” persistence forecast, −21% versus the seasonal one.</li>
+        <li>LightGBM does not beat persistence on RMSE (+7.8%), only on MAE.</li></ul></div>
+</div>
+<p class="code-caption">The same audit fixed 5 failing tests, 46 ruff errors that would have blocked CI, a SHAP crash (94 columns supplied versus 92 learned)
+and 2 defects in the Kubernetes manifests (dashboard namespace and volume).</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="demo">
+        <div class="section-container">
+            <span class="section-label">// Live demo</span>
+            <h2>Screenshots of the running dashboard</h2>
+            
+<div class="two-col">
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/marche-hvac/demo-benchmark.webp" alt="Model comparison against naive forecasts in the dashboard" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">New dashboard section: do the models beat a naive forecast? RMSE over the 12 months of 2025.</p>
+        <div class="pipeline-figure" style="margin-top:1rem;padding:.6rem"><img src="/media/marche-hvac/demo-predictions.webp" alt="History and forecast for the Rhône department" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">History and forecast for the Rhône. The drop in the last month comes from DPE records still being published by ADEME.</p></div>
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/marche-hvac/demo-carte.webp" alt="Map of France of heat pump installations" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Map of France of DPE records mentioning a heat pump, by department.</p>
+        <div class="pipeline-figure" style="margin-top:1rem;padding:.6rem"><img src="/media/marche-hvac/demo-shap.webp" alt="SHAP feature importance for LightGBM" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">SHAP on LightGBM, after the fix (the computation crashed on a column mismatch).</p></div>
+</div>
+        </div>
+    </section>
 
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
@@ -97,7 +153,7 @@
         </a></div>
             
             <div class="pl" data-pl id="pl-marche-hvac">
-                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button></div>
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Detailed data pipeline (labels in French)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">The target-leakage fix: before / after (labels in French)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">Evaluation protocol: time-based split and naive forecasts (labels in French)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d4">Kubernetes deployment: one image, three commands (labels in French)</button></div>
                 <div class="pl-panel" data-panel="live">
                     <div class="pl-toolbar">
                         <button type="button" class="pl-play">▶ Play the data flow</button>
@@ -117,10 +173,26 @@
                 <h3 class="pl-panel-title">Pipeline diagram (draw.io)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
                 <div class="pipeline-figure"><img src="/diagrams/marche-hvac.svg" alt="Pipeline diagram (draw.io)" loading="lazy" draggable="false"></div>
-            <div class="figure-actions"><a href="/diagrams/marche-hvac.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
+            <div class="figure-actions"><a href="/diagrams/marche-hvac.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
+                <h3 class="pl-panel-title">Detailed data pipeline (labels in French)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/marche-hvac-pipeline.svg" alt="Detailed data pipeline (labels in French)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/marche-hvac-pipeline.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">The target-leakage fix: before / after (labels in French)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/marche-hvac-fuite-cible.svg" alt="The target-leakage fix: before / after (labels in French)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/marche-hvac-fuite-cible.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d3">
+                <h3 class="pl-panel-title">Evaluation protocol: time-based split and naive forecasts (labels in French)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/marche-hvac-protocole.svg" alt="Evaluation protocol: time-based split and naive forecasts (labels in French)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/marche-hvac-protocole.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d4">
+                <h3 class="pl-panel-title">Kubernetes deployment: one image, three commands (labels in French)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/marche-hvac-deploiement.svg" alt="Kubernetes deployment: one image, three commands (labels in French)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/marche-hvac-deploiement.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Step by step</h3>
-            <ol class="pipeline-steps"><li>On the 1st of each month, Airflow (or the Kubernetes CronJob) runs the collectors across the 96 departments.</li><li>Raw data is cleaned, merged and loaded into a star schema; outliers are detected with three methods.</li><li>Feature engineering produces lags, rolling means and rolling standard deviations over 3 and 6 months.</li><li>Five model families are trained on a temporal split, then explained with SHAP.</li><li>Models are served by FastAPI and visualized in a Streamlit dashboard (map of France, forecasts, comparison).</li></ol>
+            <ol class="pipeline-steps"><li>On the 1st of each month, Airflow (or the Kubernetes CronJob) runs the collectors across the 96 departments.</li><li>Raw data is cleaned, merged and loaded into a star schema; outliers are detected with three methods.</li><li>Feature engineering produces lags, rolling means and rolling standard deviations over 3 and 6 months, computed on the series shifted by one month so they never see the month to predict.</li><li>Five model families are trained on a temporal split (train ≤ June 2024, validation H2 2024, test 2025 → February 2026), compared with two naive forecasts, then explained with SHAP.</li><li>Models are served by FastAPI and visualized in a Streamlit dashboard (map of France, forecasts, comparison with naive forecasts).</li></ol>
         </div>
     </section>
 
@@ -128,7 +200,7 @@
         <div class="section-container">
             <span class="section-label">// Key strengths</span>
             <h2>Key strengths of the solution</h2>
-            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Field knowledge</strong>: features chosen by domain expertise (MaPrimeRénov', CEE energy-saving certificates, housing type).</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Honest forecasting</strong>: temporal split, TimeSeriesSplit, 5 model families compared, SHAP explainability.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Extensible</strong>: plugin-based collectors, portable star schema (SQLite, PostgreSQL, SQL Server).</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Ready to deploy</strong>: 562 tests, non-root Docker, monthly Airflow DAG and equivalent Kubernetes CronJob.</p></li></ol>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Field knowledge</strong>: features chosen by domain expertise (MaPrimeRénov', CEE energy-saving certificates, housing type).</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Honest audit</strong>: target leakage found and fixed (illusory R² 0.9996 → 0.968 on 2025), anti-leakage tests.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Measured usefulness</strong>: Ridge makes 24% less error than the “same as last month” naive forecast.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Ready to deploy</strong>: 559 passing tests, non-root Docker, monthly Airflow DAG and equivalent Kubernetes CronJob.</p></li></ol>
         </div>
     </section>
 
@@ -170,7 +242,16 @@
             <h2>Industrialization: what is in place</h2>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Practice</th><th>Status</th><th>Detail</th></tr></thead>
-                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>pytest on 2 versions + coverage, ruff, Docker smoke test</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>562 tests</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Multi-stage, non-root</td></tr><tr><td>Orchestration</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Airflow + K8s CronJob</td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td>Metrics in CSV/JSON (no MLflow)</td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>FastAPI, 6 endpoints</td></tr><tr><td>Deployment</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Render Blueprint</td></tr><tr><td>IaC / K8s</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Kubernetes manifests (Deployment, Ingress, PVC, CronJob)</td></tr></tbody></table></div>
+                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>pytest on 2 versions + coverage, ruff (46 errors fixed), Docker smoke test</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>565 tests: 559 passed, 6 skipped, 0 failed (including 3 anti-leakage)</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Multi-stage, non-root (build not rerun during the audit)</td></tr><tr><td>Orchestration</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Airflow + K8s CronJob</td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td>Metrics in CSV/JSON (no MLflow)</td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>FastAPI, 6 endpoints, tested locally</td></tr><tr><td>Deployment</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Render Blueprint</td></tr><tr><td>IaC / K8s</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Kubernetes manifests, kustomize render checked (8 resources), not applied to a cluster</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="resultats">
+        <div class="section-container">
+            <span class="section-label">// Results</span>
+            <h2>Measured metrics</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Model</th><th>Full test: RMSE · MAE · R²</th><th>12 months of 2025: RMSE · MAE · R²</th></tr></thead><tbody><tr><td>Ridge (selected)</td><td>135.9 · 56.2 · 0.909</td><td>83.5 · 40.8 · 0.968</td></tr><tr><td>LightGBM</td><td>149.6 · 58.0 · 0.889</td><td>119.1 · 44.0 · 0.934</td></tr><tr><td>Naive seasonal ŷ(t) = y(t-12)</td><td>141.7 · 64.8 · 0.901</td><td>105.6 · 55.0 · 0.948</td></tr><tr><td>Naive persistence ŷ(t) = y(t-1)</td><td>148.4 · 63.3 · 0.891</td><td>110.5 · 46.9 · 0.943</td></tr><tr><td>Prophet (1 model per department)</td><td>221.8 · 96.3 · 0.756</td><td>—</td></tr><tr><td>Exogenous Ridge (no DPE history)</td><td>374.7 · 223.2 · 0.305</td><td>372.5 · 210.8 · 0.355</td></tr><tr><td>LSTM (exploratory)</td><td>441 to 459 · 180 to 191 · −0.04 to 0.04</td><td>—</td></tr><tr><td>Ridge before the fix (target leakage)</td><td>9.18 · — · 0.9996 (illusory)</td><td>—</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">Benchmark of 27/10/2026 (<code>scripts/benchmark_leakage.py</code>), CPU only. Unit: DPE records mentioning a heat pump, per department and per month. Test: January 2025 → February 2026 (1,344 rows); the 2025 view excludes January and February 2026, undercounted because DPE records reach ADEME late. Temporal cross-validation (3 folds): Ridge RMSE 91.4 ± 14.0. <strong>Reading</strong>: Ridge beats persistence by 24.5% on RMSE; without DPE history the model explains almost nothing (R² 0.36): the signal comes from the recent market history, not from weather or economic conditions.</p>
         </div>
     </section>
 
@@ -178,17 +259,24 @@
         <div class="section-container">
             <span class="section-label">// Code excerpts</span>
             <h2>The code that makes the difference</h2>
-            <p class="code-caption">kubernetes/cronjob-pipeline.yaml — the Airflow DAG, Kubernetes-native version</p><pre class="code"><code>apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: hvac-pipeline-monthly
-spec:
+            <p class="code-caption">src/processing/feature_engineering.py — rolling windows shifted by one month (leakage fix)</p><pre class="code"><code>                mean_name = f&quot;{col}_rmean_{window}m&quot;
+                df[mean_name] = df.groupby(&quot;dept&quot;)[col].transform(
+                    lambda s: s.shift(1).rolling(window, min_periods=1).mean()
+                ).round(2)</code></pre><p class="code-caption">tests/test_processing/test_feature_engineering.py — the anti-leakage test: perturbing y(t) must not change month t&#x27;s features</p><pre class="code"><code>        perturbed_input.loc[mask, self.TARGET] += 1000
+        perturbed = self._engineer(fe, perturbed_input)
+
+        row = (base[&quot;dept&quot;] == dept) &amp; (base[&quot;date_id&quot;] == month_t)
+        derived = [
+            c for c in base.columns
+            if c.startswith(f&quot;{self.TARGET}_&quot;)
+        ]
+        assert derived, &quot;expected target-derived features&quot;
+        pd.testing.assert_frame_equal(
+            base.loc[row, derived].reset_index(drop=True),
+            perturbed.loc[row, derived].reset_index(drop=True),
+        )</code></pre><p class="code-caption">kubernetes/cronjob-pipeline.yaml — the Airflow DAG, Kubernetes-native version</p><pre class="code"><code>spec:
   schedule: &quot;0 6 1 * *&quot;    # 1st of the month at 6:00 UTC
-  concurrencyPolicy: Forbid
-  jobTemplate:
-    spec:
-      backoffLimit: 2
-      activeDeadlineSeconds: 7200</code></pre>
+  concurrencyPolicy: Forbid</code></pre>
         </div>
     </section>
 
@@ -197,7 +285,7 @@ spec:
             <span class="section-label">// Critical review</span>
             <h2>Known limitations and next steps</h2>
             <p style="margin-bottom:1.5rem">Documenting limitations honestly is part of the job: it lets a team make informed decisions.</p>
-            <div class="arg-card arg-card--ok"><ul><li>Post-project audit: some rolling means include the target's current month, which inflates the scores. Fix identified (one-month shift); metrics will be republished after re-benchmarking.</li><li>No MLflow tracking or drift monitoring: the next component to add.</li></ul></div>
+            <div class="arg-card arg-card--ok"><ul><li><strong>Proxy</strong>: a DPE follows a sale or a rental, not an installation. The model forecasts heat pumps observed during diagnostics.</li><li><strong>Simplified multi-month API forecast</strong>: beyond one month, only <code>lag_1m</code> is updated; other lags and windows are not recomputed. Identified, not fixed.</li><li><strong>Incomplete last months</strong>: DPE records reach ADEME late (February 2026 only a quarter collected) and the pipeline does not yet filter unconsolidated months.</li><li>Non-deterministic LSTM, sequences built without breaks between departments: it does no better than an average.</li><li>ReadWriteOnce Kubernetes volume shared by the API (2 replicas), the dashboard and the CronJob: incompatible with a multi-node cluster.</li><li>Not verified during the audit: <code>docker build</code>, <code>kubectl apply</code> on a cluster, running the Airflow DAG, full collection of the 15.9 M DPE records. No validation yet on months after February 2026.</li><li>No MLflow tracking or drift monitoring: the next component to add.</li></ul></div>
         </div>
     </section>
 

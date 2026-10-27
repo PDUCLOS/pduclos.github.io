@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LyonFlow — Multimodal traffic MLOps platform — Patrice Duclos</title>
-    <meta name="description" content="End-to-end MLOps platform running in production on a VPS: 9 open data sources, Medallion architecture on PostgreSQL/PostGIS, 27 Airflow DAGs, automatically retrained XGBoost models, multimodal pgRouting routing and a dashboard for 3 personas.">
+    <meta name="description" content="End-to-end MLOps platform for Lyon mobility: 9 open data sources, Medallion architecture on PostgreSQL/PostGIS, 27 Airflow DAGs, quantile XGBoost (P10/P50/P90) one hour ahead, MLflow tracking, PSI drift, pgRouting routing and a dashboard for 3 personas. Deployed on a VPS; Kubernetes target rendered with kustomize.">
     <meta name="robots" content="index, follow, noai, noimageai">
     <meta name="tdm-reservation" content="1">
     <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
     <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
     <meta property="og:title" content="LyonFlow — Multimodal traffic MLOps platform — Patrice Duclos">
-    <meta property="og:description" content="End-to-end MLOps platform running in production on a VPS: 9 open data sources, Medallion architecture on PostgreSQL/PostGIS, 27 Airflow DAGs, automatically retrained XGBoost models, multimodal pgRouting routing and a dashboard for 3 personas.">
+    <meta property="og:description" content="End-to-end MLOps platform for Lyon mobility: 9 open data sources, Medallion architecture on PostgreSQL/PostGIS, 27 Airflow DAGs, quantile XGBoost (P10/P50/P90) one hour ahead, MLflow tracking, PSI drift, pgRouting routing and a dashboard for 3 personas. Deployed on a VPS; Kubernetes target rendered with kustomize.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pduclos.github.io/en/projects/lyonflow.html">
     <link rel="canonical" href="https://pduclos.github.io/en/projects/lyonflow.html">
@@ -36,7 +36,7 @@
                 <ul class="dropdown">
                     <li><a href="/en/projects/">All projects<small>overview · MLOps matrix</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
-                    <li><a href="/en/projects/achats-negociation.html">Buyvera — procurement negotiation<small>Flagship project · Marketable product · Project Manager</small></a></li><li><a href="/en/projects/lyonflow.html" aria-current="page">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/copilote-erp.html">Grounded ERP copilot (RAG + SQL + LLMOps)<small>Generative AI · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html">Vibration-based predictive maintenance<small>Industrial ML · Signal · Digital twin</small></a></li><li><a href="/en/projects/marche-hvac.html">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/csvtraitement.html">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html">PredictIRA<small>Public health ML · Team project</small></a></li>
+                    <li><a href="/en/projects/achats-negociation.html">Buyvera — procurement negotiation<small>Flagship project · Marketable product · Project Manager</small></a></li><li><a href="/en/projects/lyonflow.html" aria-current="page">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/copilote-erp.html">Grounded ERP copilot (RAG + SQL + LLMOps)<small>Generative AI · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html">Vibration-based predictive maintenance<small>Industrial ML · Signal · MLOps</small></a></li><li><a href="/en/projects/marche-hvac.html">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/csvtraitement.html">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html">PredictIRA<small>Public health ML · Team project, revived in 2026</small></a></li>
                     <li class="dropdown-sep" aria-hidden="true"></li>
                     <li><a href="https://buyvera.fr/en/">Product website — Buyvera<small>procurement project · bilingual site</small></a></li>
                     <li><a href="/presentations/plateforme-tarifs.html">Sales deck (in French)<small>procurement project · 38 slides</small></a></li>
@@ -60,9 +60,9 @@
             <div class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/projects/">Projects</a> / LyonFlow</div>
             <span class="project-tag" style="color:var(--accent)">MLOps · Production · Urban mobility</span>
             <h1>LyonFlow — Lyon mobility <span class="highlight">predicted in real time</span></h1>
-            <p class="lead">End-to-end MLOps platform running in production on a VPS: 9 open data sources, Medallion architecture on PostgreSQL/PostGIS, 27 Airflow DAGs, automatically retrained XGBoost models, multimodal pgRouting routing and a dashboard for 3 personas.</p>
-            <div class="kpi-row"><div class="kpi"><b>9</b><span>open data sources</span></div><div class="kpi"><b>27</b><span>Airflow DAGs</span></div><div class="kpi"><b>620</b><span>pytest tests</span></div><div class="kpi"><b>59</b><span>widgets / 18 pages</span></div><div class="kpi"><b>−45%</b><span>MAE (3 models vs 1)</span></div></div>
-            <div class="btn-row"><a href="https://github.com/PDUCLOS/lyonflowfull" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Source code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/databrickslyonflow" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Databricks variant <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+            <p class="lead">End-to-end MLOps platform for Lyon mobility: 9 open data sources, Medallion architecture on PostgreSQL/PostGIS, 27 Airflow DAGs, quantile XGBoost (P10/P50/P90) one hour ahead, MLflow tracking, PSI drift, pgRouting routing and a dashboard for 3 personas. Deployed on a VPS; Kubernetes target rendered with kustomize.</p>
+            <div class="kpi-row"><div class="kpi"><b>9</b><span>open data sources</span></div><div class="kpi"><b>27</b><span>Airflow DAGs</span></div><div class="kpi"><b>653</b><span>passing pytest tests, 0 failures</span></div><div class="kpi"><b>5.4 ms</b><span>P10/P50/P90 prediction (median)</span></div><div class="kpi"><b>18</b><span>Streamlit pages, 3 personas</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/lyonflowfull" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Source code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/lyonflowfull/tree/feat/vitrine-lyonflow" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Showcase branch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://github.com/PDUCLOS/databrickslyonflow" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Databricks variant <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </div>
     </header>
 
@@ -78,12 +78,61 @@
                 </div>
                 <div class="arg-card arg-card--tech reveal">
                     <span class="arg-label">For tech teams · what the code proves</span>
-                    <ul><li>Medallion Bronze/Silver/Gold on <strong>PostgreSQL 16 + PostGIS + pgRouting</strong>, parameterized SQL throughout, zero hard-coded credentials.</li><li><strong>27 Airflow DAGs</strong> (collection every 5 min → 6 h, transforms, ML, maintenance), MinIO S3 archiving.</li><li><strong>MLflow</strong> registry (6 models, Production stage), XGBoost retraining every 30 min, custom <strong>PSI</strong> drift + Evidently reports.</li><li>GitHub Actions CI: ruff, mypy, bandit, pytest + coverage. Deployment via <code>make deploy-vps</code> / <code>rollback-vps</code>, 20 health checks.</li><li>Prometheus + Grafana + Alertmanager observability, Nginx as the only exposed entry point, Let's Encrypt TLS.</li></ul>
+                    <ul><li>Medallion Bronze/Silver/Gold on <strong>PostgreSQL 16 + PostGIS + pgRouting</strong>, parameterized SQL throughout, zero hard-coded credentials.</li><li><strong>27 Airflow DAGs</strong> (collection every 5 min → 6 h, transforms, ML, maintenance), MinIO S3 archiving.</li><li><strong>Quantile XGBoost</strong> (P10/P50/P90): speed trained daily, Vélo'v hourly, inference every 15 min; <strong>MLflow</strong> tracking with fallback to a local model.</li><li>Custom <strong>PSI</strong> drift (daily report), Evidently optional; Prometheus + Grafana + Alertmanager, 7 alert groups.</li><li>GitHub Actions CI: ruff, mypy, bandit, pytest + coverage. Deployment via <code>make deploy-vps</code> / <code>rollback-vps</code>, Nginx as the only exposed entry point.</li><li><strong>Kubernetes</strong> target: kustomize <code>base</code> + dev / prod overlays + monitoring component, rendering validated with no errors.</li></ul>
                 </div>
             </div>
         </div>
     </section>
 
+
+    <section class="page-section alt" id="video">
+        <div class="section-container">
+            <span class="section-label">// Presentation</span>
+            <h2>The project in 1 min 45</h2>
+            
+<video controls preload="none" poster="/media/lyonflow/poster.webp" style="width:100%;border-radius:12px;border:1px solid var(--border);background:#0f1830">
+    <source src="/media/lyonflow/presentation.mp4" type="video/mp4">
+</video>
+<p class="code-caption" style="margin-top:.8rem">1 min 45, narrated in French · 10 scenes, synthetic voice, built from the showcase screenshots and diagrams.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="demo">
+        <div class="section-container">
+            <span class="section-label">// Real demo</span>
+            <h2>Screenshots of the application started from the repository</h2>
+            
+<div class="two-col">
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/lyonflow/demo-statut-service.webp" alt="Service status page: database unreachable, indicators set to Undetermined" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">“Service status” page after the fix: database deliberately unreachable, the 4 indicators switch to “Undetermined” instead of showing a Python traceback.</p></div>
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/lyonflow/demo-accueil.webp" alt="Streamlit home page with the 3 personas" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Streamlit home page: 3 personas (commuter, TCL operator, elected official). Visible, unfixed defect: a <code>&lt;/div&gt;</code> tag is shown under two cards.</p>
+        <div class="pipeline-figure" style="margin-top:1rem;padding:.6rem"><img src="/media/lyonflow/demo-api.webp" alt="Swagger of the LyonFlow FastAPI API" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">FastAPI API: 9 routes (health, models, traffic and Vélo'v prediction, recommendation, itinerary, bottlenecks, GDPR, login).</p></div>
+</div>
+<p class="code-caption" style="margin-top:1rem">Screenshots taken on the API and dashboard started from the repository <strong>without a database</strong>: they show the application and its degraded states, not real data.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="verification">
+        <div class="section-container">
+            <span class="section-label">// Review</span>
+            <h2>What I checked and fixed</h2>
+            
+<div class="two-col">
+    <div class="arg-card arg-card--tech"><span class="arg-label">Checking the figures</span><ul>
+        <li><strong>27 DAGs</strong> confirmed (28 <code>DAG(...)</code> calls, 1 of them legacy).</li>
+        <li>Tests: <strong>650 passing</strong> out of 674 collected (not 620), then <strong>653</strong> with 3 added security tests; 0 failures.</li>
+        <li>“Retrain every 30 min” was <strong>inaccurate</strong>: speed is trained daily at 03:38 (the hourly DAG has been paused since 07/01/2026), Vélo'v hourly at :50; inference every 15 min.</li>
+        <li>7 Prometheus alert groups confirmed (17 rules).</li></ul></div>
+    <div class="arg-card arg-card--ok"><span class="arg-label">Fixing</span><ul>
+        <li><strong>Tests not portable to Windows</strong>: files read without an encoding (<code>UnicodeDecodeError</code>), fixed with <code>encoding="utf-8"</code>.</li>
+        <li><strong>“Service status” page</strong>: with the database unreachable it showed a full Python traceback. The Alerts indicator and latest incidents now follow the same rule as the other 3 indicators.</li>
+        <li><strong>Bypassable rate limit</strong>: the API took the first IP of <code>X-Forwarded-For</code>, which the client chooses. It now takes the last one, added by nginx.</li>
+        <li><strong>Kubernetes</strong>: the kustomize base on the dormant branch no longer built. Realigned with <code>main</code> in <code>deploy/k8s</code>; Prometheus / Alertmanager / Airflow UIs protected.</li></ul></div>
+</div>
+        </div>
+    </section>
 
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
@@ -101,7 +150,7 @@
         </a></div>
             
             <div class="pl" data-pl id="pl-lyonflow">
-                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Medallion data flow</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">The 4 ML pillars</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">Production infrastructure (VPS, containers)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d4">Airflow orchestration</button></div>
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Overview: from open data feed to decision</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">Model lifecycle: actual DAG schedules</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">Kubernetes target (kustomize, not deployed)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d4">Production infrastructure (VPS, containers)</button></div>
                 <div class="pl-panel" data-panel="live">
                     <div class="pl-toolbar">
                         <button type="button" class="pl-play">▶ Play the data flow</button>
@@ -122,25 +171,25 @@
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
                 <div class="pipeline-figure"><img src="/diagrams/lyonflow.svg" alt="Pipeline diagram (draw.io)" loading="lazy" draggable="false"></div>
             <div class="figure-actions"><a href="/diagrams/lyonflow.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
-                <h3 class="pl-panel-title">Medallion data flow</h3>
+                <h3 class="pl-panel-title">Overview: from open data feed to decision</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-medallion.svg" alt="Medallion data flow" loading="lazy" draggable="false"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-medallion.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
-                <h3 class="pl-panel-title">The 4 ML pillars</h3>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-vue-ensemble.svg" alt="Overview: from open data feed to decision" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-vue-ensemble.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">Model lifecycle: actual DAG schedules</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-ml.svg" alt="The 4 ML pillars" loading="lazy" draggable="false"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-ml.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d3">
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-cycle-mlops.svg" alt="Model lifecycle: actual DAG schedules" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-cycle-mlops.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d3">
+                <h3 class="pl-panel-title">Kubernetes target (kustomize, not deployed)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/lyonflow-kubernetes.svg" alt="Kubernetes target (kustomize, not deployed)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-kubernetes.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d4">
                 <h3 class="pl-panel-title">Production infrastructure (VPS, containers)</h3>
                 <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
                 <div class="pipeline-figure"><img src="/diagrams/lyonflow-infra.svg" alt="Production infrastructure (VPS, containers)" loading="lazy" draggable="false"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-infra.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d4">
-                <h3 class="pl-panel-title">Airflow orchestration</h3>
-                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
-                <div class="pipeline-figure"><img src="/diagrams/lyonflow-airflow.svg" alt="Airflow orchestration" loading="lazy" draggable="false"></div>
-            <div class="figure-actions"><a href="/diagrams/lyonflow-airflow.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
+            <div class="figure-actions"><a href="/diagrams/lyonflow-infra.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Step by step</h3>
-            <ol class="pipeline-steps"><li><strong>Collection</strong> — 9 open sources with no API key, Airflow DAGs scheduled from every 5 min (traffic, buses, Vélo'v) to every 6 h (weather alerts).</li><li><strong>Bronze</strong> — immutable raw JSONB storage: history can always be replayed.</li><li><strong>Silver</strong> — deduplication (<code>DISTINCT ON</code>), SIRI parsing, geographic reprojection (4326 / 2154), filtering of faulty sensors.</li><li><strong>Gold</strong> — ML features (lags, rolling averages, school calendar, weather) and business materialized views (bottlenecks, delays by road segment).</li><li><strong>Modeling</strong> — XGBoost speed H+1h (inference every 15 min), XGBoost Vélo'v H+1h, car routing with <code>pgr_dijkstra</code> on the OSM network with injected speeds.</li><li><strong>MLOps</strong> — MLflow tracking, continuous comparison with TomTom data, daily drift report, automatic retraining.</li><li><strong>Delivery</strong> — FastAPI API (prediction, recommendation, bottlenecks) and an 18-page / 59-widget Streamlit dashboard, with no simulated data at all.</li></ol>
+            <ol class="pipeline-steps"><li><strong>Collection</strong> — 9 open sources, Airflow DAGs scheduled from every 5 min (traffic, buses, Vélo'v) to every 6 h (weather alerts).</li><li><strong>Bronze</strong> — immutable raw JSONB storage: history can always be replayed.</li><li><strong>Silver</strong> — deduplication (<code>DISTINCT ON</code>), SIRI parsing, geographic reprojection (4326 / 2154), filtering of faulty sensors.</li><li><strong>Gold</strong> — ML features (lags, rolling averages, school calendar, weather) and business materialized views (bottlenecks, delays by road segment).</li><li><strong>Modeling</strong> — quantile XGBoost speed H+1h (daily training at 03:38, inference every 15 min), XGBoost Vélo'v H+1h (hourly retraining), car routing with <code>pgr_dijkstra</code>.</li><li><strong>MLOps</strong> — MLflow tracking, comparison with TomTom data, daily PSI drift report (05:30) shown to the personas. Retraining is scheduled, not triggered by drift.</li><li><strong>Delivery</strong> — FastAPI API (prediction, itinerary, bottlenecks, GDPR) and an 18-page Streamlit dashboard for 3 personas.</li></ol>
         </div>
     </section>
 
@@ -148,7 +197,7 @@
         <div class="section-container">
             <span class="section-label">// Key strengths</span>
             <h2>Key strengths of the solution</h2>
-            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>In production, not in a notebook</strong>: deployed on a server, monitored (Prometheus / Grafana), backed up nightly, one-command deployment and rollback.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Closed MLOps loop</strong>: MLflow registry, daily PSI drift, automatic XGBoost retraining.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Measured architecture choice</strong>: 3 specialized models instead of one, MAE 5.8 → 3.2 (−45%).</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Built for decision-making</strong>: 3 personas (rider, operator, elected official), bus delay × congestion cross-analysis to prioritize investment.</p></li></ol>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>From raw feed to decision</strong>: 9 sources, Medallion on PostgreSQL, 27 Airflow DAGs, 3 personas (commuter, operator, elected official).</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Forecasts with uncertainty</strong>: quantile XGBoost P10/P50/P90, 5.4 ms per sensor, inference every 15 min.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Instrumented MLOps loop</strong>: MLflow, daily PSI drift, Prometheus alerts, one-command deployment and rollback.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Re-checked figures</strong>: 653 passing tests, schedules read from the code, errors in the previous page corrected and flaws fixed.</p></li></ol>
         </div>
     </section>
 
@@ -179,7 +228,7 @@
             </div>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Tool</th><th>Role in the project</th><th>What it demonstrates</th></tr></thead>
-                <tbody><tr><td>Apache Airflow 2.9</td><td>27 DAGs: collection, Medallion transforms, training, inference, maintenance</td><td>Production orchestration, dependencies and retries</td></tr><tr><td>PostgreSQL 16 + PostGIS</td><td>bronze / silver / gold / osm / rgpd schemas</td><td>Medallion modeling, spatial SQL, materialized views</td></tr><tr><td>pgRouting 3.7</td><td>Car routing over ~101k OSM edges</td><td>Graph algorithms inside the database</td></tr><tr><td>XGBoost</td><td>Traffic speed and Vélo'v availability at H+1h</td><td>Time series, domain features</td></tr><tr><td>MLflow 2.12</td><td>Tracking and registry for 6 models</td><td>Model lifecycle</td></tr><tr><td>PSI + Evidently</td><td>Daily drift detection</td><td>Production model monitoring</td></tr><tr><td>FastAPI</td><td>Prediction / recommendation API, API key</td><td>Model serving</td></tr><tr><td>Streamlit</td><td>18 pages, 3 personas, PDF report for elected officials</td><td>Decision-oriented delivery</td></tr><tr><td>Docker · Nginx · systemd</td><td>Containerized stack, single reverse proxy, TLS</td><td>Deployment and server hardening</td></tr><tr><td>Prometheus · Grafana · Alertmanager</td><td>Metrics, dashboards, 7 alert groups</td><td>Observability</td></tr><tr><td>MinIO</td><td>S3 archiving of Silver data</td><td>Data lifecycle management</td></tr><tr><td>Databricks (variant)</td><td>Delta Lake, DLT <code>expect_or_drop</code>, Unity Catalog, Asset Bundles</td><td>Portability to a managed lakehouse</td></tr></tbody></table></div>
+                <tbody><tr><td>Apache Airflow 2.9</td><td>27 DAGs: collection, Medallion transforms, training, inference, maintenance</td><td>Production orchestration, dependencies and retries</td></tr><tr><td>PostgreSQL 16 + PostGIS</td><td>bronze / silver / gold / osm / rgpd schemas</td><td>Medallion modeling, spatial SQL, materialized views</td></tr><tr><td>pgRouting 3.7</td><td>Car routing over the OSM network</td><td>Graph algorithms inside the database</td></tr><tr><td>XGBoost (quantile regression)</td><td>Traffic speed and Vélo'v availability at H+1h, P10/P90 intervals</td><td>Time series, forecast uncertainty</td></tr><tr><td>MLflow 2.12</td><td>Tracking; loads <code>models:/xgb_speed_h60/Production</code> with a local fallback</td><td>Model lifecycle</td></tr><tr><td>PSI (+ optional Evidently)</td><td>Daily drift report</td><td>Production model monitoring</td></tr><tr><td>FastAPI</td><td>9 routes: prediction, itinerary, bottlenecks, GDPR, login</td><td>Model serving</td></tr><tr><td>Streamlit</td><td>18 pages, 3 personas</td><td>Decision-oriented delivery</td></tr><tr><td>Docker · Nginx · systemd</td><td>Containerized stack, single reverse proxy, TLS</td><td>Deployment and server hardening</td></tr><tr><td>Kubernetes (kustomize)</td><td>base + dev / prod overlays, monitoring component, SealedSecret in prod</td><td>Portability to a cluster</td></tr><tr><td>Prometheus · Grafana · Alertmanager</td><td>7 alert groups, 17 rules</td><td>Observability</td></tr><tr><td>MinIO</td><td>S3 archiving of Silver data</td><td>Data lifecycle management</td></tr><tr><td>Databricks (variant)</td><td>Delta Lake, DLT <code>expect_or_drop</code>, Unity Catalog, Asset Bundles</td><td>Portability to a managed lakehouse</td></tr></tbody></table></div>
         </div>
     </section>
 
@@ -190,7 +239,7 @@
             <h2>Industrialization: what is in place</h2>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Practice</th><th>Status</th><th>Detail</th></tr></thead>
-                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>ruff, mypy, bandit, pytest + coverage</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>620 tests (unit, personas, integration, e2e)</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Application Compose + monitoring Compose</td></tr><tr><td>Orchestration</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Airflow, 27 DAGs (25 active)</td></tr><tr><td>Tracking / registry</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>MLflow registry, Production stage</td></tr><tr><td>Monitoring / drift</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Daily PSI, Evidently, Prometheus/Grafana</td></tr><tr><td>API</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>FastAPI + API key</td></tr><tr><td>Deployment</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>VPS, scripted deploy/rollback, health checks</td></tr><tr><td>IaC / K8s</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Databricks Asset Bundle; dormant Kubernetes branch</td></tr></tbody></table></div>
+                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>ruff, mypy, bandit, pytest + coverage</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>653 passing, 1 skipped, 23 integration tests deselected</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Application Compose + monitoring Compose</td></tr><tr><td>Orchestration</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Airflow, 27 DAGs (hourly speed retrain paused)</td></tr><tr><td>Tracking / registry</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>MLflow; production registry not re-checked</td></tr><tr><td>Monitoring / drift</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Daily PSI, optional Evidently, Prometheus/Grafana</td></tr><tr><td>API</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>FastAPI + API key</td></tr><tr><td>Deployment</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>VPS, scripted deploy/rollback, health checks</td></tr><tr><td>IaC / K8s</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>kustomize dev / prod validated (not deployed); Databricks Asset Bundle</td></tr></tbody></table></div>
         </div>
     </section>
 
@@ -198,8 +247,8 @@
         <div class="section-container">
             <span class="section-label">// Results</span>
             <h2>Measured metrics</h2>
-            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Decision / measurement</th><th>Result</th><th>Source</th></tr></thead><tbody><tr><td>1 single model (38 features) vs 3 specialized models</td><td>MAE 5.8 → 3.2 (−45%)</td><td>internal validation (private working repository)</td></tr><tr><td>Exploratory benchmark: vehicle counts, 80/20 temporal split, 5 models</td><td>Tuned XGBoost: MAE 6.97 · R² 0.71 (linear regression: MAE 15.5)</td><td>notebook 05, private working repository</td></tr><tr><td>Network coverage</td><td>~458 Vélo&#x27;v stations · ~101k OSM edges</td><td>README / diagrams in the public repository</td></tr></tbody></table></div>
-            <p style="margin-top:1.2rem">Key architecture decision: separate traffic, buses and Vélo'v. Road capacity features are 0 for bikes: in a single model, they add noise and degrade accuracy.</p>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Measurement</th><th>Result</th><th>Conditions</th></tr></thead><tbody><tr><td>pytest suite (repository config)</td><td>650 passed, 1 skipped, 23 deselected, 0 failed (18.4 s); 653 with the security tests</td><td>1 skipped = PostgreSQL absent</td></tr><tr><td>Training the 3 quantile models (200 trees, depth 6)</td><td>8.19 s</td><td>49,985 synthetic rows, 11 features, CPU</td></tr><tr><td>&lt;code&gt;predict()&lt;/code&gt; for one sensor (P10 + P50 + P90)</td><td>median 5.43 ms · p95 15.29 ms · p99 46.57 ms</td><td>1,000 calls</td></tr><tr><td>Batch P50 prediction</td><td>14.78 ms / 10,000 rows</td><td>same model</td></tr><tr><td>Serialized model</td><td>2,680 KB</td><td>dict of 3 models</td></tr><tr><td>PSI, shift +0.25 σ / +0.5 σ / +1 σ</td><td>0.0626 stable / 0.2377 significant / 0.9491 significant</td><td>20,000 points, 10 buckets</td></tr><tr><td>&lt;code&gt;GET /health&lt;/code&gt;</td><td>median 26.9 ms · p95 55.1 ms</td><td>200 calls, database unreachable</td></tr><tr><td>&lt;code&gt;kubectl kustomize&lt;/code&gt; dev / prod overlays</td><td>1,759 / 1,972 lines, 0 errors</td><td>no pod started</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">Measured on 10/27/2026 on a Ryzen 9 3900X. The synthetic dataset measures the model's <strong>cost</strong>, not its <strong>quality</strong>: no prediction error is published. Accuracy gains reported earlier (MAE 5.8 → 3.2, benchmark R² 0.71) come from a private working repository and were not re-checked.</p>
         </div>
     </section>
 
@@ -207,18 +256,44 @@
         <div class="section-container">
             <span class="section-label">// Code excerpts</span>
             <h2>The code that makes the difference</h2>
-            <p class="code-caption">src/monitoring/psi.py — robust PSI drift, no heavy dependency</p><pre class="code"><code>def _safe_psi_term(pct_ref: float, pct_curr: float, eps: float = 1e-6) -&gt; float:
-    &quot;&quot;&quot;One term of the PSI sum, protected against log(0) and division by 0.&quot;&quot;&quot;
+            <p class="code-caption">src/models/xgboost_speed.py — confidence intervals through quantile regression</p><pre class="code"><code>        quantiles = {&quot;p10&quot;: 0.1, &quot;p50&quot;: 0.5, &quot;p90&quot;: 0.9}
+        models: dict[str, xgb.XGBRegressor] = {}
+        metrics: dict[str, float] = {}
+        for label, alpha in quantiles.items():
+            model = xgb.XGBRegressor(
+                n_estimators=n_estimators,
+                max_depth=max_depth,
+                learning_rate=learning_rate,
+                objective=&quot;reg:quantileerror&quot;,
+                quantile_alpha=alpha,
+                random_state=42,
+                n_jobs=-1,
+            )</code></pre><p class="code-caption">src/monitoring/psi.py — robust PSI drift, no heavy dependency</p><pre class="code"><code>def _safe_psi_term(pct_ref: float, pct_curr: float, eps: float = 1e-6) -&gt; float:
+    &quot;&quot;&quot;Un terme de la somme PSI, protégé contre log(0) et division par 0.&quot;&quot;&quot;
     if pct_ref &lt; eps and pct_curr &lt; eps:
         return 0.0
     if pct_curr &lt; eps:
         pct_curr = eps
     if pct_ref &lt; eps:
         pct_ref = eps
-    return (pct_curr - pct_ref) * np.log(pct_curr / pct_ref)</code></pre><p class="code-caption">Operations — one-command deployment and rollback</p><pre class="code"><code>make check-deploy-env        # .deploy.env chmod 600 + critical variables
-make deploy-vps              # rsync + systemd restart
-./scripts/healthcheck-vps.sh  # 20+ checks: containers, disk, DB, endpoints
-make rollback-vps            # back to the previous release</code></pre>
+    return (pct_curr - pct_ref) * np.log(pct_curr / pct_ref)</code></pre><p class="code-caption">dashboard/pages/Usager_5_Statut_Service.py — an “Undetermined” indicator rather than a Python traceback</p><pre class="code"><code>def _kpi_alerts() -&gt; dict | None:
+    &quot;&quot;&quot;KPI #4 — Alertes actives 6h.
+
+    Comme les 3 autres voyants : si la base ne répond pas, le voyant passe
+    en « Indéterminé » au lieu d&#x27;afficher une trace Python à l&#x27;usager.
+    &quot;&quot;&quot;
+    try:
+        df = cached_recent_alerts(hours=6, limit=50)
+    except DashboardDataError:
+        logger.warning(&quot;Statut service : alertes indisponibles (DB injoignable)&quot;)
+        return None
+    n_total = len(df)
+    n_critical = int((df[&quot;severity&quot;] == &quot;critical&quot;).sum()) if &quot;severity&quot; in df.columns else 0
+    return {&quot;n_total&quot;: n_total, &quot;n_critical&quot;: n_critical}</code></pre><p class="code-caption">deploy/k8s/overlays/prod/kustomization.yaml — monitoring enabled in production only</p><pre class="code"><code>resources:
+  - ../../base
+
+components:
+  - ../../components/monitoring</code></pre>
         </div>
     </section>
 
@@ -227,7 +302,7 @@ make rollback-vps            # back to the previous release</code></pre>
             <span class="section-label">// Critical review</span>
             <h2>Known limitations and next steps</h2>
             <p style="margin-bottom:1.5rem">Documenting limitations honestly is part of the job: it lets a team make informed decisions.</p>
-            <div class="arg-card arg-card--ok"><ul><li>Single server: no high availability. The Kubernetes target (EKS/GKE) exists on a dormant branch.</li><li>Bus delay prediction still in the analysis phase: SIRI data needs to accumulate before going to production.</li><li>Off-site backup: rclone configuration still to be finalized.</li><li>Databricks variant in progress: week 1 delivered (Unity Catalog, Bronze ingestion, DLT), MLflow / Model Serving / Genie to come.</li></ul></div>
+            <div class="arg-card arg-card--ok"><ul><li>Single server: no high availability. The Kubernetes target is rendered (kustomize) but not yet deployed: image to publish, MinIO, cert-manager, DAGs to validate under KubernetesExecutor.</li><li>Production operation on the VPS, the MLflow registry and every accuracy metric were not re-checked when this page was updated.</li><li><code>POST /api/v1/recommend</code> still returns a hard-coded example; <code>GET /api/v1/models</code> shows frozen metrics when MLflow is unreachable.</li><li>Unfixed UI defects: a visible <code>&lt;/div&gt;</code> tag and truncated text on the home page; inconsistent version numbers (README, <code>/health</code>, OpenAPI).</li><li>Bus delay prediction is still in the analysis phase: SIRI data needs to accumulate before going to production.</li><li>Databricks variant in progress: week 1 delivered (Unity Catalog, Bronze ingestion, DLT), MLflow / Model Serving / Genie to come.</li></ul></div>
         </div>
     </section>
 
