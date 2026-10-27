@@ -1,6 +1,7 @@
 """Portfolio content: one dict per project page. Facts come from the repositories (analysed 2026-09-23)."""
 
 from achats import ACHATS
+from copilote_erp import COPILOTE_ERP
 
 GH = "https://github.com/PDUCLOS/"
 
@@ -926,6 +927,8 @@ def predict(data: dict):
 
 # Buyvera (procurement product, commercially viable): flagship project, listed first.
 PROJECTS.insert(0, ACHATS)
+# Copilote ERP (RAG + SQL + LLMOps + Kubernetes) : juste après LyonFlow.
+PROJECTS.insert(2, COPILOTE_ERP)
 
 # Points forts de chaque solution, repris en tête de la section « Points forts » des pages projets.
 STRENGTHS = {

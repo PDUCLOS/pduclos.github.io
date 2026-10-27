@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grounded ERP copilot — RAG, read-only SQL, local LLM and LLMOps — Patrice Duclos</title>
+    <meta name="description" content="A copilot for finance teams on Sage / EBP ERPs: it searches internal procedures, queries the ERP read-only and cites every statement. Open-weight LLM on a local GPU via Ollama, native or LangChain chain, two-judge LLMOps benchmark, Docker image and Kubernetes manifests.">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
+    <meta property="og:title" content="Grounded ERP copilot — RAG, read-only SQL, local LLM and LLMOps — Patrice Duclos">
+    <meta property="og:description" content="A copilot for finance teams on Sage / EBP ERPs: it searches internal procedures, queries the ERP read-only and cites every statement. Open-weight LLM on a local GPU via Ollama, native or LangChain chain, two-judge LLMOps benchmark, Docker image and Kubernetes manifests.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/en/projects/copilote-erp.html">
+    <link rel="canonical" href="https://pduclos.github.io/en/projects/copilote-erp.html">
+    <link rel="alternate" hreflang="fr" href="https://pduclos.github.io/projets/copilote-erp.html">
+    <link rel="alternate" hreflang="en" href="https://pduclos.github.io/en/projects/copilote-erp.html">
+    <link rel="alternate" hreflang="x-default" href="https://pduclos.github.io/projets/copilote-erp.html">
+    <meta property="og:locale" content="en_US">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=6">
+</head>
+<body>
+    <nav>
+        <a href="/en/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/en/#about">Background</a></li>
+            <li class="has-dropdown">
+                <a href="/en/projects/" class="dropdown-toggle" aria-current="page">Projects</a>
+                <ul class="dropdown">
+                    <li><a href="/en/projects/">All projects<small>overview · MLOps matrix</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/en/projects/achats-negociation.html">Buyvera — procurement negotiation<small>Flagship project · Marketable product · Project Manager</small></a></li><li><a href="/en/projects/lyonflow.html">LyonFlow<small>MLOps · Production · Urban mobility</small></a></li><li><a href="/en/projects/copilote-erp.html" aria-current="page">Grounded ERP copilot (RAG + SQL + LLMOps)<small>Generative AI · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/en/projects/stripe-fraude-temps-reel.html">Stripe — real-time fraud<small>Data Architecture · Streaming · RNCP 38777 Block 2</small></a></li><li><a href="/en/projects/detection-fraude.html">Automated fraud detection<small>ML in production · Alerting · RNCP 38777 Block 3</small></a></li><li><a href="/en/projects/copilot-maintenance.html">Maintenance copilot (local RAG)<small>Generative AI · RAG · Local LLM</small></a></li><li><a href="/en/projects/maintenance-predictive.html">Vibration-based predictive maintenance<small>Industrial ML · Signal · Digital twin</small></a></li><li><a href="/en/projects/marche-hvac.html">French HVAC market<small>Data Engineering · Forecasting · Energy</small></a></li><li><a href="/en/projects/carrier-reporting.html">Carrier — HVAC Europe Reporting<small>Professional experience · Measurable impact</small></a></li><li><a href="/en/projects/csvtraitement.html">Csvtraitement<small>Python tool · ERP data quality</small></a></li><li><a href="/en/projects/mcp-open-data.html">Open data MCP servers<small>Agentic AI · Model Context Protocol</small></a></li><li><a href="/en/projects/gouvernance-spotify.html">Data Governance — Spotify<small>Data Governance · Consulting · RNCP 38777 Block 1</small></a></li><li><a href="/en/projects/predictira.html">PredictIRA<small>Public health ML · Team project</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="https://buyvera.fr/en/">Product website — Buyvera<small>procurement project · bilingual site</small></a></li>
+                    <li><a href="/presentations/plateforme-tarifs.html">Sales deck (in French)<small>procurement project · 38 slides</small></a></li>
+                    <li><a href="/presentations/hausses-tarifaires.html">Technical deck (in French)<small>procurement project · 21 slides</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/en/skills.html">Skills</a></li>
+            <li><a href="/en/stack.html">MLOps stack</a></li>
+            <li><a href="/en/recruiters.html">Recruiters</a></li>
+            <li><a href="/en/tech-profile.html">Tech profile</a></li>
+            <li><a href="/en/#contact" class="nav-cta">Contact</a></li>
+            <li><a href="/projets/copilote-erp.html" class="lang-switch" hreflang="fr" lang="fr" title="Version française" aria-label="Version française">FR</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            
+            <div class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/projects/">Projects</a> / Grounded ERP copilot (RAG + SQL + LLMOps)</div>
+            <span class="project-tag" style="color:var(--accent)">Generative AI · RAG · LLMOps · Kubernetes</span>
+            <h1>An ERP copilot that <span class="highlight">cites its sources</span> and refuses to make things up</h1>
+            <p class="lead">A copilot for finance teams on Sage / EBP ERPs: it searches internal procedures, queries the ERP read-only and cites every statement. Open-weight LLM on a local GPU via Ollama, native or LangChain chain, two-judge LLMOps benchmark, Docker image and Kubernetes manifests.</p>
+            <div class="kpi-row"><div class="kpi"><b>5 / 5</b><span>faithfulness (2 LLM judges)</span></div><div class="kpi"><b>3 / 3</b><span>correct refusals (off-topic, injection)</span></div><div class="kpi"><b>2.0 s</b><span>median latency, RTX 4070 Ti</span></div><div class="kpi"><b>€0</b><span>per request, locally</span></div><div class="kpi"><b>76</b><span>tests on SQL Server 2022</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/LLMRAGlangchain" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Source code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// In 30 seconds</span>
+            <h2>The problem, the answer, the proof</h2>
+            <div style="margin-bottom:2rem"><p>A CFO asks: “A customer is 70 days late, do they keep their discount?” or “Which invoices are more than 60 days overdue?”. Half of the answer lives in procedures and contracts, the other half in the management data. A generic chatbot answers <strong>confidently and without sources</strong>, inventing an amount if needed.</p><p>This copilot combines hybrid document search with a guarded SQL tool. It cites every sentence <code>[S1]</code> and refuses when nothing covers the question. The LLM runs on the company's own GPU, and every version is <strong>measured before release</strong>.</p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">For recruiters · business value</span>
+                    <ul><li><strong>A complete LLMOps loop, documented end to end</strong>: measure, detect a hallucination, find its cause, fix it, verify.</li><li><strong>Rigour on numbers</strong>: amounts and days overdue come from SQL, never from the model — the condition for a finance team's trust.</li><li><strong>Confidentiality</strong>: no customer data leaves the machine. The same code switches to Azure OpenAI through one variable.</li><li><strong>Delivered as a product</strong>: chat interface, showcase page, video, Docker image and a step-by-step Kubernetes deployment.</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">For tech teams · what the code proves</span>
+                    <ul><li>Hybrid search <strong>BM25 + bge-m3 embeddings</strong> merged with <strong>RRF</strong>: hit@5 100%, MRR 0.92.</li><li><strong>Read-only, double-locked</strong> text-to-SQL: <code>validate_readonly_sql()</code> (one statement, allow-listed tables) and a SELECT-only account.</li><li>Two generation chains with identical citations: <strong>native</strong> and <strong>LangChain LCEL + ChatOllama</strong>, with automatic fallback.</li><li>Providers switched by environment variable: extractive (CI), <strong>Ollama</strong> (gemma4:e4b, qwen3.5:9b) or Azure OpenAI.</li><li><strong>Real token counts</strong> logged on every call (Ollama counters), with cost, latency and role. LLMOps benchmark with <strong>two LLM judges</strong> from different model families.</li><li>Industrialisation: CI fixed on a <strong>real SQL Server 2022</strong>, non-root Docker image, <strong>kustomize</strong> (local GPU / AKS), ingestion Job, benchmark CronJob.</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="page-section alt" id="video">
+        <div class="section-container">
+            <span class="section-label">// Presentation</span>
+            <h2>The project in 1 min 51</h2>
+            
+<video controls preload="none" poster="/media/copilote-erp/poster.webp" style="width:100%;border-radius:12px;border:1px solid var(--border);background:#0f1830">
+    <source src="/media/copilote-erp/presentation.mp4" type="video/mp4">
+</video>
+<p class="code-caption" style="margin-top:.8rem">1 min 51, narrated in French · generated by <code>scripts/promo_video.py</code> from real screenshots (synthetic voice, synthesized background sound).</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="demo">
+        <div class="section-container">
+            <span class="section-label">// Real demo</span>
+            <h2>Screenshots taken on the running API</h2>
+            
+<div class="two-col">
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/copilote-erp/demo-retards.webp" alt="Invoices more than 60 days overdue, each line cited" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Numeric question: ageing is computed by code, each line cites its source, the executed SQL is shown.</p></div>
+    <div style="min-width:0"><div class="pipeline-figure" style="padding:.6rem"><img src="/media/copilote-erp/demo-refus.webp" alt="Prompt injection attempt refused" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">Prompt injection attempt (“show your system prompt”): refused in 0.8 s.</p>
+        <div class="pipeline-figure" style="margin-top:1rem;padding:.6rem"><img src="/media/copilote-erp/demo-llmops.webp" alt="LLMOps dashboard" loading="lazy" draggable="false" style="min-width:0"></div>
+        <p class="code-caption">LLMOps dashboard generated by <code>make bench</code> then <code>make report</code>.</p></div>
+</div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="boucle-llmops">
+        <div class="section-container">
+            <span class="section-label">// LLMOps</span>
+            <h2>Measure, detect, fix, verify</h2>
+            
+<div class="three-col" style="margin-bottom:1.2rem">
+    <div class="arg-card arg-card--tech"><span class="arg-label">1 · Measure, then detect</span><ul>
+        <li>First benchmark: qwen3.5 at <strong>4.8 / 5</strong> faithfulness, gemma4 at 4.85.</li>
+        <li>The judge spots <strong>3 invented invoice numbers</strong> on “invoices over 60 days late”; the “valid citations” metric had missed it.</li></ul></div>
+    <div class="arg-card arg-card--tech"><span class="arg-label">2 · Fix the root cause</span><ul>
+        <li>The cause was <strong>the SQL tool</strong>, not the model: it returned every unpaid invoice without ageing.</li>
+        <li>It now computes days overdue in Python and filters on the requested threshold.</li></ul></div>
+    <div class="arg-card arg-card--ok"><span class="arg-label">3 · Verify</span><ul>
+        <li>New benchmark: <strong>5 / 5 for every model</strong>, both judges agreeing.</li>
+        <li>Next metric: <strong>completeness</strong> (gemma can omit 1 invoice out of 8 without inventing anything).</li></ul></div>
+</div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline & architecture</span>
+            <h2>End-to-end architecture</h2>
+            <p>Pipeline rebuilt from an analysis of the repository: every block maps to real code. Play the data flow, click a block to follow its dependencies, or open the architecture diagrams.</p>
+            <div class="gh-cards"><a class="gh-card" href="https://github.com/PDUCLOS/LLMRAGlangchain" target="_blank" rel="noopener" data-repo="PDUCLOS/LLMRAGlangchain">
+            <span class="gh-name"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>LLMRAGlangchain</span>
+            <span class="gh-desc">Public repository on GitHub</span>
+            <span class="gh-meta"><span data-k="lang"></span><span data-k="push"></span><span data-k="stars"></span></span>
+        </a></div>
+            
+            <div class="pl" data-pl id="pl-copilote-erp">
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Interactive pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Pipeline diagram (draw.io)</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Application architecture: providers switched by environment variable</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">RAG pipeline: ingestion, retrieval, native or LangChain generation</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">LLMOps: benchmark, judges and production loop</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d4">Kubernetes deployment: API, Ollama on a GPU node, SQL Server, Jobs</button></div>
+                <div class="pl-panel" data-panel="live">
+                    <div class="pl-toolbar">
+                        <button type="button" class="pl-play">▶ Play the data flow</button>
+                        <button type="button" class="pl-reset" hidden>Show all</button>
+                        <span class="pl-hint">Click a block to see what feeds it and what it feeds.</span>
+                    </div>
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:6">
+                        <svg class="pl-edges" aria-hidden="true"></svg>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">Procedures &amp; contracts</button><button type="button" class="pl-node" data-id="s0n1">Sage / EBP ERP (SQL Server)</button></div><div class="pl-col" data-col="1" style="--k:#0284C7"><h4><span>02</span>Ingestion</h4><button type="button" class="pl-node" data-id="s1n0">Section-aware chunking</button><button type="button" class="pl-node" data-id="s1n1">bge-m3 embeddings</button></div><div class="pl-col" data-col="2" style="--k:#2563EB"><h4><span>03</span>Retrieval</h4><button type="button" class="pl-node" data-id="s2n0">BM25 + vectors → RRF</button><button type="button" class="pl-node" data-id="s2n1">Read-only SQL + ageing</button></div><div class="pl-col" data-col="3" style="--k:#16A34A"><h4><span>04</span>Generation</h4><button type="button" class="pl-node" data-id="s3n0">gemma4:e4b on GPU (Ollama)</button><button type="button" class="pl-node" data-id="s3n1">Native | LangChain LCEL</button></div><div class="pl-col" data-col="4" style="--k:#DB2777"><h4><span>05</span>LLMOps</h4><button type="button" class="pl-node" data-id="s4n0">Token · cost · latency log</button><button type="button" class="pl-node" data-id="s4n1">Benchmark: 2 LLM judges</button></div><div class="pl-col" data-col="5" style="--k:#0D9488"><h4><span>06</span>Serving</h4><button type="button" class="pl-node" data-id="s5n0">FastAPI + chat UI</button><button type="button" class="pl-node" data-id="s5n1">Kubernetes (HPA, GPU node)</button></div></div>
+                    </div></div>
+                    <div class="pl-band" style="--k:#475569">Docker (single image) · GitHub Actions (ruff · pytest · real SQL Server) · kustomize local-gpu / cloud</div>
+                    <div class="pl-info" aria-live="polite"></div>
+                    <div class="pl-legend"><span><i class="solid"></i>data flow</span><span><i class="dash"></i>monitoring / retraining loop</span></div>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s1n1", "l": "", "d": false}, {"a": "s1n1", "b": "s2n0", "l": "index", "d": false}, {"a": "s0n1", "b": "s2n1", "l": "SELECT", "d": false}, {"a": "s2n0", "b": "s3n0", "l": "sources [Sx]", "d": false}, {"a": "s2n1", "b": "s3n0", "l": "", "d": false}, {"a": "s3n0", "b": "s3n1", "l": "", "d": true}, {"a": "s3n0", "b": "s4n0", "l": "log", "d": true}, {"a": "s4n1", "b": "s3n0", "l": "evaluates", "d": true}, {"a": "s3n0", "b": "s5n0", "l": "", "d": false}, {"a": "s5n0", "b": "s5n1", "l": "", "d": true}]</script>
+                </div>
+                <div class="pl-panel" data-panel="d0">
+                <h3 class="pl-panel-title">Pipeline diagram (draw.io)</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/copilote-erp.svg" alt="Pipeline diagram (draw.io)" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/copilote-erp.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
+                <h3 class="pl-panel-title">Application architecture: providers switched by environment variable</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/copilote-erp-app.svg" alt="Application architecture: providers switched by environment variable" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/copilote-erp-app.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">RAG pipeline: ingestion, retrieval, native or LangChain generation</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/copilote-erp-pipeline-rag.svg" alt="RAG pipeline: ingestion, retrieval, native or LangChain generation" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/copilote-erp-pipeline-rag.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d3">
+                <h3 class="pl-panel-title">LLMOps: benchmark, judges and production loop</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/copilote-erp-llmops.svg" alt="LLMOps: benchmark, judges and production loop" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/copilote-erp-llmops.svg" target="_blank">⤢ Full screen (SVG)</a></div></div><div class="pl-panel" data-panel="d4">
+                <h3 class="pl-panel-title">Kubernetes deployment: API, Ollama on a GPU node, SQL Server, Jobs</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>scroll / drag to navigate</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/copilote-erp-kubernetes.svg" alt="Kubernetes deployment: API, Ollama on a GPU node, SQL Server, Jobs" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/copilote-erp-kubernetes.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
+            </div>
+            <h3 class="pl-steps-title">Step by step</h3>
+            <ol class="pipeline-steps"><li><strong>Chunking</strong> — procedures and contracts split into 800-character chunks along section titles, so the answer can cite “Commercial policy § 3”.</li><li><strong>Embeddings</strong> — bge-m3 (1,024 dimensions, multilingual) served by Ollama on the local GPU.</li><li><strong>Hybrid search</strong> — BM25 for exact terms (invoice numbers, VAT), vectors for meaning, RRF fusion.</li><li><strong>SQL tool</strong> — for data questions, a guarded read-only query; ageing of unpaid invoices computed in Python.</li><li><strong>Grounded generation</strong> — numbered sources and a strict instruction: cite every statement, refuse otherwise.</li><li><strong>Logging</strong> — role, model, real tokens, cost, latency and sources of each call, exposed on <code>/usage</code>.</li><li><strong>LLMOps benchmark</strong> — 13 questions (incl. off-topic and injection) × 4 configurations, scored by two judges; replayed nightly as a CronJob.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="points-forts">
+        <div class="section-container">
+            <span class="section-label">// Key strengths</span>
+            <h2>Key strengths of the solution</h2>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>No invented numbers</strong>: mandatory citations, refusal without a source, amounts from read-only SQL.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>A proven LLMOps loop</strong>: a hallucination caught by the judges, fixed at the root, faithfulness back to 5 / 5.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Sovereign, no usage cost</strong>: open-weight LLM on a local GPU, same code to Azure through one variable.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Production-ready</strong>: CI on a real SQL Server, Docker image, Kubernetes with a GPU node and least privilege.</p></li></ol>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Tools & languages</span>
+            <h2>Tech stack and why these choices</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Languages (share of code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">Python</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:63%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">63%</span></div><div class="skill-item"><span class="skill-name">HTML</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:20%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">20%</span></div><div class="skill-item"><span class="skill-name">YAML</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:7%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">7%</span></div><div class="skill-item"><span class="skill-name">SQL</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:6%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">6%</span></div><div class="skill-item"><span class="skill-name">Shell / Make</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:2%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">2%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">Excluding Markdown documentation, data and media.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Keywords</h3>
+                    <div class="project-tech"><span class="tech-badge">RAG</span><span class="tech-badge">LangChain</span><span class="tech-badge">Ollama</span><span class="tech-badge">LLMOps</span><span class="tech-badge">LLM-as-a-judge</span><span class="tech-badge">FastAPI</span><span class="tech-badge">SQL Server</span><span class="tech-badge">Docker</span><span class="tech-badge">Kubernetes</span><span class="tech-badge">BM25</span><span class="tech-badge">bge-m3</span><span class="tech-badge">Azure OpenAI</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Tool</th><th>Role in the project</th><th>What it demonstrates</th></tr></thead>
+                <tbody><tr><td>Ollama (gemma4:e4b, qwen3.5:9b, bge-m3)</td><td>LLM and embeddings on a local GPU, real token counters</td><td>Sovereign generative AI</td></tr><tr><td>LangChain LCEL + ChatOllama</td><td>prompt | model | extract chain, fallback to the native chain</td><td>LLM orchestration</td></tr><tr><td>BM25 + RRF</td><td>Lexical search merged with vector search</td><td>Information retrieval</td></tr><tr><td>SQLAlchemy + SQL Server 2022</td><td>ERP data, read-only guard, least-privilege roles</td><td>Transactional data</td></tr><tr><td>FastAPI</td><td>/chat, /sql, /usage, /health API and chat UI</td><td>Model serving</td></tr><tr><td>In-house LLMOps benchmark</td><td>hit@k, MRR, citations, refusals, injection, p50/p95, cost; two LLM judges</td><td>Evaluation and regression testing</td></tr><tr><td>Docker</td><td>Single image for API, ingestion and benchmark; non-root, healthcheck</td><td>Containerisation</td></tr><tr><td>Kubernetes (kustomize)</td><td>HPA, GPU node, StatefulSet, Job, CronJob, NetworkPolicy, oauth2-proxy</td><td>Deployment</td></tr><tr><td>Azure OpenAI · AI Search</td><td>Cloud target, same code through environment variables</td><td>Portability</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="mlops">
+        <div class="section-container">
+            <span class="section-label">// MLOps maturity</span>
+            <h2>Industrialization: what is in place</h2>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Practice</th><th>Status</th><th>Detail</th></tr></thead>
+                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>ruff, pytest, real SQL Server, gold-set gate</td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>75 tests + SQL Server 2022 suite</td></tr><tr><td>Docker</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>Single image tested end to end</td></tr><tr><td>Orchestration</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Kubernetes CronJob for the LLMOps benchmark</td></tr><tr><td>Tracking / registry</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>LLMOps benchmark (JSON reports); no registry</td></tr><tr><td>Monitoring / drift</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Token / cost / latency log, /usage</td></tr><tr><td>API</td><td><span class="m-yes" title="Implemented">●</span> Implemented</td><td>FastAPI + chat UI</td></tr><tr><td>Deployment</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>Manifests validated (kustomize), not yet applied to a cluster</td></tr><tr><td>IaC / K8s</td><td><span class="m-part" title="Partial">◐</span> Partial</td><td>kustomize; Azure Bicep planned</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="resultats">
+        <div class="section-container">
+            <span class="section-label">// Results</span>
+            <h2>Measured metrics</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Configuration</th><th>Faithfulness (before → after fix)</th><th>Correct refusals</th><th>Latency p50 / p95</th></tr></thead><tbody><tr><td>Original extractive mode</td><td>3.1 → 3.2</td><td>1 / 3</td><td>4 ms / 5 ms</td></tr><tr><td>qwen3.5:9b · native chain</td><td>4.8 → 5.0</td><td>3 / 3</td><td>3.1 s / 5.8 s</td></tr><tr><td>qwen3.5:9b · LangChain (ChatOllama)</td><td>4.8 → 5.0</td><td>3 / 3</td><td>3.0 s / 5.4 s</td></tr><tr><td>gemma4:e4b · native chain (selected)</td><td>4.85 → 5.0</td><td>3 / 3</td><td>2.0 s / 3.4 s</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">LLMOps benchmark of 27/10/2026 on an RTX 4070 Ti SUPER: 10 business questions + 3 adversarial ones, faithfulness scored by gemma4 and qwen3.5. Azure-equivalent cost (gpt-4.1-mini, real tokens): about €0.85 per 1,000 requests.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="code">
+        <div class="section-container">
+            <span class="section-label">// Code excerpts</span>
+            <h2>The code that makes the difference</h2>
+            <p class="code-caption">agents/safe_sql.py — first lock: a single, read-only statement</p><pre class="code"><code>statement = sql.strip().rstrip(&quot;;&quot;).strip()
+
+if &quot;;&quot; in statement:
+    raise SqlGuardError(&quot;Une seule instruction SQL est autorisée par requête.&quot;)
+
+lowered = statement.lower()
+
+first_token = next((t for t in _TOKEN_RE.findall(lowered) if t not in {&quot;(&quot;}), &quot;&quot;)
+if first_token not in ALLOWED_START:
+    raise SqlGuardError(
+        f&quot;Requête non autorisée : elle doit commencer par SELECT ou WITH (trouvé &#x27;{first_token}&#x27;).&quot;
+    )
+
+tokens = set(_TOKEN_RE.findall(lowered))
+forbidden = sorted(tokens &amp; FORBIDDEN_KEYWORDS)
+if forbidden:
+    raise SqlGuardError(f&quot;Mot-clé interdit : {&#x27;, &#x27;.join(forbidden)}.&quot;)</code></pre><p class="code-caption">providers/llm.py — LLMOps: real counters returned by Ollama</p><pre class="code"><code>def ollama_usage(data: dict) -&gt; dict[str, float]:
+    &quot;&quot;&quot;Extrait les compteurs d&#x27;une réponse Ollama (durées en ns -&gt; ms).&quot;&quot;&quot;
+    eval_count = int(data.get(&quot;eval_count&quot;) or 0)
+    eval_ms = (data.get(&quot;eval_duration&quot;) or 0) / 1e6
+    return {
+        &quot;tokens_in&quot;: int(data.get(&quot;prompt_eval_count&quot;) or 0),
+        &quot;tokens_out&quot;: eval_count,
+        &quot;load_ms&quot;: round((data.get(&quot;load_duration&quot;) or 0) / 1e6, 1),
+        &quot;prompt_ms&quot;: round((data.get(&quot;prompt_eval_duration&quot;) or 0) / 1e6, 1),
+        &quot;eval_ms&quot;: round(eval_ms, 1),
+        &quot;tokens_per_s&quot;: round(eval_count / (eval_ms / 1000), 1) if eval_ms else 0.0,
+    }</code></pre><p class="code-caption">Deployment — from image to GPU cluster</p><pre class="code"><code>docker build -t erp-ai-copilot:0.2.0 .
+kubectl apply -k deploy/k8s/overlays/local-gpu
+kubectl -n erp-ai wait --for=condition=complete job/erp-ai-ingest --timeout=10m
+kubectl -n erp-ai port-forward svc/erp-ai-api 8000:80</code></pre>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Critical review</span>
+            <h2>Known limitations and next steps</h2>
+            <p style="margin-bottom:1.5rem">Documenting limitations honestly is part of the job: it lets a team make informed decisions.</p>
+            <div class="arg-card arg-card--ok"><ul><li>13-question benchmark: a regression tool, not a statistical study.</li><li>Faithfulness does not measure omissions: a completeness metric is the next step.</li><li>Kubernetes manifests validated by rendering (<code>kubectl kustomize</code>) and the image tested in a container, but not yet applied to a real cluster.</li><li>Authentication: oauth2-proxy (Entra ID) in front of the cloud Ingress; the business role still has to be derived from Entra ID groups.</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/en/projects/lyonflow.html"><small>← Previous project</small>LyonFlow</a>
+            <a class="next" href="/en/projects/stripe-fraude-temps-reel.html"><small>Next project →</small>Stripe — real-time fraud</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Analytics Engineer — Lyon, France · <a href="/LICENSE.txt" style="color:var(--text-muted)">All rights reserved · no text and data mining or AI use</a> ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=6"></script>
+</body>
+</html>
