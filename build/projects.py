@@ -2,6 +2,7 @@
 
 from achats import ACHATS
 from copilote_erp import COPILOTE_ERP
+from visiontrack import VISIONTRACK
 
 GH = "https://github.com/PDUCLOS/"
 
@@ -929,6 +930,15 @@ def predict(data: dict):
 PROJECTS.insert(0, ACHATS)
 # Copilote ERP (RAG + SQL + LLMOps + Kubernetes) : juste après LyonFlow.
 PROJECTS.insert(2, COPILOTE_ERP)
+PROJECTS.append(VISIONTRACK)
+
+# Projets phares (en tête de /projets/), puis les autres projets en tuiles compactes.
+FEATURED = ("achats-negociation", "visiontrack", "lyonflow", "copilote-erp", "stripe-fraude-temps-reel", "maintenance-predictive")
+OTHERS = ("carrier-reporting", "copilot-maintenance", "detection-fraude", "marche-hvac", "gouvernance-spotify",
+          "mcp-open-data", "csvtraitement", "predictira")
+_order = {slug: i for i, slug in enumerate(FEATURED + OTHERS)}
+assert set(_order) == {p["slug"] for p in PROJECTS}, "FEATURED + OTHERS doit couvrir tous les projets"
+PROJECTS.sort(key=lambda p: _order[p["slug"]])
 
 # Points forts de chaque solution, repris en tête de la section « Points forts » des pages projets.
 STRENGTHS = {

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionTrack — détection, tracking et distance de personnes en temps réel, 100 % local — Patrice Duclos</title>
+    <meta name="description" content="Pipeline de vision par ordinateur en temps réel sur un PC équipé d&#x27;une carte NVIDIA grand public : détection RF-DETR, tracking ByteTrack, distance par fusion géométrie + profondeur Depth Anything V2, lignes de comptage, zones interdites et heatmap. Tout se règle dans un fichier YAML ; sorties en vidéo annotée et en JSON Lines.">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
+    <meta property="og:title" content="VisionTrack — détection, tracking et distance de personnes en temps réel, 100 % local — Patrice Duclos">
+    <meta property="og:description" content="Pipeline de vision par ordinateur en temps réel sur un PC équipé d&#x27;une carte NVIDIA grand public : détection RF-DETR, tracking ByteTrack, distance par fusion géométrie + profondeur Depth Anything V2, lignes de comptage, zones interdites et heatmap. Tout se règle dans un fichier YAML ; sorties en vidéo annotée et en JSON Lines.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/projets/visiontrack.html">
+    <link rel="canonical" href="https://pduclos.github.io/projets/visiontrack.html">
+    <link rel="alternate" hreflang="fr" href="https://pduclos.github.io/projets/visiontrack.html">
+    <link rel="alternate" hreflang="en" href="https://pduclos.github.io/en/projects/visiontrack.html">
+    <link rel="alternate" hreflang="x-default" href="https://pduclos.github.io/projets/visiontrack.html">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=7">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">Parcours</a></li>
+            <li class="has-dropdown">
+                <a href="/projets/" class="dropdown-toggle" aria-current="page">Projets</a>
+                <ul class="dropdown">
+                    <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/projets/achats-negociation.html">Buyvera — négociation achats<small>Projet phare · Produit commercialisable · Chef de projet</small></a></li><li><a href="/projets/visiontrack.html" aria-current="page">VisionTrack — vision par ordinateur locale<small>Computer vision · Temps réel · 100 % local</small></a></li><li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Production · Mobilité urbaine</small></a></li><li><a href="/projets/copilote-erp.html">Copilote ERP sourcé (RAG + SQL + LLMOps)<small>IA générative · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · MLOps</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Reporting HVAC Europe<small>Expérience professionnelle · Impact mesurable</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe relancé en 2026</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="https://buyvera.fr/">Site commercial — Buyvera<small>projet achats · site produit bilingue</small></a></li>
+                    <li><a href="/presentations/plateforme-tarifs.html">Présentation commerciale<small>projet achats · 38 slides</small></a></li>
+                    <li><a href="/presentations/hausses-tarifaires.html">Présentation technique<small>projet achats · 21 slides</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/competences.html">Compétences</a></li>
+            <li><a href="/stack.html">Stack MLOps</a></li>
+            <li><a href="/profil-rh.html">Recruteurs</a></li>
+            <li><a href="/profil-tech.html">Profil technique</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+            <li><a href="/en/projects/visiontrack.html" class="lang-switch" hreflang="en" lang="en" title="English version" aria-label="English version">EN</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            
+            <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / VisionTrack — vision par ordinateur locale</div>
+            <span class="project-tag" style="color:var(--accent)">Computer vision · Temps réel · 100 % local</span>
+            <h1>Compter, suivre et mesurer les personnes <span class="highlight">sans qu'une image ne quitte le site</span></h1>
+            <p class="lead">Pipeline de vision par ordinateur en temps réel sur un PC équipé d'une carte NVIDIA grand public : détection RF-DETR, tracking ByteTrack, distance par fusion géométrie + profondeur Depth Anything V2, lignes de comptage, zones interdites et heatmap. Tout se règle dans un fichier YAML ; sorties en vidéo annotée et en JSON Lines.</p>
+            <div class="kpi-row"><div class="kpi"><b>≈ 28–30</b><span>images/s en 1280×720</span></div><div class="kpi"><b>100 %</b><span>local, fonctionne hors ligne</span></div><div class="kpi"><b>3</b><span>méthodes de distance</span></div><div class="kpi"><b>8</b><span>scénarios dans la vidéo de démo</span></div><div class="kpi"><b>Apache 2.0</b><span>modèles par défaut</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/visiontrack" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Code source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="#video" class="contact-btn contact-btn-secondary">Vidéo de démo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// En 30 secondes</span>
+            <h2>Le problème, la réponse, la preuve</h2>
+            <div style="margin-bottom:2rem"><p>Compter les entrées d'un magasin, détecter une personne dans une zone dangereuse ou mesurer la densité d'une foule : les offres du marché envoient en général les images dans le cloud et facturent <strong>à la caméra</strong>. Pour beaucoup de sites, c'est un frein RGPD autant qu'un coût qui grandit avec le volume.</p><p>VisionTrack fait tout <strong>sur place</strong>, sur un seul PC GPU : détection, suivi, distance en mètres, comptage et alertes de zone. Seules des métriques (comptages, JSON) peuvent sortir du site si on le souhaite. L'adaptation à un nouveau site se fait dans <code>config.yaml</code>, sans toucher au code.</p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">Pour le recruteur · valeur business</span>
+                    <ul><li><strong>Conformité par conception</strong> : aucune image ne quitte le réseau local, pas d'abonnement par caméra.</li><li><strong>Pensé comme une offre</strong> : audit du site, POC de 2 semaines sur les vidéos du client, puis déploiement et formation.</li><li><strong>Cas d'usage concrets</strong> : commerce (fréquentation, heatmap), sécurité (zone interdite), événementiel, smart city, entrepôt, sport.</li><li><strong>Honnêteté technique</strong> : la distance est annoncée comme une estimation (±15–20 % sans calibration), avec la façon de la fiabiliser.</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
+                    <ul><li>Détection <strong>RF-DETR</strong> (Apache 2.0) ou YOLO en option ; tracking <strong>ByteTrack</strong> avec identifiants stables et traînées.</li><li>Seuils du tracker alignés automatiquement sur la confiance du détecteur, pour ne pas rejeter des détections volontairement gardées.</li><li>Distance : géométrie (focale × taille / hauteur de boîte), profondeur <strong>Depth Anything V2</strong> en fp16 sur GPU, ou fusion qui recale la profondeur relative en mètres ; lissage exponentiel par piste.</li><li>Zones de comptage et zones interdites, heatmap ; sorties MP4 annoté + JSON Lines (une ligne par image : pistes, distances, zones).</li><li>Interface <strong>Gradio</strong> locale pour les rendez-vous client ; vidéo de démo générée par script à partir du vrai pipeline.</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="page-section alt" id="video">
+        <div class="section-container">
+            <span class="section-label">// Démonstration</span>
+            <h2>VisionTrack en 1 min 57</h2>
+            
+<video controls preload="none" poster="/media/visiontrack/poster.webp" style="width:100%;border-radius:12px;border:1px solid var(--border);background:#0f1830">
+    <source src="/media/visiontrack/demo.mp4" type="video/mp4">
+</video>
+<p class="code-caption" style="margin-top:.8rem">1 min 57 · montée par <code>demo/make_demo.py</code>, qui fait tourner le vrai pipeline sur chaque scène :
+suivi, distance, foule dense, nuit, comptage, zone interdite, heatmap, puis comparatif réglage rapide / réglage précision.
+Vidéos sources sous licence CC BY, créditées à l'écran.</p>
+<div class="pipeline-figure" style="margin-top:1.5rem;padding:.6rem"><img src="/media/visiontrack/chelmsford.webp" alt="VisionTrack sur une rue piétonne : boîtes, identifiants, distances et carte de profondeur en incrustation" loading="lazy" draggable="false" style="min-width:0"></div>
+<p class="code-caption">Rue piétonne de Chelmsford (CC BY) : identifiants stables, distance de chaque personne en mètres (rouge &lt; 3 m, orange &lt; 8 m),
+carte de profondeur en incrustation, ligne de comptage.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline & architecture</span>
+            <h2>Architecture de bout en bout</h2>
+            <p>Pipeline reconstitué à partir de l'analyse du dépôt : chaque brique correspond à du code réel. Animez le flux, cliquez une brique pour suivre ses dépendances, ou ouvrez les schémas d'architecture.</p>
+            <div class="gh-cards"><a class="gh-card" href="https://github.com/PDUCLOS/visiontrack" target="_blank" rel="noopener" data-repo="PDUCLOS/visiontrack">
+            <span class="gh-name"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>visiontrack</span>
+            <span class="gh-desc">Dépôt public sur GitHub</span>
+            <span class="gh-meta"><span data-k="lang"></span><span data-k="push"></span><span data-k="stars"></span></span>
+        </a></div>
+            
+            <div class="pl" data-pl id="pl-visiontrack">
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Pipeline interactif</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Schéma draw.io du pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d1">Architecture du pipeline</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d2">Local ou cloud : ce qui sort du site</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d3">Cas d&#x27;usage</button></div>
+                <div class="pl-panel" data-panel="live">
+                    <div class="pl-toolbar">
+                        <button type="button" class="pl-play">▶ Animer le flux de données</button>
+                        <button type="button" class="pl-reset" hidden>Tout afficher</button>
+                        <span class="pl-hint">Cliquez une brique pour voir ce qu'elle reçoit et ce qu'elle alimente.</span>
+                    </div>
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:6">
+                        <svg class="pl-edges" aria-hidden="true"></svg>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">YouTube (yt-dlp)</button><button type="button" class="pl-node" data-id="s0n1">Fichier ou webcam</button><button type="button" class="pl-node" data-id="s0n2">Caméra IP (RTSP)</button></div><div class="pl-col" data-col="1" style="--k:#16A34A"><h4><span>02</span>Détection</h4><button type="button" class="pl-node" data-id="s1n0">RF-DETR (Apache 2.0)</button><button type="button" class="pl-node" data-id="s1n1">YOLO (option, AGPL)</button></div><div class="pl-col" data-col="2" style="--k:#2563EB"><h4><span>03</span>Tracking</h4><button type="button" class="pl-node" data-id="s2n0">ByteTrack</button><button type="button" class="pl-node" data-id="s2n1">ID stables + traînées</button></div><div class="pl-col" data-col="3" style="--k:#16A34A"><h4><span>04</span>Distance</h4><button type="button" class="pl-node" data-id="s3n0">Géométrie (pinhole)</button><button type="button" class="pl-node" data-id="s3n1">Depth Anything V2</button><button type="button" class="pl-node" data-id="s3n2">Fusion + lissage</button></div><div class="pl-col" data-col="4" style="--k:#2563EB"><h4><span>05</span>Zones</h4><button type="button" class="pl-node" data-id="s4n0">Lignes de comptage</button><button type="button" class="pl-node" data-id="s4n1">Zones interdites</button><button type="button" class="pl-node" data-id="s4n2">Heatmap</button></div><div class="pl-col" data-col="5" style="--k:#0D9488"><h4><span>06</span>Sorties</h4><button type="button" class="pl-node" data-id="s5n0">MP4 annoté</button><button type="button" class="pl-node" data-id="s5n1">JSON Lines</button><button type="button" class="pl-node" data-id="s5n2">Interface Gradio</button></div></div>
+                    </div></div>
+                    <div class="pl-band" style="--k:#475569">config.yaml : source, modèle, classes, zones, seuils · PyTorch CUDA (fp16) · tout reste sur le réseau local</div>
+                    <div class="pl-info" aria-live="polite"></div>
+                    <div class="pl-legend"><span><i class="solid"></i>flux de données</span><span><i class="dash"></i>boucle de suivi / réentraînement</span></div>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s0n1", "b": "s1n0", "l": "", "d": false}, {"a": "s0n2", "b": "s1n0", "l": "", "d": false}, {"a": "s0n1", "b": "s1n1", "l": "", "d": false}, {"a": "s1n0", "b": "s2n0", "l": "boîtes", "d": false}, {"a": "s1n1", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s2n1", "l": "", "d": false}, {"a": "s2n1", "b": "s3n0", "l": "", "d": false}, {"a": "s2n1", "b": "s3n1", "l": "", "d": false}, {"a": "s3n0", "b": "s3n2", "l": "recalage", "d": false}, {"a": "s3n1", "b": "s3n2", "l": "", "d": false}, {"a": "s3n2", "b": "s4n0", "l": "", "d": false}, {"a": "s3n2", "b": "s4n1", "l": "", "d": false}, {"a": "s2n1", "b": "s4n2", "l": "", "d": false}, {"a": "s4n0", "b": "s5n0", "l": "", "d": false}, {"a": "s4n1", "b": "s5n1", "l": "", "d": false}, {"a": "s4n2", "b": "s5n0", "l": "", "d": false}, {"a": "s5n0", "b": "s5n2", "l": "", "d": false}]</script>
+                </div>
+                <div class="pl-panel" data-panel="d0">
+                <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/visiontrack.svg" alt="Schéma draw.io du pipeline" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/visiontrack.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d1">
+                <h3 class="pl-panel-title">Architecture du pipeline</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/visiontrack-architecture.svg" alt="Architecture du pipeline" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/visiontrack-architecture.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d2">
+                <h3 class="pl-panel-title">Local ou cloud : ce qui sort du site</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/visiontrack-local-vs-cloud.svg" alt="Local ou cloud : ce qui sort du site" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/visiontrack-local-vs-cloud.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div><div class="pl-panel" data-panel="d3">
+                <h3 class="pl-panel-title">Cas d&#x27;usage</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/visiontrack-use-cases.svg" alt="Cas d&#x27;usage" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/visiontrack-use-cases.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
+            </div>
+            <h3 class="pl-steps-title">Étape par étape</h3>
+            <ol class="pipeline-steps"><li><strong>Source</strong> — vidéo YouTube (mise en cache), fichier, webcam ou flux RTSP ; extrait et résolution réglables.</li><li><strong>Détection</strong> — RF-DETR (nano à large) filtre les classes demandées (personnes par défaut) au seuil de confiance choisi.</li><li><strong>Tracking</strong> — ByteTrack attribue un identifiant stable à chaque personne et conserve les pistes perdues quelques instants (occultations).</li><li><strong>Distance</strong> — fusion de la méthode géométrique et de la carte de profondeur, calculée une image sur deux pour tenir le temps réel, puis lissée par piste.</li><li><strong>Zones et rendu</strong> — comptage entrées / sorties, alertes de zone interdite, heatmap ; vidéo annotée, JSON Lines et statistiques dans l'interface Gradio.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="points-forts">
+        <div class="section-container">
+            <span class="section-label">// Points forts</span>
+            <h2>Les points forts de la solution</h2>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>100 % local</strong> : aucune image ne quitte le site, pas de cloud ni d'abonnement par caméra, fonctionne hors ligne.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Temps réel sur matériel grand public</strong> : ≈ 28–30 images/s en 1280×720 pour tout le pipeline sur une RTX 4070 Ti SUPER.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Distance fiable dans les scènes encombrées</strong> : fusion géométrie + profondeur, qui prend le relais quand une personne est assise ou masquée.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Adaptable par configuration</strong> : source, modèle, classes, zones et seuils dans un seul fichier YAML.</p></li></ol>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Outils & langages</span>
+            <h2>Stack technique et pourquoi ces choix</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Langages (part du code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">Python</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:100%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">100%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">≈ 1 270 lignes de Python : pipeline, interface Gradio et script de la vidéo de démo.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
+                    <div class="project-tech"><span class="tech-badge">Computer vision</span><span class="tech-badge">RF-DETR</span><span class="tech-badge">ByteTrack</span><span class="tech-badge">Depth Anything V2</span><span class="tech-badge">PyTorch</span><span class="tech-badge">CUDA</span><span class="tech-badge">OpenCV</span><span class="tech-badge">supervision</span><span class="tech-badge">Gradio</span><span class="tech-badge">YAML</span><span class="tech-badge">RGPD</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
+                <tbody><tr><td>RF-DETR</td><td>Détection des personnes (nano → large)</td><td>Choix d'un modèle récent sous licence permissive</td></tr><tr><td>ByteTrack (trackers / supervision)</td><td>Suivi multi-objets, identifiants stables</td><td>Gestion des occultations et des ID fantômes</td></tr><tr><td>Depth Anything V2</td><td>Carte de profondeur monoculaire en fp16</td><td>Intégration d'un modèle Hugging Face sur GPU</td></tr><tr><td>PyTorch CUDA</td><td>Inférence GPU de bout en bout</td><td>Tenir le temps réel sur du matériel grand public</td></tr><tr><td>OpenCV</td><td>Lecture des sources, rendu et écriture MP4</td><td>Traitement vidéo</td></tr><tr><td>supervision</td><td>Lignes de comptage, zones polygonales, annotations</td><td>Logique métier au-dessus des détections</td></tr><tr><td>Gradio</td><td>Interface de démonstration locale, retours enregistrés en local</td><td>Outil présentable en rendez-vous client</td></tr><tr><td>YAML</td><td>Toute l'adaptation à un site dans un seul fichier</td><td>Séparer configuration et code</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="mlops">
+        <div class="section-container">
+            <span class="section-label">// Maturité MLOps</span>
+            <h2>Industrialisation : ce qui est en place</h2>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Pratique</th><th>Statut</th><th>Détail</th></tr></thead>
+                <tbody><tr><td>CI/CD</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tests</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Docker</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Orchestration</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Interface Gradio locale (pas d&#x27;API)</td></tr><tr><td>Déploiement</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Installation documentée sur PC GPU Windows / Linux</td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="resultats">
+        <div class="section-container">
+            <span class="section-label">// Résultats</span>
+            <h2>Métriques mesurées</h2>
+            <div class="table-wrap"><table class="stack-table"><thead><tr><th>Mesure</th><th>Résultat</th><th>Conditions</th></tr></thead><tbody><tr><td>Débit de tout le pipeline</td><td>≈ 28 à 30 images/s</td><td>RTX 4070 Ti SUPER, 1280×720, RF-DETR medium + tracking + profondeur + zones + rendu</td></tr><tr><td>Précision de la distance</td><td>estimation à ±15–20 %</td><td>sans calibration de la caméra ; meilleure avec le vrai champ de vision</td></tr></tbody></table></div>
+            <p style="margin-top:1.2rem">La vidéo de démo compare sur la même scène un réglage rapide (medium, seuil 0,45, 1280 px) et un réglage précision (large, seuil 0,30, 1920 px), avec le nombre moyen de personnes détectées et la vitesse obtenue.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="code">
+        <div class="section-container">
+            <span class="section-label">// Extraits de code</span>
+            <h2>Le code qui fait la différence</h2>
+            <p class="code-caption">visiontrack/pipeline.py — le tracker ne rejette pas ce que le détecteur a gardé</p><pre class="code"><code>conf = cfg[&quot;detector&quot;][&quot;confidence&quot;]
+tracker_cfg[&quot;track_activation_threshold&quot;] = min(tracker_cfg[&quot;track_activation_threshold&quot;], conf)
+tracker_cfg[&quot;high_conf_det_threshold&quot;] = min(tracker_cfg.get(&quot;high_conf_det_threshold&quot;, 0.6), conf + 0.15)
+tracker = ByteTrackTracker(frame_rate=src_fps, **tracker_cfg)</code></pre><p class="code-caption">config.yaml — adapter à un site sans toucher au code</p><pre class="code"><code>detector:
+  backend: rfdetr       # rfdetr (Apache 2.0) | yolo (Ultralytics, AGPL-3.0)
+  model: medium
+  confidence: 0.45
+distance:
+  method: fusion        # pinhole | depth | fusion | none
+  horizontal_fov_deg: 65
+zones:
+  lines:
+    - name: passage
+      start: [0.05, 0.75]
+      end: [0.95, 0.75]</code></pre>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Regard critique</span>
+            <h2>Limites connues et prochaines étapes</h2>
+            <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet à une équipe de décider en connaissance de cause.</p>
+            <div class="arg-card arg-card--ok"><ul><li>Pas encore de tests automatisés ni d'intégration continue : priorité à la démonstration, à ajouter avant une mission.</li><li>Distance estimée sans calibration (±15–20 %) : en mission, renseigner le vrai champ de vision ou calibrer la caméra.</li><li>Nécessite un PC x86 avec carte NVIDIA (CUDA) ; pas de version CPU temps réel.</li><li>Backend YOLO sous AGPL-3.0 et modèles Depth Anything Base / Large ou « Metric » : licence à vérifier avant un usage commercial.</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/projets/achats-negociation.html"><small>← Projet précédent</small>Buyvera — négociation achats</a>
+            <a class="next" href="/projets/lyonflow.html"><small>Projet suivant →</small>LyonFlow</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Analytics Engineer — Lyon · <a href="/LICENSE.txt" style="color:var(--text-muted)">Tous droits réservés · fouille de données et IA interdites</a> ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=7"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ from pathlib import Path
 
 from drawio import build_xml, write_and_export, slim_svg, DRAWIO_BIN
 from pages import project_page, MATRIX_COLS, MARK
-from projects import PROJECTS, GH
+from projects import PROJECTS, GH, FEATURED
 from render import head, nav, FOOTER, footer, badges, arrow, e
 from i18n import T, MATRIX_COLS as MATRIX_COLS_I18N, home, project_path
 from pages import marks
@@ -102,7 +102,13 @@ def matrix_table(projects=None, lang="fr"):
         <p class="code-caption" style="margin-top:0.8rem">{T[lang]["matrix_caption"]}</p>"""
 
 
-def tile(p, lang="fr"):
+def tile(p, lang="fr", compact=False):
+    if compact:
+        return f"""<a class="proj-tile proj-tile--compact reveal" href="{project_path(p['slug'], lang)}">
+        <span class="project-tag">{e(p['kicker'])}</span>
+        <h3>{e(p['short'])}</h3>
+        <div class="project-tech">{badges(p['tags'][:3])}</div>
+    </a>"""
     return f"""<a class="proj-tile reveal" href="{project_path(p['slug'], lang)}">
         <span class="project-tag">{e(p['kicker'])}</span>
         <h3>{e(p['short'])}</h3>
@@ -111,16 +117,39 @@ def tile(p, lang="fr"):
     </a>"""
 
 
+def projects_sections(projects, lang="fr"):
+    """Projets phares (grandes tuiles) puis autres projets (tuiles compactes)."""
+    feat = [p for p in projects if p["slug"] in FEATURED]
+    rest = [p for p in projects if p["slug"] not in FEATURED]
+    t = {"fr": ("// Projets phares", "Les projets à voir en premier", "// Autres projets",
+                "Expérience professionnelle, études de cas de certification et outils"),
+         "en": ("// Flagship projects", "The projects to see first", "// Other projects",
+                "Professional experience, certification case studies and tools")}[lang]
+    return f"""
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">{t[0]}</span>
+            <h2>{t[1]}</h2>
+            <div class="proj-grid">{''.join(tile(p, lang) for p in feat)}</div>
+        </div>
+    </section>
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">{t[2]}</span>
+            <h2>{t[3]}</h2>
+            <div class="proj-grid proj-grid--compact">{''.join(tile(p, lang, compact=True) for p in rest)}</div>
+        </div>
+    </section>
+"""
+
+
 # ---------------------------------------------------------------- pages
 def page_projects_index():
     path = "/projets/"
     body = hero("Projets", "// Portfolio", 'Projets — <span class="highlight">du besoin métier à la production</span>',
                 f"{len(PROJECTS)} projets documentés : pour chacun, le problème métier, le pipeline en draw.io, "
                 "les outils et langages, le niveau d'industrialisation, les métriques et les limites assumées.")
-    body += f"""
-    <section class="page-section">
-        <div class="section-container"><div class="proj-grid">{''.join(tile(p) for p in PROJECTS)}</div></div>
-    </section>
+    body += projects_sections(PROJECTS) + f"""
     <section class="page-section alt">
         <div class="section-container">
             <span class="section-label">// Maturité MLOps</span>
@@ -459,6 +488,7 @@ def build_en():
         SITE=SITE, write=write, FOOTER=footer(en), e=e, arrow=arrow, badges=badges, dots=dots, PROJECTS=PROJECTS_EN,
         head=partial(head, lang=en), nav=partial(nav, lang=en), hero=partial(hero, lang=en),
         matrix_table=partial(matrix_table, PROJECTS_EN, en), tile=partial(tile, lang=en),
+        projects_sections=lambda: projects_sections(PROJECTS_EN, en),
         competences_section=lambda: competences_section(site_en.STACK_EN, PROJECTS_EN, en))
     for p in PROJECTS_EN:
         write(SITE / "en" / "projects" / f"{p['slug']}.html", project_page(p, PROJECTS_EN, en))

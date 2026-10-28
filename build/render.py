@@ -39,7 +39,7 @@ def head(title, description, path, lang="fr"):
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css?v=6">
+    <link rel="stylesheet" href="/assets/style.css?v=7">
 </head>
 <body>
 """
@@ -106,7 +106,7 @@ def footer(lang="fr"):
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>
-    <script src="/assets/site.js?v=6"></script>
+    <script src="/assets/site.js?v=7"></script>
 </body>
 </html>
 """
@@ -118,7 +118,7 @@ FOOTER = """
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>
-    <script src="/assets/site.js?v=6"></script>
+    <script src="/assets/site.js?v=7"></script>
 </body>
 </html>
 """

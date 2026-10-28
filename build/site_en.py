@@ -122,10 +122,7 @@ def page_projects_index(h):
     body = h.hero("Projects", "// Portfolio", 'Projects — <span class="highlight">from business need to production</span>',
                   f"{len(PROJECTS)} documented projects: for each one, the business problem, the draw.io pipeline, "
                   "the tools and languages, the level of industrialization, the metrics and the acknowledged limitations.")
-    body += f"""
-    <section class="page-section">
-        <div class="section-container"><div class="proj-grid">{''.join(h.tile(p) for p in PROJECTS)}</div></div>
-    </section>
+    body += h.projects_sections() + f"""
     <section class="page-section alt">
         <div class="section-container">
             <span class="section-label">// MLOps maturity</span>
