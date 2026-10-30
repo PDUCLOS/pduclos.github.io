@@ -10,7 +10,7 @@ _VIDEO = f"""
 <video controls preload="none" poster="{MEDIA}/poster.webp" style="width:100%;border-radius:12px;border:1px solid var(--border);background:#0f1830">
     <source src="{MEDIA}/presentation.mp4" type="video/mp4">
 </video>
-<p class="code-caption" style="margin-top:.8rem">1 min 51 · générée par <code>scripts/promo_video.py</code> à partir des vraies captures (narration de synthèse, fond sonore synthétisé).</p>"""
+<p class="code-caption" style="margin-top:.8rem">1 min 51 · générée par <code>scripts/promo_video.py</code> à partir des vraies captures. Vidéo sans son.</p>"""
 
 _SHOTS = f"""
 <div class="two-col">
