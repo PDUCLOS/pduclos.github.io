@@ -186,11 +186,11 @@ def page_rh(h):
     PROJECTS, arrow = h.PROJECTS, h.arrow
     path = "/en/recruiters.html"
     objections = [
-        ("“It's a career change: is he really at the level?”",
+        ("“A business profile: does he really have the technical level?”",
          "Two RNCP certifications earned (RNCP is the French national qualification register): level 6, then level 7 (Master's level) "
          "Architecte en intelligence artificielle (AI Architect) in 2026, plus a Databricks certification, "
          "12 months at Carrier with three solutions still in use after I left, and an MLOps platform deployed <strong>in production</strong>. "
-         "The career change is complete; what remains is 20 years of field experience that junior profiles don't have."),
+         "The move into data is done; what remains is 20 years of field experience that junior profiles don't have."),
         ("“Senior on the business side, but junior on the tech side?”",
          "The code is public and verifiable: around 1,600 automated tests in total, continuous integration, Docker, Airflow, MLflow, "
          "Terraform. The <a href=\"/en/tech-profile.html\" style=\"color:var(--accent)\">tech profile page</a> details each proof."),
@@ -207,7 +207,7 @@ def page_rh(h):
     obj_html = "".join(f'<details class="objection"><summary>{q}</summary><p>{a}</p></details>' for q, a in objections)
     body = h.hero("Recruiters", "// For HR and hiring managers",
                   'Why hire me — <span class="highlight">in 2 minutes</span>',
-                  "20 years in industrial distribution, a certified career change into data and projects in production: "
+                  "20 years in industrial distribution, a certified specialization in data and projects in production: "
                   "a profile that understands the business <strong>and</strong> delivers the technical solution.",
                   '<div class="btn-row"><a class="contact-btn contact-btn-primary" href="/en/#contact">Contact me ' + arrow() + '</a>'
                   '<a class="contact-btn contact-btn-secondary" href="/en/projects/">See the projects ' + arrow() + '</a></div>')

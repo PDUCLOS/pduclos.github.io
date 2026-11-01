@@ -255,10 +255,10 @@ def page_stack():
 def page_rh():
     path = "/profil-rh.html"
     objections = [
-        ("« C'est une reconversion : a-t-il vraiment le niveau ? »",
+        ("« Un profil métier : a-t-il vraiment le niveau technique ? »",
          "Deux certifications RNCP obtenues (niveau 6, puis niveau 7 Bac+5 Architecte en intelligence artificielle en 2026), une certification Databricks, "
          "12 mois chez Carrier avec trois dispositifs restés en service après mon départ, et une plateforme MLOps déployée <strong>en production</strong>. "
-         "La reconversion est terminée ; ce qui reste, c'est 20 ans de terrain que les profils juniors n'ont pas."),
+         "Le passage à la data est acquis ; ce qui reste, c'est 20 ans de terrain que les profils juniors n'ont pas."),
         ("« Senior métier, mais junior technique ? »",
          "Le code est public et vérifiable : environ 1 600 tests automatisés cumulés, intégration continue, Docker, Airflow, MLflow, "
          "Terraform. La <a href=\"/profil-tech.html\" style=\"color:var(--accent)\">page technique</a> détaille chaque preuve."),
@@ -275,7 +275,7 @@ def page_rh():
     obj_html = "".join(f'<details class="objection"><summary>{q}</summary><p>{a}</p></details>' for q, a in objections)
     body = hero("Recruteurs", "// Pour les RH et managers",
                 'Pourquoi me recruter — <span class="highlight">en 2 minutes</span>',
-                "20 ans de distribution industrielle, une reconversion data certifiée et des projets en production : "
+                "20 ans de distribution industrielle, une spécialisation data certifiée et des projets en production : "
                 "un profil qui comprend le métier <strong>et</strong> livre la solution technique.",
                 '<div class="btn-row"><a class="contact-btn contact-btn-primary" href="/#contact">Me contacter ' + arrow() + '</a>'
                 '<a class="contact-btn contact-btn-secondary" href="/projets/">Voir les projets ' + arrow() + '</a></div>')
