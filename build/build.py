@@ -165,7 +165,7 @@ def page_projects_index():
 
 
 STACK = [
-    ("Orchestration & pipelines", [("Apache Airflow", 4, "LyonFlow (27 DAGs), Stripe, Fraude, HVAC"),
+    ("Orchestration & pipelines", [("Apache Airflow", 4, "LyonFlow (28 DAGs), Stripe, Fraude, HVAC"),
                                    ("Kafka + Debezium (CDC)", 3, "Stripe"),
                                    ("Kubernetes CronJob", 2, "HVAC"),
                                    ("Databricks DLT / Asset Bundles", 2, "LyonFlow Databricks")]),
@@ -366,7 +366,7 @@ def page_tech():
     proofs = [
         ("Architecture de données", "Medallion Bronze/Silver/Gold sur PostgreSQL/PostGIS ; OLTP → CDC Debezium → Kafka → Redis / MongoDB → Snowflake ; schémas en étoile.",
          "lyonflow"),
-        ("Orchestration", "27 DAGs Airflow en production (collecte */5 min, transforms, ML, maintenance) ; CronJob Kubernetes équivalent à un DAG.",
+        ("Orchestration", "28 DAGs Airflow en production (collecte */5 min, transforms, ML, maintenance) ; CronJob Kubernetes équivalent à un DAG.",
          "lyonflow"),
         ("Cycle de vie ML", "MLflow registry, split temporel anti-fuite, features partagées train/serve, garde-fous de fuite par actif.",
          "stripe-fraude-temps-reel"),
@@ -395,7 +395,7 @@ def page_tech():
         <div class="section-container">
             <div class="kpi-row">
                 <div class="kpi"><b>≈ 1 600</b><span>tests automatisés</span></div>
-                <div class="kpi"><b>27</b><span>DAGs Airflow en prod</span></div>
+                <div class="kpi"><b>28</b><span>DAGs Airflow en prod</span></div>
                 <div class="kpi"><b>6</b><span>dépôts avec CI</span></div>
                 <div class="kpi"><b>{len(PROJECTS)}</b><span>pipelines en draw.io</span></div>
             </div>

@@ -30,7 +30,7 @@ _SHOTS = f"""
 _FIXES = """
 <div class="two-col">
     <div class="arg-card arg-card--tech"><span class="arg-label">Vérifier les chiffres</span><ul>
-        <li><strong>27 DAGs</strong> confirmés (28 appels <code>DAG(...)</code>, dont 1 legacy).</li>
+        <li><strong>28 DAGs</strong> confirmés : <code>dag_id</code> distincts hors legacy, y compris ceux déclarés par une constante (recompte du 01/11/2026).</li>
         <li>Tests : <strong>650 verts</strong> sur 674 collectés (et non 620), puis <strong>653</strong> avec 3 tests de sécurité ajoutés ; 0 échec.</li>
         <li>« Retrain toutes les 30 min » était <strong>inexact</strong> : vitesse entraînée chaque jour à 03:38 (le DAG horaire est en pause depuis le 01/07/2026), Vélo'v chaque heure à :50 ; inférence toutes les 15 min.</li>
         <li>7 groupes d'alertes Prometheus confirmés (17 règles).</li></ul></div>
@@ -43,16 +43,16 @@ _FIXES = """
 
 FR_UPDATES = dict(
     lead="Plateforme MLOps de bout en bout pour la mobilité lyonnaise : 9 sources open data, architecture Medallion "
-         "sur PostgreSQL/PostGIS, 27 DAGs Airflow, XGBoost quantile (P10/P50/P90) à H+1h, suivi MLflow, dérive PSI, "
+         "sur PostgreSQL/PostGIS, 28 DAGs Airflow, XGBoost quantile (P10/P50/P90) à H+1h, suivi MLflow, dérive PSI, "
          "routage pgRouting et un dashboard à 3 personas. Déployée sur VPS ; cible Kubernetes rendue par kustomize.",
-    kpis=[("9", "sources open data"), ("27", "DAGs Airflow"), ("653", "tests pytest verts, 0 échec"),
+    kpis=[("9", "sources open data"), ("28", "DAGs Airflow"), ("653", "tests pytest verts, 0 échec"),
           ("5,4 ms", "prédiction P10/P50/P90 (médiane)"), ("18", "pages Streamlit, 3 personas")],
     links=[("Code source", GH + "lyonflowfull", True),
            ("Branche vitrine", BRANCH, False),
            ("Variante Databricks", GH + "databrickslyonflow", False)],
     tech=[
         "Medallion Bronze/Silver/Gold sur <strong>PostgreSQL 16 + PostGIS + pgRouting</strong>, SQL paramétré partout, zéro credential en dur.",
-        "<strong>27 DAGs Airflow</strong> (collecte 5 min → 6 h, transforms, ML, maintenance), archivage MinIO S3.",
+        "<strong>28 DAGs Airflow</strong> (collecte 5 min → 6 h, transforms, ML, maintenance), archivage MinIO S3.",
         "<strong>XGBoost quantile</strong> (P10/P50/P90) : vitesse entraînée chaque jour, Vélo'v chaque heure, inférence toutes les 15 min ; suivi <strong>MLflow</strong> avec repli sur un modèle local.",
         "Dérive <strong>PSI</strong> maison (rapport quotidien), Evidently en option ; Prometheus + Grafana + Alertmanager, 7 groupes d'alertes.",
         "CI GitHub Actions : ruff, mypy, bandit, pytest + couverture. Déploiement <code>make deploy-vps</code> / <code>rollback-vps</code>, Nginx seul point exposé.",
@@ -72,7 +72,7 @@ FR_UPDATES = dict(
                     ("lyonflow-kubernetes", "Cible Kubernetes (kustomize, non déployée)"),
                     ("lyonflow-infra", "Infrastructure de production (VPS, conteneurs)")],
     stack=[
-        ("Apache Airflow 2.9", "27 DAGs : collecte, transforms Medallion, entraînement, inférence, maintenance", "Orchestration de production, dépendances et reprises"),
+        ("Apache Airflow 2.9", "28 DAGs : collecte, transforms Medallion, entraînement, inférence, maintenance", "Orchestration de production, dépendances et reprises"),
         ("PostgreSQL 16 + PostGIS", "Schémas bronze / silver / gold / osm / rgpd", "Modélisation Medallion, SQL spatial, vues matérialisées"),
         ("pgRouting 3.7", "Itinéraire voiture sur le réseau OSM", "Algorithmes de graphe dans la base"),
         ("XGBoost (régression quantile)", "Vitesse trafic et disponibilité Vélo'v à H+1h, intervalles P10/P90", "Séries temporelles, incertitude de prévision"),
@@ -89,7 +89,7 @@ FR_UPDATES = dict(
     matrix_notes=dict(ci="ruff, mypy, bandit, pytest + couverture",
                       tests="653 verts, 1 ignoré, 23 d'intégration désélectionnés",
                       docker="Compose applicatif + compose monitoring",
-                      orch="Airflow, 27 DAGs (retrain horaire vitesse en pause)",
+                      orch="Airflow, 28 DAGs (retrain horaire vitesse en pause)",
                       tracking="MLflow ; registre de production non revérifié",
                       monitoring="PSI quotidien, Evidently optionnel, Prometheus/Grafana",
                       serving="FastAPI + clé API", deploy="VPS, deploy/rollback scriptés, health checks",
@@ -162,7 +162,7 @@ components:
         "Variante Databricks en cours : semaine 1 livrée (Unity Catalog, ingestion Bronze, DLT), MLflow / Model Serving / Genie à venir.",
     ],
     strengths=[
-        "<strong>Du flux brut à la décision</strong> : 9 sources, Medallion sur PostgreSQL, 27 DAGs Airflow, 3 personas (usager, opérateur, élu).",
+        "<strong>Du flux brut à la décision</strong> : 9 sources, Medallion sur PostgreSQL, 28 DAGs Airflow, 3 personas (usager, opérateur, élu).",
         "<strong>Prévision avec incertitude</strong> : XGBoost quantile P10/P50/P90, 5,4 ms par capteur, inférence toutes les 15 min.",
         "<strong>Boucle MLOps instrumentée</strong> : MLflow, dérive PSI quotidienne, alertes Prometheus, déploiement et retour arrière en une commande.",
         "<strong>Chiffres revérifiés</strong> : 653 tests verts, cadences lues dans le code, erreurs de la fiche précédente corrigées et failles réparées.",
@@ -195,7 +195,7 @@ _SHOTS_EN = f"""
 _FIXES_EN = """
 <div class="two-col">
     <div class="arg-card arg-card--tech"><span class="arg-label">Checking the figures</span><ul>
-        <li><strong>27 DAGs</strong> confirmed (28 <code>DAG(...)</code> calls, 1 of them legacy).</li>
+        <li><strong>28 DAGs</strong> confirmed: distinct <code>dag_id</code> values excluding legacy, including those declared through a constant (recount of 11/01/2026).</li>
         <li>Tests: <strong>650 passing</strong> out of 674 collected (not 620), then <strong>653</strong> with 3 added security tests; 0 failures.</li>
         <li>“Retrain every 30 min” was <strong>inaccurate</strong>: speed is trained daily at 03:38 (the hourly DAG has been paused since 07/01/2026), Vélo'v hourly at :50; inference every 15 min.</li>
         <li>7 Prometheus alert groups confirmed (17 rules).</li></ul></div>
@@ -208,16 +208,16 @@ _FIXES_EN = """
 
 EN_UPDATES = dict(
     lead="End-to-end MLOps platform for Lyon mobility: 9 open data sources, Medallion architecture on "
-         "PostgreSQL/PostGIS, 27 Airflow DAGs, quantile XGBoost (P10/P50/P90) one hour ahead, MLflow tracking, PSI drift, "
+         "PostgreSQL/PostGIS, 28 Airflow DAGs, quantile XGBoost (P10/P50/P90) one hour ahead, MLflow tracking, PSI drift, "
          "pgRouting routing and a dashboard for 3 personas. Deployed on a VPS; Kubernetes target rendered with kustomize.",
-    kpis=[("9", "open data sources"), ("27", "Airflow DAGs"), ("653", "passing pytest tests, 0 failures"),
+    kpis=[("9", "open data sources"), ("28", "Airflow DAGs"), ("653", "passing pytest tests, 0 failures"),
           ("5.4 ms", "P10/P50/P90 prediction (median)"), ("18", "Streamlit pages, 3 personas")],
     links=[("Source code", GH + "lyonflowfull", True),
            ("Showcase branch", BRANCH, False),
            ("Databricks variant", GH + "databrickslyonflow", False)],
     tech=[
         "Medallion Bronze/Silver/Gold on <strong>PostgreSQL 16 + PostGIS + pgRouting</strong>, parameterized SQL throughout, zero hard-coded credentials.",
-        "<strong>27 Airflow DAGs</strong> (collection every 5 min → 6 h, transforms, ML, maintenance), MinIO S3 archiving.",
+        "<strong>28 Airflow DAGs</strong> (collection every 5 min → 6 h, transforms, ML, maintenance), MinIO S3 archiving.",
         "<strong>Quantile XGBoost</strong> (P10/P50/P90): speed trained daily, Vélo'v hourly, inference every 15 min; <strong>MLflow</strong> tracking with fallback to a local model.",
         "Custom <strong>PSI</strong> drift (daily report), Evidently optional; Prometheus + Grafana + Alertmanager, 7 alert groups.",
         "GitHub Actions CI: ruff, mypy, bandit, pytest + coverage. Deployment via <code>make deploy-vps</code> / <code>rollback-vps</code>, Nginx as the only exposed entry point.",
@@ -237,7 +237,7 @@ EN_UPDATES = dict(
                     ("lyonflow-kubernetes", "Kubernetes target (kustomize, not deployed)"),
                     ("lyonflow-infra", "Production infrastructure (VPS, containers)")],
     stack=[
-        ("Apache Airflow 2.9", "27 DAGs: collection, Medallion transforms, training, inference, maintenance", "Production orchestration, dependencies and retries"),
+        ("Apache Airflow 2.9", "28 DAGs: collection, Medallion transforms, training, inference, maintenance", "Production orchestration, dependencies and retries"),
         ("PostgreSQL 16 + PostGIS", "bronze / silver / gold / osm / rgpd schemas", "Medallion modeling, spatial SQL, materialized views"),
         ("pgRouting 3.7", "Car routing over the OSM network", "Graph algorithms inside the database"),
         ("XGBoost (quantile regression)", "Traffic speed and Vélo'v availability at H+1h, P10/P90 intervals", "Time series, forecast uncertainty"),
@@ -254,7 +254,7 @@ EN_UPDATES = dict(
     matrix_notes=dict(ci="ruff, mypy, bandit, pytest + coverage",
                       tests="653 passing, 1 skipped, 23 integration tests deselected",
                       docker="Application Compose + monitoring Compose",
-                      orch="Airflow, 27 DAGs (hourly speed retrain paused)",
+                      orch="Airflow, 28 DAGs (hourly speed retrain paused)",
                       tracking="MLflow; production registry not re-checked",
                       monitoring="Daily PSI, optional Evidently, Prometheus/Grafana",
                       serving="FastAPI + API key", deploy="VPS, scripted deploy/rollback, health checks",
@@ -290,7 +290,7 @@ EN_UPDATES = dict(
         "Databricks variant in progress: week 1 delivered (Unity Catalog, Bronze ingestion, DLT), MLflow / Model Serving / Genie to come.",
     ],
     strengths=[
-        "<strong>From raw feed to decision</strong>: 9 sources, Medallion on PostgreSQL, 27 Airflow DAGs, 3 personas (commuter, operator, elected official).",
+        "<strong>From raw feed to decision</strong>: 9 sources, Medallion on PostgreSQL, 28 Airflow DAGs, 3 personas (commuter, operator, elected official).",
         "<strong>Forecasts with uncertainty</strong>: quantile XGBoost P10/P50/P90, 5.4 ms per sensor, inference every 15 min.",
         "<strong>Instrumented MLOps loop</strong>: MLflow, daily PSI drift, Prometheus alerts, one-command deployment and rollback.",
         "<strong>Re-checked figures</strong>: 653 passing tests, schedules read from the code, errors in the previous page corrected and flaws fixed.",

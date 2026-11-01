@@ -17,9 +17,9 @@ PROJECTS = [
         title="LyonFlow — Plateforme MLOps trafic multimodal",
         title_html='LyonFlow — la mobilité lyonnaise <span class="highlight">prédite en temps réel</span>',
         lead="Plateforme MLOps de bout en bout, en production sur VPS : 9 sources open data, architecture Medallion "
-             "sur PostgreSQL/PostGIS, 27 DAGs Airflow, modèles XGBoost réentraînés automatiquement, routage "
+             "sur PostgreSQL/PostGIS, 28 DAGs Airflow, modèles XGBoost réentraînés automatiquement, routage "
              "multimodal pgRouting et un dashboard à 3 personas.",
-        kpis=[("9", "sources open data"), ("27", "DAGs Airflow"), ("620", "tests pytest"), ("59", "widgets / 18 pages"),
+        kpis=[("9", "sources open data"), ("28", "DAGs Airflow"), ("620", "tests pytest"), ("59", "widgets / 18 pages"),
               ("−45 %", "MAE (3 modèles vs 1)")],
         links=[("Code source", GH + "lyonflowfull", True),
                ("Variante Databricks", GH + "databrickslyonflow", False)],
@@ -39,7 +39,7 @@ PROJECTS = [
         ],
         tech=[
             "Medallion Bronze/Silver/Gold sur <strong>PostgreSQL 16 + PostGIS + pgRouting</strong>, SQL paramétré partout, zéro credential en dur.",
-            "<strong>27 DAGs Airflow</strong> (collecte 5 min → 6 h, transforms, ML, maintenance), archivage MinIO S3.",
+            "<strong>28 DAGs Airflow</strong> (collecte 5 min → 6 h, transforms, ML, maintenance), archivage MinIO S3.",
             "<strong>MLflow</strong> registry (6 modèles, stage Production), retrain XGBoost toutes les 30 min, drift <strong>PSI</strong> maison + rapports Evidently.",
             "CI GitHub Actions : ruff, mypy, bandit, pytest + couverture. Déploiement <code>make deploy-vps</code> / <code>rollback-vps</code>, 20 health checks.",
             "Observabilité Prometheus + Grafana + Alertmanager, Nginx seul point exposé, TLS Let's Encrypt.",
@@ -75,7 +75,7 @@ PROJECTS = [
         tags=["Airflow", "PostgreSQL", "PostGIS", "pgRouting", "XGBoost", "MLflow", "PSI / Evidently", "FastAPI",
               "Streamlit", "Docker", "Nginx", "Prometheus", "Grafana", "MinIO", "GitHub Actions", "RGPD"],
         stack=[
-            ("Apache Airflow 2.9", "27 DAGs : collecte, transforms Medallion, entraînement, inférence, maintenance", "Orchestration de production, dépendances et reprises"),
+            ("Apache Airflow 2.9", "28 DAGs : collecte, transforms Medallion, entraînement, inférence, maintenance", "Orchestration de production, dépendances et reprises"),
             ("PostgreSQL 16 + PostGIS", "Schémas bronze / silver / gold / osm / rgpd", "Modélisation Medallion, SQL spatial, vues matérialisées"),
             ("pgRouting 3.7", "Itinéraire voiture sur ~101 k arêtes OSM", "Algorithmes de graphe dans la base"),
             ("XGBoost", "Vitesse trafic et disponibilité Vélo'v à H+1h", "Séries temporelles, features métier"),
@@ -90,7 +90,7 @@ PROJECTS = [
         ],
         matrix=dict(ci="y", tests="y", docker="y", orch="y", tracking="y", monitoring="y", serving="y", deploy="y", iac="p"),
         matrix_notes=dict(ci="ruff, mypy, bandit, pytest + couverture", tests="620 tests (unitaires, personas, intégration, e2e)",
-                          docker="Compose applicatif + compose monitoring", orch="Airflow, 27 DAGs (25 actifs)",
+                          docker="Compose applicatif + compose monitoring", orch="Airflow, 28 DAGs",
                           tracking="MLflow registry, stage Production", monitoring="PSI quotidien, Evidently, Prometheus/Grafana",
                           serving="FastAPI + clé API", deploy="VPS, deploy/rollback scriptés, health checks",
                           iac="Asset Bundle Databricks ; branche Kubernetes dormante"),

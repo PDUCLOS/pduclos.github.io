@@ -7,7 +7,7 @@ stays independent from build.py.
 
 # ---------------------------------------------------------------- data
 STACK_EN = [
-    ("Orchestration & pipelines", [("Apache Airflow", 4, "LyonFlow (27 DAGs), Stripe, Fraud, HVAC"),
+    ("Orchestration & pipelines", [("Apache Airflow", 4, "LyonFlow (28 DAGs), Stripe, Fraud, HVAC"),
                                    ("Kafka + Debezium (CDC)", 3, "Stripe"),
                                    ("Kubernetes CronJob", 2, "HVAC"),
                                    ("Databricks DLT / Asset Bundles", 2, "LyonFlow Databricks")]),
@@ -299,7 +299,7 @@ def page_tech(h):
     proofs = [
         ("Data architecture", "Bronze/Silver/Gold medallion on PostgreSQL/PostGIS; OLTP → Debezium CDC → Kafka → Redis / MongoDB → Snowflake; star schemas.",
          "lyonflow"),
-        ("Orchestration", "27 Airflow DAGs in production (collection every 5 min, transforms, ML, maintenance); Kubernetes CronJob equivalent to a DAG.",
+        ("Orchestration", "28 Airflow DAGs in production (collection every 5 min, transforms, ML, maintenance); Kubernetes CronJob equivalent to a DAG.",
          "lyonflow"),
         ("ML lifecycle", "MLflow registry, leak-proof temporal split, features shared between training and serving, per-asset leakage guardrails.",
          "stripe-fraude-temps-reel"),
@@ -328,7 +328,7 @@ def page_tech(h):
         <div class="section-container">
             <div class="kpi-row">
                 <div class="kpi"><b>≈ 1,600</b><span>automated tests</span></div>
-                <div class="kpi"><b>27</b><span>Airflow DAGs in production</span></div>
+                <div class="kpi"><b>28</b><span>Airflow DAGs in production</span></div>
                 <div class="kpi"><b>6</b><span>repositories with CI</span></div>
                 <div class="kpi"><b>{len(PROJECTS)}</b><span>pipelines in draw.io</span></div>
             </div>
