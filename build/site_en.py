@@ -189,7 +189,7 @@ def page_rh(h):
         ("“It's a career change: is he really at the level?”",
          "Two RNCP certifications earned (RNCP is the French national qualification register): level 6, then level 7 (Master's level) "
          "Architecte en intelligence artificielle (AI Architect) in 2026, plus a Databricks certification, "
-         "10 months at Carrier with quantified results, and an MLOps platform deployed <strong>in production</strong>. "
+         "12 months at Carrier with three solutions still in use after I left, and an MLOps platform deployed <strong>in production</strong>. "
          "The career change is complete; what remains is 20 years of field experience that junior profiles don't have."),
         ("“Senior on the business side, but junior on the tech side?”",
          "The code is public and verifiable: around 1,600 automated tests in total, continuous integration, Docker, Airflow, MLflow, "
@@ -224,10 +224,10 @@ def page_rh(h):
                     <li>Scoping, architecture, development, acceptance testing, deployment</li>
                     <li>Go-to-market: presentations and <a href="https://buyvera.fr/en/" style="color:var(--accent)">sales website</a></li>
                     <li><a href="/en/projects/achats-negociation.html" style="color:var(--accent)">See the project →</a></li></ul></div>
-                <div class="arg-card arg-card--rh reveal"><span class="arg-label">Measured business impact</span><ul>
-                    <li><strong>−40%</strong> processing time at Carrier</li>
-                    <li><strong>~€100K/month</strong> of data errors detected</li>
-                    <li><strong>5 SAP sources</strong> unified into European-level reporting</li></ul></div>
+                <div class="arg-card arg-card--rh reveal"><span class="arg-label">Results at Carrier (12 months)</span><ul>
+                    <li><strong>3 management solutions</strong> in production, still in use after I left</li>
+                    <li><strong>12 daily SAP extracts</strong>, 12 countries, one reference dataset</li>
+                    <li><strong>Customer promise</strong> measured: lead-time gaps across 12 countries</li></ul></div>
                 <div class="arg-card arg-card--rh reveal"><span class="arg-label">Rare business expertise</span><ul>
                     <li><strong>20 years</strong> in B2B industrial distribution (Michaud Chailly, Descours &amp; Cabaud)</li>
                     <li>HVAC, energy, supply chain, key accounts</li>

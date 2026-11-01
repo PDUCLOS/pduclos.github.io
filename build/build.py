@@ -257,7 +257,7 @@ def page_rh():
     objections = [
         ("« C'est une reconversion : a-t-il vraiment le niveau ? »",
          "Deux certifications RNCP obtenues (niveau 6, puis niveau 7 Bac+5 Architecte en intelligence artificielle en 2026), une certification Databricks, "
-         "10 mois chez Carrier avec des résultats chiffrés, et une plateforme MLOps déployée <strong>en production</strong>. "
+         "12 mois chez Carrier avec trois dispositifs restés en service après mon départ, et une plateforme MLOps déployée <strong>en production</strong>. "
          "La reconversion est terminée ; ce qui reste, c'est 20 ans de terrain que les profils juniors n'ont pas."),
         ("« Senior métier, mais junior technique ? »",
          "Le code est public et vérifiable : environ 1 600 tests automatisés cumulés, intégration continue, Docker, Airflow, MLflow, "
@@ -292,10 +292,10 @@ def page_rh():
                     <li>Cadrage, architecture, développement, recette, déploiement</li>
                     <li>Mise en marché : présentations et <a href="https://buyvera.fr/" style="color:var(--accent)">site commercial</a></li>
                     <li><a href="/projets/achats-negociation.html" style="color:var(--accent)">Voir le projet →</a></li></ul></div>
-                <div class="arg-card arg-card--rh reveal"><span class="arg-label">Impact business mesuré</span><ul>
-                    <li><strong>−40 %</strong> de temps de traitement chez Carrier</li>
-                    <li><strong>~100 K€/mois</strong> d'erreurs de données détectées</li>
-                    <li><strong>5 sources SAP</strong> unifiées dans un pilotage européen</li></ul></div>
+                <div class="arg-card arg-card--rh reveal"><span class="arg-label">Résultats chez Carrier (12 mois)</span><ul>
+                    <li><strong>3 dispositifs</strong> de pilotage en production, restés en service après mon départ</li>
+                    <li><strong>12 extractions SAP</strong> quotidiennes, 12 pays, un référentiel unique</li>
+                    <li><strong>Promesse client</strong> mesurée : écarts de délais sur 12 pays</li></ul></div>
                 <div class="arg-card arg-card--rh reveal"><span class="arg-label">Expertise métier rare</span><ul>
                     <li><strong>20 ans</strong> en distribution industrielle B2B (Michaud Chailly, Descours &amp; Cabaud)</li>
                     <li>HVAC, énergie, supply chain, grands comptes</li>
