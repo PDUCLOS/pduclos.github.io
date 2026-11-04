@@ -3,6 +3,7 @@
 from achats import ACHATS
 from copilote_erp import COPILOTE_ERP
 from visiontrack import VISIONTRACK
+from buyvera_bi import BUYVERA_BI
 
 GH = "https://github.com/PDUCLOS/"
 
@@ -933,9 +934,10 @@ PROJECTS.insert(0, ACHATS)
 # Copilote ERP (RAG + SQL + LLMOps + Kubernetes) : juste après LyonFlow.
 PROJECTS.insert(2, COPILOTE_ERP)
 PROJECTS.append(VISIONTRACK)
+PROJECTS.append(BUYVERA_BI)
 
 # Projets phares (en tête de /projets/), puis les autres projets en tuiles compactes.
-FEATURED = ("achats-negociation", "visiontrack", "lyonflow", "copilote-erp", "stripe-fraude-temps-reel", "maintenance-predictive")
+FEATURED = ("achats-negociation", "buyvera-bi", "visiontrack", "lyonflow", "copilote-erp", "stripe-fraude-temps-reel", "maintenance-predictive")
 OTHERS = ("carrier-reporting", "copilot-maintenance", "detection-fraude", "marche-hvac", "gouvernance-spotify",
           "mcp-open-data", "csvtraitement", "predictira")
 _order = {slug: i for i, slug in enumerate(FEATURED + OTHERS)}
