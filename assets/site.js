@@ -324,3 +324,262 @@
         });
     }
 })();
+
+// Animations Carrier : parcours commande, collecte, colonnes, devises, glissement de mois ([data-ca])
+(function () {
+    var roots = document.querySelectorAll('[data-ca]');
+    if (!roots.length) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function h(tag, cls, txt) { var el = document.createElement(tag); if (cls) el.className = cls; if (txt != null) el.textContent = txt; return el; }
+    function flip(el, parent) {
+        var a = el.getBoundingClientRect(); parent.appendChild(el);
+        if (reduce) return;
+        var b = el.getBoundingClientRect();
+        el.style.transition = 'none';
+        el.style.transform = 'translate(' + (a.left - b.left) + 'px,' + (a.top - b.top) + 'px)';
+        void el.offsetWidth; el.style.transition = ''; el.style.transform = '';
+    }
+    var R = {};
+
+    R.journey = function (c) {
+        var d = c.d, sc = d.scenarios[c.scen || 0], st = c.stage;
+        var top = h('div', 'cj-top'), day = h('div', 'cj-day'); day.appendChild(h('span', '', d.ui.day)); var dv = h('b', '', '0'); day.appendChild(dv); top.appendChild(day);
+        st.appendChild(top);
+        var track = h('ol', 'cj-track'), lis = d.stations.map(function (s) {
+            var li = h('li', 'cj-st'); li.appendChild(h('i')); li.appendChild(h('strong', '', s[0])); li.appendChild(h('small', '', s[1])); track.appendChild(li); return li;
+        });
+        st.appendChild(track);
+        var tl = h('div', 'cj-tl'), cur = h('span', 'cj-cur'); tl.appendChild(cur); st.appendChild(tl);
+        var ev = h('ul', 'cj-ev'); st.appendChild(ev);
+        var res = h('div', 'cj-res'); st.appendChild(res);
+        function pct(x) { return (x / d.max * 100) + '%'; }
+        return sc.events.map(function (e) {
+            return function () {
+                dv.textContent = e.day; cur.style.left = pct(e.day);
+                lis.forEach(function (li, i) { li.classList.toggle('done', i < e.st); li.classList.toggle('on', i === e.st); li.classList.toggle('bad', i === e.st && !!e.bad); });
+                Object.keys(e.set || {}).forEach(function (k) {
+                    var f = h('span', 'cj-flag f-' + k, d.flags[k] + ' · ' + e.set[k]); f.style.left = pct(e.set[k]);
+                    if (k === 'd2' || k === 'd3') tl.querySelectorAll('.f-d1,.f-d2').forEach(function (x) { x.classList.add('old'); });
+                    tl.appendChild(f);
+                });
+                var li = h('li', e.bad ? 'bad' : ''); li.appendChild(h('b', '', d.ui.day + ' ' + e.day)); li.appendChild(document.createTextNode(' ' + e.txt));
+                ev.insertBefore(li, ev.firstChild);
+                c.log(e.txt);
+            };
+        }).concat([function () {
+            lis.forEach(function (li) { li.classList.remove('on'); li.classList.add('done'); });
+            sc.result.forEach(function (r, i) {
+                var k = h('div', 'cj-kpi ' + (r[2] ? 'ok' : 'ko')); k.style.transitionDelay = (reduce ? 0 : i * 120) + 'ms';
+                k.appendChild(h('small', '', r[0])); k.appendChild(h('strong', '', r[1])); res.appendChild(k);
+                requestAnimationFrame(function () { k.classList.add('in'); });
+            });
+        }]);
+    };
+
+    R.collect = function (c) {
+        var d = c.d, st = c.stage, wrap = h('div', 'cc');
+        var src = h('div', 'cc-src'), hub = h('div', 'cc-hub'), out = h('div', 'cc-out');
+        var chips = []; for (var i = 1; i <= 12; i++) { var ch = h('span', 'cc-chip', d.src + ' ' + i); src.appendChild(ch); chips.push(ch); }
+        hub.appendChild(h('strong', '', d.hub)); var clock = h('span', 'cc-clock', d.clock[0]); hub.appendChild(clock); var files = h('div', 'cc-files'); hub.appendChild(files);
+        var tiles = d.out.map(function (t) { var x = h('span', 'cc-tile', t); out.appendChild(x); return x; });
+        wrap.appendChild(src); wrap.appendChild(hub); wrap.appendChild(out); st.appendChild(wrap);
+        return [
+            function () { c.log(d.txt[0]); chips.forEach(function (x) { x.classList.add('in'); }); },
+            function () { c.log(d.txt[1]); chips.forEach(function (x, i) { setTimeout(function () { flip(x, files); x.classList.add('moved'); }, reduce ? 0 : i * 110); }); },
+            function () {
+                c.log(d.txt[2]); hub.classList.add('run'); var m = 6 * 60, end = 8 * 60;
+                (function tick() { clock.textContent = ('0' + Math.floor(m / 60)).slice(-2) + ':' + ('0' + m % 60).slice(-2); if (m < end) { m += 15; setTimeout(tick, reduce ? 0 : 140); } })();
+            },
+            function () { c.log(d.txt[3]); hub.classList.remove('run'); tiles.forEach(function (t, i) { setTimeout(function () { t.classList.add('on'); }, reduce ? 0 : i * 200); }); }
+        ];
+    };
+
+    R.columns = function (c) {
+        var d = c.d, st = c.stage;
+        var head = h('div', 'ck-head'), n = h('b', '', d.total); head.appendChild(n); head.appendChild(h('span', '', ' ' + d.unit)); st.appendChild(head);
+        var grid = h('div', 'ck-grid'), cells = [];
+        for (var i = 0; i < d.total; i++) { var x = h('i'); x.dataset.keep = ((i * 37) % d.total) < d.kept ? '1' : ''; grid.appendChild(x); cells.push(x); }
+        st.appendChild(grid);
+        var legend = h('div', 'ck-legend'); st.appendChild(legend);
+        var list = h('ul', 'ck-anom'); st.appendChild(list);
+        var kept = cells.filter(function (x) { return x.dataset.keep; }), bad = [3, 21, 40, 66], items = [];
+        function count(a, b) { var v = a, s = (b - a) / 20; (function t() { v += s; if ((s < 0 && v <= b) || reduce) v = b; n.textContent = Math.round(v); if (v !== b) setTimeout(t, 30); })(); }
+        return [
+            function () { c.log(d.txt[0]); grid.classList.add('in'); },
+            function () { c.log(d.txt[1]); cells.forEach(function (x) { if (!x.dataset.keep) x.classList.add('drop'); }); count(d.total, d.kept); },
+            function () {
+                c.log(d.txt[2]); grid.classList.add('slim'); var k = 0;
+                d.types.forEach(function (t) {
+                    for (var j = 0; j < t[1]; j++) kept[k++].className = t[2];
+                    var l = h('span', 'ck-lg ' + t[2], t[0] + ' · ' + t[1]); legend.appendChild(l);
+                });
+            },
+            function () {
+                c.log(d.txt[3]);
+                bad.forEach(function (b, i) { kept[b].classList.add('bad'); var li = h('li', 'bad', d.anomalies[i]); list.appendChild(li); items.push(li); });
+            },
+            function () {
+                c.log(d.txt[4]);
+                bad.forEach(function (b, i) { kept[b].classList.remove('bad'); kept[b].classList.add('fixed'); items[i].className = 'ok'; items[i].appendChild(h('small', '', ' — ' + d.fixed)); });
+            }
+        ];
+    };
+
+    R.currency = function (c) {
+        var d = c.d, st = c.stage, row = h('div', 'cx');
+        var cards = d.cards.map(function (k, i) {
+            var el = h('div', 'cx-card'); el.appendChild(h('small', '', k[0]));
+            var v = h('strong'); v.appendChild(h('span', 'cx-v', k[1])); v.appendChild(h('em', '', ' ' + k[2])); el.appendChild(v);
+            el.appendChild(h('span', 'cx-bar')); row.appendChild(el); return el;
+        });
+        st.appendChild(row);
+        return d.steps.map(function (s) {
+            return function () {
+                c.log(s.txt);
+                cards.forEach(function (x) { x.classList.remove('warn'); });
+                (s.show || []).forEach(function (i) { cards[i].classList.add('in'); });
+                (s.set || []).forEach(function (p) { cards[p[0]].querySelector('.cx-v').textContent = p[1]; });
+                (s.warn || []).forEach(function (i) { cards[i].classList.add('warn'); });
+                if (s.bar) { var b = cards[s.bar[0]]; b.classList.add('has-bar'); b.querySelector('.cx-bar').style.setProperty('--w', s.bar[1] + '%'); }
+            };
+        });
+    };
+
+    R.slip = function (c) {
+        var d = c.d, st = c.stage, wrap = h('div', 'cs'), cols = d.months.map(function (m) {
+            var col = h('div', 'cs-col'); col.appendChild(h('h5', '', m)); var box = h('div', 'cs-box'); col.appendChild(box);
+            var f = h('small', 'cs-foot'); col.appendChild(f); wrap.appendChild(col); return { box: box, foot: f };
+        });
+        st.appendChild(wrap);
+        var orders = []; for (var i = 1; i <= d.orders; i++) { var o = h('span', 'cs-o', d.prefix + i); cols[0].box.appendChild(o); orders.push(o); }
+        function foot() {
+            cols.forEach(function (c2, i) { var n2 = c2.box.children.length; c2.foot.textContent = i === 0 ? n2 + ' / ' + d.orders + ' ' + d.delivered : (n2 ? '+' + n2 : ''); });
+        }
+        foot(); cols[0].foot.textContent = d.orders + ' ' + d.planned;
+        return [
+            function () { c.log(d.txt[0]); orders.forEach(function (o) { o.classList.add('in'); }); },
+            function () {
+                c.log(d.txt[1]);
+                d.moves.forEach(function (m, i) { setTimeout(function () { var o = orders[m[0]]; o.classList.add('late'); flip(o, cols[m[1]].box); foot(); }, reduce ? 0 : i * 450); });
+            },
+            function () { c.log(d.txt[2]); wrap.classList.add('done'); }
+        ];
+    };
+
+    R.tickets = function (c) {
+        var d = c.d, st = c.stage, wrap = h('div', 'ct'), head = h('div', 'ct-head');
+        d.months.forEach(function (m) { head.appendChild(h('span', '', m)); });
+        wrap.appendChild(head);
+        var body = h('div', 'ct-body');
+        function pct(x) { return (x / d.max * 100) + '%'; }
+        function month(x) { return Math.min(d.months.length - 1, Math.floor(x / (d.max / d.months.length))); }
+        var rows = d.tickets.map(function (t) {
+            var r = h('div', 'ct-row'), bar = h('span', 'ct-bar ' + t[3]), mk = h('i', 'ct-mk'), lab = h('b', '', t[0]);
+            bar.style.left = pct(t[1]); bar.style.width = pct((t[2] == null ? d.max : t[2]) - t[1]);
+            bar.appendChild(lab); r.appendChild(bar); r.appendChild(mk); body.appendChild(r);
+            return { t: t, r: r, bar: bar, mk: mk, lab: lab };
+        });
+        wrap.appendChild(body);
+        var legend = h('div', 'ct-legend');
+        Object.keys(d.types).forEach(function (k) { legend.appendChild(h('span', 'ct-lg ' + k, d.types[k])); });
+        wrap.appendChild(legend);
+        var tab = h('div', 'ct-tab'), cells = d.rows.map(function (lbl) {
+            var row = h('div', 'ct-trow'); row.appendChild(h('span', 'ct-tl', lbl));
+            var cs = d.months.map(function () { var x = h('b', '', '·'); row.appendChild(x); return x; });
+            tab.appendChild(row); return { row: row, cs: cs };
+        });
+        wrap.appendChild(tab); st.appendChild(wrap);
+        function fill(k, key) {
+            var n = d.months.map(function () { return 0; });
+            rows.forEach(function (x) { var v = key(x.t); if (v != null) n[month(v)]++; });
+            cells[k].cs.forEach(function (x, i) { x.textContent = n[i]; });
+            cells[k].row.classList.add('on');
+            return n;
+        }
+        return [
+            function () { c.log(d.txt[0]); wrap.classList.add('in'); },
+            function () {
+                c.log(d.txt[1]); wrap.classList.add('closed');
+                rows.forEach(function (x) {
+                    if (x.t[2] == null) { x.r.classList.add('gone'); x.lab.textContent = x.t[0] + ' · ' + d.hidden; }
+                    else { x.mk.style.left = pct(x.t[2]); x.mk.classList.add('on'); }
+                });
+                fill(0, function (t) { return t[2]; });
+            },
+            function () {
+                c.log(d.txt[2]);
+                rows.forEach(function (x) { if (x.t[2] != null && month(x.t[1]) !== month(x.t[2])) x.r.classList.add('warn'); });
+            },
+            function () {
+                c.log(d.txt[3]); wrap.classList.remove('closed'); wrap.classList.add('created');
+                rows.forEach(function (x) {
+                    x.r.classList.remove('warn', 'gone'); x.mk.style.left = pct(x.t[1]); x.mk.classList.add('on');
+                    if (x.t[2] == null) x.lab.textContent = x.t[0] + ' · ' + d.running;
+                });
+                var a = cells[0].cs.map(function (x) { return +x.textContent; }), b = fill(1, function (t) { return t[1]; });
+                b.forEach(function (v, i) { if (v !== a[i]) { cells[0].cs[i].classList.add('diff'); cells[1].cs[i].classList.add('diff'); } });
+            },
+            function () { c.log(d.txt[4]); }
+        ];
+    };
+
+    R.pareto = function (c) {
+        var d = c.d, st = c.stage, wrap = h('div', 'cp2'), plot = h('div', 'cp2-plot'), labels = h('div', 'cp2-lab');
+        var NS = 'http://www.w3.org/2000/svg', svg = document.createElementNS(NS, 'svg'), line = document.createElementNS(NS, 'polyline'), rule = h('span', 'cp2-rule', d.rule);
+        svg.setAttribute('viewBox', '0 0 100 100'); svg.setAttribute('preserveAspectRatio', 'none'); line.setAttribute('vector-effect', 'non-scaling-stroke'); svg.appendChild(line);
+        var cats = d.cats.map(function (k, i) {
+            var b = h('div', 'cp2-b'), bar = h('i'), v = h('small', '', k[1]); b.appendChild(v); b.appendChild(bar);
+            var lab = h('span', '', k[0]); plot.appendChild(b); labels.appendChild(lab);
+            return { n: k[1], el: b, bar: bar, v: v, lab: lab, i: i };
+        });
+        // ordre de départ mélangé
+        [3, 0, 5, 1, 6, 2, 4].forEach(function (i) { plot.appendChild(cats[i].el); labels.appendChild(cats[i].lab); });
+        plot.appendChild(svg); plot.appendChild(rule); wrap.appendChild(plot); wrap.appendChild(labels); st.appendChild(wrap);
+        function size() { var mx = Math.max.apply(null, cats.map(function (x) { return x.n; })); cats.forEach(function (x) { x.bar.style.height = (x.n / mx * 100) + '%'; x.v.textContent = x.n; }); }
+        function sort() {
+            cats.slice().sort(function (a, b) { return b.n - a.n; }).forEach(function (x) { flip(x.el, plot); labels.appendChild(x.lab); });
+            plot.appendChild(svg); plot.appendChild(rule);
+            var tot = 0, sum = 0, ord = cats.slice().sort(function (a, b) { return b.n - a.n; });
+            ord.forEach(function (x) { tot += x.n; });
+            line.setAttribute('points', ord.map(function (x, i) { sum += x.n; return ((i + .5) / ord.length * 100) + ',' + (100 - sum / tot * 100); }).join(' '));
+            wrap.classList.add('cum');
+        }
+        return [
+            function () { c.log(d.txt[0]); size(); plot.classList.add('in'); },
+            function () { c.log(d.txt[1]); sort(); },
+            function () { c.log(d.txt[2]); var x = cats[d.add[0]]; x.el.classList.add('new'); x.lab.classList.add('new'); x.n += d.add[1]; size(); },
+            function () { c.log(d.txt[3]); sort(); }
+        ];
+    };
+
+    roots.forEach(function (root) {
+        var d = JSON.parse(root.getAttribute('data-json')), play = root.querySelector('.ca-play');
+        var c = { d: d, stage: root.querySelector('.ca-stage'), scen: 0, run: 0 };
+        var logEl = root.querySelector('.ca-log');
+        c.log = function (t) { logEl.textContent = t; };
+        root.classList.add('ready');
+        function start() {
+            var run = ++c.run; c.stage.innerHTML = ''; logEl.textContent = '';
+            var steps = R[root.dataset.ca](c), i = 0;
+            play.textContent = d.ui.replay;
+            (function next() {
+                if (run !== c.run || i >= steps.length) return;
+                steps[i++](); setTimeout(next, reduce ? 0 : (root.dataset.ca === 'journey' ? 1700 : 2100));
+            })();
+        }
+        play.addEventListener('click', start);
+        root.querySelectorAll('.ca-scen').forEach(function (b) {
+            b.addEventListener('click', function () {
+                c.scen = +b.dataset.s;
+                root.querySelectorAll('.ca-scen').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+                start();
+            });
+        });
+        // lancement automatique à la première apparition (sauf mouvement réduit)
+        if (reduce) start();
+        else if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); start(); } }, { threshold: 0.35 });
+            io.observe(root);
+        }
+    });
+})();

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Performance management and data qualification — Carrier — Patrice Duclos</title>
-    <meta name="description" content="Data Analyst, 12 months at Carrier HVAC Europe: three Power BI solutions designed, built and put into production on an SAP S/4HANA scope covering 12 countries, including a measure of how reliable the delivery promise to customers is. Every field is qualified with the business and IT, in an international FR/EN setting.">
+    <title>Carrier — three data projects run in parallel, three problems — Patrice Duclos</title>
+    <meta name="description" content="Data Analyst, 12 months at Carrier HVAC Europe, on an SAP S/4HANA scope of 12 sales entities. I ran three projects in parallel, each answering a different problem: 1. measure whether the 3 factories keep the date promised to the customer; 2. measure the real workload and response time of the master data service; 3. track and eliminate automatic item creation errors sent by ERCD.">
     <meta name="robots" content="index, follow, noai, noimageai">
     <meta name="tdm-reservation" content="1">
     <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
     <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
-    <meta property="og:title" content="Performance management and data qualification — Carrier — Patrice Duclos">
-    <meta property="og:description" content="Data Analyst, 12 months at Carrier HVAC Europe: three Power BI solutions designed, built and put into production on an SAP S/4HANA scope covering 12 countries, including a measure of how reliable the delivery promise to customers is. Every field is qualified with the business and IT, in an international FR/EN setting.">
+    <meta property="og:title" content="Carrier — three data projects run in parallel, three problems — Patrice Duclos">
+    <meta property="og:description" content="Data Analyst, 12 months at Carrier HVAC Europe, on an SAP S/4HANA scope of 12 sales entities. I ran three projects in parallel, each answering a different problem: 1. measure whether the 3 factories keep the date promised to the customer; 2. measure the real workload and response time of the master data service; 3. track and eliminate automatic item creation errors sent by ERCD.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pduclos.github.io/en/projects/carrier-reporting.html">
     <link rel="canonical" href="https://pduclos.github.io/en/projects/carrier-reporting.html">
@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css?v=9">
+    <link rel="stylesheet" href="/assets/style.css?v=11">
 </head>
 <body>
     <nav>
@@ -59,9 +59,9 @@
             
             <div class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/projects/">Projects</a> / Carrier — HVAC Europe performance management</div>
             <span class="project-tag" style="color:var(--accent)">Professional experience · 12 months · In production</span>
-            <h1>Carrier: <span class="highlight">3 management dashboards</span> across 12 countries, still in use after I left</h1>
-            <p class="lead">Data Analyst, 12 months at Carrier HVAC Europe: three Power BI solutions designed, built and put into production on an SAP S/4HANA scope covering 12 countries, including a measure of how reliable the delivery promise to customers is. Every field is qualified with the business and IT, in an international FR/EN setting.</p>
-            <div class="kpi-row"><div class="kpi"><b>12</b><span>SAP S/4HANA countries</span></div><div class="kpi"><b>3</b><span>solutions in production</span></div><div class="kpi"><b>1.5 GB → 800 MB</b><span>per extraction cycle</span></div><div class="kpi"><b>12 months</b><span>Data Analyst</span></div></div>
+            <h1>Carrier: <span class="highlight">three projects in parallel</span>, three problems, all still in use</h1>
+            <p class="lead">Data Analyst, 12 months at Carrier HVAC Europe, on an SAP S/4HANA scope of 12 sales entities. I ran three projects in parallel, each answering a different problem: 1. measure whether the 3 factories keep the date promised to the customer; 2. measure the real workload and response time of the master data service; 3. track and eliminate automatic item creation errors sent by ERCD.</p>
+            <div class="kpi-row"><div class="kpi"><b>3</b><span>projects run in parallel</span></div><div class="kpi"><b>12</b><span>SAP S/4HANA sales entities</span></div><div class="kpi"><b>3</b><span>factories measured</span></div><div class="kpi"><b>8 am</b><span>data up to date every morning</span></div><div class="kpi"><b>12 months</b><span>Data Analyst</span></div></div>
             <div class="btn-row"></div>
         </div>
     </header>
@@ -70,25 +70,111 @@
         <div class="section-container">
             <span class="section-label">// In 30 seconds</span>
             <h2>The problem, the answer, the proof</h2>
-            <div style="margin-bottom:2rem"><p>In an international industrial group, indicators whose source nobody can trace are not used to decide: each country exports its own SAP data, and the delivery date promised to the customer has to be verifiable.</p><p>Mission: consolidate SAP extracts from 12 countries, qualify every field and give European teams dashboards they can trust.</p></div>
+            <div style="margin-bottom:2rem"><p><strong>Project 1 — OTD, factory lead times.</strong> An order goes through sales, finance, master data, the factory, customer service and transport; the factory can reschedule several times. The data existed in 12 SAP exports of 240 columns, on 12 SharePoint sites, with different formats and currencies. It had to become a reliable measure of the customer promise.</p><p><strong>Project 2 — ServiceNow, master data tickets.</strong> Existing dashboards only counted closed tickets: tickets open for several months disappeared, and both workload and response rate were distorted.</p><p><strong>Project 3 — ERCD, error Pareto.</strong> Mass uploads from the spare parts business generated item creation errors; they had to be classified, tracked over time, and new checks had to be addable without development.</p></div>
             <div class="two-col">
                 <div class="arg-card arg-card--rh reveal">
                     <span class="arg-label">For recruiters · business value</span>
-                    <ul><li><strong>Lasting result</strong>: three management solutions put into production, still in use after I left.</li><li><strong>Customer promise measured</strong>: lead-time gaps modeled (factory lead time, acknowledgment, reschedules, delays) across 12 countries.</li><li><strong>Trusted data</strong>: the origin of every field validated with the Europe market lead and the IT department.</li></ul>
+                    <ul><li><strong>Three problems, three answers</strong>: run in parallel, all put into production and still in use after I left.</li><li><strong>Project 1 · OTD</strong>: lead time split by actor, customer dissatisfaction measured against the initial acknowledged date.</li><li><strong>Project 2 · ServiceNow</strong>: tickets counted in their creation month, not their closure month; half of my time.</li><li><strong>Project 3 · ERCD</strong>: an evolving Pareto used as the basis for action plans with ERCD.</li></ul>
                 </div>
                 <div class="arg-card arg-card--tech reveal">
                     <span class="arg-label">For tech teams · what the code proves</span>
-                    <ul><li>Power Automate orchestration of 12 daily extracts consolidated into a single reference dataset (1.5 GB reduced to 800 MB per cycle, under the Power BI Pro dataset limit).</li><li>Qualification and lineage: origin and calculation method of every field of an ABAP extract; reduction at source and query folding.</li><li>Semantic model in TMDL, bilingual FR/EN documentation generated from the model; explicit calculated columns for auditability.</li><li>Automatic detection and categorization of item-creation errors (Pareto) for the master data team.</li></ul>
+                    <ul><li><strong>Project 1 · OTD</strong>: Power Automate (12 SharePoint → 1, up to date at 8 am), Power Query (240 → 80 typed columns, 1.5 GB reduced to 800 MB per cycle), reading the report's ABAP / SQL code, format and currency harmonization, TMDL model and DAX measures.</li><li><strong>Project 2 · ServiceNow</strong>: daily ServiceNow ticket report (mailbox → SharePoint → Power BI), tracking of tickets open from month to month, typing by reason and origin, pickup, processing and closure times.</li><li><strong>Project 3 · ERCD</strong>: M and DAX only; cross-tables by error type, Pareto prepared in the data, reference CSV mapping each check to its category.</li></ul>
                 </div>
             </div>
         </div>
     </section>
 
 
+    <section class="page-section alt" id="projets">
+        <div class="section-container">
+            <span class="section-label">// Three projects</span>
+            <h2>Three projects in parallel, three different problems</h2>
+            <div class="cp3">
+    <a class="cp3-card" href="#processus"><span>01</span><strong>OTD — factory lead times</strong>
+        <p><em>Problem</em>: 12 heterogeneous SAP exports, a customer promise nobody could check.</p>
+        <p><em>Answer</em>: one source at 8 am, OTD of the 3 factories, reschedules and their effects.</p></a>
+    <a class="cp3-card" href="#master-data"><span>02</span><strong>ServiceNow — master data tickets</strong>
+        <p><em>Problem</em>: only closed tickets were counted, so the service's workload was distorted.</p>
+        <p><em>Answer</em>: every ticket tracked, typed by reason and origin, training needs identified.</p></a>
+    <a class="cp3-card" href="#erreurs-ercd"><span>03</span><strong>ERCD — error Pareto</strong>
+        <p><em>Problem</em>: errors at every spare parts mass upload, with no usable tracking.</p>
+        <p><em>Answer</em>: Paretos in M and DAX, a new check added with one CSV line.</p></a>
+</div>
+<p style="margin-top:1rem">The three projects ran at the same time, with separate sources, users and goals. They are presented
+separately below.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="processus">
+        <div class="section-container">
+            <span class="section-label">// Project 1 · Process</span>
+            <h2>Project 1 · OTD — from order to delivery</h2>
+            
+<div class="ca" data-ca="journey" data-json="{&quot;stations&quot;: [[&quot;Quote&quot;, &quot;Sales&quot;], [&quot;SAP order&quot;, &quot;Sales&quot;], [&quot;Credit&quot;, &quot;Finance&quot;], [&quot;Item&quot;, &quot;Master data&quot;], [&quot;Acknowledgment&quot;, &quot;Factory&quot;], [&quot;Manufacturing&quot;, &quot;Factory&quot;], [&quot;Availability&quot;, &quot;Customer service&quot;], [&quot;Delivery&quot;, &quot;Transport&quot;]], &quot;flags&quot;: {&quot;d1&quot;: &quot;Date 1&quot;, &quot;d2&quot;: &quot;Date 2&quot;, &quot;d3&quot;: &quot;Date 3&quot;, &quot;avail&quot;: &quot;Avail.&quot;, &quot;deliv&quot;: &quot;Delivered&quot;}, &quot;max&quot;: 110, &quot;scenarios&quot;: [{&quot;label&quot;: &quot;With 2 reschedules&quot;, &quot;events&quot;: [{&quot;day&quot;: 0, &quot;st&quot;: 0, &quot;txt&quot;: &quot;Quote accepted by the customer, outside SAP.&quot;}, {&quot;day&quot;: 3, &quot;st&quot;: 1, &quot;txt&quot;: &quot;Order entered in SAP through the configurator gateway.&quot;}, {&quot;day&quot;: 5, &quot;st&quot;: 2, &quot;txt&quot;: &quot;Customer credit approved by finance.&quot;}, {&quot;day&quot;: 11, &quot;st&quot;: 3, &quot;txt&quot;: &quot;Configured item created by master data.&quot;}, {&quot;day&quot;: 18, &quot;st&quot;: 4, &quot;txt&quot;: &quot;The factory acknowledges the order: delivery promised on day 70 (Date 1).&quot;, &quot;set&quot;: {&quot;d1&quot;: 70}}, {&quot;day&quot;: 30, &quot;st&quot;: 5, &quot;txt&quot;: &quot;Manufacturing starts.&quot;}, {&quot;day&quot;: 45, &quot;st&quot;: 5, &quot;bad&quot;: true, &quot;txt&quot;: &quot;1st factory reschedule: Date 2 = day 84. Customer service replans the pickup and gets a new written agreement from the customer (crane).&quot;, &quot;set&quot;: {&quot;d2&quot;: 84}}, {&quot;day&quot;: 62, &quot;st&quot;: 5, &quot;bad&quot;: true, &quot;txt&quot;: &quot;2nd reschedule: Date 3 = day 98. New replanning, new written agreement.&quot;, &quot;set&quot;: {&quot;d3&quot;: 98}}, {&quot;day&quot;: 94, &quot;st&quot;: 6, &quot;txt&quot;: &quot;Machine made available on the yard; customer service organizes shipping.&quot;, &quot;set&quot;: {&quot;avail&quot;: 94}}, {&quot;day&quot;: 100, &quot;st&quot;: 7, &quot;bad&quot;: true, &quot;txt&quot;: &quot;Delivered after 6 days of transit: 2 days after the current date, transit was not covered.&quot;, &quot;set&quot;: {&quot;deliv&quot;: 100}}], &quot;result&quot;: [[&quot;Factory OTD&quot;, &quot;Kept: available day 94 ≤ Date 3&quot;, true], [&quot;Customer&quot;, &quot;Dissatisfied: +30 days vs Date 1&quot;, false], [&quot;Reschedules&quot;, &quot;2 (“2 or more” class)&quot;, false], [&quot;Customer service&quot;, &quot;2 replannings, 2 written agreements&quot;, false], [&quot;Month&quot;, &quot;Planned in M3, delivered in M4: revenue and GP slip&quot;, false]]}, {&quot;label&quot;: &quot;No reschedule&quot;, &quot;events&quot;: [{&quot;day&quot;: 0, &quot;st&quot;: 0, &quot;txt&quot;: &quot;Quote accepted by the customer, outside SAP.&quot;}, {&quot;day&quot;: 3, &quot;st&quot;: 1, &quot;txt&quot;: &quot;Order entered in SAP through the configurator gateway.&quot;}, {&quot;day&quot;: 5, &quot;st&quot;: 2, &quot;txt&quot;: &quot;Customer credit approved by finance.&quot;}, {&quot;day&quot;: 11, &quot;st&quot;: 3, &quot;txt&quot;: &quot;Configured item created by master data.&quot;}, {&quot;day&quot;: 18, &quot;st&quot;: 4, &quot;txt&quot;: &quot;The factory acknowledges the order: delivery promised on day 70 (Date 1).&quot;, &quot;set&quot;: {&quot;d1&quot;: 70}}, {&quot;day&quot;: 30, &quot;st&quot;: 5, &quot;txt&quot;: &quot;Manufacturing starts.&quot;}, {&quot;day&quot;: 60, &quot;st&quot;: 6, &quot;txt&quot;: &quot;Machine made available with the margin needed for transit.&quot;, &quot;set&quot;: {&quot;avail&quot;: 60}}, {&quot;day&quot;: 68, &quot;st&quot;: 7, &quot;txt&quot;: &quot;Delivered on day 68, before the promised date.&quot;, &quot;set&quot;: {&quot;deliv&quot;: 68}}], &quot;result&quot;: [[&quot;Factory OTD&quot;, &quot;Kept&quot;, true], [&quot;Customer&quot;, &quot;Satisfied: delivered before Date 1&quot;, true], [&quot;Reschedules&quot;, &quot;0&quot;, true], [&quot;Customer service&quot;, &quot;A single planning&quot;, true], [&quot;Month&quot;, &quot;Delivered in the planned month&quot;, true]]}], &quot;ui&quot;: {&quot;play&quot;: &quot;▶ Play&quot;, &quot;replay&quot;: &quot;↻ Replay&quot;, &quot;day&quot;: &quot;Day&quot;, &quot;fict&quot;: &quot;Illustrative scenario, fictitious values.&quot;}}">
+    <div class="ca-bar"><button type="button" class="pl-play ca-play">▶ Play</button><button type="button" class="ca-scen" data-s="0" aria-pressed="true">With 2 reschedules</button><button type="button" class="ca-scen" data-s="1" aria-pressed="false">No reschedule</button><span class="ca-note">Illustrative scenario, fictitious values.</span></div>
+    
+    <div class="ca-stage"></div>
+    <p class="ca-log" aria-live="polite"></p>
+</div><div class="table-wrap"><table class="stack-table"><thead><tr><th>#</th><th>Step</th><th>Who</th><th>Milestone in the data</th></tr></thead><tbody><tr><td>1</td><td>Quote, outside SAP</td><td>Sales</td><td>—</td></tr><tr><td>2</td><td>Order entered in SAP through a gateway with the configurator</td><td>Sales / SAP</td><td><strong>Order creation date</strong></td></tr><tr><td>3</td><td>Customer credit check</td><td>Finance</td><td>Order released or blocked</td></tr><tr><td>4</td><td>Creation or update of the configured item, often almost unique</td><td>Master data</td><td>Item processing time</td></tr><tr><td>5</td><td>Order sent to the factory through a gateway, acknowledged with a date</td><td>Factory</td><td><strong>Initial acknowledged date (Date 1)</strong></td></tr><tr><td>6</td><td>Manufacturing, late or early depending on load; possible reschedules</td><td>Factory</td><td>Date 2 (1 reschedule), Date 3 (2 or more)</td></tr><tr><td>7</td><td>Machine made available on the yard, pickup organized with the customer's written agreement (crane to book)</td><td>Customer service</td><td><strong>Availability date</strong>, shipping date</td></tr><tr><td>8</td><td>Transit to the customer, paid by Carrier</td><td>Transport</td><td><strong>Final delivery date</strong></td></tr></tbody></table></div><p style="margin-top:1rem">The key point: the factory must make the machine available <strong>before</strong> the date it
+acknowledged, to leave customer service the transit time. That time is supposed to be recorded in SAP, which is not always the case.
+Every reschedule forces customer service to replan the pickup and get a new written agreement from the customer.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="collecte">
+        <div class="section-container">
+            <span class="section-label">// Project 1 · Collection</span>
+            <h2>Project 1 · OTD — from SAP exports to a reliable source</h2>
+            
+<div class="ca" data-ca="collect" data-json="{&quot;src&quot;: &quot;SharePoint&quot;, &quot;hub&quot;: &quot;Power Automate&quot;, &quot;clock&quot;: [&quot;06:00&quot;, &quot;08:00&quot;], &quot;out&quot;: [&quot;OTD of the 3 factories&quot;, &quot;Date reschedules&quot;, &quot;Month slippage&quot;], &quot;txt&quot;: [&quot;Every morning, 12 SAP reports wait on 12 different SharePoint sites, one per sales entity.&quot;, &quot;Power Automate moves and files them in one place.&quot;, &quot;The refresh runs as a batch, at a fixed time.&quot;, &quot;At 8 am, dashboards are up to date in all 12 countries.&quot;], &quot;ui&quot;: {&quot;play&quot;: &quot;▶ Play&quot;, &quot;replay&quot;: &quot;↻ Replay&quot;, &quot;day&quot;: &quot;Day&quot;, &quot;fict&quot;: &quot;Illustrative scenario, fictitious values.&quot;}}">
+    <div class="ca-bar"><button type="button" class="pl-play ca-play">▶ Play</button><span class="ca-note">Illustrative scenario, fictitious values.</span></div>
+    <h4 class="ca-title">12 reports, 12 SharePoint sites, one source at 8 am</h4>
+    <div class="ca-stage"></div>
+    <p class="ca-log" aria-live="polite"></p>
+</div>
+<div class="ca" data-ca="columns" data-json="{&quot;total&quot;: 240, &quot;kept&quot;: 80, &quot;unit&quot;: &quot;columns&quot;, &quot;types&quot;: [[&quot;Date&quot;, 12, &quot;t1&quot;], [&quot;Amount&quot;, 14, &quot;t2&quot;], [&quot;Quantity&quot;, 8, &quot;t3&quot;], [&quot;Code&quot;, 20, &quot;t4&quot;], [&quot;Text&quot;, 26, &quot;t5&quot;]], &quot;anomalies&quot;: [&quot;Decimal format differs by country&quot;, &quot;Empty or invalid dates&quot;, &quot;Label that does not match the source field&quot;, &quot;Amount with no currency stated&quot;], &quot;fixed&quot;: &quot;identified, documented, reported to IT&quot;, &quot;txt&quot;: [&quot;The SAP export arrives with 240 columns.&quot;, &quot;Power Query keeps only 80, the ones the business needs.&quot;, &quot;Each column gets an explicit type: the file&#x27;s real structure reappears.&quot;, &quot;Checks bring out the export anomalies.&quot;, &quot;Each anomaly is traced to its source in the report code and reported to IT.&quot;], &quot;ui&quot;: {&quot;play&quot;: &quot;▶ Play&quot;, &quot;replay&quot;: &quot;↻ Replay&quot;, &quot;day&quot;: &quot;Day&quot;, &quot;fict&quot;: &quot;Illustrative scenario, fictitious values.&quot;}}">
+    <div class="ca-bar"><button type="button" class="pl-play ca-play">▶ Play</button><span class="ca-note">Illustrative scenario, fictitious values.</span></div>
+    <h4 class="ca-title">240 columns cut to 80, typed and checked</h4>
+    <div class="ca-stage"></div>
+    <p class="ca-log" aria-live="polite"></p>
+</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="indicateurs">
+        <div class="section-container">
+            <span class="section-label">// Project 1 · Indicators</span>
+            <h2>Project 1 · OTD — what the dashboards measure</h2>
+            
+<div class="ca" data-ca="slip" data-json="{&quot;months&quot;: [&quot;Month M&quot;, &quot;M+1&quot;, &quot;M+2&quot;], &quot;orders&quot;: 10, &quot;prefix&quot;: &quot;O&quot;, &quot;delivered&quot;: &quot;delivered&quot;, &quot;planned&quot;: &quot;planned&quot;, &quot;moves&quot;: [[2, 1], [5, 1], [7, 1], [9, 2]], &quot;txt&quot;: [&quot;10 orders are planned for delivery this month: that is the sales target.&quot;, &quot;Factories reschedule: each delayed order moves to the next month.&quot;, &quot;Result: 6 of 10 orders delivered in M. The target is missed, and the cause is the factory, not sales.&quot;], &quot;ui&quot;: {&quot;play&quot;: &quot;▶ Play&quot;, &quot;replay&quot;: &quot;↻ Replay&quot;, &quot;day&quot;: &quot;Day&quot;, &quot;fict&quot;: &quot;Illustrative scenario, fictitious values.&quot;}}">
+    <div class="ca-bar"><button type="button" class="pl-play ca-play">▶ Play</button><span class="ca-note">Illustrative scenario, fictitious values.</span></div>
+    <h4 class="ca-title">Month slippage: the sales target missed because of the factory</h4>
+    <div class="ca-stage"></div>
+    <p class="ca-log" aria-live="polite"></p>
+</div><div class="table-wrap"><table class="stack-table"><thead><tr><th>Indicator</th><th>Calculation</th><th>Question it answers</th></tr></thead><tbody><tr><td><strong>Factory OTD</strong></td><td>Availability compared with the current date, for each of the 3 factories</td><td>Does the factory keep the date it gives?</td></tr><tr><td><strong>Customer dissatisfaction</strong></td><td>Lines late against the <em>initial</em> acknowledged date (Date 1)</td><td>Was the customer delivered on the date first promised?</td></tr><tr><td><strong>Date reschedules</strong></td><td>Lines grouped as 0, 1, 2 or more reschedules (Dates 1, 2, 3), gap in days</td><td>Which factory reschedules, and how often?</td></tr><tr><td><strong>Lead time per step</strong></td><td>Time between milestones: finance, master data, acknowledgment, manufacturing, shipping, transit</td><td>Where is the time lost?</td></tr><tr><td><strong>Customer service workload</strong></td><td>Pickup replanning caused by reschedules</td><td>What do reschedules cost the team?</td></tr><tr><td><strong>Month slippage</strong></td><td>Orders planned in the month and delivered the next, by factory, in revenue and gross profit</td><td>Is the sales target missed because of the factory?</td></tr></tbody></table></div><p style="margin-top:1rem">The customer's view and the factory's view are kept apart: a factory can keep its new date and
+still produce a dissatisfied line, because the customer had booked the crane for the initial date.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="devises">
+        <div class="section-container">
+            <span class="section-label">// Project 1 · Currencies</span>
+            <h2>Project 1 · OTD — one order, three currencies</h2>
+            
+<div class="ca" data-ca="currency" data-json="{&quot;cards&quot;: [[&quot;Customer selling price&quot;, &quot;400,000&quot;, &quot;PLN&quot;], [&quot;Converted to euros&quot;, &quot;93,000&quot;, &quot;EUR&quot;], [&quot;Factory purchase price&quot;, &quot;70,000&quot;, &quot;EUR&quot;], [&quot;Gross profit&quot;, &quot;23,000&quot;, &quot;EUR&quot;], [&quot;US consolidation&quot;, &quot;20,300&quot;, &quot;USD&quot;]], &quot;steps&quot;: [{&quot;show&quot;: [0], &quot;txt&quot;: &quot;Poland: the customer orders in zlotys, and the export does not state the currency.&quot;}, {&quot;show&quot;: [1], &quot;txt&quot;: &quot;The amount is brought back to euros (fictitious rate) to compare countries.&quot;}, {&quot;show&quot;: [2], &quot;txt&quot;: &quot;The factory invoices the entity in euros: that is the purchase price.&quot;}, {&quot;show&quot;: [3], &quot;bar&quot;: [3, 100], &quot;txt&quot;: &quot;Gross profit and revenue are reported in euros.&quot;}, {&quot;set&quot;: [[2, &quot;74,200&quot;], [3, &quot;18,800&quot;]], &quot;warn&quot;: [2, 3], &quot;bar&quot;: [3, 82], &quot;txt&quot;: &quot;Raw material increase: the factory raises its purchase price by 6%. The zloty selling price does not move, the margin drops.&quot;}, {&quot;show&quot;: [4], &quot;txt&quot;: &quot;European figures are consolidated in US dollars for the United States.&quot;}], &quot;ui&quot;: {&quot;play&quot;: &quot;▶ Play&quot;, &quot;replay&quot;: &quot;↻ Replay&quot;, &quot;day&quot;: &quot;Day&quot;, &quot;fict&quot;: &quot;Illustrative scenario, fictitious values.&quot;}}">
+    <div class="ca-bar"><button type="button" class="pl-play ca-play">▶ Play</button><span class="ca-note">Illustrative scenario, fictitious values.</span></div>
+    
+    <div class="ca-stage"></div>
+    <p class="ca-log" aria-live="polite"></p>
+</div><div class="table-wrap"><table class="stack-table"><thead><tr><th>Level</th><th>Example: Poland</th><th>Watch point</th></tr></thead><tbody><tr><td>Customer order (selling price)</td><td>Zloty (PLN)</td><td>Currency rarely stated in the export</td></tr><tr><td>Entity's order to the factory</td><td>Zloty (PLN)</td><td>Same order, different amount</td></tr><tr><td>Factory order, purchase price</td><td>Euro (EUR)</td><td>The purchase price can change between the order and the factory (raw material increase)</td></tr><tr><td>Margin, gross profit, revenue</td><td>Euro (EUR)</td><td>Carrier SAS takes a margin for resale, storage and organizing delivery</td></tr><tr><td>Group consolidation</td><td>US dollar (USD)</td><td>European figures consolidated for the United States</td></tr></tbody></table></div><p style="margin-top:1rem">The same order therefore exists in local currency on the entity side and in euros on the factory
+side: each amount had to be traced to its side to recompute the real margin when the factory changes its price, not only at order time.</p>
+        </div>
+    </section>
+
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
-            <span class="section-label">// Pipeline & architecture</span>
-            <h2>End-to-end architecture</h2>
+            <span class="section-label">// Project 1 · Pipeline</span>
+            <h2>Project 1 · OTD — the factory lead-time pipeline, from SAP to the dashboard</h2>
             <p>Pipeline rebuilt from an analysis of the repository: every block maps to real code. Play the data flow, click a block to follow its dependencies, or open the architecture diagrams.</p>
             
             
@@ -100,14 +186,14 @@
                         <button type="button" class="pl-reset" hidden>Show all</button>
                         <span class="pl-hint">Click a block to see what feeds it and what it feeds.</span>
                     </div>
-                    <div class="pl-scroll"><div class="pl-canvas" style="--n:5">
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:7">
                         <svg class="pl-edges" aria-hidden="true"></svg>
-                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">12 SAP extracts (12 countries)</button></div><div class="pl-col" data-col="1" style="--k:#0284C7"><h4><span>02</span>Preparation</h4><button type="button" class="pl-node" data-id="s1n0">Power Automate + Power Query</button></div><div class="pl-col" data-col="2" style="--k:#7C3AED"><h4><span>03</span>Model</h4><button type="button" class="pl-node" data-id="s2n0">TMDL semantic model</button></div><div class="pl-col" data-col="3" style="--k:#2563EB"><h4><span>04</span>Controls</h4><button type="button" class="pl-node" data-id="s3n0">Qualification and lineage</button><button type="button" class="pl-node" data-id="s3n1">Item error Pareto</button></div><div class="pl-col" data-col="4" style="--k:#E11D48"><h4><span>05</span>Management</h4><button type="button" class="pl-node" data-id="s4n0">Master data management</button><button type="button" class="pl-node" data-id="s4n1">Customer promise and lead times</button></div></div>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Sources</h4><button type="button" class="pl-node" data-id="s0n0">SAP S/4HANA report (CSV, 240 col.)</button><button type="button" class="pl-node" data-id="s0n1">Factory → SAP gateway (Dates 1, 2, 3)</button></div><div class="pl-col" data-col="1" style="--k:#0284C7"><h4><span>02</span>Collection</h4><button type="button" class="pl-node" data-id="s1n0">Power Automate: 12 SharePoint → 1</button><button type="button" class="pl-node" data-id="s1n1">Daily batch, up to date at 8 am</button></div><div class="pl-col" data-col="2" style="--k:#2563EB"><h4><span>03</span>Preparation</h4><button type="button" class="pl-node" data-id="s2n0">Power Query: 240 → 80 columns</button><button type="button" class="pl-node" data-id="s2n1">Explicit typing</button></div><div class="pl-col" data-col="3" style="--k:#DB2777"><h4><span>04</span>Qualification</h4><button type="button" class="pl-node" data-id="s3n0">Reading the ABAP code (SQL)</button><button type="button" class="pl-node" data-id="s3n1">Export anomalies → IT</button></div><div class="pl-col" data-col="4" style="--k:#2563EB"><h4><span>05</span>Harmonization</h4><button type="button" class="pl-node" data-id="s4n0">Formats of the 12 countries</button><button type="button" class="pl-node" data-id="s4n1">Currencies PLN → EUR → USD</button><button type="button" class="pl-node" data-id="s4n2">Entity → factory → line hierarchy</button></div><div class="pl-col" data-col="5" style="--k:#7C3AED"><h4><span>06</span>Model</h4><button type="button" class="pl-node" data-id="s5n0">TMDL semantic model</button><button type="button" class="pl-node" data-id="s5n1">DAX measures</button></div><div class="pl-col" data-col="6" style="--k:#E11D48"><h4><span>07</span>Management</h4><button type="button" class="pl-node" data-id="s6n0">OTD of the 3 factories</button><button type="button" class="pl-node" data-id="s6n1">Reschedules 0 / 1 / 2+</button><button type="button" class="pl-node" data-id="s6n2">Dissatisfaction (initial ack.)</button><button type="button" class="pl-node" data-id="s6n3">Month slippage, revenue and GP</button></div></div>
                     </div></div>
-                    
+                    <div class="pl-band" style="--k:#475569">SAP S/4HANA · SharePoint · Power Automate · Power Query (M) · Power BI (DAX, TMDL) · European teams FR / EN</div>
                     <div class="pl-info" aria-live="polite"></div>
                     <div class="pl-legend"><span><i class="solid"></i>data flow</span><span><i class="dash"></i>monitoring / retraining loop</span></div>
-                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n1", "l": "", "d": false}, {"a": "s3n0", "b": "s4n1", "l": "", "d": false}, {"a": "s3n1", "b": "s4n0", "l": "", "d": false}]</script>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "×12", "d": false}, {"a": "s0n1", "b": "s1n0", "l": "dates", "d": false}, {"a": "s1n1", "b": "s2n0", "l": "triggers", "d": true}, {"a": "s1n0", "b": "s2n0", "l": "", "d": false}, {"a": "s2n0", "b": "s3n0", "l": "", "d": false}, {"a": "s2n1", "b": "s3n1", "l": "", "d": false}, {"a": "s3n0", "b": "s4n0", "l": "", "d": false}, {"a": "s3n0", "b": "s4n1", "l": "", "d": false}, {"a": "s3n1", "b": "s4n2", "l": "", "d": false}, {"a": "s4n0", "b": "s5n0", "l": "", "d": false}, {"a": "s4n1", "b": "s5n1", "l": "rates", "d": false}, {"a": "s4n2", "b": "s5n0", "l": "", "d": false}, {"a": "s5n0", "b": "s6n0", "l": "", "d": false}, {"a": "s5n1", "b": "s6n1", "l": "", "d": false}, {"a": "s5n1", "b": "s6n2", "l": "", "d": false}, {"a": "s5n1", "b": "s6n3", "l": "", "d": false}]</script>
                 </div>
                 <div class="pl-panel" data-panel="d0">
                 <h3 class="pl-panel-title">Pipeline diagram (draw.io)</h3>
@@ -116,7 +202,53 @@
             <div class="figure-actions"><a href="/diagrams/carrier-reporting.svg" target="_blank">⤢ Full screen (SVG)</a></div></div>
             </div>
             <h3 class="pl-steps-title">Step by step</h3>
-            <ol class="pipeline-steps"><li>Orchestration of 12 daily SAP extracts into a single reference dataset (Power Automate).</li><li>Qualification of every field with the business and IT: origin and calculation method.</li><li>Power BI semantic model (TMDL) and lead-time gap measures.</li><li>Three solutions put into production, with bilingual documentation generated from the model.</li></ol>
+            <ol class="pipeline-steps"><li><strong>Source</strong> — each entity generates a 240-column CSV report in SAP S/4HANA; acknowledged and modified dates (Dates 1, 2, 3) come from the factories through a gateway.</li><li><strong>Collection</strong> — Power Automate moves and files the 12 reports, stored on 12 SharePoint sites, in one place, then triggers the refresh, every day at a fixed time.</li><li><strong>Preparation</strong> — Power Query keeps the 80 useful columns and types each one explicitly to recover the file's real structure.</li><li><strong>Qualification</strong> — the report code gives the source and label of each column; export anomalies are documented and reported to IT.</li><li><strong>Harmonization</strong> — national formats aligned, currencies rebuilt, data organized by entity, factory, order and line.</li><li><strong>Management</strong> — Power BI model and DAX measures: OTD, reschedules, dissatisfaction, lead time per step, month slippage.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="master-data">
+        <div class="section-container">
+            <span class="section-label">// Project 2 · ServiceNow</span>
+            <h2>Project 2 · ServiceNow — the real workload of the master data service</h2>
+            
+<div class="ca" data-ca="tickets" data-json="{&quot;months&quot;: [&quot;Month 1&quot;, &quot;Month 2&quot;, &quot;Month 3&quot;], &quot;max&quot;: 90, &quot;tickets&quot;: [[&quot;T1&quot;, 3, 9, &quot;simple&quot;], [&quot;T2&quot;, 12, 16, &quot;simple&quot;], [&quot;T3&quot;, 20, 41, &quot;aller&quot;], [&quot;T4&quot;, 25, 82, &quot;multi&quot;], [&quot;T5&quot;, 36, 40, &quot;simple&quot;], [&quot;T6&quot;, 52, 71, &quot;aller&quot;], [&quot;T7&quot;, 66, null, &quot;open&quot;], [&quot;T8&quot;, 75, 79, &quot;simple&quot;]], &quot;types&quot;: {&quot;simple&quot;: &quot;Simple&quot;, &quot;aller&quot;: &quot;Round trip&quot;, &quot;multi&quot;: &quot;Multiple exchanges&quot;, &quot;open&quot;: &quot;Still open&quot;}, &quot;rows&quot;: [&quot;“Closed only” view&quot;, &quot;Reset rule: creation month&quot;], &quot;hidden&quot;: &quot;invisible&quot;, &quot;running&quot;: &quot;open&quot;, &quot;txt&quot;: [&quot;8 tickets reach the service over 3 months. Some are solved in one go, others overlap one or more months.&quot;, &quot;View of the old dashboards: only closed tickets count, in their closure month. T7, still open, appears nowhere.&quot;, &quot;The overlap problem: T3, created in month 1 and closed in month 2, understates month 1&#x27;s workload and inflates month 2. T4, open nearly 2 months, only shows up in month 3.&quot;, &quot;Reset rule: each ticket is counted in its creation month. Month 1 gets its 4 tickets back, and T7 stays visible, still open.&quot;, &quot;Result: each month&#x27;s real workload and the service&#x27;s response time are right again, ticket by ticket.&quot;], &quot;ui&quot;: {&quot;play&quot;: &quot;▶ Play&quot;, &quot;replay&quot;: &quot;↻ Replay&quot;, &quot;day&quot;: &quot;Day&quot;, &quot;fict&quot;: &quot;Illustrative scenario, fictitious values.&quot;}}">
+    <div class="ca-bar"><button type="button" class="pl-play ca-play">▶ Play</button><span class="ca-note">Illustrative scenario, fictitious values.</span></div>
+    <h4 class="ca-title">The problem with tickets that overlap months</h4>
+    <div class="ca-stage"></div>
+    <p class="ca-log" aria-live="polite"></p>
+</div><p>Problem: the figures of the Carrier SAS master data service were wrong. This project took half of my time.
+It measures the activity of the service, which creates and updates items in SAP S/4HANA: one team supervises, trains and solves
+complex cases; a specialized team handles requests as fast as possible.</p>
+<p style="margin-top:1rem"><strong>Source.</strong> Every day, a ServiceNow report of all tickets assigned to the service, exported from a
+mailbox to a SharePoint site, then processed in Power BI: creation, pickup, processing, closure, reason, origin.</p>
+<p style="margin-top:1rem"><strong>The problem.</strong> Existing dashboards only counted closed tickets. A ticket still open
+appeared nowhere; a ticket open for several months slipped from month to month, then was counted all at once in its creation or
+closure month, depending on the case. The service's workload and response rate were distorted. I analyzed how the services counted
+tickets, then the rule was reset: <strong>each ticket is counted in its creation month, not its closure month</strong>. The expected values
+are matched, and tickets still open stay visible from one month to the next instead of disappearing.</p><div class="table-wrap"><table class="stack-table"><thead><tr><th>Ticket type</th><th>Path</th><th>What it shows</th></tr></thead><tbody><tr><td><strong>Simple</strong></td><td>Correct request: picked up, processed and closed in one go, closure almost right after processing</td><td>The most frequent case, the one to aim for: right request, fast processing</td></tr><tr><td><strong>Round trip</strong></td><td>Poorly worded request, sent back to the requester, then taken up again by master data</td><td>Much longer total time, caused by the form</td></tr><tr><td><strong>Multiple exchanges</strong></td><td>Several returns before completion, sometimes over several months</td><td>The tickets that distorted the months</td></tr></tbody></table></div><p style="margin-top:1rem"><strong>What it enables.</strong> Requests are typed by reason and origin. It shows which countries
+and entities struggle most to state their need in the item creation form, so where to train first to get simple tickets from the
+start. Dashboards track activity over time and check whether the actions taken reduce processing time and round trips.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="erreurs-ercd">
+        <div class="section-container">
+            <span class="section-label">// Project 3 · ERCD errors</span>
+            <h2>Project 3 · ERCD — an evolving Pareto of item creation errors</h2>
+            
+<div class="ca" data-ca="pareto" data-json="{&quot;cats&quot;: [[&quot;Unit of measure&quot;, 42], [&quot;Description&quot;, 25], [&quot;Material group&quot;, 14], [&quot;Weight / dimensions&quot;, 8], [&quot;Supplier&quot;, 5], [&quot;Price&quot;, 4], [&quot;Customs code&quot;, 2]], &quot;add&quot;: [6, 30], &quot;cum&quot;: &quot;cumulative&quot;, &quot;rule&quot;: &quot;80%&quot;, &quot;txt&quot;: [&quot;Every ERCD upload is checked: detected errors are counted by category.&quot;, &quot;Pareto: categories sorted, cumulative curve. A few categories hold most of the errors.&quot;, &quot;A new check is added to the reference file (CSV) and mapped to an existing category.&quot;, &quot;Without touching the model, its errors show up in the right place: the category moves up the Pareto.&quot;], &quot;ui&quot;: {&quot;play&quot;: &quot;▶ Play&quot;, &quot;replay&quot;: &quot;↻ Replay&quot;, &quot;day&quot;: &quot;Day&quot;, &quot;fict&quot;: &quot;Illustrative scenario, fictitious values.&quot;}}">
+    <div class="ca-bar"><button type="button" class="pl-play ca-play">▶ Play</button><span class="ca-note">Illustrative scenario, fictitious values.</span></div>
+    <h4 class="ca-title">Error Pareto: a new check fits in without development</h4>
+    <div class="ca-stage"></div>
+    <p class="ca-log" aria-live="polite"></p>
+</div><p>Problem: errors in automatic item creation sent by ERCD, Carrier's spare parts business. ERCD pushes pre-filled forms to master data, which
+mass-loads them into SAP. A colleague had built an Excel file that detects, at every upload, non-compliant data against a list of
+predefined error types.</p>
+<p style="margin-top:1rem"><strong>Constraint: M (Power Query) and DAX only.</strong> Power Query reads the check file and builds the
+cross-tables by error type. Power BI has no ready-made Pareto chart: the data must be prepared (ranking, cumulative total) to make it
+usable. A reference table, a plain CSV, maps each check to its category.</p><div class="table-wrap"><table class="stack-table"><thead><tr><th>Change</th><th>What it takes</th><th>Result</th></tr></thead><tbody><tr><td>New error check</td><td>Add a line to the reference CSV, with its category</td><td>Automatic: the error shows up in the right place in the Paretos</td></tr><tr><td>New error category</td><td>Specific development in the model</td><td>Rare, since categories are stable</td></tr></tbody></table></div><p style="margin-top:1rem"><strong>What it enables.</strong> Action plans with the ERCD team to eliminate some error types for good,
+and spotting, over a given period, a new error type as it appears, for example when the person generating the file does not know
+some subtleties.</p>
         </div>
     </section>
 
@@ -124,7 +256,7 @@
         <div class="section-container">
             <span class="section-label">// Key strengths</span>
             <h2>Key strengths of the solution</h2>
-            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Lasting result</strong>: three solutions in production, still in use after I left.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Qualified data</strong>: origin of every field traced and validated with the business and IT.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>European scale</strong>: 12 daily SAP extracts, 12 countries, one reference dataset.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>International setting</strong>: European teams, FR / EN.</p></li></ol>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Three projects in parallel</strong>: three problems, three solutions in production, still in use after I left.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Project 1 · OTD — the customer promise measured</strong>: 12 exports standardized, SAP report code reviewed, delay assigned to each actor.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Project 2 · ServiceNow — figures that are finally right</strong>: every ticket counted, including those open for several months.</p></li><li class="pf-item reveal"><span class="pf-num">04</span><p><strong>Project 3 · ERCD — built to evolve</strong>: a new error check is added with one line in a CSV, no development.</p></li></ol>
         </div>
     </section>
 
@@ -136,11 +268,11 @@
                 <div class="skill-group"><h3 class="skill-group-title">Languages (share of code)</h3>
                     <p class="code-caption" style="margin-top:1rem">Company project: code not public.</p></div>
                 <div class="skill-group"><h3 class="skill-group-title">Keywords</h3>
-                    <div class="project-tech"><span class="tech-badge">Power BI</span><span class="tech-badge">DAX</span><span class="tech-badge">Power Query</span><span class="tech-badge">TMDL</span><span class="tech-badge">Power Automate</span><span class="tech-badge">SAP S/4HANA</span><span class="tech-badge">Master Data</span><span class="tech-badge">Data Quality</span></div></div>
+                    <div class="project-tech"><span class="tech-badge">Power BI</span><span class="tech-badge">DAX</span><span class="tech-badge">Power Query</span><span class="tech-badge">TMDL</span><span class="tech-badge">Power Automate</span><span class="tech-badge">SharePoint</span><span class="tech-badge">SAP S/4HANA</span><span class="tech-badge">ABAP / SQL</span><span class="tech-badge">ServiceNow</span><span class="tech-badge">OTD</span><span class="tech-badge">Pareto</span><span class="tech-badge">Master Data</span><span class="tech-badge">Data Quality</span><span class="tech-badge">Multi-currency</span></div></div>
             </div>
             <div class="table-wrap"><table class="stack-table">
                 <thead><tr><th>Tool</th><th>Role in the project</th><th>What it demonstrates</th></tr></thead>
-                <tbody><tr><td>Power BI</td><td>Semantic model (TMDL) and dashboards</td><td>Reporting for decision-makers</td></tr><tr><td>DAX</td><td>Management and lead-time gap measures</td><td>Analytical logic</td></tr><tr><td>Power Query</td><td>Preparation of SAP extracts, query folding</td><td>Reduction at source</td></tr><tr><td>SAP S/4HANA</td><td>ABAP extracts from 12 countries</td><td>Qualification and lineage</td></tr><tr><td>Power Automate</td><td>Orchestration of 12 daily extracts</td><td>Single reference dataset</td></tr></tbody></table></div>
+                <tbody><tr><td>SAP S/4HANA</td><td>P1: 240-column report per entity, factory gateway</td><td>Reading the report code to qualify the data</td></tr><tr><td>Power Automate</td><td>P1: 12 SharePoint sites gathered, daily refresh</td><td>A single source, at a fixed time</td></tr><tr><td>Power Query (M)</td><td>P1: 240 → 80 typed columns · P2: ticket report · P3: reading the check file</td><td>Preparation and reduction at source</td></tr><tr><td>DAX</td><td>P1: OTD, reschedules, slippage · P2: workload, response time · P3: Pareto</td><td>Analytical logic</td></tr><tr><td>Power BI / TMDL</td><td>Semantic models and dashboards for all three projects</td><td>Reporting for Europe</td></tr><tr><td>SharePoint</td><td>P1: 12 country reports · P2: daily ticket report</td><td>Drop point for the sources</td></tr></tbody></table></div>
         </div>
     </section>
 
@@ -150,7 +282,7 @@
             <span class="section-label">// Critical review</span>
             <h2>Known limitations and next steps</h2>
             <p style="margin-bottom:1.5rem">Documenting limitations honestly is part of the job: it lets a team make informed decisions.</p>
-            <div class="arg-card arg-card--ok"><ul><li>Confidential data and code: this page describes the approach without disclosing internal information.</li></ul></div>
+            <div class="arg-card arg-card--ok"><ul><li>Confidential data and code: this page describes the approach without disclosing internal information or business figures.</li><li>Reschedules are grouped in three classes (0, 1, 2 or more): the report does not keep each change beyond the second.</li></ul></div>
         </div>
     </section>
 
@@ -166,6 +298,6 @@
         <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
         <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
     </footer>
-    <script src="/assets/site.js?v=9"></script>
+    <script src="/assets/site.js?v=11"></script>
 </body>
 </html>

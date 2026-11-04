@@ -52,7 +52,8 @@ def project_page(p, projects, lang="fr"):
     badge = (f'<div class="live-badge" style="position:static;display:inline-flex;margin-bottom:1.2rem">'
              f'<span class="live-dot"></span> {e(p["badge"])}</div>') if p.get("badge") else ""
     out = [head(f"{p['title']} — Patrice Duclos", p["lead"], path, lang), nav(projects, path, lang)]
-    custom = "".join(f"""
+    def sections(items, start=0):
+        return "".join(f"""
     <section class="page-section{' alt' if i % 2 == 0 else ''}" id="{sid}">
         <div class="section-container">
             <span class="section-label">// {label}</span>
@@ -60,7 +61,9 @@ def project_page(p, projects, lang="fr"):
             {body}
         </div>
     </section>
-""" for i, (sid, label, title, body) in enumerate(p.get("custom_sections", [])))
+""" for i, (sid, label, title, body) in enumerate(items, start))
+    custom = sections(p.get("custom_sections", []))
+    custom_after = sections(p.get("custom_after", []), 1)
     diagrams = [(slug, t["p_drawio"])] + list(p.get("extra_diagrams", []))
     out.append(f"""
     <header class="page-hero">
@@ -98,8 +101,8 @@ def project_page(p, projects, lang="fr"):
 {custom}
     <section class="page-section alt" id="pipeline">
         <div class="section-container">
-            <span class="section-label">// {t['p_pipe_label']}</span>
-            <h2>{t['p_pipe_title']}</h2>
+            <span class="section-label">// {p.get('pipe_label', t['p_pipe_label'])}</span>
+            <h2>{p.get('pipe_title', t['p_pipe_title'])}</h2>
             <p>{t['p_pipe_intro']}</p>
             {repo_cards(p, lang)}
             {interactive(p, diagrams, partial(figure, lang=lang), lang)}
@@ -107,7 +110,7 @@ def project_page(p, projects, lang="fr"):
             <ol class="pipeline-steps">{''.join(f'<li>{x}</li>' for x in p['steps'])}</ol>
         </div>
     </section>
-
+{custom_after}
     <section class="page-section" id="points-forts">
         <div class="section-container">
             <span class="section-label">// {t['p_pf_label']}</span>

@@ -1,68 +1,10 @@
 """English content for projects 7-12 and strengths (translated from projects.py)."""
+from carrier_en import CARRIER_EN
 from projects import GH, M_NONE
 
 PART_B = [
     # ------------------------------------------------------------------ CARRIER
-    dict(
-        slug="carrier-reporting",
-        short="Carrier — HVAC Europe performance management",
-        kicker="Professional experience · 12 months · In production",
-        title="Performance management and data qualification — Carrier",
-        title_html='Carrier: <span class="highlight">3 management dashboards</span> across 12 countries, still in use after I left',
-        lead="Data Analyst, 12 months at Carrier HVAC Europe: three Power BI solutions designed, built and put into production "
-             "on an SAP S/4HANA scope covering 12 countries, including a measure of how reliable the delivery promise to customers is. "
-             "Every field is qualified with the business and IT, in an international FR/EN setting.",
-        kpis=[("12", "SAP S/4HANA countries"), ("3", "solutions in production"), ("1.5 GB → 800 MB", "per extraction cycle"), ("12 months", "Data Analyst")],
-        links=[],
-        context=[
-            "In an international industrial group, indicators whose source nobody can trace are not used to decide: each "
-            "country exports its own SAP data, and the delivery date promised to the customer has to be verifiable.",
-            "Mission: consolidate SAP extracts from 12 countries, qualify every field and give European teams "
-            "dashboards they can trust.",
-        ],
-        rh=[
-            "<strong>Lasting result</strong>: three management solutions put into production, still in use after I left.",
-            "<strong>Customer promise measured</strong>: lead-time gaps modeled (factory lead time, acknowledgment, reschedules, delays) across 12 countries.",
-            "<strong>Trusted data</strong>: the origin of every field validated with the Europe market lead and the IT department.",
-        ],
-        tech=[
-            "Power Automate orchestration of 12 daily extracts consolidated into a single reference dataset (1.5 GB reduced to 800 MB per cycle, under the Power BI Pro dataset limit).",
-            "Qualification and lineage: origin and calculation method of every field of an ABAP extract; reduction at source and query folding.",
-            "Semantic model in TMDL, bilingual FR/EN documentation generated from the model; explicit calculated columns for auditability.",
-            "Automatic detection and categorization of item-creation errors (Pareto) for the master data team.",
-        ],
-        stages=[
-            ("Sources", "source", ["12 SAP extracts (12 countries)"]),
-            ("Preparation", "ingest", ["Power Automate + Power Query"]),
-            ("Model", "storage", ["TMDL semantic model"]),
-            ("Controls", "process", ["Qualification and lineage", "Item error Pareto"]),
-            ("Management", "ui", ["Master data management", "Customer promise and lead times"]),
-        ],
-        edges=[("s0n0", "s1n0", "", False), ("s1n0", "s2n0", "", False), ("s2n0", "s3n0", "", False), ("s2n0", "s3n1", "", False),
-               ("s3n0", "s4n1", "", False), ("s3n1", "s4n0", "", False)],
-        band=None,
-        steps=[
-            "Orchestration of 12 daily SAP extracts into a single reference dataset (Power Automate).",
-            "Qualification of every field with the business and IT: origin and calculation method.",
-            "Power BI semantic model (TMDL) and lead-time gap measures.",
-            "Three solutions put into production, with bilingual documentation generated from the model.",
-        ],
-        extra_diagrams=[],
-        langs=None,
-        langs_note="Company project: code not public.",
-        tags=["Power BI", "DAX", "Power Query", "TMDL", "Power Automate", "SAP S/4HANA", "Master Data", "Data Quality"],
-        stack=[
-            ("Power BI", "Semantic model (TMDL) and dashboards", "Reporting for decision-makers"),
-            ("DAX", "Management and lead-time gap measures", "Analytical logic"),
-            ("Power Query", "Preparation of SAP extracts, query folding", "Reduction at source"),
-            ("SAP S/4HANA", "ABAP extracts from 12 countries", "Qualification and lineage"),
-            ("Power Automate", "Orchestration of 12 daily extracts", "Single reference dataset"),
-        ],
-        matrix=None,
-        limits=[
-            "Confidential data and code: this page describes the approach without disclosing internal information.",
-        ],
-    ),
+    CARRIER_EN,
     # ------------------------------------------------------------------ CSV
     dict(
         slug="csvtraitement",
@@ -375,12 +317,6 @@ STRENGTHS_EN = {
         "<strong>Honest forecasting</strong>: temporal split, TimeSeriesSplit, 5 model families compared, SHAP explainability.",
         "<strong>Extensible</strong>: plugin-based collectors, portable star schema (SQLite, PostgreSQL, SQL Server).",
         "<strong>Ready to deploy</strong>: 562 tests, non-root Docker, monthly Airflow DAG and equivalent Kubernetes CronJob.",
-    ],
-    "carrier-reporting": [
-        "<strong>Lasting result</strong>: three solutions in production, still in use after I left.",
-        "<strong>Qualified data</strong>: origin of every field traced and validated with the business and IT.",
-        "<strong>European scale</strong>: 12 daily SAP extracts, 12 countries, one reference dataset.",
-        "<strong>International setting</strong>: European teams, FR / EN.",
     ],
     "achats-negociation": [
         "<strong>Project led end to end</strong>: scoping, 3-scenario business case, architecture, acceptance testing, deployment, go-to-market.",

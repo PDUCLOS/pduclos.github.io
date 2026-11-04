@@ -1,5 +1,6 @@
 """Portfolio content: one dict per project page. Facts come from the repositories (analysed 2026-09-23)."""
 
+from carrier import CARRIER
 from achats import ACHATS
 from copilote_erp import COPILOTE_ERP
 from visiontrack import VISIONTRACK
@@ -594,66 +595,7 @@ spec:
         ],
     ),
     # ------------------------------------------------------------------ CARRIER
-    dict(
-        slug="carrier-reporting",
-        short="Carrier — Pilotage HVAC Europe",
-        kicker="Expérience professionnelle · 12 mois · Mis en production",
-        title="Pilotage et qualification des données — Carrier",
-        title_html='Carrier : <span class="highlight">3 dispositifs de pilotage</span> sur 12 pays, restés en service après mon départ',
-        lead="Data Analyst, 12 mois chez Carrier HVAC Europe : trois dispositifs Power BI conçus, développés et mis en production "
-             "sur un périmètre SAP S/4HANA à 12 pays, dont la mesure de la fiabilité de la promesse client. Chaque champ est "
-             "qualifié avec le métier et la DSI, en contexte international FR/EN.",
-        kpis=[("12", "pays SAP S/4HANA"), ("3", "dispositifs en production"), ("1,5 Go → 800 Mo", "par cycle d'extraction"), ("12 mois", "Data Analyst")],
-        links=[],
-        context=[
-            "Dans un groupe industriel international, des indicateurs dont personne ne sait retracer la source ne servent pas "
-            "à décider : chaque pays exporte ses données SAP, et la promesse de délai faite au client doit pouvoir se vérifier.",
-            "Mission : consolider les extractions SAP de 12 pays, qualifier chaque champ et donner aux équipes européennes "
-            "des tableaux de bord fiables.",
-        ],
-        rh=[
-            "<strong>Résultat durable</strong> : trois dispositifs de pilotage mis en production, restés en service après mon départ.",
-            "<strong>Promesse client mesurée</strong> : écarts de délais modélisés (délai usine, accusé de réception, reports, retards) sur 12 pays.",
-            "<strong>Données de confiance</strong> : provenance de chaque champ validée avec le responsable marché Europe et le service informatique.",
-        ],
-        tech=[
-            "Orchestration Power Automate de 12 extractions quotidiennes consolidées en un référentiel unique (1,5 Go ramenés à 800 Mo par cycle, sous la limite d'un dataset Power BI Pro).",
-            "Qualification et lignage : provenance et méthode de calcul de chaque champ d'une extraction ABAP ; réduction à la source et query folding.",
-            "Modèle sémantique en TMDL, documentation bilingue FR/EN générée depuis le modèle ; colonnes calculées explicites pour l'auditabilité.",
-            "Détection et catégorisation automatique des erreurs de création d'articles (Pareto) pour le service master data.",
-        ],
-        stages=[
-            ("Sources", "source", ["12 extractions SAP (12 pays)"]),
-            ("Préparation", "ingest", ["Power Automate + Power Query"]),
-            ("Modèle", "storage", ["Modèle sémantique TMDL"]),
-            ("Contrôles", "process", ["Qualification et lignage", "Pareto des erreurs articles"]),
-            ("Pilotage", "ui", ["Pilotage master data", "Promesse client et délais"]),
-        ],
-        edges=[("s0n0", "s1n0", "", False), ("s1n0", "s2n0", "", False), ("s2n0", "s3n0", "", False), ("s2n0", "s3n1", "", False),
-               ("s3n0", "s4n1", "", False), ("s3n1", "s4n0", "", False)],
-        band=None,
-        steps=[
-            "Orchestration de 12 extractions SAP quotidiennes en un référentiel unique (Power Automate).",
-            "Qualification de chaque champ avec le métier et la DSI : provenance et méthode de calcul.",
-            "Modèle sémantique Power BI (TMDL) et mesures des écarts de délais.",
-            "Mise en production de trois dispositifs, documentation bilingue générée depuis le modèle.",
-        ],
-        extra_diagrams=[],
-        langs=None,
-        langs_note="Projet réalisé en entreprise : code non public.",
-        tags=["Power BI", "DAX", "Power Query", "TMDL", "Power Automate", "SAP S/4HANA", "Master Data", "Data Quality"],
-        stack=[
-            ("Power BI", "Modèle sémantique (TMDL) et dashboards", "Restitution pour les décideurs"),
-            ("DAX", "Mesures de pilotage et écarts de délais", "Logique analytique"),
-            ("Power Query", "Préparation des extractions SAP, query folding", "Réduction à la source"),
-            ("SAP S/4HANA", "Extractions ABAP de 12 pays", "Qualification et lignage"),
-            ("Power Automate", "Orchestration de 12 extractions quotidiennes", "Référentiel unique"),
-        ],
-        matrix=None,
-        limits=[
-            "Données et code confidentiels : cette page décrit la démarche sans exposer d'information interne.",
-        ],
-    ),
+    CARRIER,
     # ------------------------------------------------------------------ CSV
     dict(
         slug="csvtraitement",
@@ -981,12 +923,6 @@ STRENGTHS = {
         "<strong>Prévision honnête</strong> : split temporel, TimeSeriesSplit, 5 familles de modèles comparées, explicabilité SHAP.",
         "<strong>Extensible</strong> : collecteurs en plugins, schéma en étoile portable (SQLite, PostgreSQL, SQL Server).",
         "<strong>Prêt à déployer</strong> : 562 tests, Docker non-root, DAG Airflow mensuel et CronJob Kubernetes équivalent.",
-    ],
-    "carrier-reporting": [
-        "<strong>Résultat durable</strong> : trois dispositifs en production, restés en service après mon départ.",
-        "<strong>Données qualifiées</strong> : provenance de chaque champ reconstituée et validée avec le métier et la DSI.",
-        "<strong>Échelle européenne</strong> : 12 extractions SAP quotidiennes, 12 pays, un référentiel unique.",
-        "<strong>Contexte international</strong> : équipes européennes, FR / EN.",
     ],
     "achats-negociation": [
         "<strong>Projet piloté de bout en bout</strong> : cadrage, business case en 3 scénarios, architecture, recette, déploiement, mise en marché.",
