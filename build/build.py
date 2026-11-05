@@ -192,7 +192,7 @@ STACK = [
                          ("Prometheus / Grafana", 3, "LyonFlow, Copilote maintenance")]),
     ("Déploiement & infrastructure", [("Docker / Docker Compose", 4, "tous les projets industrialisés"),
                                       ("FastAPI", 4, "LyonFlow, Fraude, HVAC, RAG, IRA"),
-                                      ("Nginx, systemd, TLS, VPS Linux", 3, "LyonFlow"),
+                                      ("Nginx, systemd, TLS, VPS Linux", 3, "Buyvera — négociation achats, LyonFlow"),
                                       ("Terraform (AWS)", 3, "Stripe"),
                                       ("Kubernetes (manifests)", 2, "HVAC")]),
     ("Restitution & métier", [("Power BI / DAX / Power Query", 5, "Carrier"),
@@ -366,7 +366,7 @@ def page_tech():
     proofs = [
         ("Architecture de données", "Medallion Bronze/Silver/Gold sur PostgreSQL/PostGIS ; OLTP → CDC Debezium → Kafka → Redis / MongoDB → Snowflake ; schémas en étoile.",
          "lyonflow"),
-        ("Orchestration", "28 DAGs Airflow en production (collecte */5 min, transforms, ML, maintenance) ; CronJob Kubernetes équivalent à un DAG.",
+        ("Orchestration", "28 DAGs Airflow (collecte */5 min, transforms, ML, maintenance) ; CronJob Kubernetes équivalent à un DAG.",
          "lyonflow"),
         ("Cycle de vie ML", "MLflow registry, split temporel anti-fuite, features partagées train/serve, garde-fous de fuite par actif.",
          "stripe-fraude-temps-reel"),

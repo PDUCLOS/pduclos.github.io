@@ -214,11 +214,11 @@ ACHATS = dict(
         ("YAML", "One configuration file per supplier", "Scalability without development"),
         ("pytest · testthat · GitHub Actions", "≈ 3,850 Python tests + ≈ 800 R tests, multi-version CI", "Reliable figures"),
     ],
-    matrix=dict(ci="y", tests="y", docker="p", orch="p", tracking="n", monitoring="p", serving="y", deploy="p", iac="n"),
+    matrix=dict(ci="y", tests="y", docker="p", orch="p", tracking="n", monitoring="p", serving="y", deploy="y", iac="n"),
     matrix_notes=dict(ci="Python 3.12 / 3.13, ruff; R testthat", tests="≈ 3,850 Python tests + ≈ 800 R tests",
                       docker="Containerized multi-user deployment planned", orch="Schedulable, replayable campaigns",
                       monitoring="Log of all operations, ingestion register", serving="R/Shiny interface",
-                      deploy="Full replayable demo; rollout in work packages"),
+                      deploy="MVP deployed on a VPS, secure access (account on request), demo on fictitious data; rollout in work packages"),
     snippets=[
         ("tarifs/rattachement.py — L3 level of the cascade: fuzzy matching with stated reasons",
          '''# L3 — fuzzy matching (RG-07). `score_cutoff`: rapidfuzz drops candidates below the display

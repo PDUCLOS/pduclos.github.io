@@ -44,7 +44,7 @@ _FIXES = """
 FR_UPDATES = dict(
     lead="Plateforme MLOps de bout en bout pour la mobilité lyonnaise : 9 sources open data, architecture Medallion "
          "sur PostgreSQL/PostGIS, 28 DAGs Airflow, XGBoost quantile (P10/P50/P90) à H+1h, suivi MLflow, dérive PSI, "
-         "routage pgRouting et un dashboard à 3 personas. Déployée sur VPS ; cible Kubernetes rendue par kustomize.",
+         "routage pgRouting et un dashboard à 3 personas. A tourné sur VPS (déploiement et retour arrière scriptés) ; cible Kubernetes rendue par kustomize.",
     kpis=[("9", "sources open data"), ("28", "DAGs Airflow"), ("653", "tests pytest verts, 0 échec"),
           ("5,4 ms", "prédiction P10/P50/P90 (médiane)"), ("18", "pages Streamlit, 3 personas")],
     links=[("Code source", GH + "lyonflowfull", True),
@@ -70,7 +70,7 @@ FR_UPDATES = dict(
     extra_diagrams=[("lyonflow-vue-ensemble", "Vue d'ensemble : du flux open data à la décision"),
                     ("lyonflow-cycle-mlops", "Cycle de vie du modèle : planifications réelles des DAGs"),
                     ("lyonflow-kubernetes", "Cible Kubernetes (kustomize, non déployée)"),
-                    ("lyonflow-infra", "Infrastructure de production (VPS, conteneurs)")],
+                    ("lyonflow-infra", "Infrastructure de déploiement (VPS, conteneurs)")],
     stack=[
         ("Apache Airflow 2.9", "28 DAGs : collecte, transforms Medallion, entraînement, inférence, maintenance", "Orchestration de production, dépendances et reprises"),
         ("PostgreSQL 16 + PostGIS", "Schémas bronze / silver / gold / osm / rgpd", "Modélisation Medallion, SQL spatial, vues matérialisées"),
@@ -92,7 +92,7 @@ FR_UPDATES = dict(
                       orch="Airflow, 28 DAGs (retrain horaire vitesse en pause)",
                       tracking="MLflow ; registre de production non revérifié",
                       monitoring="PSI quotidien, Evidently optionnel, Prometheus/Grafana",
-                      serving="FastAPI + clé API", deploy="VPS, deploy/rollback scriptés, health checks",
+                      serving="FastAPI + clé API", deploy="A tourné sur VPS : deploy/rollback scriptés, health checks",
                       iac="kustomize dev / prod validé (non déployé) ; Asset Bundle Databricks"),
     metrics=dict(head=["Mesure", "Résultat", "Conditions"], rows=[
         ["Suite pytest (config du dépôt)", "650 verts, 1 ignoré, 23 désélectionnés, 0 échec (18,4 s) ; 653 avec les tests de sécurité", "1 ignoré = PostgreSQL absent"],
@@ -155,7 +155,7 @@ components:
     ],
     limits=[
         "Serveur unique : pas de haute disponibilité. La cible Kubernetes est rendue (kustomize) mais pas encore déployée : image à publier, MinIO, cert-manager, DAGs à valider sous KubernetesExecutor.",
-        "Le fonctionnement en production sur le VPS, le registre MLflow et toute métrique de précision n'ont pas été revérifiés lors de la mise à jour de cette fiche.",
+        "La plateforme ne tourne plus sur le VPS : le serveur sert désormais Buyvera. Le registre MLflow et les métriques de précision n'ont pas été revérifiés lors de la mise à jour de cette fiche.",
         "<code>POST /api/v1/recommend</code> renvoie encore un exemple codé en dur ; <code>GET /api/v1/models</code> affiche des métriques figées quand MLflow est injoignable.",
         "Défauts d'interface non corrigés : balise <code>&lt;/div&gt;</code> visible et texte tronqué sur l'accueil ; numéros de version incohérents (README, <code>/health</code>, OpenAPI).",
         "Prédiction des retards bus encore en phase d'analyse : la donnée SIRI doit s'accumuler avant de passer en production.",
@@ -209,7 +209,7 @@ _FIXES_EN = """
 EN_UPDATES = dict(
     lead="End-to-end MLOps platform for Lyon mobility: 9 open data sources, Medallion architecture on "
          "PostgreSQL/PostGIS, 28 Airflow DAGs, quantile XGBoost (P10/P50/P90) one hour ahead, MLflow tracking, PSI drift, "
-         "pgRouting routing and a dashboard for 3 personas. Deployed on a VPS; Kubernetes target rendered with kustomize.",
+         "pgRouting routing and a dashboard for 3 personas. Ran on a VPS (scripted deployment and rollback); Kubernetes target rendered with kustomize.",
     kpis=[("9", "open data sources"), ("28", "Airflow DAGs"), ("653", "passing pytest tests, 0 failures"),
           ("5.4 ms", "P10/P50/P90 prediction (median)"), ("18", "Streamlit pages, 3 personas")],
     links=[("Source code", GH + "lyonflowfull", True),
@@ -235,7 +235,7 @@ EN_UPDATES = dict(
     extra_diagrams=[("lyonflow-vue-ensemble", "Overview: from open data feed to decision"),
                     ("lyonflow-cycle-mlops", "Model lifecycle: actual DAG schedules"),
                     ("lyonflow-kubernetes", "Kubernetes target (kustomize, not deployed)"),
-                    ("lyonflow-infra", "Production infrastructure (VPS, containers)")],
+                    ("lyonflow-infra", "Deployment infrastructure (VPS, containers)")],
     stack=[
         ("Apache Airflow 2.9", "28 DAGs: collection, Medallion transforms, training, inference, maintenance", "Production orchestration, dependencies and retries"),
         ("PostgreSQL 16 + PostGIS", "bronze / silver / gold / osm / rgpd schemas", "Medallion modeling, spatial SQL, materialized views"),
@@ -257,7 +257,7 @@ EN_UPDATES = dict(
                       orch="Airflow, 28 DAGs (hourly speed retrain paused)",
                       tracking="MLflow; production registry not re-checked",
                       monitoring="Daily PSI, optional Evidently, Prometheus/Grafana",
-                      serving="FastAPI + API key", deploy="VPS, scripted deploy/rollback, health checks",
+                      serving="FastAPI + API key", deploy="Ran on a VPS: scripted deploy/rollback, health checks",
                       iac="kustomize dev / prod validated (not deployed); Databricks Asset Bundle"),
     metrics=dict(head=["Measurement", "Result", "Conditions"], rows=[
         ["pytest suite (repository config)", "650 passed, 1 skipped, 23 deselected, 0 failed (18.4 s); 653 with the security tests", "1 skipped = PostgreSQL absent"],
@@ -283,7 +283,7 @@ EN_UPDATES = dict(
     ],
     limits=[
         "Single server: no high availability. The Kubernetes target is rendered (kustomize) but not yet deployed: image to publish, MinIO, cert-manager, DAGs to validate under KubernetesExecutor.",
-        "Production operation on the VPS, the MLflow registry and every accuracy metric were not re-checked when this page was updated.",
+        "The platform no longer runs on the VPS: the server now hosts Buyvera. The MLflow registry and accuracy metrics were not re-checked when this page was updated.",
         "<code>POST /api/v1/recommend</code> still returns a hard-coded example; <code>GET /api/v1/models</code> shows frozen metrics when MLflow is unreachable.",
         "Unfixed UI defects: a visible <code>&lt;/div&gt;</code> tag and truncated text on the home page; inconsistent version numbers (README, <code>/health</code>, OpenAPI).",
         "Bus delay prediction is still in the analysis phase: SIRI data needs to accumulate before going to production.",

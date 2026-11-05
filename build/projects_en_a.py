@@ -6,10 +6,10 @@ PART_A = [
     dict(
         slug="lyonflow",
         short="LyonFlow",
-        kicker="MLOps · Production · Urban mobility",
+        kicker="MLOps · Urban mobility",
         title="LyonFlow — Multimodal traffic MLOps platform",
         title_html='LyonFlow — Lyon mobility <span class="highlight">predicted in real time</span>',
-        lead="End-to-end MLOps platform running in production on a VPS: 9 open data sources, Medallion architecture "
+        lead="End-to-end MLOps platform that ran on a VPS: 9 open data sources, Medallion architecture "
              "on PostgreSQL/PostGIS, 28 Airflow DAGs, automatically retrained XGBoost models, multimodal "
              "pgRouting routing and a dashboard for 3 personas.",
         kpis=[("9", "open data sources"), ("28", "Airflow DAGs"), ("620", "pytest tests"), ("59", "widgets / 18 pages"),
@@ -25,7 +25,7 @@ PART_A = [
             "in an application designed for three audiences.",
         ],
         rh=[
-            "<strong>A product in production</strong>, not a notebook: deployed on a server, monitored, backed up every night.",
+            "<strong>An operated product</strong>, not a notebook: ran on a server, monitored, backed up every night.",
             "Designed for <strong>3 business users</strong> (commuter, TCL operator, elected official) — same logic as sales management: each decision-maker gets their own view.",
             "Cross-referencing <strong>bus delays × congestion</strong> separates an operational problem from an infrastructure need (dedicated lane): a quantified argument for a budget decision.",
             "Project carried out solo end to end: scoping, data, models, deployment, GDPR documentation.",
@@ -62,7 +62,7 @@ PART_A = [
             "<strong>Delivery</strong> — FastAPI API (prediction, recommendation, bottlenecks) and an 18-page / 59-widget Streamlit dashboard, with no simulated data at all.",
         ],
         extra_diagrams=[("lyonflow-medallion", "Medallion data flow"), ("lyonflow-ml", "The 4 ML pillars"),
-                        ("lyonflow-infra", "Production infrastructure (VPS, containers)"),
+                        ("lyonflow-infra", "Deployment infrastructure (VPS, containers)"),
                         ("lyonflow-airflow", "Airflow orchestration")],
         langs=[("Python", 78), ("SQL", 13), ("Shell", 4), ("YAML", 3), ("Makefile", 1)],
         tags=["Airflow", "PostgreSQL", "PostGIS", "pgRouting", "XGBoost", "MLflow", "PSI / Evidently", "FastAPI",
@@ -85,7 +85,7 @@ PART_A = [
         matrix_notes=dict(ci="ruff, mypy, bandit, pytest + coverage", tests="620 tests (unit, personas, integration, e2e)",
                           docker="Application Compose + monitoring Compose", orch="Airflow, 28 DAGs",
                           tracking="MLflow registry, Production stage", monitoring="Daily PSI, Evidently, Prometheus/Grafana",
-                          serving="FastAPI + API key", deploy="VPS, scripted deploy/rollback, health checks",
+                          serving="FastAPI + API key", deploy="Ran on a VPS: scripted deploy/rollback, health checks",
                           iac="Databricks Asset Bundle; dormant Kubernetes branch"),
         metrics=dict(head=["Decision / measurement", "Result", "Source"], rows=[
             ["1 single model (38 features) vs 3 specialized models", "MAE 5.8 → 3.2 (−45%)", "internal validation (private working repository)"],

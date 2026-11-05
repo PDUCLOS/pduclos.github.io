@@ -34,7 +34,7 @@ STACK_EN = [
                          ("Prometheus / Grafana", 3, "LyonFlow, Maintenance copilot")]),
     ("Deployment & infrastructure", [("Docker / Docker Compose", 4, "all production-grade projects"),
                                      ("FastAPI", 4, "LyonFlow, Fraud, HVAC, RAG, IRA"),
-                                     ("Nginx, systemd, TLS, Linux VPS", 3, "LyonFlow"),
+                                     ("Nginx, systemd, TLS, Linux VPS", 3, "Buyvera — purchasing negotiation, LyonFlow"),
                                      ("Terraform (AWS)", 3, "Stripe"),
                                      ("Kubernetes (manifests)", 2, "HVAC")]),
     ("Reporting & business", [("Power BI / DAX / Power Query", 5, "Carrier"),
@@ -299,7 +299,7 @@ def page_tech(h):
     proofs = [
         ("Data architecture", "Bronze/Silver/Gold medallion on PostgreSQL/PostGIS; OLTP → Debezium CDC → Kafka → Redis / MongoDB → Snowflake; star schemas.",
          "lyonflow"),
-        ("Orchestration", "28 Airflow DAGs in production (collection every 5 min, transforms, ML, maintenance); Kubernetes CronJob equivalent to a DAG.",
+        ("Orchestration", "28 Airflow DAGs (collection every 5 min, transforms, ML, maintenance); Kubernetes CronJob equivalent to a DAG.",
          "lyonflow"),
         ("ML lifecycle", "MLflow registry, leak-proof temporal split, features shared between training and serving, per-asset leakage guardrails.",
          "stripe-fraude-temps-reel"),
@@ -328,7 +328,7 @@ def page_tech(h):
         <div class="section-container">
             <div class="kpi-row">
                 <div class="kpi"><b>≈ 1,600</b><span>automated tests</span></div>
-                <div class="kpi"><b>28</b><span>Airflow DAGs in production</span></div>
+                <div class="kpi"><b>28</b><span>Airflow DAGs</span></div>
                 <div class="kpi"><b>6</b><span>repositories with CI</span></div>
                 <div class="kpi"><b>{len(PROJECTS)}</b><span>pipelines in draw.io</span></div>
             </div>

@@ -15,10 +15,10 @@ PROJECTS = [
     dict(
         slug="lyonflow",
         short="LyonFlow",
-        kicker="MLOps · Production · Mobilité urbaine",
+        kicker="MLOps · Mobilité urbaine",
         title="LyonFlow — Plateforme MLOps trafic multimodal",
         title_html='LyonFlow — la mobilité lyonnaise <span class="highlight">prédite en temps réel</span>',
-        lead="Plateforme MLOps de bout en bout, en production sur VPS : 9 sources open data, architecture Medallion "
+        lead="Plateforme MLOps de bout en bout, qui a tourné sur VPS : 9 sources open data, architecture Medallion "
              "sur PostgreSQL/PostGIS, 28 DAGs Airflow, modèles XGBoost réentraînés automatiquement, routage "
              "multimodal pgRouting et un dashboard à 3 personas.",
         kpis=[("9", "sources open data"), ("28", "DAGs Airflow"), ("620", "tests pytest"), ("59", "widgets / 18 pages"),
@@ -34,7 +34,7 @@ PROJECTS = [
             "dans une application pensée pour trois publics.",
         ],
         rh=[
-            "<strong>Un produit en production</strong>, pas un notebook : déployé sur serveur, supervisé, sauvegardé chaque nuit.",
+            "<strong>Un produit exploité</strong>, pas un notebook : a tourné sur serveur, supervisé, sauvegardé chaque nuit.",
             "Pensé pour <strong>3 utilisateurs métier</strong> (usager, opérateur TCL, élu) — même logique que le pilotage commercial : chaque décideur a sa vue.",
             "Le croisement <strong>retard bus × congestion</strong> distingue un problème opérationnel d'un besoin d'infrastructure (voie dédiée) : un argument chiffré pour un arbitrage budgétaire.",
             "Projet porté seul de bout en bout : cadrage, données, modèles, déploiement, documentation RGPD.",
@@ -71,7 +71,7 @@ PROJECTS = [
             "<strong>Restitution</strong> — API FastAPI (prédiction, recommandation, goulots) et dashboard Streamlit 18 pages / 59 widgets, sans aucune donnée simulée.",
         ],
         extra_diagrams=[("lyonflow-medallion", "Flux de données Medallion"), ("lyonflow-ml", "Les 4 piliers ML"),
-                        ("lyonflow-infra", "Infrastructure de production (VPS, conteneurs)"),
+                        ("lyonflow-infra", "Infrastructure de déploiement (VPS, conteneurs)"),
                         ("lyonflow-airflow", "Orchestration Airflow")],
         langs=[("Python", 78), ("SQL", 13), ("Shell", 4), ("YAML", 3), ("Makefile", 1)],
         tags=["Airflow", "PostgreSQL", "PostGIS", "pgRouting", "XGBoost", "MLflow", "PSI / Evidently", "FastAPI",
@@ -94,7 +94,7 @@ PROJECTS = [
         matrix_notes=dict(ci="ruff, mypy, bandit, pytest + couverture", tests="620 tests (unitaires, personas, intégration, e2e)",
                           docker="Compose applicatif + compose monitoring", orch="Airflow, 28 DAGs",
                           tracking="MLflow registry, stage Production", monitoring="PSI quotidien, Evidently, Prometheus/Grafana",
-                          serving="FastAPI + clé API", deploy="VPS, deploy/rollback scriptés, health checks",
+                          serving="FastAPI + clé API", deploy="A tourné sur VPS : deploy/rollback scriptés, health checks",
                           iac="Asset Bundle Databricks ; branche Kubernetes dormante"),
         metrics=dict(head=["Décision / mesure", "Résultat", "Source"], rows=[
             ["1 modèle unique (38 features) vs 3 modèles spécialisés", "MAE 5,8 → 3,2 (−45 %)", "validation interne (dépôt de travail privé)"],
@@ -889,7 +889,7 @@ PROJECTS.sort(key=lambda p: _order[p["slug"]])
 # Points forts de chaque solution, repris en tête de la section « Points forts » des pages projets.
 STRENGTHS = {
     "lyonflow": [
-        "<strong>En production, pas en notebook</strong> : déployé sur serveur, supervisé (Prometheus / Grafana), sauvegardé chaque nuit, déploiement et retour arrière en une commande.",
+        "<strong>Exploité, pas en notebook</strong> : a tourné sur serveur, supervisé (Prometheus / Grafana), sauvegardé chaque nuit, déploiement et retour arrière en une commande.",
         "<strong>Boucle MLOps fermée</strong> : MLflow registry, dérive PSI quotidienne, réentraînement XGBoost automatique.",
         "<strong>Choix d'architecture mesuré</strong> : 3 modèles spécialisés au lieu d'un, MAE 5,8 → 3,2 (−45 %).",
         "<strong>Pensé pour la décision</strong> : 3 personas (usager, opérateur, élu), croisement retard bus × congestion pour arbitrer un investissement.",
