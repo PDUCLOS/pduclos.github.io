@@ -39,7 +39,7 @@ RHONE_DISTRIBUTION_EN = dict(
     slug="rhone-distribution",
     short="Rhône Distribution — Snowflake + dbt",
     kicker="Snowflake · dbt · SQL · Access governance",
-    badge="ONGOING PROJECT · DBT CORE VALIDATED LOCALLY · SNOWFLAKE SCRIPTS READY",
+    badge="PUBLIC PROJECT, DBT VALIDATED LOCALLY",
     title="Rhône Distribution — a Snowflake warehouse modelled with dbt",
     title_html='Snowflake and dbt: <span class="highlight">reliable data, regulated access</span>',
     lead="A fictitious B2B distributor in Lyon (5 branches, about 1,200 business customers) wants to track revenue, margin, DSO and "

@@ -46,7 +46,7 @@ RHONE_DISTRIBUTION = dict(
     slug="rhone-distribution",
     short="Rhône Distribution — Snowflake + dbt",
     kicker="Snowflake · dbt · SQL · Gouvernance des accès",
-    badge="PROJET EN COURS · DBT CORE VALIDÉ EN LOCAL · SCRIPTS SNOWFLAKE PRÊTS",
+    badge="PROJET PUBLIC, DBT VALIDÉ EN LOCAL",
     title="Rhône Distribution — un entrepôt Snowflake modélisé avec dbt",
     title_html='Snowflake et dbt : <span class="highlight">des données fiables, des accès réglementés</span>',
     lead="Un distributeur B2B lyonnais fictif (5 agences, environ 1 200 clients professionnels) veut piloter chiffre d'affaires, marge, "
