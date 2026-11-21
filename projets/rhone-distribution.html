@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhône Distribution — un entrepôt Snowflake modélisé avec dbt — Patrice Duclos</title>
+    <meta name="description" content="Un distributeur B2B lyonnais fictif (5 agences, environ 1 200 clients professionnels) veut piloter chiffre d&#x27;affaires, marge, DSO et taux de service, sans que chacun voie tout. Le flux Snowflake charge chaque nuit des données agrégées, dbt les transforme en couches Silver et Gold testées, et les accès sont réglementés par rôle : agence, données personnelles, coûts. Construit avec dbt Core et validé de bout en bout en local ; scripts Snowflake prêts, pas encore exécutés sur un compte Snowflake.">
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://pduclos.github.io/LICENSE.txt">
+    <meta name="copyright" content="© 2026 Patrice Duclos — tous droits réservés">
+    <meta property="og:title" content="Rhône Distribution — un entrepôt Snowflake modélisé avec dbt — Patrice Duclos">
+    <meta property="og:description" content="Un distributeur B2B lyonnais fictif (5 agences, environ 1 200 clients professionnels) veut piloter chiffre d&#x27;affaires, marge, DSO et taux de service, sans que chacun voie tout. Le flux Snowflake charge chaque nuit des données agrégées, dbt les transforme en couches Silver et Gold testées, et les accès sont réglementés par rôle : agence, données personnelles, coûts. Construit avec dbt Core et validé de bout en bout en local ; scripts Snowflake prêts, pas encore exécutés sur un compte Snowflake.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pduclos.github.io/projets/rhone-distribution.html">
+    <link rel="canonical" href="https://pduclos.github.io/projets/rhone-distribution.html">
+    <link rel="alternate" hreflang="fr" href="https://pduclos.github.io/projets/rhone-distribution.html">
+    <link rel="alternate" hreflang="en" href="https://pduclos.github.io/en/projects/rhone-distribution.html">
+    <link rel="alternate" hreflang="x-default" href="https://pduclos.github.io/projets/rhone-distribution.html">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=11">
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">P<span>.</span>D</a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">Parcours</a></li>
+            <li class="has-dropdown">
+                <a href="/projets/" class="dropdown-toggle" aria-current="page">Projets</a>
+                <ul class="dropdown">
+                    <li><a href="/projets/">Tous les projets<small>vue d'ensemble · matrice MLOps</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="/projets/achats-negociation.html">Buyvera — négociation achats<small>Projet phare · Produit commercialisable · Chef de projet</small></a></li><li><a href="/projets/rhone-distribution.html" aria-current="page">Rhône Distribution — Snowflake + dbt<small>Snowflake · dbt · SQL · Gouvernance des accès</small></a></li><li><a href="/projets/buyvera-bi.html">Buyvera BI — Power BI achats<small>Power BI · DAX · TMDL · Machine learning</small></a></li><li><a href="/projets/visiontrack.html">VisionTrack — vision par ordinateur locale<small>Computer vision · Personnes et trafic routier · 100 % local</small></a></li><li><a href="/projets/lyonflow.html">LyonFlow<small>MLOps · Mobilité urbaine</small></a></li><li><a href="/projets/copilote-erp.html">Copilote ERP sourcé (RAG + SQL + LLMOps)<small>IA générative · RAG · LLMOps · Kubernetes</small></a></li><li><a href="/projets/stripe-fraude-temps-reel.html">Stripe — fraude temps réel<small>Data Architecture · Streaming · Bloc 2 RNCP 38777</small></a></li><li><a href="/projets/maintenance-predictive.html">Maintenance prédictive vibratoire<small>ML industriel · Signal · MLOps</small></a></li><li><a href="/projets/carrier-reporting.html">Carrier — Pilotage HVAC Europe<small>Expérience professionnelle · 12 mois · Mis en production</small></a></li><li><a href="/projets/copilot-maintenance.html">Copilote maintenance (RAG local)<small>IA générative · RAG · LLM local</small></a></li><li><a href="/projets/detection-fraude.html">Détection de fraude automatisée<small>ML en production · Alerting · Bloc 3 RNCP 38777</small></a></li><li><a href="/projets/marche-hvac.html">Marché HVAC France<small>Data Engineering · Prévision · Énergie</small></a></li><li><a href="/projets/gouvernance-spotify.html">Gouvernance des données — Spotify<small>Data Governance · Conseil · Bloc 1 RNCP 38777</small></a></li><li><a href="/projets/mcp-open-data.html">Serveurs MCP open data<small>IA agentique · Model Context Protocol</small></a></li><li><a href="/projets/csvtraitement.html">Csvtraitement<small>Outil Python · Qualité de données ERP</small></a></li><li><a href="/projets/predictira.html">PredictIRA<small>ML santé publique · Projet d&#x27;équipe relancé en 2026</small></a></li>
+                    <li class="dropdown-sep" aria-hidden="true"></li>
+                    <li><a href="https://buyvera.fr/">Site commercial — Buyvera<small>projet achats · site produit bilingue</small></a></li>
+                    <li><a href="/presentations/plateforme-tarifs.html">Présentation commerciale<small>projet achats · 38 slides</small></a></li>
+                    <li><a href="/presentations/hausses-tarifaires.html">Présentation technique<small>projet achats · 21 slides</small></a></li>
+                </ul>
+            </li>
+            <li><a href="/competences.html">Compétences</a></li>
+            <li><a href="/stack.html">Stack MLOps</a></li>
+            <li><a href="/profil-rh.html">Recruteurs</a></li>
+            <li><a href="/profil-tech.html">Profil technique</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+            <li><a href="/en/projects/rhone-distribution.html" class="lang-switch" hreflang="en" lang="en" title="English version" aria-label="English version">EN</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-content">
+            <div class="live-badge" style="position:static;display:inline-flex;margin-bottom:1.2rem"><span class="live-dot"></span> PROJET EN COURS · DBT CORE VALIDÉ EN LOCAL · SCRIPTS SNOWFLAKE PRÊTS</div>
+            <div class="breadcrumb"><a href="/">Accueil</a> / <a href="/projets/">Projets</a> / Rhône Distribution — Snowflake + dbt</div>
+            <span class="project-tag" style="color:var(--accent)">Snowflake · dbt · SQL · Gouvernance des accès</span>
+            <h1>Snowflake et dbt : <span class="highlight">des données fiables, des accès réglementés</span></h1>
+            <p class="lead">Un distributeur B2B lyonnais fictif (5 agences, environ 1 200 clients professionnels) veut piloter chiffre d'affaires, marge, DSO et taux de service, sans que chacun voie tout. Le flux Snowflake charge chaque nuit des données agrégées, dbt les transforme en couches Silver et Gold testées, et les accès sont réglementés par rôle : agence, données personnelles, coûts. Construit avec dbt Core et validé de bout en bout en local ; scripts Snowflake prêts, pas encore exécutés sur un compte Snowflake.</p>
+            <div class="kpi-row"><div class="kpi"><b>64</b><span>tests dbt</span></div><div class="kpi"><b>70 / 70</b><span>anomalies injectées retrouvées</span></div><div class="kpi"><b>5</b><span>rôles d&#x27;accès Snowflake</span></div><div class="kpi"><b>7 210</b><span>établissements SIRENE pour le profil clients</span></div></div>
+            <div class="btn-row"><a href="https://github.com/PDUCLOS/rhone-distribution-lakehouse" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Code source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="https://pduclos.github.io/rhone-distribution-lakehouse/" target="_blank" rel="noopener" class="contact-btn contact-btn-primary">Documentation dbt et lignage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="#acces" class="contact-btn contact-btn-secondary">Accès réglementés <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+        </div>
+    </header>
+
+    <section class="page-section">
+        <div class="section-container">
+            <span class="section-label">// En 30 secondes</span>
+            <h2>Le problème, la réponse, la preuve</h2>
+            <div style="margin-bottom:2rem"><p>Un distributeur de fournitures industrielles (EPI, outillage, fixation, plomberie, électricité) veut un pilotage fiable : la DAF suit chiffre d'affaires, marge, DSO et balance âgée, la direction commerciale la performance par agence et par famille, et chaque commercial ne voit que ses clients, dans son agence, sans les coûts d'achat.</p><p><em>Données : Rhône Distribution est une entreprise fictive, son ERP est simulé par un générateur reproductible. Le profil des clients (secteurs NAF, tailles, communes) vient d'un agrégat SIRENE réel de 7 210 établissements du Rhône, de l'Ain, de l'Isère et de la Loire. Aucun nom ni SIREN réel n'est associé à un historique simulé.</em></p></div>
+            <div class="two-col">
+                <div class="arg-card arg-card--rh reveal">
+                    <span class="arg-label">Pour le recruteur · valeur business</span>
+                    <ul><li><strong>La qualité prouvée, pas affirmée</strong> : 70 anomalies injectées, un test qui exige de les retrouver toutes, ni plus ni moins.</li><li><strong>La gouvernance dans le modèle</strong> : qui voit quoi est déclaré dans le YAML dbt et appliqué automatiquement.</li><li><strong>Des noms métier</strong> : dimensions et tables Gold nommées en français, prêtes pour Power BI.</li><li><strong>Un statut honnête</strong> : ce qui tourne en local, ce qui reste à exécuter sur Snowflake.</li></ul>
+                </div>
+                <div class="arg-card arg-card--tech reveal">
+                    <span class="arg-label">Pour l'équipe technique · ce que le code prouve</span>
+                    <ul><li>ERP simulé dans <strong>PostgreSQL</strong>, extract nocturne agrégé au grain jour × client × produit × agence.</li><li><strong>Bronze</strong> (COPY INTO sur Snowflake, DuckDB en local) → <strong>Silver</strong> et <strong>Gold</strong> modélisés avec <strong>dbt</strong>.</li><li>Table de faits <code>fct_ventes_jour</code> en <strong>incrémental</strong>, dimensions, agrégats financiers (balance âgée, DSO) et commerciaux.</li><li><strong>Row access policy</strong> par agence, <strong>masking policies</strong> sur les données personnelles et financières, tags de classification.</li><li>Chargement Snowflake idempotent, procédure et Task planifiée, documentation dbt avec graphe de lignage.</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="page-section alt" id="architecture">
+        <div class="section-container">
+            <span class="section-label">// Architecture</span>
+            <h2>Deux plateformes, chacune selon son délai</h2>
+            
+<div class="pipeline-figure" style="padding:.6rem"><img src="/media/rhone-distribution/pipeline.png" alt="Pipeline Rhône Distribution : ERP simulé, extract nocturne, Bronze, Silver et Gold dbt, Snowflake, Databricks, Power BI" loading="lazy" draggable="false" style="min-width:0"></div>
+<p class="code-caption">Le schéma du projet : flux lent Snowflake (quotidien, agrégé, accès réglementés) et flux rapide Databricks (prévu).</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="acces">
+        <div class="section-container">
+            <span class="section-label">// Gouvernance</span>
+            <h2>Qui voit quoi, appliqué par le modèle</h2>
+            
+<div class="table-wrap"><table class="stack-table">
+    <thead><tr><th>Rôle</th><th>Agences visibles</th><th>Contacts clients (RGPD)</th><th>Coûts et marges</th></tr></thead>
+    <tbody>
+        <tr><td><code>RD_DAF</code></td><td>toutes</td><td>en clair</td><td>en clair</td></tr>
+        <tr><td><code>RD_DIRECTION_COMMERCIALE</code></td><td>toutes</td><td>masqués</td><td>en clair</td></tr>
+        <tr><td><code>RD_ANALYSTE</code></td><td>toutes</td><td>masqués</td><td>masqués</td></tr>
+        <tr><td><code>RD_COMMERCIAL_&lt;AGENCE&gt;</code></td><td><strong>la sienne</strong></td><td>en clair</td><td>masqués</td></tr>
+        <tr><td><code>RD_POWERBI_SVC</code></td><td>toutes (lecture Gold)</td><td>masqués</td><td>masqués</td></tr>
+    </tbody></table></div>
+<p style="margin-top:1rem">Row access policy par agence (table de correspondance rôle → agence), masking policies <code>pii_masking</code> et
+<code>finance_masking</code>, tags de classification. dbt recrée les tables à chaque run : les policies sont rattachées par un
+<strong>post-hook</strong>, à partir du <code>meta</code> déclaré dans le YAML des modèles. Bronze et Silver ne sont jamais exposés aux métiers.</p>
+<p class="code-caption"><strong>Statut :</strong> scripts Snowflake écrits, pas encore exécutés sur un compte Snowflake : vérification rôle par rôle à faire.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="qualite">
+        <div class="section-container">
+            <span class="section-label">// Qualité de données</span>
+            <h2>Une vérité terrain : 70 anomalies, 70 retrouvées</h2>
+            
+<div class="table-wrap"><table class="stack-table">
+    <thead><tr><th>Anomalie injectée</th><th>Nombre</th></tr></thead>
+    <tbody>
+        <tr><td>prix à zéro</td><td>25</td></tr>
+        <tr><td>quantité négative non marquée comme retour</td><td>12</td></tr>
+        <tr><td>expédition antérieure à la commande</td><td>15</td></tr>
+        <tr><td>facture orpheline (sans commande)</td><td>10</td></tr>
+        <tr><td>client sans code postal</td><td>8</td></tr>
+    </tbody></table></div>
+<p style="margin-top:1rem">Le générateur injecte <strong>70 anomalies</strong> et écrit leur nombre exact dans un manifeste. La couche Silver les isole
+en quarantaine, et un test dbt exige que la quarantaine retrouve <strong>exactement</strong> ce manifeste, ni plus ni moins.
+Ce test a déjà servi : une première règle « prix à zéro » produisait 5 faux positifs (une vente annulée par un retour le même jour).
+Le build a échoué, la règle a été corrigée.</p>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="pipeline">
+        <div class="section-container">
+            <span class="section-label">// Pipeline & architecture</span>
+            <h2>Architecture de bout en bout</h2>
+            <p>Pipeline reconstitué à partir de l'analyse du dépôt : chaque brique correspond à du code réel. Animez le flux, cliquez une brique pour suivre ses dépendances, ou ouvrez les schémas d'architecture.</p>
+            <div class="gh-cards"><a class="gh-card" href="https://github.com/PDUCLOS/rhone-distribution-lakehouse" target="_blank" rel="noopener" data-repo="PDUCLOS/rhone-distribution-lakehouse">
+            <span class="gh-name"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>rhone-distribution-lakehouse</span>
+            <span class="gh-desc">Dépôt public sur GitHub</span>
+            <span class="gh-meta"><span data-k="lang"></span><span data-k="push"></span><span data-k="stars"></span></span>
+        </a></div>
+            
+            <div class="pl" data-pl id="pl-rhone-distribution">
+                <div class="pl-tabs" role="tablist"><button type="button" class="pl-tab" aria-selected="true" data-tab="live">▶ Pipeline interactif</button><button type="button" class="pl-tab" aria-selected="false" data-tab="d0">Schéma draw.io du pipeline</button></div>
+                <div class="pl-panel" data-panel="live">
+                    <div class="pl-toolbar">
+                        <button type="button" class="pl-play">▶ Animer le flux de données</button>
+                        <button type="button" class="pl-reset" hidden>Tout afficher</button>
+                        <span class="pl-hint">Cliquez une brique pour voir ce qu'elle reçoit et ce qu'elle alimente.</span>
+                    </div>
+                    <div class="pl-scroll"><div class="pl-canvas" style="--n:7">
+                        <svg class="pl-edges" aria-hidden="true"></svg>
+                        <div class="pl-cols"><div class="pl-col" data-col="0" style="--k:#D97706"><h4><span>01</span>Source</h4><button type="button" class="pl-node" data-id="s0n0">ERP simulé (PostgreSQL)</button><button type="button" class="pl-node" data-id="s0n1">Profil SIRENE agrégé</button></div><div class="pl-col" data-col="1" style="--k:#2563EB"><h4><span>02</span>Extract</h4><button type="button" class="pl-node" data-id="s1n0">Extract nocturne agrégé</button></div><div class="pl-col" data-col="2" style="--k:#7C3AED"><h4><span>03</span>Bronze</h4><button type="button" class="pl-node" data-id="s2n0">COPY INTO Snowflake</button><button type="button" class="pl-node" data-id="s2n1">DuckDB en local</button></div><div class="pl-col" data-col="3" style="--k:#2563EB"><h4><span>04</span>Silver (dbt)</h4><button type="button" class="pl-node" data-id="s3n0">Nettoyage</button><button type="button" class="pl-node" data-id="s3n1">Quarantaine des anomalies</button></div><div class="pl-col" data-col="4" style="--k:#7C3AED"><h4><span>05</span>Gold (dbt)</h4><button type="button" class="pl-node" data-id="s4n0">Dimensions et faits</button><button type="button" class="pl-node" data-id="s4n1">Agrégats finance</button></div><div class="pl-col" data-col="5" style="--k:#DB2777"><h4><span>06</span>Accès</h4><button type="button" class="pl-node" data-id="s5n0">Row access</button><button type="button" class="pl-node" data-id="s5n1">Masking, tags</button></div><div class="pl-col" data-col="6" style="--k:#0D9488"><h4><span>07</span>Usage</h4><button type="button" class="pl-node" data-id="s6n0">Power BI (prévu)</button><button type="button" class="pl-node" data-id="s6n1">Features churn</button></div></div>
+                    </div></div>
+                    <div class="pl-band" style="--k:#475569">Python · PostgreSQL · DuckDB · dbt · Snowflake (SQL, RBAC, row access, masking) · Make</div>
+                    <div class="pl-info" aria-live="polite"></div>
+                    <div class="pl-legend"><span><i class="solid"></i>flux de données</span><span><i class="dash"></i>boucle de suivi / réentraînement</span></div>
+                    <script type="application/json" class="pl-data">[{"a": "s0n0", "b": "s1n0", "l": "", "d": false}, {"a": "s1n0", "b": "s2n0", "l": "", "d": false}, {"a": "s1n0", "b": "s2n1", "l": "", "d": false}, {"a": "s2n0", "b": "s3n0", "l": "", "d": false}, {"a": "s2n1", "b": "s3n0", "l": "", "d": false}, {"a": "s3n0", "b": "s3n1", "l": "", "d": false}, {"a": "s3n0", "b": "s4n0", "l": "", "d": false}, {"a": "s4n0", "b": "s4n1", "l": "", "d": false}, {"a": "s4n0", "b": "s5n0", "l": "", "d": false}, {"a": "s5n0", "b": "s5n1", "l": "", "d": false}, {"a": "s5n1", "b": "s6n0", "l": "", "d": false}, {"a": "s4n0", "b": "s6n1", "l": "", "d": false}]</script>
+                </div>
+                <div class="pl-panel" data-panel="d0">
+                <h3 class="pl-panel-title">Schéma draw.io du pipeline</h3>
+                <div class="pl-zoom-tools" aria-hidden="true"><button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="reset">⟲</button><span>molette / glisser pour naviguer</span></div>
+                <div class="pipeline-figure"><img src="/diagrams/rhone-distribution.svg" alt="Schéma draw.io du pipeline" loading="lazy" draggable="false"></div>
+            <div class="figure-actions"><a href="/diagrams/rhone-distribution.svg" target="_blank">⤢ Plein écran (SVG)</a></div></div>
+            </div>
+            <h3 class="pl-steps-title">Étape par étape</h3>
+            <ol class="pipeline-steps"><li><strong>Générer</strong> — ERP simulé reproductible (Parquet) et manifeste des anomalies injectées.</li><li><strong>Charger</strong> — base ERP PostgreSQL, puis extract nocturne agrégé.</li><li><strong>Transformer</strong> — Bronze, puis Silver et Gold avec dbt : 64 tests, dont la vérité terrain des anomalies.</li><li><strong>Sécuriser</strong> — rôles, row access et masking posés par le post-hook dbt.</li><li><strong>Exposer</strong> — tables Gold prêtes pour Power BI, snapshot de features pour un modèle de churn.</li></ol>
+        </div>
+    </section>
+
+    <section class="page-section" id="points-forts">
+        <div class="section-container">
+            <span class="section-label">// Points forts</span>
+            <h2>Les points forts de la solution</h2>
+            <ol class="pf-grid"><li class="pf-item reveal"><span class="pf-num">01</span><p><strong>Snowflake et dbt ensemble</strong> : couches Bronze, Silver, Gold, modèles incrémentaux, tests et lignage.</p></li><li class="pf-item reveal"><span class="pf-num">02</span><p><strong>Gouvernance des accès</strong> : row access par agence, masquage RGPD et financier, déclarés dans le modèle.</p></li><li class="pf-item reveal"><span class="pf-num">03</span><p><strong>Qualité vérifiable</strong> : chaque anomalie injectée est retrouvée par un test, et le test a déjà corrigé une règle fausse.</p></li></ol>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="stack">
+        <div class="section-container">
+            <span class="section-label">// Outils & langages</span>
+            <h2>Stack technique et pourquoi ces choix</h2>
+            <div class="two-col" style="margin-bottom:2rem;align-items:start">
+                <div class="skill-group"><h3 class="skill-group-title">Langages (part du code)</h3><div class="skill-items"><div class="skill-item"><span class="skill-name">SQL / dbt</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:55%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">55%</span></div><div class="skill-item"><span class="skill-name">Python</span>
+                <span style="flex:1;margin:0 1rem;height:6px;background:var(--border);border-radius:3px;overflow:hidden">
+                <span style="display:block;height:100%;width:45%;background:var(--gradient-1)"></span></span>
+                <span class="code-caption">45%</span></div></div>
+                    <p class="code-caption" style="margin-top:1rem">Lignes de code hors notebooks, calculées sur le dépôt.</p></div>
+                <div class="skill-group"><h3 class="skill-group-title">Mots-clés</h3>
+                    <div class="project-tech"><span class="tech-badge">Snowflake</span><span class="tech-badge">dbt</span><span class="tech-badge">SQL</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">DuckDB</span><span class="tech-badge">Row access policy</span><span class="tech-badge">Masking policy</span><span class="tech-badge">RGPD</span><span class="tech-badge">Qualité de données</span><span class="tech-badge">Python</span></div></div>
+            </div>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Outil</th><th>Rôle dans le projet</th><th>Ce que ça démontre</th></tr></thead>
+                <tbody><tr><td>Snowflake</td><td>Bronze, Silver, Gold, rôles, row access, masking, tags, Task</td><td>Pilotage quotidien sur données agrégées, accès réglementés</td></tr><tr><td>dbt</td><td>Modèles Silver et Gold, 64 tests, post-hooks de sécurité, documentation et lignage</td><td>Transformations versionnées, testées et documentées</td></tr><tr><td>PostgreSQL</td><td>ERP simulé</td><td>Une vraie source transactionnelle à extraire</td></tr><tr><td>DuckDB</td><td>Bronze et build dbt en local</td><td>Valider toute la chaîne sans compte cloud</td></tr><tr><td>Python</td><td>Générateur d'ERP, extract, chargeurs</td><td>Données reproductibles à graine fixe</td></tr></tbody></table></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="mlops">
+        <div class="section-container">
+            <span class="section-label">// Maturité MLOps</span>
+            <h2>Industrialisation : ce qui est en place</h2>
+            <div class="table-wrap"><table class="stack-table">
+                <thead><tr><th>Pratique</th><th>Statut</th><th>Détail</th></tr></thead>
+                <tbody><tr><td>CI/CD</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td></td></tr><tr><td>Tests</td><td><span class="m-yes" title="Implémenté">●</span> Implémenté</td><td>64 tests dbt dont la vérité terrain des 70 anomalies</td></tr><tr><td>Docker</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Orchestration</td><td><span class="m-part" title="Partiel">◐</span> Partiel</td><td>Task Snowflake écrite ; chaîne lancée par make en local</td></tr><tr><td>Tracking / registry</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Monitoring / drift</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>API</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>Déploiement</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr><tr><td>IaC / K8s</td><td><span class="m-no" title="Absent">—</span> Absent</td><td></td></tr></tbody></table></div>
+        </div>
+    </section>
+
+    <section class="page-section alt" id="suite">
+        <div class="section-container">
+            <span class="section-label">// Regard critique</span>
+            <h2>Limites connues et prochaines étapes</h2>
+            <p style="margin-bottom:1.5rem">Documenter honnêtement les limites fait partie du travail : c'est ce qui permet à une équipe de décider en connaissance de cause.</p>
+            <div class="arg-card arg-card--ok"><ul><li>Flux validé en local avec dbt Core (PostgreSQL + DuckDB), rejoué par la CI à chaque push. Scripts Snowflake écrits mais pas encore exécutés : la vérification des policies rôle par rôle reste à faire.</li><li>Flux rapide Databricks, rapports Power BI et modèle de churn sous Snowpark ML : prévus, pas encore construits.</li><li>Entreprise et historiques fictifs : les ordres de grandeur illustrent le fonctionnement, pas un résultat client.</li></ul></div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="section-container pager">
+            <a href="/projets/achats-negociation.html"><small>← Projet précédent</small>Buyvera — négociation achats</a>
+            <a class="next" href="/projets/buyvera-bi.html"><small>Projet suivant →</small>Buyvera BI — Power BI achats</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Patrice Duclos — Data Analyst — Lyon · <a href="/LICENSE.txt" style="color:var(--text-muted)">Tous droits réservés · fouille de données et IA interdites</a> ·
+        <a href="https://github.com/PDUCLOS" style="color:var(--accent);text-decoration:none">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/patrice-duclos-04819b96" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+    </footer>
+    <script src="/assets/site.js?v=11"></script>
+</body>
+</html>
